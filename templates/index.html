@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>📈 미국 주식 대시보드</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<body>
+  <div class="container">
+    <header class="dashboard-header">
+      <h1>📊 미국 주식 대시보드</h1>
+      <div class="header-top-bar">
+        <div class="header-controls">
+          <div class="toggle-switch">
+            <input type="checkbox" id="currencyToggle" onchange="toggleCurrency()">
+            <label for="currencyToggle"></label>
+            <span class="toggle-label-text" id="currencyLabel">💵 달러 보기</span>
+          </div>
+          <div class="toggle-switch">
+            <input type="checkbox" id="themeToggle" onchange="toggleTheme()">
+            <label for="themeToggle"></label>
+            <span class="toggle-label-text">🌙 다크 모드</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Tab Navigation -->
+    <div class="tab-container">
+      <nav class="tab-navigation">
+        <button class="tab-button active" data-tab="dashboard">
+          📊 대시보드
+        </button>
+        <button class="tab-button" data-tab="trading">
+          📈 거래관리 <span class="tab-badge" id="trade-count">0</span>
+        </button>
+      </nav>
+
+      <!-- Tab Content -->
+      <div class="tab-content">
+        <!-- Dashboard Tab Panel -->
+        <div class="tab-panel active" id="dashboard-panel">
+          <section class="summary-section">
+            <div class="summary-header">
+              <span class="summary-title">💵 요약</span>
+              <span class="exchange" id="krw-rate">$1 = <span id="krw-value">loading...</span>원</span>
+            </div>
+            <div class="summary-cards" id="summary-cards"></div>
+          </section>
+
+          <section class="chart-section">
+            <h2>📈 종목별 평가금액 분포</h2>
+            <canvas id="portfolioPieChart" width="400" height="400"></canvas>
+          </section>
+
+          <section class="holdings-section">
+            <h2>📂 보유 종목</h2>
+            <div class="stock-cards" id="stock-cards"></div>
+          </section>
+
+          <section class="recent-transactions-section">
+            <h2>📜 최근 거래내역</h2>
+            <ul id="recent-transaction-list"></ul>
+            <div class="view-all-link">
+              <button class="link-button" onclick="switchToTab('trading')">전체 거래내역 보기 →</button>
+            </div>
+          </section>
+        </div>
+
+        <!-- Trading Tab Panel -->
+        <div class="tab-panel" id="trading-panel">
+          <section class="trade-form-section">
+            <h2>💼 거래 등록</h2>
+            <form id="trade-form-inline" class="trade-form-inline">
+              <div class="form-row">
+                <div class="form-group suggestion-wrapper">
+                  <label for="ticker-search-inline">종목 기호</label>
+                  <input type="text" name="ticker" id="ticker-search-inline" placeholder="예: AAPL" autocomplete="off" required>
+                  <ul id="ticker-suggestions-inline" class="suggestion-list"></ul>
+                </div>
+                <div class="form-group">
+                  <label for="price-inline">가격</label>
+                  <input type="number" name="price" id="price-inline" placeholder="0.00" step="0.0001" required>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="quantity-inline">수량</label>
+                  <input type="number" name="quantity" id="quantity-inline" placeholder="0" step="0.000001" required>
+                </div>
+                <div class="form-group">
+                  <label for="date-inline">날짜</label>
+                  <input type="date" name="date" id="date-inline">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label>거래 타입</label>
+                  <div class="trade-type-toggle">
+                    <button type="button" id="btn-buy-inline" class="active">매수</button>
+                    <button type="button" id="btn-sell-inline">매도</button>
+                  </div>
+                  <input type="hidden" name="type" value="buy">
+                </div>
+                <div class="form-group form-submit">
+                  <button type="submit" class="submit-btn">거래 등록</button>
+                </div>
+              </div>
+            </form>
+            <div id="trade-message-inline" class="trade-message"></div>
+          </section>
+
+          <section class="all-transactions-section">
+            <h2>📜 전체 거래내역</h2>
+            <div class="transaction-controls">
+              <div class="transaction-stats">
+                총 <span id="total-transactions">0</span>건의 거래
+              </div>
+            </div>
+            <ul id="all-transaction-list"></ul>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Delete Confirmation Modal -->
+  <div id="deleteModal" class="modal">
+    <div class="modal-content delete-modal-content">
+      <div class="delete-modal-header">
+        <h3>⚠️ 거래내역 삭제</h3>
+      </div>
+      <div class="delete-modal-body">
+        <p>이 거래내역을 정말로 삭제하시겠습니까?</p>
+        <div class="delete-transaction-info" id="deleteTransactionInfo">
+          <!-- 거래 정보가 여기에 표시됩니다 -->
+        </div>
+        <p class="delete-warning">⚠️ 삭제된 데이터는 복구할 수 없습니다.</p>
+      </div>
+      <div class="delete-modal-actions">
+        <button class="cancel-btn" onclick="closeDeleteModal()">취소</button>
+        <button class="delete-confirm-btn" onclick="confirmDelete()">삭제</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let currency = 'usd';
+    let currentTab = 'dashboard';
+
+    // Tab Management
+    function switchToTab(tabName) {
+      currentTab = tabName;
+      
+      // Remove active states
+      document.querySelectorAll('.tab-button, .tab-panel').forEach(el => {
+        el.classList.remove('active');
+      });
+      
+      // Add active states
+      document.querySelector(`[data-tab="${tabName}"]`).classList.add('active');
+      document.querySelector(`#${tabName}-panel`).classList.add('active');
+      
+      // Update URL without reload
+      if (history.pushState) {
+        history.pushState(null, null, `#${tabName}`);
+      }
+      
+      // Update trade count when switching to trading tab
+      if (tabName === 'trading') {
+        updateTradeCount();
+      }
+    }
+
+    function initializeTabs() {
+      const tabButtons = document.querySelectorAll('.tab-button');
+      
+      // Set up tab click handlers
+      tabButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+          const targetTab = e.target.closest('.tab-button').dataset.tab;
+          switchToTab(targetTab);
+        });
+      });
+
+      // Keyboard navigation for tabs
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+          const activeTab = document.querySelector('.tab-button.active');
+          const tabs = Array.from(tabButtons);
+          const currentIndex = tabs.indexOf(activeTab);
+          
+          if (e.key === 'ArrowLeft' && currentIndex > 0) {
+            switchToTab(tabs[currentIndex - 1].dataset.tab);
+            tabs[currentIndex - 1].focus();
+            e.preventDefault();
+          } else if (e.key === 'ArrowRight' && currentIndex < tabs.length - 1) {
+            switchToTab(tabs[currentIndex + 1].dataset.tab);
+            tabs[currentIndex + 1].focus();
+            e.preventDefault();
+          }
+        }
+      });
+
+      // Handle initial URL hash
+      const hash = window.location.hash.replace('#', '');
+      if (hash === 'trading' || hash === 'dashboard') {
+        switchToTab(hash);
+      }
+
+      // Handle browser back/forward
+      window.addEventListener('popstate', () => {
+        const hash = window.location.hash.replace('#', '') || 'dashboard';
+        switchToTab(hash);
+      });
+    }
+
+    function updateTradeCount() {
+      fetchTransactions().then(transactions => {
+        document.getElementById('trade-count').textContent = transactions.length;
+        document.getElementById('total-transactions').textContent = transactions.length;
+      });
+    }
+
+    function toggleCurrency() {
+      const toggle = document.getElementById("currencyToggle");
+      const label = document.getElementById("currencyLabel");
+      currency = toggle.checked ? 'krw' : 'usd';
+      label.innerText = toggle.checked ? '🇰🇷 원화 보기' : '💵 달러 보기';
+      renderDashboard();
+    }
+
+    function toggleTheme() {
+      document.body.classList.toggle('dark-mode');
+    }
+
+    function toggleTradeForm() {
+      const container = document.getElementById("trade-form-container");
+      container.style.display = container.style.display === 'none' ? 'block' : 'none';
+    }
+
+    async function fetchExchangeRate() {
+      const res = await fetch("https://open.er-api.com/v6/latest/USD");
+      const data = await res.json();
+      return data.rates.KRW;
+    }
+
+    async function fetchPortfolio() {
+      const res = await fetch("/api/stocks/v1/portfolio");
+      return await res.json();
+    }
+
+    async function fetchPrices() {
+      const res = await fetch("/api/stocks/v1/prices");
+      return await res.json();
+    }
+
+    async function fetchTransactions() {
+      const res = await fetch("/api/stocks/v1/transactions");
+      return await res.json();
+    }
+
+    function formatUSD(value) {
+      return `$${value.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+    }
+
+    function formatKRW(value) {
+      return `${Math.round(value).toLocaleString()}원`;
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      // Initialize tabs
+      initializeTabs();
+
+      // Initialize date picker for inline form
+      flatpickr("input[name='date']", {
+        dateFormat: "Y-m-d",
+        defaultDate: new Date()
+      });
+
+      // Toggle button for trade type - inline form
+      const buyBtnInline = document.getElementById("btn-buy-inline");
+      const sellBtnInline = document.getElementById("btn-sell-inline");
+      const typeInputInline = document.querySelector("#trade-form-inline input[name='type']");
+
+      if (buyBtnInline && sellBtnInline && typeInputInline) {
+        buyBtnInline.addEventListener("click", (e) => {
+          e.preventDefault();
+          buyBtnInline.classList.add("active");
+          sellBtnInline.classList.remove("active");
+          typeInputInline.value = "buy";
+        });
+        buyBtnInline.addEventListener("touchstart", (e) => {
+          e.preventDefault();
+          buyBtnInline.classList.add("active");
+          sellBtnInline.classList.remove("active");
+          typeInputInline.value = "buy";
+        });
+        
+        sellBtnInline.addEventListener("click", (e) => {
+          e.preventDefault();
+          sellBtnInline.classList.add("active");
+          buyBtnInline.classList.remove("active");
+          typeInputInline.value = "sell";
+        });
+        sellBtnInline.addEventListener("touchstart", (e) => {
+          e.preventDefault();
+          sellBtnInline.classList.add("active");
+          buyBtnInline.classList.remove("active");
+          typeInputInline.value = "sell";
+        });
+      }
+
+      // Initialize ticker search for inline form
+      initializeInlineTickerSearch();
+    });
+
+    let portfolioChart = null; // ✅ 전역 차트 변수
+
+    async function renderPortfolioChart(portfolio, prices, krwRate) {
+      const labels = [];
+      const data = [];
+
+      for (const [symbol, info] of Object.entries(portfolio)) {
+        const price = prices[symbol];
+        if (price == null) continue;
+
+        const currentValue = info.shares * price;
+        const displayValue = currency === 'krw' ? currentValue * krwRate : currentValue;
+
+        labels.push(symbol);
+        data.push(displayValue);
+      }
+
+      const ctx = document.getElementById('portfolioPieChart').getContext('2d');
+
+      if (portfolioChart) {
+        portfolioChart.destroy();
+      }
+
+      portfolioChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+          labels: labels,
+          datasets: [{
+            label: currency === 'krw' ? '평가금액 (₩)' : '평가금액 ($)',
+            data: data,
+            backgroundColor: [
+              '#007bff', '#28a745', '#ffc107', '#dc3545', '#17a2b8', '#6610f2'
+            ],
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            tooltip: {
+              callbacks: {
+                label: function(context) {
+                  const val = context.raw;
+                  return currency === 'krw'
+                    ? `₩ ${Math.round(val).toLocaleString()}`
+                    : `$ ${val.toFixed(2).toLocaleString()}`;
+                }
+              }
+            },
+            legend: {
+              position: 'bottom'
+            },
+            title: {
+              display: false
+            }
+          }
+        }
+      });
+    }
+
+    async function renderDashboard() {
+      const krwRate = await fetchExchangeRate();
+      document.getElementById("krw-value").innerText = Number(krwRate.toFixed(2)).toString();
+
+      const portfolio = await fetchPortfolio();
+      const prices = await fetchPrices();
+
+      const stockCards = document.getElementById("stock-cards");
+      const summary = { invested: 0, value: 0 };
+      stockCards.innerHTML = "";
+
+      if (portfolio && Object.keys(portfolio).length > 0) {
+        for (const [symbol, info] of Object.entries(portfolio)) {
+          const price = prices[symbol];
+          if (price == null) continue;
+
+          const shares = Number(info.shares.toFixed(6)).toString();
+          const avgPrice = info.average_price;
+          const invested = shares * avgPrice;
+          const currentValue = shares * price;
+          const profit = currentValue - invested;
+
+          summary.invested += invested;
+          summary.value += currentValue;
+
+          const rate = Number(((profit / invested) * 100).toFixed(2)).toString();
+          const rateClass = profit >= 0 ? 'positive' : 'negative';
+
+          stockCards.innerHTML += `
+            <div class="stock-card">
+              <div class="stock-header">
+                <h3>${symbol}</h3>
+                <span class="price">${formatUSD(price)}</span>
+              </div>
+              <div class="stock-body">
+                <p><strong>보유 수량:</strong> ${shares}</p>
+                <p><strong>평가 금액:</strong> 
+                  ${currency === 'usd' ? formatUSD(currentValue) : formatKRW(currentValue * krwRate)}
+                </p>
+                <p><strong>수익:</strong> 
+                  ${currency === 'usd' ? formatUSD(profit) : formatKRW(profit * krwRate)}
+                </p>
+                <p><strong>수익률:</strong> <span class="${rateClass}">${rate}%</span></p>
+              </div>
+            </div>
+          `;
+        }
+      } else {
+        stockCards.innerHTML = `<p>📭 보유 중인 종목이 없습니다.</p>`;
+      }
+
+      const profit = summary.value - summary.invested;
+
+      
+      const rate = Number(((profit / summary.invested) * 100).toFixed(2)).toString();
+      const rateClass = profit >= 0 ? 'positive' : 'negative';
+
+      document.getElementById("summary-cards").innerHTML = `
+        <div class="card">
+          <h3>총 투자금</h3>
+          <p>${currency === 'usd' ? formatUSD(summary.invested) : formatKRW(summary.invested * krwRate)}</p>
+        </div>
+        <div class="card">
+          <h3>현재 평가액</h3>
+          <p>${currency === 'usd' ? formatUSD(summary.value) : formatKRW(summary.value * krwRate)}</p>
+        </div>
+        <div class="card">
+          <h3>총 수익</h3>
+          <p>${currency === 'usd' ? formatUSD(profit) : formatKRW(profit * krwRate)}</p>
+          <p>수익률: <span class="${rateClass}">${rate}%</span></p>
+        </div>
+      `;
+
+      renderPortfolioChart(portfolio, prices, krwRate);
+    }
+
+    async function renderRecentTransactions() {
+      const txList = await fetch("/api/stocks/v1/transactions").then(res => res.json());
+      const container = document.getElementById("recent-transaction-list");
+      container.innerHTML = "";
+
+      // Show only the most recent 5 transactions
+      const recentTx = txList.slice(-5).reverse();
+
+      if (recentTx.length === 0) {
+        container.innerHTML = '<li class="no-transactions">📭 거래내역이 없습니다.</li>';
+        return;
+      }
+
+      recentTx.forEach((tx, i) => {
+        const div = document.createElement("div");
+        div.className = "transaction-card";
+        div.innerHTML = `
+          <div class="tx-info">
+            <div class="tx-header">
+              <span class="tx-ticker" title="${tx.ticker}">${tx.ticker}</span>
+              <span class="tx-type" data-type="${tx.type.toUpperCase()}">${tx.type.toUpperCase()}</span>
+            </div>
+            <div class="tx-details">
+              <div class="tx-detail-item">
+                <span>📅</span>
+                <span>${tx.date}</span>
+              </div>
+              <div class="tx-detail-item">
+                <span>📦</span>
+                <span class="tx-amount">${tx.quantity.toLocaleString(undefined, { maximumFractionDigits: 6 })}</span>
+              </div>
+              <div class="tx-detail-item">
+                <span>💲</span>
+                <span class="tx-amount">${Number(tx.price).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+              </div>
+            </div>
+          </div>
+        `;
+        container.appendChild(div);
+      });
+    }
+
+    async function renderAllTransactions() {
+      const txList = await fetch("/api/stocks/v1/transactions").then(res => res.json());
+      const container = document.getElementById("all-transaction-list");
+      container.innerHTML = "";
+
+      if (txList.length === 0) {
+        container.innerHTML = '<li class="no-transactions">📭 거래내역이 없습니다.</li>';
+        return;
+      }
+
+      // Show all transactions in reverse chronological order
+      const sortedTx = txList.slice().reverse();
+
+      sortedTx.forEach((tx, i) => {
+        const originalIndex = txList.length - 1 - i;
+        const div = document.createElement("div");
+        div.className = "transaction-card";
+        div.innerHTML = `
+          <div class="tx-info">
+            <div class="tx-header">
+              <span class="tx-ticker" title="${tx.ticker}">${tx.ticker}</span>
+              <span class="tx-type" data-type="${tx.type.toUpperCase()}">${tx.type.toUpperCase()}</span>
+            </div>
+            <div class="tx-details">
+              <div class="tx-detail-item">
+                <span>📅</span>
+                <span>${tx.date}</span>
+              </div>
+              <div class="tx-detail-item">
+                <span>📦</span>
+                <span class="tx-amount">${tx.quantity.toLocaleString(undefined, { maximumFractionDigits: 6 })}</span>
+              </div>
+              <div class="tx-detail-item">
+                <span>💲</span>
+                <span class="tx-amount">${Number(tx.price).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+              </div>
+              <div class="tx-detail-item">
+                <span>💰</span>
+                <span class="tx-amount">${(tx.quantity * tx.price).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+              </div>
+            </div>
+          </div>
+          <button class="tx-delete" onclick="deleteTransaction(${originalIndex})" title="거래내역 삭제">×</button>
+        `;
+        container.appendChild(div);
+      });
+
+      // Update trade count
+      updateTradeCount();
+    }
+
+    let pendingDeleteIndex = null;
+    let pendingDeleteTransaction = null;
+
+    function deleteTransaction(index) {
+      // First get the transaction data to show in confirmation
+      fetchTransactions().then(transactions => {
+        const transaction = transactions[index];
+        if (transaction) {
+          pendingDeleteIndex = index;
+          pendingDeleteTransaction = transaction;
+          showDeleteModal(transaction);
+        }
+      });
+    }
+
+    function showDeleteModal(transaction) {
+      const modal = document.getElementById('deleteModal');
+      const infoElement = document.getElementById('deleteTransactionInfo');
+      
+      // Display transaction info
+      infoElement.innerHTML = `
+        <div><strong>종목:</strong> ${transaction.ticker}</div>
+        <div><strong>타입:</strong> ${transaction.type.toUpperCase()}</div>
+        <div><strong>가격:</strong> $${Number(transaction.price).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</div>
+        <div><strong>수량:</strong> ${transaction.quantity.toLocaleString(undefined, { maximumFractionDigits: 6 })}</div>
+        <div><strong>날짜:</strong> ${transaction.date}</div>
+      `;
+      
+      modal.style.display = 'block';
+      
+      // Focus management for accessibility
+      setTimeout(() => {
+        const cancelBtn = modal.querySelector('.cancel-btn');
+        if (cancelBtn) {
+          cancelBtn.focus();
+        }
+      }, 100);
+    }
+
+    function closeDeleteModal() {
+      const modal = document.getElementById('deleteModal');
+      modal.style.display = 'none';
+      pendingDeleteIndex = null;
+      pendingDeleteTransaction = null;
+    }
+
+    async function confirmDelete() {
+      if (pendingDeleteIndex !== null) {
+        try {
+          await fetch(`/api/stocks/v1/transactions/${pendingDeleteIndex}`, { method: "DELETE" });
+          
+          // Update all displays
+          renderDashboard();
+          renderRecentTransactions();
+          renderAllTransactions();
+          
+          closeDeleteModal();
+        } catch (error) {
+          alert('거래내역 삭제 중 오류가 발생했습니다.');
+          console.error('Error deleting transaction:', error);
+        }
+      }
+    }
+
+    // Close modal when clicking outside
+    window.addEventListener('click', function(event) {
+      const deleteModal = document.getElementById('deleteModal');
+      if (event.target === deleteModal) {
+        closeDeleteModal();
+      }
+    });
+
+    // Keyboard support for delete modal
+    document.addEventListener('keydown', function(event) {
+      const deleteModal = document.getElementById('deleteModal');
+      if (deleteModal.style.display === 'block') {
+        if (event.key === 'Escape') {
+          closeDeleteModal();
+          event.preventDefault();
+        } else if (event.key === 'Enter') {
+          confirmDelete();
+          event.preventDefault();
+        }
+      }
+    });
+
+    // Inline form submission handler
+    document.addEventListener('DOMContentLoaded', function() {
+      const inlineForm = document.getElementById("trade-form-inline");
+      if (inlineForm) {
+        inlineForm.addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const form = e.target;
+          const messageEl = document.getElementById("trade-message-inline");
+          
+          const data = {
+            ticker: form.ticker.value.toUpperCase(),
+            price: form.price.value,
+            quantity: form.quantity.value,
+            type: form.type.value,
+            date: form.date.value
+          };
+
+          try {
+            const res = await fetch("/api/stocks/v1/transactions", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(data),
+            });
+
+            const msg = await res.json();
+            
+            if (res.ok) {
+              messageEl.className = "trade-message success";
+              messageEl.textContent = msg.message || "거래가 성공적으로 등록되었습니다.";
+              form.reset();
+              
+              // Update all relevant sections
+              renderDashboard();
+              renderRecentTransactions();
+              renderAllTransactions();
+              
+              // Hide success message after 3 seconds
+              setTimeout(() => {
+                messageEl.style.display = 'none';
+              }, 3000);
+            } else {
+              messageEl.className = "trade-message error";
+              messageEl.textContent = msg.error || "거래 등록에 실패했습니다.";
+            }
+          } catch (error) {
+            messageEl.className = "trade-message error";
+            messageEl.textContent = "네트워크 오류가 발생했습니다.";
+          }
+        });
+      }
+    });
+
+    function initializeInlineTickerSearch() {
+      const tickerInputInline = document.getElementById("ticker-search-inline");
+      const suggestionBoxInline = document.getElementById("ticker-suggestions-inline");
+
+      if (!tickerInputInline || !suggestionBoxInline) return;
+
+      tickerInputInline.addEventListener("input", async () => {
+        const query = tickerInputInline.value.trim();
+        if (!query) {
+          suggestionBoxInline.innerHTML = "";
+          suggestionBoxInline.style.display = "none";
+          return;
+        }
+
+        try {
+          const res = await fetch(`/api/stocks/v1/symbol-search?q=${query}`);
+          const results = await res.json();
+
+          if (results.length > 0) {
+            suggestionBoxInline.innerHTML = results.map(r => `
+              <li onclick="selectTickerInline('${r.symbol}')">
+                <strong>${r.symbol}</strong> - ${r.name}
+              </li>
+            `).join("");
+            suggestionBoxInline.style.display = "block";
+          } else {
+            suggestionBoxInline.innerHTML = "";
+            suggestionBoxInline.style.display = "none";
+          }
+        } catch (error) {
+          console.error('Error fetching ticker suggestions:', error);
+          suggestionBoxInline.innerHTML = "";
+          suggestionBoxInline.style.display = "none";
+        }
+      });
+
+      // Hide suggestions when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!tickerInputInline.contains(e.target) && !suggestionBoxInline.contains(e.target)) {
+          suggestionBoxInline.style.display = "none";
+        }
+      });
+    }
+
+    function selectTickerInline(symbol) {
+      const tickerInputInline = document.getElementById("ticker-search-inline");
+      const suggestionBoxInline = document.getElementById("ticker-suggestions-inline");
+      
+      tickerInputInline.value = symbol;
+      suggestionBoxInline.innerHTML = "";
+      suggestionBoxInline.style.display = "none";
+    }
+
+    // Main initialization
+    function initializeApp() {
+      renderDashboard();
+      renderRecentTransactions();
+      renderAllTransactions();
+      updateTradeCount();
+    }
+
+    // Initialize app when DOM is ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initializeApp);
+    } else {
+      initializeApp();
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+{
+  "portfolio": {
+    "AAPL": {
+      "shares": 12.037544999999998,
+      "average_price": 180.921
+    },
+    "NVDA": {
+      "shares": 18.100622,
+      "average_price": 125.7973
+    }
+  },
+  "transactions": [
+    {
+      "ticker": "AAPL",
+      "type": "buy",
+      "price": 180.35,
+      "quantity": 11.71247,
+      "date": "2025-06-04"
+    },
+    {
+      "ticker": "NVDA",
+      "type": "buy",
+      "price": 121.63,
+      "quantity": 15.0,
+      "date": "2025-06-04"
+    },
+    {
+      "ticker": "AAPL",
+      "type": "buy",
+      "price": 204.87,
+      "quantity": 0.107337,
+      "date": "2025-06-10"
+    },
+    {
+      "ticker": "AAPL",
+      "type": "buy",
+      "price": 198.0,
+      "quantity": 0.111061,
+      "date": "2025-06-16"
+    },
+    {
+      "ticker": "NVDA",
+      "type": "buy",
+      "price": 144.7,
+      "quantity": 0.100622,
+      "date": "2025-06-17"
+    },
+    {
+      "ticker": "NVDA",
+      "type": "buy",
+      "price": 146.0,
+      "quantity": 3.0,
+      "date": "2025-06-24"
+    },
+    {
+      "ticker": "AAPL",
+      "type": "buy",
+      "price": 201.73,
+      "quantity": 0.106677,
+      "date": "2025-06-23"
+    }
+  ]
+}
