@@ -197,6 +197,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   box-shadow: 0 2px 8px rgba(0,0,0,0.06);
   transition: all 0.3s ease;
   position: relative;
+  min-height: 60px; /* 최소 높이 설정 */
 }
 
 .transaction-card:hover {
@@ -216,6 +217,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   gap: 8px;
   min-width: 0; /* 플렉스 축소 허용 */
   overflow: hidden; /* 컨테이너 오버플로우 방지 */
+  padding-right: 40px; /* 삭제 버튼 공간 확보 */
 }
 
 .tx-header {
@@ -317,7 +319,9 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   transition: all 0.3s ease;
   touch-action: manipulation;
   opacity: 0.7;
-  align-self: flex-start; /* tx-header와 같은 높이에 위치 */
+  position: absolute; /* 절대 위치로 변경 */
+  right: 16px; /* 우측 여백 */
+  top: 16px; /* 상단 여백 - tx-header와 정렬 */
 }
 
 .tx-delete:hover {
@@ -342,12 +346,18 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     gap: 10px;
   }
 
+  .tx-info {
+    padding-right: 45px; /* 모바일에서 삭제 버튼 공간 확보 */
+  }
+
   .tx-delete {
     width: 26px; /* 모바일 헤더 높이에 맞게 */
     height: 26px;
     font-size: 14px;
     opacity: 1;
     border-radius: 4px;
+    right: 14px; /* 모바일에서 우측 여백 조정 */
+    top: 14px; /* 모바일에서 상단 여백 조정 */
   }
 
   .tx-header {
@@ -383,11 +393,17 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     margin-bottom: 8px;
   }
 
+  .tx-info {
+    padding-right: 40px; /* 소형 모바일에서 삭제 버튼 공간 확보 */
+  }
+
   .tx-delete {
     width: 22px; /* 소형 모바일 헤더에 맞게 */
     height: 22px;
     font-size: 12px;
     border-radius: 4px;
+    right: 12px; /* 소형 모바일에서 우측 여백 조정 */
+    top: 12px; /* 소형 모바일에서 상단 여백 조정 */
   }
 
   .tx-header {
