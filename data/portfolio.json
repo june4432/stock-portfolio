@@ -1,12 +1,12 @@
 {
   "portfolio": {
     "AAPL": {
-      "shares": 12.037544999999998,
-      "average_price": 180.921
+      "shares": 12.754586999999999,
+      "average_price": 182.6414
     },
     "NVDA": {
-      "shares": 18.277543,
-      "average_price": 126.1701
+      "shares": 18.798556,
+      "average_price": 127.2688
     }
   },
   "transactions": [
@@ -60,11 +60,12 @@
       "date": "2025-06-23"
     },
     {
-      "ticker": "NVDA",
+      "ticker": "AAPL",
       "type": "buy",
-      "price": 172.37,
-      "quantity": 0.083483,
-      "date": "2025-08-12"
+      "price": 200.73,
+      "quantity": 0.1097,
+      "date": "2025-06-30",
+      "purchase_datetime": "2025-06-30 10:30"
     },
     {
       "ticker": "NVDA",
@@ -73,6 +74,104 @@
       "quantity": 0.093438,
       "date": "2025-06-30",
       "purchase_datetime": "2025-06-30 10:30"
+    },
+    {
+      "ticker": "AAPL",
+      "type": "buy",
+      "price": 213.11,
+      "quantity": 0.102388,
+      "date": "2025-07-07"
+    },
+    {
+      "ticker": "NVDA",
+      "type": "buy",
+      "price": 158.6,
+      "quantity": 0.091677,
+      "date": "2025-07-07",
+      "purchase_datetime": "2025-07-07 10:29"
+    },
+    {
+      "ticker": "AAPL",
+      "type": "buy",
+      "price": 207.87,
+      "quantity": 0.104055,
+      "date": "2025-07-14",
+      "purchase_datetime": "2025-07-14 10:29"
+    },
+    {
+      "ticker": "NVDA",
+      "type": "buy",
+      "price": 164.02,
+      "quantity": 0.087916,
+      "date": "2025-07-14",
+      "purchase_datetime": "2025-07-14 10:29"
+    },
+    {
+      "ticker": "AAPL",
+      "type": "buy",
+      "price": 214.24,
+      "quantity": 0.100728,
+      "date": "2025-07-21"
+    },
+    {
+      "ticker": "NVDA",
+      "type": "buy",
+      "price": 172.37,
+      "quantity": 0.083483,
+      "date": "2025-08-12"
+    },
+    {
+      "ticker": "AAPL",
+      "type": "buy",
+      "price": 213.94,
+      "quantity": 0.100729,
+      "date": "2025-07-28"
+    },
+    {
+      "ticker": "NVDA",
+      "type": "buy",
+      "price": 175.23,
+      "quantity": 0.082007,
+      "date": "2025-08-12"
+    },
+    {
+      "ticker": "AAPL",
+      "type": "buy",
+      "price": 206.03,
+      "quantity": 0.104888,
+      "date": "2025-08-04",
+      "purchase_datetime": "2025-08-04 10:31"
+    },
+    {
+      "ticker": "NVDA",
+      "type": "buy",
+      "price": 177.05,
+      "quantity": 0.081388,
+      "date": "2025-08-04",
+      "purchase_datetime": "2025-08-04 10:31"
+    },
+    {
+      "ticker": "AAPL",
+      "type": "buy",
+      "price": 226.96,
+      "quantity": 0.094554,
+      "date": "2025-08-11",
+      "purchase_datetime": "2025-08-11 10:32"
+    },
+    {
+      "ticker": "NVDA",
+      "type": "buy",
+      "price": 182.46,
+      "quantity": 0.078428,
+      "date": "2025-08-11"
+    },
+    {
+      "ticker": "NVDA",
+      "type": "buy",
+      "price": 143.98,
+      "quantity": 0.099597,
+      "date": "2025-06-23",
+      "purchase_datetime": "2025-06-23 10:29"
     }
   ]
 }
