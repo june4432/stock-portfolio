@@ -46,6 +46,87 @@ h1, h2, h3 {
   color: var(--accent-dark);
 }
 
+/* Trade Registration Section */
+.trade-registration-section {
+  margin-bottom: 30px;
+}
+
+.upload-subsection {
+  margin-bottom: 30px;
+}
+
+.upload-subsection h3 {
+  color: var(--accent-light);
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.dark-mode .upload-subsection h3 {
+  color: var(--accent-dark);
+}
+
+/* Manual Input Section */
+.manual-input-section {
+  text-align: center;
+  padding: 20px;
+}
+
+.section-divider {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.divider-line {
+  flex: 1;
+  height: 1px;
+  background: var(--border-light);
+}
+
+.dark-mode .divider-line {
+  background: var(--border-dark);
+}
+
+.divider-text {
+  padding: 0 15px;
+  color: #666;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.dark-mode .divider-text {
+  color: #999;
+}
+
+.direct-input-btn {
+  background: var(--card-bg-light);
+  border: 2px dashed var(--border-light);
+  color: var(--text-light);
+  padding: 15px 30px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.direct-input-btn:hover {
+  border-color: var(--accent-light);
+  color: var(--accent-light);
+  background: rgba(0, 123, 255, 0.05);
+}
+
+.dark-mode .direct-input-btn {
+  background: var(--card-bg-dark);
+  border-color: var(--border-dark);
+  color: var(--text-dark);
+}
+
+.dark-mode .direct-input-btn:hover {
+  border-color: var(--accent-dark);
+  color: var(--accent-dark);
+  background: rgba(102, 178, 255, 0.1);
+}
+
 /* ======================== */
 /* 🔁 Toggle Switch         */
 /* ======================== */
@@ -1161,13 +1242,49 @@ ul#transaction-list {
 
 .parsed-transaction {
   display: flex;
-  align-items: center;
-  gap: 12px;
+  flex-direction: column;
+  gap: 8px;
   padding: 12px;
   margin: 8px 0;
   border: 1px solid var(--border-light);
   border-radius: 6px;
   background: var(--bg-light);
+}
+
+.parsed-transaction .tx-main-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.parsed-transaction .tx-datetime {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85em;
+  color: #666;
+  padding-left: 8px;
+}
+
+.dark-mode .parsed-transaction .tx-datetime {
+  color: #aaa;
+}
+
+.datetime-label {
+  font-weight: 500;
+}
+
+.datetime-value {
+  font-family: monospace;
+  background: var(--tx-bg-light);
+  padding: 2px 6px;
+  border-radius: 3px;
+  border: 1px solid var(--tx-border-light);
+}
+
+.dark-mode .datetime-value {
+  background: var(--tx-bg-dark);
+  border-color: var(--border-dark);
 }
 
 .dark-mode .parsed-transaction {

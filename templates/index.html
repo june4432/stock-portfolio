@@ -87,43 +87,60 @@
         <!-- Trading Tab Panel -->
         <div class="tab-panel" id="trading-panel">
           <!-- Screenshot Upload Section -->
-          <section class="screenshot-upload-section content-section">
-            <h2>📷 스크린샷으로 거래 등록</h2>
-            <div class="upload-area" id="upload-area">
-              <div class="upload-content">
-                <div class="upload-icon">📸</div>
-                <p class="upload-text">스크린샷을 드래그하거나 클릭하여 업로드</p>
-                <p class="upload-subtext">PNG, JPG, JPEG 파일 지원 (최대 16MB)</p>
-                <div class="upload-buttons">
-                  <button type="button" class="upload-btn" onclick="document.getElementById('file-input').click()">파일 선택</button>
-                </div>
-                <input type="file" id="file-input" accept="image/*" style="display: none;">
-                <input type="file" id="sample-file-input" accept="image/*" style="display: none;">
-              </div>
-            </div>
-            <div id="upload-result" class="upload-result" style="display: none;">
-              <div class="result-content">
-                <div class="image-preview">
-                  <h3>📷 업로드된 이미지</h3>
-                  <div class="thumbnail-container">
-                    <img id="uploaded-thumbnail" src="" alt="업로드된 이미지" style="display: none;">
+          <section class="trade-registration-section content-section">
+            <h2>💼 거래 등록</h2>
+            
+            <!-- 스크린샷 업로드 -->
+            <div class="upload-subsection">
+              <h3>📷 스크린샷으로 등록하기</h3>
+              <div class="upload-area" id="upload-area">
+                <div class="upload-content">
+                  <div class="upload-icon">📸</div>
+                  <p class="upload-text">스크린샷을 드래그하거나 클릭하여 업로드</p>
+                  <p class="upload-subtext">PNG, JPG, JPEG 파일 지원 (최대 16MB)</p>
+                  <div class="upload-buttons">
+                    <button type="button" class="upload-btn" onclick="document.getElementById('file-input').click()">파일 선택</button>
                   </div>
+                  <input type="file" id="file-input" accept="image/*" style="display: none;">
+                  <input type="file" id="sample-file-input" accept="image/*" style="display: none;">
                 </div>
-                <div class="ocr-results">
-                  <h3>📋 인식된 거래내역</h3>
-                  <div id="parsed-transactions">
-                    <div class="ocr-status processing">
-                      <span class="status-icon">⏳</span>
-                      <span class="status-text">OCR 처리 중...</span>
+              </div>
+              <div id="upload-result" class="upload-result" style="display: none;">
+                <div class="result-content">
+                  <div class="image-preview">
+                    <h4>📷 업로드된 이미지</h4>
+                    <div class="thumbnail-container">
+                      <img id="uploaded-thumbnail" src="" alt="업로드된 이미지" style="display: none;">
+                    </div>
+                  </div>
+                  <div class="ocr-results">
+                    <h4>📋 인식된 거래내역</h4>
+                    <div id="parsed-transactions">
+                      <div class="ocr-status processing">
+                        <span class="status-icon">⏳</span>
+                        <span class="status-text">OCR 처리 중...</span>
+                      </div>
                     </div>
                   </div>
                 </div>
+                <div class="upload-actions">
+                  <button class="cancel-upload-btn" onclick="clearUploadResult()">취소</button>
+                  <button class="edit-upload-btn" onclick="editParsedTransaction()">수정하여 저장</button>
+                  <button class="confirm-upload-btn" onclick="addParsedTransactions()">바로 저장</button>
+                </div>
               </div>
-              <div class="upload-actions">
-                <button class="cancel-upload-btn" onclick="clearUploadResult()">취소</button>
-                <button class="edit-upload-btn" onclick="editParsedTransaction()">수정하여 저장</button>
-                <button class="confirm-upload-btn" onclick="addParsedTransactions()">바로 저장</button>
+            </div>
+
+            <!-- 직접 입력 구분선 및 버튼 -->
+            <div class="manual-input-section">
+              <div class="section-divider">
+                <span class="divider-line"></span>
+                <span class="divider-text">또는</span>
+                <span class="divider-line"></span>
               </div>
+              <button type="button" class="direct-input-btn" onclick="openAddTransactionModal()">
+                ✏️ 직접 입력하기
+              </button>
             </div>
             
             <!-- Edit Transaction Modal -->
@@ -168,46 +185,6 @@
             </div>
           </section>
 
-          <section class="trade-form-section content-section">
-            <h2>💼 거래 등록</h2>
-            <form id="trade-form-inline" class="trade-form-inline">
-              <div class="form-row">
-                <div class="form-group suggestion-wrapper">
-                  <label for="ticker-search-inline">종목 기호</label>
-                  <input type="text" name="ticker" id="ticker-search-inline" placeholder="예: AAPL" autocomplete="off" required>
-                  <ul id="ticker-suggestions-inline" class="suggestion-list"></ul>
-                </div>
-                <div class="form-group">
-                  <label for="price-inline">가격</label>
-                  <input type="number" name="price" id="price-inline" placeholder="0.00" step="0.0001" required>
-                </div>
-              </div>
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="quantity-inline">수량</label>
-                  <input type="number" name="quantity" id="quantity-inline" placeholder="0" step="0.000001" required>
-                </div>
-                <div class="form-group">
-                  <label for="date-inline">날짜</label>
-                  <input type="date" name="date" id="date-inline">
-                </div>
-              </div>
-              <div class="form-row">
-                <div class="form-group">
-                  <label>거래 타입</label>
-                  <div class="trade-type-toggle">
-                    <button type="button" id="btn-buy-inline" class="active">매수</button>
-                    <button type="button" id="btn-sell-inline">매도</button>
-                  </div>
-                  <input type="hidden" name="type" value="buy">
-                </div>
-                <div class="form-group form-submit">
-                  <button type="submit" class="submit-btn">거래 등록</button>
-                </div>
-              </div>
-            </form>
-            <div id="trade-message-inline" class="trade-message"></div>
-          </section>
 
           <section class="all-transactions-section content-section">
             <h2>📜 전체 거래내역</h2>
@@ -219,6 +196,48 @@
             <ul id="all-transaction-list"></ul>
           </section>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add Transaction Modal -->
+  <div id="addTransactionModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>💼 거래 등록</h3>
+        <span class="close" onclick="closeAddTransactionModal()">&times;</span>
+      </div>
+      <div class="modal-body">
+        <form id="add-transaction-form">
+          <div class="form-group suggestion-wrapper">
+            <label for="add-ticker">종목 기호</label>
+            <input type="text" name="ticker" id="add-ticker" placeholder="예: AAPL" autocomplete="off" required>
+            <ul id="add-ticker-suggestions" class="suggestion-list"></ul>
+          </div>
+          <div class="form-group">
+            <label for="add-type">거래 유형</label>
+            <select id="add-type" name="type">
+              <option value="buy">매수</option>
+              <option value="sell">매도</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="add-quantity">주식 수</label>
+            <input type="number" id="add-quantity" name="quantity" step="0.000001" required>
+          </div>
+          <div class="form-group">
+            <label for="add-price">가격 ($)</label>
+            <input type="number" id="add-price" name="price" step="0.01" required>
+          </div>
+          <div class="form-group">
+            <label for="add-date">거래 날짜</label>
+            <input type="date" id="add-date" name="date" required>
+          </div>
+        </form>
+      </div>
+      <div class="modal-actions">
+        <button class="cancel-btn" onclick="closeAddTransactionModal()">취소</button>
+        <button class="save-btn" onclick="saveAddedTransaction()">저장</button>
       </div>
     </div>
   </div>
@@ -379,41 +398,8 @@
         defaultDate: new Date()
       });
 
-      // Toggle button for trade type - inline form
-      const buyBtnInline = document.getElementById("btn-buy-inline");
-      const sellBtnInline = document.getElementById("btn-sell-inline");
-      const typeInputInline = document.querySelector("#trade-form-inline input[name='type']");
-
-      if (buyBtnInline && sellBtnInline && typeInputInline) {
-        buyBtnInline.addEventListener("click", (e) => {
-          e.preventDefault();
-          buyBtnInline.classList.add("active");
-          sellBtnInline.classList.remove("active");
-          typeInputInline.value = "buy";
-        });
-        buyBtnInline.addEventListener("touchstart", (e) => {
-          e.preventDefault();
-          buyBtnInline.classList.add("active");
-          sellBtnInline.classList.remove("active");
-          typeInputInline.value = "buy";
-        });
-        
-        sellBtnInline.addEventListener("click", (e) => {
-          e.preventDefault();
-          sellBtnInline.classList.add("active");
-          buyBtnInline.classList.remove("active");
-          typeInputInline.value = "sell";
-        });
-        sellBtnInline.addEventListener("touchstart", (e) => {
-          e.preventDefault();
-          sellBtnInline.classList.add("active");
-          buyBtnInline.classList.remove("active");
-          typeInputInline.value = "sell";
-        });
-      }
-
-      // Initialize ticker search for inline form
-      initializeInlineTickerSearch();
+      // Initialize add transaction modal
+      initializeAddTransactionModal();
     });
 
     let portfolioChart = null; // ✅ 전역 차트 변수
@@ -579,6 +565,12 @@
                   <span class="tx-label">거래일</span>
                   <span class="tx-value">${tx.date}</span>
               </div>
+              ${tx.purchase_datetime ? `
+                <div class="tx-detail">
+                    <span class="tx-label">구매일시</span>
+                    <span class="tx-value">${tx.purchase_datetime}</span>
+                </div>
+              ` : ''}
               <div class="tx-detail">
                   <span class="tx-label">수량</span>
                   <span class="tx-value">${tx.quantity.toLocaleString(undefined, { maximumFractionDigits: 6 })}</span>
@@ -622,6 +614,12 @@
                   <span class="tx-label">거래일</span>
                   <span class="tx-value">${tx.date}</span>
               </div>
+              ${tx.purchase_datetime ? `
+                <div class="tx-detail">
+                    <span class="tx-label">구매일시</span>
+                    <span class="tx-value">${tx.purchase_datetime}</span>
+                </div>
+              ` : ''}
               <div class="tx-detail">
                   <span class="tx-label">수량</span>
                   <span class="tx-value">${tx.quantity.toLocaleString(undefined, { maximumFractionDigits: 6 })}</span>
@@ -726,69 +724,37 @@
       }
     });
 
-    // Inline form submission handler
-    document.addEventListener('DOMContentLoaded', function() {
-      const inlineForm = document.getElementById("trade-form-inline");
-      if (inlineForm) {
-        inlineForm.addEventListener("submit", async (e) => {
-          e.preventDefault();
-          const form = e.target;
-          const messageEl = document.getElementById("trade-message-inline");
-          
-          const data = {
-            ticker: form.ticker.value.toUpperCase(),
-            price: form.price.value,
-            quantity: form.quantity.value,
-            type: form.type.value,
-            date: form.date.value
-          };
+    function initializeAddTransactionModal() {
+      // 모달 외부 클릭 시 닫기
+      window.addEventListener('click', (e) => {
+        const modal = document.getElementById('addTransactionModal');
+        if (e.target === modal) {
+          closeAddTransactionModal();
+        }
+      });
+      
+      // ESC 키로 모달 닫기
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          closeAddTransactionModal();
+        }
+      });
+      
+      // 종목 검색 기능 초기화
+      initializeAddTickerSearch();
+    }
 
-          try {
-            const res = await fetch("/api/stocks/v1/transactions", {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify(data),
-            });
+    function initializeAddTickerSearch() {
+      const tickerInput = document.getElementById("add-ticker");
+      const suggestionBox = document.getElementById("add-ticker-suggestions");
 
-            const msg = await res.json();
-            
-            if (res.ok) {
-              messageEl.className = "trade-message success";
-              messageEl.textContent = msg.message || "거래가 성공적으로 등록되었습니다.";
-              form.reset();
-              
-              // Update all relevant sections
-              renderDashboard();
-              renderRecentTransactions();
-              renderAllTransactions();
-              
-              // Hide success message after 3 seconds
-              setTimeout(() => {
-                messageEl.style.display = 'none';
-              }, 3000);
-            } else {
-              messageEl.className = "trade-message error";
-              messageEl.textContent = msg.error || "거래 등록에 실패했습니다.";
-            }
-          } catch (error) {
-            messageEl.className = "trade-message error";
-            messageEl.textContent = "네트워크 오류가 발생했습니다.";
-          }
-        });
-      }
-    });
+      if (!tickerInput || !suggestionBox) return;
 
-    function initializeInlineTickerSearch() {
-      const tickerInputInline = document.getElementById("ticker-search-inline");
-      const suggestionBoxInline = document.getElementById("ticker-suggestions-inline");
-
-      if (!tickerInputInline || !suggestionBoxInline) return;
-
-      tickerInputInline.addEventListener("input", async () => {
-        const query = tickerInputInline.value.trim();
+      tickerInput.addEventListener("input", async () => {
+        const query = tickerInput.value.trim();
         if (!query) {
-          suggestionBoxInline.innerHTML = "";
-          suggestionBoxInline.style.display = "none";
+          suggestionBox.innerHTML = "";
+          suggestionBox.style.display = "none";
           return;
         }
 
@@ -797,38 +763,42 @@
           const results = await res.json();
 
           if (results.length > 0) {
-            suggestionBoxInline.innerHTML = results.map(r => `
-              <li onclick="selectTickerInline('${r.symbol}')">
+            suggestionBox.innerHTML = results.map(r => `
+              <li onclick="selectAddTicker('${r.symbol}')">
                 <strong>${r.symbol}</strong> - ${r.name}
               </li>
             `).join("");
-            suggestionBoxInline.style.display = "block";
+            suggestionBox.style.display = "block";
           } else {
-            suggestionBoxInline.innerHTML = "";
-            suggestionBoxInline.style.display = "none";
+            suggestionBox.innerHTML = "";
+            suggestionBox.style.display = "none";
           }
         } catch (error) {
           console.error('Error fetching ticker suggestions:', error);
-          suggestionBoxInline.innerHTML = "";
-          suggestionBoxInline.style.display = "none";
+          suggestionBox.innerHTML = "";
+          suggestionBox.style.display = "none";
         }
       });
 
       // Hide suggestions when clicking outside
       document.addEventListener('click', (e) => {
-        if (!tickerInputInline.contains(e.target) && !suggestionBoxInline.contains(e.target)) {
-          suggestionBoxInline.style.display = "none";
+        if (!tickerInput.contains(e.target) && !suggestionBox.contains(e.target)) {
+          suggestionBox.style.display = "none";
         }
       });
     }
 
-    function selectTickerInline(symbol) {
-      const tickerInputInline = document.getElementById("ticker-search-inline");
-      const suggestionBoxInline = document.getElementById("ticker-suggestions-inline");
+    function selectAddTicker(symbol) {
+      const tickerInput = document.getElementById("add-ticker");
+      const suggestionBox = document.getElementById("add-ticker-suggestions");
       
-      tickerInputInline.value = symbol;
-      suggestionBoxInline.innerHTML = "";
-      suggestionBoxInline.style.display = "none";
+      if (tickerInput) {
+        tickerInput.value = symbol;
+      }
+      if (suggestionBox) {
+        suggestionBox.innerHTML = "";
+        suggestionBox.style.display = "none";
+      }
     }
 
     // Screenshot Upload Functionality
@@ -950,17 +920,36 @@
     function displayParsedTransactions(result) {
       const parsedContainer = document.getElementById('parsed-transactions');
       
+      // 디버깅: 데이터 확인
+      console.log('displayParsedTransactions - result:', result);
+      console.log('parsed_data:', result.parsed_data);
+      result.parsed_data.forEach((tx, index) => {
+        console.log(`Transaction ${index}:`, tx);
+        console.log(`  purchase_datetime: ${tx.purchase_datetime}`);
+      });
+      
+      // OCR 결과 저장 (수정하여 저장 버튼에서 사용)
+      window.currentParsedTransaction = result.parsed_data && result.parsed_data.length > 0 ? result.parsed_data[0] : null;
+      
       // OCR 처리 완료 상태 표시
       parsedContainer.innerHTML = `
         <div class="ocr-status success">
           <span class="status-icon">✅</span>
-          <span class="status-text">처리 완료</span>
+          <span class="status-text">처리 완료 - 아래 폼에서 수정 후 저장하세요</span>
         </div>
         ${result.parsed_data.map(tx => `
           <div class="parsed-transaction">
-            <span class="tx-symbol">${tx.ticker}</span>
-            <span class="tx-type ${tx.type}">${tx.type.toUpperCase()}</span>
-            <span class="tx-amount">${tx.quantity} @ $${tx.price}</span>
+            <div class="tx-main-info">
+              <span class="tx-symbol">${tx.ticker}</span>
+              <span class="tx-type ${tx.type}">${tx.type.toUpperCase()}</span>
+              <span class="tx-amount">${tx.quantity} @ $${tx.price}</span>
+            </div>
+            ${tx.purchase_datetime ? `
+              <div class="tx-datetime">
+                <span class="datetime-label">구매일시:</span>
+                <span class="datetime-value">${tx.purchase_datetime}</span>
+              </div>
+            ` : `<div class="tx-datetime-debug">DEBUG: purchase_datetime가 없습니다 (${tx.purchase_datetime})</div>`}
           </div>
         `).join('')}
       `;
@@ -969,6 +958,111 @@
       const uploadResult = document.getElementById('upload-result');
       if (uploadResult.style.display === 'none') {
         uploadResult.style.display = 'block';
+      }
+    }
+
+    function editParsedTransaction() {
+      // 현재 저장된 OCR 결과가 있는지 확인
+      if (!window.currentParsedTransaction) {
+        alert('수정할 거래 정보가 없습니다.');
+        return;
+      }
+      
+      const transaction = window.currentParsedTransaction;
+      
+      // 거래 등록 모달 열기 (날짜 초기화 스킵)
+      openAddTransactionModal(true);
+      
+      // OCR 결과로 모달 필드 채우기
+      setTimeout(() => {
+        const tickerInput = document.getElementById('add-ticker');
+        const priceInput = document.getElementById('add-price');
+        const quantityInput = document.getElementById('add-quantity');
+        const dateInput = document.getElementById('add-date');
+        const typeSelect = document.getElementById('add-type');
+        
+        if (tickerInput) {
+          tickerInput.value = transaction.ticker || '';
+        }
+        if (priceInput) {
+          priceInput.value = transaction.price || '';
+        }
+        if (quantityInput) {
+          quantityInput.value = transaction.quantity || '';
+        }
+        if (dateInput && transaction.purchase_datetime) {
+          // purchase_datetime에서 날짜 부분만 추출 (YYYY-MM-DD 형식)
+          const dateOnly = transaction.purchase_datetime.split(' ')[0];
+          dateInput.value = dateOnly;
+        }
+        if (typeSelect) {
+          typeSelect.value = transaction.type || 'buy';
+        }
+        
+        // 첫 번째 입력 필드에 포커스 (사용자가 수정하기 편하도록)
+        if (tickerInput) {
+          tickerInput.focus();
+          tickerInput.select(); // 텍스트 전체 선택
+        }
+        
+        console.log('OCR 결과가 모달에 입력되었습니다:', transaction);
+      }, 200); // 모달이 열린 후 필드 채우기
+    }
+
+    function openAddTransactionModal(skipDateReset = false) {
+      document.getElementById('addTransactionModal').style.display = 'block';
+      // 폼 초기화
+      document.getElementById('add-transaction-form').reset();
+      // OCR에서 온 경우가 아닐 때만 오늘 날짜를 기본값으로 설정
+      if (!skipDateReset) {
+        document.getElementById('add-date').value = new Date().toISOString().split('T')[0];
+      }
+    }
+
+    function closeAddTransactionModal() {
+      document.getElementById('addTransactionModal').style.display = 'none';
+    }
+
+    async function saveAddedTransaction() {
+      const form = document.getElementById('add-transaction-form');
+      const formData = new FormData(form);
+      
+      const transactionData = {
+        ticker: formData.get('ticker'),
+        type: formData.get('type'),
+        quantity: parseFloat(formData.get('quantity')),
+        price: parseFloat(formData.get('price')),
+        date: formData.get('date')
+      };
+      
+      if (!transactionData.ticker || !transactionData.quantity || !transactionData.price) {
+        alert('모든 필드를 입력해주세요.');
+        return;
+      }
+      
+      try {
+        const response = await fetch('/api/stocks/v1/transactions', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(transactionData)
+        });
+        
+        if (response.ok) {
+          closeAddTransactionModal();
+          // 모든 데이터 새로고침
+          await loadPortfolioData();
+          await loadAllTransactions();
+          updateTradeCount();
+          alert('거래가 성공적으로 등록되었습니다.');
+        } else {
+          const error = await response.json();
+          alert('거래 등록 실패: ' + (error.error || '알 수 없는 오류'));
+        }
+      } catch (error) {
+        console.error('Transaction save error:', error);
+        alert('거래 등록 중 오류가 발생했습니다.');
       }
     }
 

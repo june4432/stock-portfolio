@@ -60,6 +60,61 @@ def process_ocr_text(text):
     
     return transactions
 
+def extract_purchase_date(text):
+    """OCR 텍스트에서 구매일 추출 (mm월 dd일 (요일) hh:mm 형식)"""
+    # 텍스트를 줄 단위로 분할
+    lines = text.strip().split('\n')
+    
+    # 각 줄을 검사하여 출금 관련 줄들을 찾고 제외
+    filtered_lines = []
+    for line in lines:
+        line = line.strip()
+        if line and '출금' not in line and '완료되었습니다' not in line:
+            filtered_lines.append(line)
+    
+    # 필터링된 텍스트 재구성
+    filtered_text = '\n'.join(filtered_lines)
+    print(f"필터링 후 텍스트 (출금 관련 줄 제거):")
+    print(filtered_text)
+    print("=" * 50)
+    
+    # 시간 정보가 있는 패턴 우선 검색 (구매 관련 정보만)
+    # 예: "6월 30일 (월) 10:30"
+    datetime_pattern = r'(\d{1,2})월\s*(\d{1,2})일\s*(?:\([가-힣]\))?\s*(\d{1,2}):(\d{2})'
+    datetime_matches = re.findall(datetime_pattern, filtered_text)
+    
+    if datetime_matches:
+        # 가장 마지막에 나오는 날짜/시간 사용 (구매 정보는 보통 하단에 위치)
+        month, day, hour, minute = datetime_matches[-1]
+        try:
+            current_year = datetime.now().year
+            purchase_date = datetime(current_year, int(month), int(day), int(hour), int(minute))
+            result = purchase_date.strftime('%Y-%m-%d %H:%M')
+            print(f"구매일 시간 포함 패턴 매칭: {datetime_matches[-1]} → {result}")
+            return result
+        except ValueError as e:
+            print(f"시간 포함 날짜 파싱 오류: {e}")
+    
+    # 시간 정보가 없는 패턴도 시도 (구매 관련 정보 근처만)
+    date_only_pattern = r'(\d{1,2})월\s*(\d{1,2})일\s*(?:\([가-힣]\))?'
+    date_matches = re.findall(date_only_pattern, filtered_text)
+    
+    if date_matches:
+        # 가장 마지막 날짜 사용 (구매 정보는 보통 하단에 위치)
+        month, day = date_matches[-1]
+        try:
+            current_year = datetime.now().year
+            # 시간 정보가 없으면 00:00으로 설정
+            purchase_date = datetime(current_year, int(month), int(day), 0, 0)
+            result = purchase_date.strftime('%Y-%m-%d %H:%M')
+            print(f"구매일 날짜만 패턴 매칭: {date_matches[-1]} → {result}")
+            return result
+        except ValueError as e:
+            print(f"날짜만 파싱 오류: {e}")
+    
+    print(f"구매일 패턴 매칭 실패")
+    return None
+
 def extract_korean_trading_info(text):
     """한국어 거래 앱에서 정보 추출"""
     transactions = []
@@ -68,6 +123,10 @@ def extract_korean_trading_info(text):
     print(f"=== Full OCR Text ===")
     print(text)
     print(f"=== End OCR Text ===")
+    
+    # 구매일 추출
+    purchase_date = extract_purchase_date(text)
+    print(f"Extracted purchase date: {purchase_date}")
     
     # 종목 심볼 찾기 - 더 정확한 패턴 사용
     # NVDA처럼 독립적으로 나오는 3-5글자 대문자만
@@ -148,7 +207,8 @@ def extract_korean_trading_info(text):
                     'type': action_type,
                     'quantity': quantity,
                     'price': round(price_usd, 2),
-                    'date': datetime.now().strftime('%Y-%m-%d'),
+                    'date': purchase_date[:10] if purchase_date else datetime.now().strftime('%Y-%m-%d'),  # YYYY-MM-DD 형식만 사용
+                    'purchase_datetime': purchase_date,  # 전체 날짜/시간 정보
                     'original_amount_krw': amount,
                     'extracted_dollar_price': dollar_matches[0] if dollar_matches else None
                 })
@@ -187,16 +247,23 @@ def add_transaction():
     quantity = float(req["quantity"])
     tx_type = req["type"]
     date = req.get("date") or datetime.today().strftime("%Y-%m-%d")
+    purchase_datetime = req.get("purchase_datetime")  # OCR에서 추출된 구매일시
 
     data = load_data()
     transactions = data.setdefault("transactions", [])
-    transactions.append({
+    transaction_data = {
         "ticker": symbol,
         "type": tx_type,
         "price": price,
         "quantity": quantity,
         "date": date
-    })
+    }
+    
+    # purchase_datetime이 있으면 추가
+    if purchase_datetime:
+        transaction_data["purchase_datetime"] = purchase_datetime
+    
+    transactions.append(transaction_data)
 
     update_portfolio(data)
     save_data(data)
@@ -301,15 +368,23 @@ def upload_screenshot():
         # 이미지 처리
         image = Image.open(file.stream)
         
-        # OCR 수행 (한국어 + 영어)
+        # 이미지 전처리 - OCR 품질 향상
+        from PIL import ImageEnhance
+        enhancer = ImageEnhance.Brightness(image)
+        image = enhancer.enhance(1.2)  # 밝기 20% 증가
+        
+        enhancer = ImageEnhance.Contrast(image)
+        image = enhancer.enhance(1.3)  # 대비 30% 증가
+        
+        # OCR 수행 (한국어 + 영어, PSM 6 모드)
         try:
-            raw_text = pytesseract.image_to_string(image, lang='kor+eng')
-            print(f"OCR Raw Text: {raw_text}")  # 디버깅용
+            raw_text = pytesseract.image_to_string(image, lang='kor+eng', config='--psm 6')
+            print(f"OCR Raw Text (enhanced): {raw_text}")  # 디버깅용
         except Exception as e:
-            print(f"OCR with kor+eng failed, trying eng only: {e}")
+            print(f"OCR with enhanced settings failed, trying basic: {e}")
             try:
-                raw_text = pytesseract.image_to_string(image, lang='eng')
-                print(f"OCR Raw Text (eng): {raw_text}")
+                raw_text = pytesseract.image_to_string(image, lang='kor+eng')
+                print(f"OCR Raw Text (basic): {raw_text}")
             except Exception as e2:
                 return jsonify({'error': f'OCR processing failed: {str(e2)}'}), 500
         
@@ -357,14 +432,23 @@ def save_sample():
         
         # 이미지 처리 및 OCR
         image = Image.open(filepath)
+        
+        # 이미지 전처리 - OCR 품질 향상
+        from PIL import ImageEnhance
+        enhancer = ImageEnhance.Brightness(image)
+        image = enhancer.enhance(1.2)  # 밝기 20% 증가
+        
+        enhancer = ImageEnhance.Contrast(image)
+        image = enhancer.enhance(1.3)  # 대비 30% 증가
+        
         try:
-            raw_text = pytesseract.image_to_string(image, lang='kor+eng')
-            print(f"Sample OCR Raw Text: {raw_text}")
+            raw_text = pytesseract.image_to_string(image, lang='kor+eng', config='--psm 6')
+            print(f"Sample OCR Raw Text (enhanced): {raw_text}")
         except Exception as e:
-            print(f"Sample OCR with kor+eng failed, trying eng only: {e}")
+            print(f"Sample OCR with enhanced settings failed, trying basic: {e}")
             try:
-                raw_text = pytesseract.image_to_string(image, lang='eng')
-                print(f"Sample OCR Raw Text (eng): {raw_text}")
+                raw_text = pytesseract.image_to_string(image, lang='kor+eng')
+                print(f"Sample OCR Raw Text (basic): {raw_text}")
             except Exception as e2:
                 raw_text = f"OCR Error: {str(e2)}"
         

@@ -5,8 +5,8 @@
       "average_price": 180.921
     },
     "NVDA": {
-      "shares": 18.100622,
-      "average_price": 125.7973
+      "shares": 18.277543,
+      "average_price": 126.1701
     }
   },
   "transactions": [
@@ -58,6 +58,21 @@
       "price": 201.73,
       "quantity": 0.106677,
       "date": "2025-06-23"
+    },
+    {
+      "ticker": "NVDA",
+      "type": "buy",
+      "price": 172.37,
+      "quantity": 0.083483,
+      "date": "2025-08-12"
+    },
+    {
+      "ticker": "NVDA",
+      "type": "buy",
+      "price": 157.11,
+      "quantity": 0.093438,
+      "date": "2025-06-30",
+      "purchase_datetime": "2025-06-30 10:30"
     }
   ]
 }
