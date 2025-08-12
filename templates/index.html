@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <body>
@@ -57,9 +58,21 @@
             <canvas id="portfolioPieChart" width="400" height="400"></canvas>
           </section>
 
+          <section class="asset-history-section">
+            <h2>📊 자산 히스토리</h2>
+            <canvas id="assetHistoryChart" width="800" height="400"></canvas>
+          </section>
+
           <section class="holdings-section">
             <h2>📂 보유 종목</h2>
             <div class="stock-cards" id="stock-cards"></div>
+          </section>
+
+          <section class="news-section">
+            <h2>📰 관련 뉴스</h2>
+            <div class="news-container" id="news-container">
+              <p class="news-loading">뉴스를 불러오는 중...</p>
+            </div>
           </section>
 
           <section class="recent-transactions-section">
@@ -73,6 +86,89 @@
 
         <!-- Trading Tab Panel -->
         <div class="tab-panel" id="trading-panel">
+          <!-- Screenshot Upload Section -->
+          <section class="screenshot-upload-section">
+            <h2>📷 스크린샷으로 거래 등록</h2>
+            <div class="upload-area" id="upload-area">
+              <div class="upload-content">
+                <div class="upload-icon">📸</div>
+                <p class="upload-text">스크린샷을 드래그하거나 클릭하여 업로드</p>
+                <p class="upload-subtext">PNG, JPG, JPEG 파일 지원 (최대 16MB)</p>
+                <div class="upload-buttons">
+                  <button type="button" class="upload-btn" onclick="document.getElementById('file-input').click()">파일 선택</button>
+                  <button type="button" class="save-sample-btn" onclick="document.getElementById('sample-file-input').click()">🔬 샘플 저장</button>
+                </div>
+                <input type="file" id="file-input" accept="image/*" style="display: none;">
+                <input type="file" id="sample-file-input" accept="image/*" style="display: none;">
+              </div>
+            </div>
+            <div id="upload-result" class="upload-result" style="display: none;">
+              <div class="result-content">
+                <div class="image-preview">
+                  <h3>📷 업로드된 이미지</h3>
+                  <div class="thumbnail-container">
+                    <img id="uploaded-thumbnail" src="" alt="업로드된 이미지" style="display: none;">
+                  </div>
+                </div>
+                <div class="ocr-results">
+                  <h3>📋 인식된 거래내역</h3>
+                  <div id="parsed-transactions">
+                    <div class="ocr-status processing">
+                      <span class="status-icon">⏳</span>
+                      <span class="status-text">OCR 처리 중...</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="upload-actions">
+                <button class="cancel-upload-btn" onclick="clearUploadResult()">취소</button>
+                <button class="edit-upload-btn" onclick="editParsedTransaction()">수정하여 저장</button>
+                <button class="confirm-upload-btn" onclick="addParsedTransactions()">바로 저장</button>
+              </div>
+            </div>
+            
+            <!-- Edit Transaction Modal -->
+            <div id="editTransactionModal" class="modal" style="display: none;">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h3>거래내역 수정</h3>
+                  <button class="close-btn" onclick="closeEditModal()">&times;</button>
+                </div>
+                <div class="modal-body">
+                  <form id="edit-transaction-form">
+                    <div class="form-group">
+                      <label for="edit-ticker">종목 기호</label>
+                      <input type="text" id="edit-ticker" name="ticker" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="edit-type">거래 유형</label>
+                      <select id="edit-type" name="type">
+                        <option value="buy">매수</option>
+                        <option value="sell">매도</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="edit-quantity">주식 수</label>
+                      <input type="number" id="edit-quantity" name="quantity" step="0.000001" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="edit-price">가격 ($)</label>
+                      <input type="number" id="edit-price" name="price" step="0.01" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="edit-date">거래 날짜</label>
+                      <input type="date" id="edit-date" name="date" required>
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-actions">
+                  <button class="cancel-btn" onclick="closeEditModal()">취소</button>
+                  <button class="save-btn" onclick="saveEditedTransaction()">저장</button>
+                </div>
+              </div>
+            </div>
+          </section>
+
           <section class="trade-form-section">
             <h2>💼 거래 등록</h2>
             <form id="trade-form-inline" class="trade-form-inline">
@@ -738,12 +834,441 @@
       suggestionBoxInline.style.display = "none";
     }
 
+    // Screenshot Upload Functionality
+    let parsedTransactionData = [];
+
+    function initializeUpload() {
+      const fileInput = document.getElementById('file-input');
+      const sampleFileInput = document.getElementById('sample-file-input');
+      const uploadArea = document.getElementById('upload-area');
+      
+      // File input change event
+      fileInput.addEventListener('change', handleFile);
+      
+      // Sample file input change event
+      if (sampleFileInput) {
+        sampleFileInput.addEventListener('change', handleSampleFile);
+      }
+      
+      // Drag and drop events
+      uploadArea.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        uploadArea.classList.add('drag-over');
+      });
+      
+      uploadArea.addEventListener('dragleave', (e) => {
+        e.preventDefault();
+        uploadArea.classList.remove('drag-over');
+      });
+      
+      uploadArea.addEventListener('drop', (e) => {
+        e.preventDefault();
+        uploadArea.classList.remove('drag-over');
+        const files = e.dataTransfer.files;
+        if (files.length > 0) {
+          processImageFile(files[0]);
+        }
+      });
+    }
+
+    function handleFile(event) {
+      console.log('File input change event triggered');
+      const file = event.target.files[0];
+      if (file) {
+        console.log('Selected file:', file.name, 'type:', file.type, 'size:', file.size);
+        processImageFile(file);
+      }
+    }
+
+    async function processImageFile(file) {
+      console.log('handleFile called with:', file.name, 'type:', file.type, 'size:', file.size);
+      
+      // Validation
+      const validTypes = ['image/png', 'image/jpeg', 'image/jpg', 'image/gif', 'image/bmp'];
+      const validExtensions = ['.png', '.jpg', '.jpeg', '.gif', '.bmp'];
+      const maxSize = 16 * 1024 * 1024; // 16MB
+      
+      const fileExtension = file.name.toLowerCase().substring(file.name.lastIndexOf('.'));
+      const mimeValid = validTypes.includes(file.type);
+      const extValid = validExtensions.includes(fileExtension);
+      
+      console.log('Validation - MIME type valid:', mimeValid, 'Extension valid:', extValid);
+      
+      if (!mimeValid || !extValid) {
+        alert('지원되지 않는 파일 형식입니다. PNG, JPG, JPEG, GIF, BMP 파일만 업로드 가능합니다.');
+        return;
+      }
+      
+      if (file.size > maxSize) {
+        alert('파일 크기가 너무 큽니다. 16MB 이하의 파일만 업로드 가능합니다.');
+        return;
+      }
+      
+      // Show loading state
+      const uploadArea = document.getElementById('upload-area');
+      uploadArea.innerHTML = `
+        <div class="upload-content">
+          <div class="upload-icon">⏳</div>
+          <p class="upload-text">이미지를 처리하는 중...</p>
+        </div>
+      `;
+      
+      // 이미지 썸네일 미리 생성하고 업로드 영역 숨기기
+      const thumbnail = document.getElementById('uploaded-thumbnail');
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        thumbnail.src = e.target.result;
+        thumbnail.style.display = 'block';
+        
+        // 썸네일이 로드되면 업로드 영역 숨기고 결과 영역 표시
+        uploadArea.style.display = 'none';
+        document.getElementById('upload-result').style.display = 'block';
+        
+        console.log('Thumbnail loaded for:', file.name);
+      };
+      reader.readAsDataURL(file);
+      
+      try {
+        const formData = new FormData();
+        formData.append('file', file);
+        
+        const response = await fetch('/api/stocks/v1/upload-screenshot', {
+          method: 'POST',
+          body: formData
+        });
+        
+        const result = await response.json();
+        console.log('OCR Result:', result);
+        
+        if (result.success && result.parsed_data.length > 0) {
+          parsedTransactionData = result.parsed_data;
+          displayParsedTransactions(result);
+        } else {
+          resetUploadArea();
+          alert('거래내역을 인식할 수 없습니다. 더 명확한 이미지를 시도해보세요.');
+        }
+      } catch (error) {
+        console.error('Upload error:', error);
+        resetUploadArea();
+        alert('업로드 중 오류가 발생했습니다: ' + error.message);
+      }
+    }
+
+    function displayParsedTransactions(result) {
+      const parsedContainer = document.getElementById('parsed-transactions');
+      
+      // OCR 처리 완료 상태 표시
+      parsedContainer.innerHTML = `
+        <div class="ocr-status success">
+          <span class="status-icon">✅</span>
+          <span class="status-text">처리 완료</span>
+        </div>
+        ${result.parsed_data.map(tx => `
+          <div class="parsed-transaction">
+            <span class="tx-symbol">${tx.ticker}</span>
+            <span class="tx-type ${tx.type}">${tx.type.toUpperCase()}</span>
+            <span class="tx-amount">${tx.quantity} @ $${tx.price}</span>
+          </div>
+        `).join('')}
+      `;
+      
+      // 결과 영역이 아직 표시되지 않았다면 표시
+      const uploadResult = document.getElementById('upload-result');
+      if (uploadResult.style.display === 'none') {
+        uploadResult.style.display = 'block';
+      }
+    }
+
+    async function addParsedTransactions() {
+      try {
+        for (const tx of parsedTransactionData) {
+          const response = await fetch('/api/stocks/v1/transactions', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(tx)
+          });
+          
+          if (!response.ok) {
+            throw new Error('거래 등록 실패');
+          }
+        }
+        
+        alert(`${parsedTransactionData.length}개의 거래내역이 성공적으로 등록되었습니다.`);
+        clearUploadResult();
+        renderDashboard();
+        renderRecentTransactions();
+        renderAllTransactions();
+      } catch (error) {
+        alert('거래 등록 중 오류가 발생했습니다: ' + error.message);
+      }
+    }
+
+    function clearUploadResult() {
+      // 업로드 영역 다시 표시
+      const uploadArea = document.getElementById('upload-area');
+      uploadArea.style.display = 'block';
+      resetUploadArea();
+      
+      // 결과 영역 숨기기
+      document.getElementById('upload-result').style.display = 'none';
+      
+      // 썸네일 초기화
+      const thumbnail = document.getElementById('uploaded-thumbnail');
+      thumbnail.src = '';
+      thumbnail.style.display = 'none';
+      
+      // OCR 결과 초기화 
+      const parsedContainer = document.getElementById('parsed-transactions');
+      parsedContainer.innerHTML = `
+        <div class="ocr-status processing">
+          <span class="status-icon">⏳</span>
+          <span class="status-text">OCR 처리 중...</span>
+        </div>
+      `;
+      
+      parsedTransactionData = [];
+    }
+
+    async function handleSampleFile(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+
+      try {
+        const formData = new FormData();
+        formData.append('file', file);
+        
+        const response = await fetch('/api/stocks/v1/save-sample', {
+          method: 'POST',
+          body: formData
+        });
+        
+        const result = await response.json();
+        console.log('Sample save result:', result);
+        
+        if (result.success) {
+          alert(`샘플 파일이 저장되었습니다: ${result.message}\n\n이미지 정보:\n- 크기: ${result.image_info.size[0]}x${result.image_info.size[1]}\n- 형식: ${result.image_info.format}\n- 파일 크기: ${Math.round(result.image_info.file_size / 1024)}KB`);
+          
+          // 인식된 텍스트가 있으면 콘솔에 출력
+          if (result.raw_text) {
+            console.log('OCR Result from sample:', result.raw_text);
+          }
+        } else {
+          alert('샘플 저장에 실패했습니다: ' + result.error);
+        }
+      } catch (error) {
+        console.error('Sample save error:', error);
+        alert('샘플 저장 중 오류가 발생했습니다: ' + error.message);
+      }
+      
+      // 파일 인풋 리셋
+      event.target.value = '';
+    }
+
+    function resetUploadArea() {
+      const uploadArea = document.getElementById('upload-area');
+      uploadArea.innerHTML = `
+        <div class="upload-content">
+          <div class="upload-icon">📸</div>
+          <p class="upload-text">스크린샷을 드래그하거나 클릭하여 업로드</p>
+          <p class="upload-subtext">PNG, JPG, JPEG 파일 지원 (최대 16MB)</p>
+          <div class="upload-buttons">
+            <button type="button" class="upload-btn" onclick="document.getElementById('file-input').click()">파일 선택</button>
+            <button type="button" class="save-sample-btn" onclick="document.getElementById('sample-file-input').click()">🔬 샘플 저장</button>
+          </div>
+          <input type="file" id="file-input" accept="image/*" style="display: none;">
+          <input type="file" id="sample-file-input" accept="image/*" style="display: none;">
+        </div>
+      `;
+      // Re-initialize upload events
+      setTimeout(initializeUpload, 100);
+    }
+
+    // News functionality
+    async function fetchAndRenderNews() {
+      try {
+        const response = await fetch('/api/stocks/v1/news');
+        const news = await response.json();
+        
+        const newsContainer = document.getElementById('news-container');
+        
+        if (news.length === 0) {
+          newsContainer.innerHTML = '<p class="no-news">관련 뉴스가 없습니다.</p>';
+          return;
+        }
+        
+        newsContainer.innerHTML = news.map(item => `
+          <div class="news-item">
+            <div class="news-header">
+              <span class="news-symbol">${item.symbol}</span>
+              <span class="news-date">${new Date(item.published).toLocaleDateString('ko-KR')}</span>
+            </div>
+            <h3 class="news-title">
+              <a href="${item.link}" target="_blank">${item.title}</a>
+            </h3>
+            <p class="news-summary">${item.summary}</p>
+          </div>
+        `).join('');
+      } catch (error) {
+        console.error('News fetch error:', error);
+        document.getElementById('news-container').innerHTML = '<p class="news-error">뉴스를 불러올 수 없습니다.</p>';
+      }
+    }
+
+    // Asset History Chart
+    let assetHistoryChart = null;
+
+    async function renderAssetHistoryChart() {
+      try {
+        const response = await fetch('/api/stocks/v1/asset-history');
+        const historyData = await response.json();
+        
+        const ctx = document.getElementById('assetHistoryChart').getContext('2d');
+        
+        if (assetHistoryChart) {
+          assetHistoryChart.destroy();
+        }
+        
+        if (Object.keys(historyData).length === 0) {
+          return;
+        }
+        
+        const datasets = Object.entries(historyData).map(([symbol, data], index) => {
+          const colors = ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF', '#FF9F40'];
+          return {
+            label: symbol,
+            data: data.map(point => ({ x: point.date, y: point.value })),
+            borderColor: colors[index % colors.length],
+            backgroundColor: colors[index % colors.length] + '20',
+            fill: false,
+            tension: 0.1
+          };
+        });
+        
+        assetHistoryChart = new Chart(ctx, {
+          type: 'line',
+          data: { datasets },
+          options: {
+            responsive: true,
+            plugins: {
+              title: {
+                display: false
+              }
+            },
+            scales: {
+              x: {
+                type: 'time',
+                time: {
+                  unit: 'day',
+                  displayFormats: {
+                    day: 'MM/DD'
+                  }
+                }
+              },
+              y: {
+                beginAtZero: true,
+                ticks: {
+                  callback: function(value) {
+                    return '$' + value.toLocaleString();
+                  }
+                }
+              }
+            }
+          }
+        });
+      } catch (error) {
+        console.error('Asset history chart error:', error);
+      }
+    }
+
     // Main initialization
+    // Edit transaction functionality
+    let currentEditingTransaction = null;
+
+    function editParsedTransaction() {
+      if (!parsedTransactionData || parsedTransactionData.length === 0) {
+        alert('편집할 거래내역이 없습니다.');
+        return;
+      }
+      
+      // 첫 번째 거래내역을 편집 (여러개인 경우 확장 가능)
+      currentEditingTransaction = parsedTransactionData[0];
+      
+      // 모달 폼에 데이터 채우기
+      document.getElementById('edit-ticker').value = currentEditingTransaction.ticker || '';
+      document.getElementById('edit-type').value = currentEditingTransaction.type || 'buy';
+      document.getElementById('edit-quantity').value = currentEditingTransaction.quantity || '';
+      document.getElementById('edit-price').value = currentEditingTransaction.price || '';
+      document.getElementById('edit-date').value = currentEditingTransaction.date || new Date().toISOString().split('T')[0];
+      
+      // 모달 표시
+      document.getElementById('editTransactionModal').style.display = 'block';
+    }
+
+    function closeEditModal() {
+      document.getElementById('editTransactionModal').style.display = 'none';
+      currentEditingTransaction = null;
+    }
+
+    async function saveEditedTransaction() {
+      const form = document.getElementById('edit-transaction-form');
+      const formData = new FormData(form);
+      
+      const editedTransaction = {
+        ticker: formData.get('ticker').toUpperCase(),
+        type: formData.get('type'),
+        quantity: parseFloat(formData.get('quantity')),
+        price: parseFloat(formData.get('price')),
+        date: formData.get('date')
+      };
+      
+      // 유효성 검사
+      if (!editedTransaction.ticker || !editedTransaction.quantity || !editedTransaction.price) {
+        alert('모든 필드를 올바르게 입력해주세요.');
+        return;
+      }
+      
+      try {
+        const response = await fetch('/api/stocks/v1/transactions', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(editedTransaction)
+        });
+        
+        const result = await response.json();
+        if (response.ok) {
+          alert('수정된 거래내역이 저장되었습니다.');
+          closeEditModal();
+          clearUploadResult();
+          
+          // 대시보드 업데이트
+          renderDashboard();
+          renderRecentTransactions();
+          renderAllTransactions();
+          updateTradeCount();
+        } else {
+          alert('저장 실패: ' + result.error);
+        }
+      } catch (error) {
+        alert('저장 중 오류가 발생했습니다: ' + error.message);
+      }
+    }
+
     function initializeApp() {
       renderDashboard();
       renderRecentTransactions();
       renderAllTransactions();
       updateTradeCount();
+      fetchAndRenderNews();
+      renderAssetHistoryChart();
+      initializeUpload();
+      
+      // 편집 모달 외부 클릭시 닫기
+      const editModal = document.getElementById('editTransactionModal');
+      window.addEventListener('click', function(event) {
+        if (event.target === editModal) {
+          closeEditModal();
+        }
+      });
     }
 
     // Initialize app when DOM is ready

@@ -1,0 +1,1685 @@
+2025-08-11T23:40:46:  * Serving Flask app 'app'
+2025-08-11T23:40:46:  * Debug mode: on
+2025-08-11T23:40:46: WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+2025-08-11T23:40:46: 
+2025-08-11T23:40:46:  * Running on all addresses (0.0.0.0)
+2025-08-11T23:40:46:  * Running on http://127.0.0.1:9010
+2025-08-11T23:40:46:  * Running on http://192.168.0.65:9010
+2025-08-11T23:40:46: Press CTRL+C to quit
+2025-08-11T23:40:46:  * Restarting with stat
+2025-08-11T23:40:48:  * Debugger is active!
+2025-08-11T23:40:48:  * Debugger PIN: 972-012-010
+2025-08-11T23:40:48: 172.236.228.218 - - [11/Aug/2025 23:40:48] "GET / HTTP/1.1" 200 -
+2025-08-11T23:41:23: 118.235.11.48 - - [11/Aug/2025 23:41:23] "GET / HTTP/1.1" 200 -
+2025-08-11T23:41:23: 118.235.11.48 - - [11/Aug/2025 23:41:23] "GET /static/style.css HTTP/1.1" 304 -
+2025-08-11T23:41:23: 118.235.11.48 - - [11/Aug/2025 23:41:23] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-11T23:41:23: YF.download() has changed argument auto_adjust default to True
+2025-08-11T23:41:23: 
+2025-08-11T23:41:23: 118.235.11.48 - - [11/Aug/2025 23:41:23] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-11T23:41:23: 118.235.11.48 - - [11/Aug/2025 23:41:23] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-11T23:41:23: 118.235.11.48 - - [11/Aug/2025 23:41:23] "GET /api/stocks/v1/portfolio HTTP/1.1" 200 -
+2025-08-11T23:41:23: 118.235.11.48 - - [11/Aug/2025 23:41:23] "GET /api/stocks/v1/symbol-search?q=NVDA HTTP/1.1" 200 -
+2025-08-11T23:41:23: 118.235.11.48 - - [11/Aug/2025 23:41:23] "GET /api/stocks/v1/symbol-search?q=NVDA HTTP/1.1" 200 -
+2025-08-11T23:41:23: [WARNING] Could not sort news items due to parsing error: time data 'Sun, 10 Aug 2025 14:00:00 -0400' does not match format '%a, %d %b %Y %H:%M:%S %Z'
+2025-08-11T23:41:23: 
+2025-08-11T23:41:23: 118.235.11.48 - - [11/Aug/2025 23:41:23] "GET /api/stocks/v1/news HTTP/1.1" 200 -
+2025-08-11T23:41:23: 118.235.11.48 - - [11/Aug/2025 23:41:23] "GET /api/stocks/v1/symbol-search?q=AAPL HTTP/1.1" 200 -
+2025-08-11T23:41:23: 118.235.11.48 - - [11/Aug/2025 23:41:23] "GET /api/stocks/v1/symbol-search?q=AAPL HTTP/1.1" 200 -
+2025-08-11T23:41:23: 118.235.11.48 - - [11/Aug/2025 23:41:23] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-11T23:41:24: [                       0%                       ]
+2025-08-11T23:41:24: [*********************100%***********************]  2 of 2 completed
+2025-08-11T23:41:24: [                       0%                       ]
+2025-08-11T23:41:24: [*********************100%***********************]  2 of 2 completed
+2025-08-11T23:41:24: 118.235.11.48 - - [11/Aug/2025 23:41:24] "GET /api/stocks/v1/asset-history HTTP/1.1" 200 -
+2025-08-11T23:41:25: 118.235.11.48 - - [11/Aug/2025 23:41:25] "GET /api/stocks/v1/prices HTTP/1.1" 200 -
+2025-08-11T23:41:39: 118.235.11.48 - - [11/Aug/2025 23:41:39] "GET /api/stocks/v1/portfolio HTTP/1.1" 200 -
+2025-08-11T23:41:39: 118.235.11.48 - - [11/Aug/2025 23:41:39] "GET /api/stocks/v1/prices HTTP/1.1" 200 -
+2025-08-11T23:41:46: 118.235.11.48 - - [11/Aug/2025 23:41:46] "GET /api/stocks/v1/portfolio HTTP/1.1" 200 -
+2025-08-11T23:41:47: 118.235.11.48 - - [11/Aug/2025 23:41:47] "GET /api/stocks/v1/prices HTTP/1.1" 200 -
+2025-08-11T23:42:06: 107.206.247.119 - - [11/Aug/2025 23:42:06] code 400, message Bad HTTP/0.9 request type ('\x13I\x02\x0fW')
+2025-08-11T23:42:06: 107.206.247.119 - - [11/Aug/2025 23:42:06] "\x13I\x02\x0fW\x0dsf" HTTPStatus.BAD_REQUEST -
+2025-08-11T23:45:39: 24.36.179.144 - - [11/Aug/2025 23:45:39] code 400, message Bad request version ('\x94ó\x1a¯·hp\x96\x1a')
+2025-08-11T23:45:39: 24.36.179.144 - - [11/Aug/2025 23:45:39] "«XÏ\x82q¢P\x1bÐ]õbú¢ïªG\x8a\x9dÉm\x15ÊÉ°Ú`ú\\\x94\x15N¥QÚ¾\x09]QÌ>Ìj§\x89ýcf\x988È£³&\x9c¶\x81°ÌuPô´T[&`\x8a\x8c¸WÝ9\x04_@,¨_rk\x83Â2V÷\x1e{Vì\x91^Ä.5\x94f\x05p·>&W\x13\x02¹²\x1cÕÞ»\x12\x00 \x86è\x88\x87. hJ¡Ñp¡\x05Êº9ÆÑÄÁ>\x04/!ÿa\x13ËÀaý)á¾\x866\x9cV\x91)Ê( KO{Óê$\x1dÿfÿÉgh¡¢\x9a3¼Üé\x12~z\x02ñ¾1-\x08Âl#²«i\x86\\~\x80\x02\x98Ï\x84þQ\x0cBþ\x19c'\x98\x9fQþ\x10<ÈÖ\x93¬ü\x01\x0dÚË9§ÓÇÞàÝá[G¡³¦Ò\x83iåÞ\x12M.Ä\x9bïg\x14ØíLqÆd\x8f\x09\x94ó\x1a¯·hp\x96\x1a" HTTPStatus.BAD_REQUEST -
+2025-08-11T23:45:40: 24.36.179.144 - - [11/Aug/2025 23:45:40] code 400, message Bad HTTP/0.9 request type ('\x13I\x02\x0fW')
+2025-08-11T23:45:40: 24.36.179.144 - - [11/Aug/2025 23:45:40] "\x13I\x02\x0fW\x0dsf" HTTPStatus.BAD_REQUEST -
+2025-08-11T23:45:51: 24.36.179.144 - - [11/Aug/2025 23:45:51] code 400, message Bad request version ('b®\x10')
+2025-08-11T23:45:51: 24.36.179.144 - - [11/Aug/2025 23:45:51] "\x0eN$ÎLøôÊ^\\)\x0c#Æ¯\x98Æ\x9fÃkÊ ^äÍ\x0bi~\x9e»¦±Ì\x91'à\x88±F¯ÖÈÈ\x9d´ëÙ,¡ûõ)0\x1esKäß\x00m¶}Iðà[ÛçàaVHiÀ%¤÷ÆÕZ\x93\x10\x07%\x9f \x92ÐëÌ!+\x80`\x12YwÃQ©\x1e\x89ÃRÄ>\x1cb®\x10\x1c" HTTPStatus.BAD_REQUEST -
+2025-08-11T23:45:52: 24.36.179.144 - - [11/Aug/2025 23:45:52] code 400, message Bad HTTP/0.9 request type ('\x13I\x02\x0fW')
+2025-08-11T23:45:52: 24.36.179.144 - - [11/Aug/2025 23:45:52] "\x13I\x02\x0fW\x0dsf" HTTPStatus.BAD_REQUEST -
+2025-08-11T23:45:53: 24.36.179.144 - - [11/Aug/2025 23:45:53] code 400, message Bad request version ("·¬¨h\x9f\x89^èD9#l,'+\x9b\x1aëð\x81º\x92")
+2025-08-11T23:45:53: 24.36.179.144 - - [11/Aug/2025 23:45:53] "\x80¬yªc,\x13Ì/ÁªMË\x0bc\x1bj5Õ\x84/@$\x02t« 6\x08ÞF\x0f\x14\x08\x99\x94c\\ÖÙ\x1d\x88ù ·¬¨h\x9f\x89^èD9#l,'+\x9b\x1aëð\x81º\x92" HTTPStatus.BAD_REQUEST -
+2025-08-11T23:45:54: 24.36.179.144 - - [11/Aug/2025 23:45:54] code 400, message Bad HTTP/0.9 request type ('\x13I\x02\x0fW')
+2025-08-11T23:45:54: 24.36.179.144 - - [11/Aug/2025 23:45:54] "\x13I\x02\x0fW\x0dsf" HTTPStatus.BAD_REQUEST -
+2025-08-11T23:46:02: 24.255.28.133 - - [11/Aug/2025 23:46:02] code 400, message Bad HTTP/0.9 request type ('\x13I\x02\x0fW')
+2025-08-11T23:46:02: 24.255.28.133 - - [11/Aug/2025 23:46:02] "\x13I\x02\x0fW\x0dsf" HTTPStatus.BAD_REQUEST -
+2025-08-11T23:48:52: 180.75.47.46 - - [11/Aug/2025 23:48:52] code 400, message Bad request syntax ("å\x909\x8cÚ\x98úÙü+Mp\x15?äÛ\x98=naãMË¢'«\x9d\x17&ö\x80W¹Éé³D\x08¸)ÆµÑ¦\x7f¼Â\x7fáê\x81ä[\x10\x99¼Ú\x9c\x97Öñ$R\x12½F\x9chúÇ\x17u\x00ãã\x1aÑ\x00æ")
+2025-08-11T23:48:52: 180.75.47.46 - - [11/Aug/2025 23:48:52] "å\x909\x8cÚ\x98úÙü+Mp\x15?äÛ\x98=naãMË¢'«\x9d\x17&ö\x80W¹Éé³D\x08¸)ÆµÑ¦\x7f¼Â\x7fáê\x81ä[\x10\x99¼Ú\x9c\x97Öñ$R\x12½F\x9chúÇ\x17u\x00ãã\x1aÑ\x00æ" HTTPStatus.BAD_REQUEST -
+2025-08-12T00:05:44: 71.239.76.30 - - [12/Aug/2025 00:05:44] code 400, message Bad request version ('ïåõÛ\x91Ì÷\x91\x9d0q#Þô')
+2025-08-12T00:05:44: 71.239.76.30 - - [12/Aug/2025 00:05:44] "LØ7\x9d\x98\x87\x94,ä%4\x08\x02 \x81 ©\x1eïåõÛ\x91Ì÷\x91\x9d0q#Þô" HTTPStatus.BAD_REQUEST -
+2025-08-12T00:05:44: 115.66.191.47 - - [12/Aug/2025 00:05:44] code 400, message Bad request version ('ª')
+2025-08-12T00:05:44: 115.66.191.47 - - [12/Aug/2025 00:05:44] "\x98Ü^\x907i­è\x18%kG\x0dG\x1c¡\x1fª" HTTPStatus.BAD_REQUEST -
+2025-08-12T00:05:45: 115.66.191.47 - - [12/Aug/2025 00:05:45] code 400, message Bad HTTP/0.9 request type ('\x13I\x02\x0fW')
+2025-08-12T00:05:45: 115.66.191.47 - - [12/Aug/2025 00:05:45] "\x13I\x02\x0fW\x0dsf" HTTPStatus.BAD_REQUEST -
+2025-08-12T00:05:47: 71.239.76.30 - - [12/Aug/2025 00:05:47] code 400, message Bad HTTP/0.9 request type ('\x13I\x02\x0fW')
+2025-08-12T00:05:47: 71.239.76.30 - - [12/Aug/2025 00:05:47] "\x13I\x02\x0fW\x0dsf" HTTPStatus.BAD_REQUEST -
+2025-08-12T00:06:59: 97.177.168.167 - - [12/Aug/2025 00:06:59] code 400, message Bad HTTP/0.9 request type ('\x13I\x02\x0fW')
+2025-08-12T00:06:59: 97.177.168.167 - - [12/Aug/2025 00:06:59] "\x13I\x02\x0fW\x0dsf" HTTPStatus.BAD_REQUEST -
+2025-08-12T00:15:03: 71.239.76.30 - - [12/Aug/2025 00:15:03] code 400, message Bad request version ('=å\x8e\x05Æ³Z®£¡iÅxaõÄW\x8e¸ÈJ#ÏPÍ©$F\x05üí>F\x89iÍ\x93Ã03%')
+2025-08-12T00:15:03: 71.239.76.30 - - [12/Aug/2025 00:15:03] "Älø\x0cØ|\x9dù'°/\x98Àµ[\x02Û7\x99è}!u\x086g\x07£ïÛe\x88\x90Ð\x18iJ¡ø5\x97\x94O°DË"pª\x82i|\x8c¦³w´\x83Ìú©\x08\x09=å\x8e\x05Æ³Z®£¡iÅxaõÄW\x8e¸ÈJ#ÏPÍ©$F\x05üí>F\x89iÍ\x93Ã03%" HTTPStatus.BAD_REQUEST -
+2025-08-12T00:23:13: 219.79.245.175 - - [12/Aug/2025 00:23:13] code 400, message Bad request version ('\x99äRu\x87\x03\x82\x84çª»ÌÌ[TQ')
+2025-08-12T00:23:13: 219.79.245.175 - - [12/Aug/2025 00:23:13] "\x0d?¬\x1f&q\x1cö\x06\x00:æ£¨TÞ¯õÝ&Êö4\x14Ë\x8a±\x13! \x99äRu\x87\x03\x82\x84çª»ÌÌ[TQ" HTTPStatus.BAD_REQUEST -
+2025-08-12T00:23:31: 219.79.245.175 - - [12/Aug/2025 00:23:31] code 400, message Bad HTTP/0.9 request type ('\x13I\x02\x0fW')
+2025-08-12T00:23:31: 219.79.245.175 - - [12/Aug/2025 00:23:31] "\x13I\x02\x0fW\x0dsf" HTTPStatus.BAD_REQUEST -
+2025-08-12T00:24:23: 71.239.76.30 - - [12/Aug/2025 00:24:23] code 400, message Bad HTTP/0.9 request type ('\x13I\x02\x0fW')
+2025-08-12T00:24:23: 71.239.76.30 - - [12/Aug/2025 00:24:23] "\x13I\x02\x0fW\x0dsf" HTTPStatus.BAD_REQUEST -
+2025-08-12T00:26:37: 180.75.47.46 - - [12/Aug/2025 00:26:37] code 400, message Bad HTTP/0.9 request type ('\x13I\x02\x0fW')
+2025-08-12T00:26:37: 180.75.47.46 - - [12/Aug/2025 00:26:37] "\x13I\x02\x0fW\x0dsf" HTTPStatus.BAD_REQUEST -
+2025-08-12T00:29:04: 64.184.20.73 - - [12/Aug/2025 00:29:04] code 400, message Bad request version ('¶')
+2025-08-12T00:29:04: 64.184.20.73 - - [12/Aug/2025 00:29:04] "-\x89ÖÂEA`\x1f?Å}%\x04r­w\x7fIx\x17Ãþ~M"G½\x84ª|aÿ\x94\x85ÌÔ)5\x12\x08?÷´\x85)ÃÁ7®ÿyÅ\x04\x09!ó,\x0b3\x1fóÃ\x12\x96R/7¼\x0dâéÇÚ÷\x9e®\x99\x8aC÷`\x94yÅ\x17-\x13\x89W\x8f"îd¦\x0b|\x9a6W\x8eW\x92#\x16l4K~ºðâ¯å(\x09ê/\x06¢\x90\x83U\x1d\x8f\x8eýne\x08\x19\x1fÒ\x11·\x81\x1e¶" HTTPStatus.BAD_REQUEST -
+2025-08-12T00:30:49: 64.184.20.73 - - [12/Aug/2025 00:30:49] code 400, message Bad HTTP/0.9 request type ('\x13I\x02\x0fW')
+2025-08-12T00:30:49: 64.184.20.73 - - [12/Aug/2025 00:30:49] "\x13I\x02\x0fW\x0dsf" HTTPStatus.BAD_REQUEST -
+2025-08-12T00:31:09: 73.170.130.56 - - [12/Aug/2025 00:31:09] code 400, message Bad HTTP/0.9 request type ('\x13I\x02\x0fW')
+2025-08-12T00:31:09: 73.170.130.56 - - [12/Aug/2025 00:31:09] "\x13I\x02\x0fW\x0dsf" HTTPStatus.BAD_REQUEST -
+2025-08-12T00:35:37: 71.83.30.103 - - [12/Aug/2025 00:35:37] code 400, message Bad HTTP/0.9 request type ('"±Ôu\x15Ç\x87§]B\x10\x9d\x0e×ÈË4øç\x90ïÅ,')
+2025-08-12T00:35:37: 71.83.30.103 - - [12/Aug/2025 00:35:37] "
+2025-08-12T00:35:37: "±Ôu\x15Ç\x87§]B\x10\x9d\x0e×ÈË4øç\x90ïÅ,\x0b»¸!zØ¬WÓÿÎ'k®=¬U\x11¦" HTTPStatus.BAD_REQUEST -
+2025-08-12T00:37:05: 23.87.81.130 - - [12/Aug/2025 00:37:05] code 400, message Bad request version ('&')
+2025-08-12T00:37:05: 23.87.81.130 - - [12/Aug/2025 00:37:05] "Ê\x95\x99\x02\x8d¶XIKÕÍ\x9bÅ.\x8b}3%«\x8b\x9by;.!\x8d9nÈ¨(\x1c/`\x9b+\x10\x04\x86&¤Ê¯îÅ\x8fà\x89¡\x9a\x9c\x0dÐÀ{<NíOUÜ\x03\x15¬º\x8dm\x0eÔEì+\x87\x07p$\x90­Ú\x0e\x8d\x0eÅJÁ°gÎi~àc\x1bgÂG¹\x88|æ9\x18ÏTU'Îðô\x10\x9f½$_\x81\x8bä×¥Î\x8b\x8f§\x8bÙ7§k\x99x\x09òïyÅÉD\x7fk7Ê¬·®®èÌ\x82ÚÝ\x11µd\x1c¥í\x96]\x80\x87\x9aã'ÄÂþ\x0b!rª\x7fÅ«UT\x144¾\x14afù×À\x95\x8fÄø\x16Â(\x97òî, &
+2025-08-12T00:37:05: " HTTPStatus.BAD_REQUEST -
+2025-08-12T00:37:06: 23.87.81.130 - - [12/Aug/2025 00:37:06] code 400, message Bad HTTP/0.9 request type ('\x13I\x02\x0fW')
+2025-08-12T00:37:06: 23.87.81.130 - - [12/Aug/2025 00:37:06] "\x13I\x02\x0fW\x0dsf" HTTPStatus.BAD_REQUEST -
+2025-08-12T00:37:08: 23.87.81.130 - - [12/Aug/2025 00:37:08] code 400, message Bad request version ('\x99')
+2025-08-12T00:37:08: 23.87.81.130 - - [12/Aug/2025 00:37:08] "èW. i"\x14\x01Ï\x15\x9d'Y:\x1f¹G.¾8©Hl£^9Â"¥\x1b\x1dýö%\x03²®®\x0c7òqÅçßìg\x06(\x97úe\\Z!Çd}uDý&ñò\x8f}à\x92\x9b×\x91içvüÂPèrJ\x0e¯\x15¹©8ÿjs\x89)lÒÿ¹ò8­g)\x84\x15_oxç­\x11æ\x85×T¡.·Ý\x09Ã\x1685§ä\x96»¿\x11\x94\x1e\x99" HTTPStatus.BAD_REQUEST -
+2025-08-12T00:37:09: 23.87.81.130 - - [12/Aug/2025 00:37:09] code 400, message Bad HTTP/0.9 request type ('\x13I\x02\x0fW')
+2025-08-12T00:37:09: 23.87.81.130 - - [12/Aug/2025 00:37:09] "\x13I\x02\x0fW\x0dsf" HTTPStatus.BAD_REQUEST -
+2025-08-12T00:37:13: 23.87.81.130 - - [12/Aug/2025 00:37:13] code 400, message Bad request version ('kÿkÆû\x05ð\xad')
+2025-08-12T00:37:13: 23.87.81.130 - - [12/Aug/2025 00:37:13] "I¨\x0b/´É\x8bg\x8dÛae÷/\x98`Ïª\x8bg.\x18H0dj5OÉ\\ÖJ\x11÷\x08îßR¶Âz^1b\x89k\x81ö>ß¼\x8cLðsµ\x86\x0c]8\x9fÊnGwhÿ\x1eèJ-,VU«>Å³l\x86³­Ó\x12\x0c¡ÎJÞëmþ kÿkÆû\x05ð­" HTTPStatus.BAD_REQUEST -
+2025-08-12T00:37:17: 23.87.81.130 - - [12/Aug/2025 00:37:17] code 400, message Bad HTTP/0.9 request type ('\x13I\x02\x0fW')
+2025-08-12T00:37:17: 23.87.81.130 - - [12/Aug/2025 00:37:17] "\x13I\x02\x0fW\x0dsf" HTTPStatus.BAD_REQUEST -
+2025-08-12T00:38:40: 62.49.115.243 - - [12/Aug/2025 00:38:40] code 400, message Bad request version ("\x80d1\x90\x11Ø\x91q\x06U('")
+2025-08-12T00:38:40: 62.49.115.243 - - [12/Aug/2025 00:38:40] "
+2025-08-12T00:38:40: {ûà!tÃ#/ í\x9b­\x9aó\x82\x82oìw\x09KIþ^P\x83\x81e²s\x9dâ\x81²\x16)§]«\x17©k\x9d#\x84\x07SÓTwÌE\x1c\x9b5\x85\x7f-½\x0eh\x05¬÷r*©\x03NÂ_\x14¦¼\x02Å`¢Ñö{ÓáäÞ\x89ö,z\x96v6ãfZqòØw+\x8bó·\x87ÔÓ\x01\x85?\x17ÔÑJÊ%='\x09»zOf\x14«\x9cüm4Ü4ú]\x09K.@\x15û\x10\x8a\x8cÈàÉX\x89\x8d»\x8aÕùJ\x162\x84Y\x9b¿-\x00\x936é\x17&ÈBÏüÚà\x817jÁÿ\x0ev¹w\x80~à¹O\x00/j\x148\x1779&\x17³ïL>\\#¸Vã\x9fo\x13\x15«Z)0Ö\x140\x16\x9f²Û\x9d\x855 &O\x96|Í`£\x16¯k\x0b\x13¦6ß¹¹ÎÝ~Ý¥\x90£ ©Ý\x8c6\x82\x8dö\x8aNÀànZ@i\x07\x09\x1c\x94\x83r\x9co \x80d1\x90\x11Ø\x91q\x06U('" HTTPStatus.BAD_REQUEST -
+2025-08-12T00:40:53: 62.49.115.243 - - [12/Aug/2025 00:40:53] code 400, message Bad request version ('¹SÀ×@X\x8f²fÅ')
+2025-08-12T00:40:53: 62.49.115.243 - - [12/Aug/2025 00:40:53] "±øõ\x1fÍ\x85íFL3\x13ÊZ\x9eT6L\x95_Æ\x1cB_ôq\x0cÞdÐ\x13ë\x14´5a\x07[zNñ=7ÕS®\x9fÅÃ§ô³"\x09\x839\x04»Ùk?Í\x1e\x8f\x81?`aÔå\x96¨ü0Íj5\x9d o\x9cTÛ tbX"Lóº\x92\x07f\x16:+ë\x1bs\x99\x02\x88ì\x03\x13ýRã\x09fº)½ \x0eõØ\x1díÌÝ\x13ëû\x08\x92nÈá¬Fï]\x82¼\x1a\x1f2±F(CøÉ\x09éâv_é\x03ï{¿<TÌJ¨r¤\x02\x0fgH\x97óG\x10\x01Ç\x95§Ë2ëØê\x9b\x0b¹SÀ×@X\x8f²fÅ" HTTPStatus.BAD_REQUEST -
+2025-08-12T00:43:05: 62.49.115.243 - - [12/Aug/2025 00:43:05] code 400, message Bad request version ('9Á©àUûLF¾.\x94')
+2025-08-12T00:43:05: 62.49.115.243 - - [12/Aug/2025 00:43:05] "Î\x91õ<6m\x16¡¥í\x95\x9d\x85\x8bfC\x1fÍ\x1d9Á©àUûLF¾.\x94" HTTPStatus.BAD_REQUEST -
+2025-08-12T00:45:16: 62.49.115.243 - - [12/Aug/2025 00:45:16] code 400, message Bad HTTP/0.9 request type ('ê+±ñðþ¡\x9cZhdWóÚ\x9a_À©|¤u\x8f\x9dd')
+2025-08-12T00:45:16: 62.49.115.243 - - [12/Aug/2025 00:45:16] "ê+±ñðþ¡\x9cZhdWóÚ\x9a_À©|¤u\x8f\x9dd ¹z¹¥SÀ\x88H\x99µÎl\x80$\x94Þ\x95\x8aJ8¹ÿG\x08·¥\x84µ~,Ä3%ß%" HTTPStatus.BAD_REQUEST -
+2025-08-12T00:47:28: 62.49.115.243 - - [12/Aug/2025 00:47:28] code 400, message Bad HTTP/0.9 request type ('\x05×T4Wë\x18\x16¼¶;d\x84Î\x16^Jù6>ñ\x92<Nú\xadfÝÚúS:UÑAé×iÑ».pùÎw®5¼á\x86¼ªhJlÍ^rýá{@\x14v\x89n\x8dÈR\x9b±\x9a¶Q\x08ó5')
+2025-08-12T00:47:28: 62.49.115.243 - - [12/Aug/2025 00:47:28] "\x05×T4Wë\x18\x16¼¶;d\x84Î\x16^Jù6>ñ\x92<Nú­fÝÚúS:UÑAé×iÑ».pùÎw®5¼á\x86¼ªhJlÍ^rýá{@\x14v\x89n\x8dÈR\x9b±\x9a¶Q\x08ó5 dl\x9ccÅÆ\\0ü«h£gc¾\x18ê\x88\x90¥W\x19" HTTPStatus.BAD_REQUEST -
+2025-08-12T00:49:54: 73.235.19.223 - - [12/Aug/2025 00:49:54] code 400, message Bad request syntax ('o\x96»ÌéðiBo¥')
+2025-08-12T00:49:54: 73.235.19.223 - - [12/Aug/2025 00:49:54] "o\x96»ÌéðiBo¥" HTTPStatus.BAD_REQUEST -
+2025-08-12T00:50:26: 73.235.19.223 - - [12/Aug/2025 00:50:26] code 400, message Bad HTTP/0.9 request type ('\x13I\x02\x0fW')
+2025-08-12T00:50:26: 73.235.19.223 - - [12/Aug/2025 00:50:26] "\x13I\x02\x0fW\x0dsf" HTTPStatus.BAD_REQUEST -
+2025-08-12T00:51:40: 62.49.115.243 - - [12/Aug/2025 00:51:40] code 400, message Bad request version ('\x8aP*J\\JÛ\x99Ý\x8e\x94?\x92\x02¦\x80\x9a>zã½\x96ëâÌÕP\x84\x87´Ï×guÜ9à%Ò\x0få\x82\x9f\x10@C,uqó\x97û\x0eøâ|·ðÆÅn\x91YJÍ¬àðò2Ý\x9a¸hsL;ü§|Çd\x9a\x10Äw::â;¦ÞcC\x939ö\x87W\x9e¡\x9eU%\x7f\x00G®\x90\x10\xadY\x8f¯Ë')
+2025-08-12T00:51:40: 62.49.115.243 - - [12/Aug/2025 00:51:40] "5/\x90d®^\x99ú\x95\x7f\x1eºË\x95ÖÕÈº\x0eµÃ-@£_í^\x8fä\x8d\x1a.\x09Íºò¥¦)_Ù[\x98\x84FÔ&+{cù¹\x08N\x82ë\x8f¥\x01îF¡,~ä½ó[±\x9bói<ÉÁæcF\x92'\x18-ê\x98º÷\x9dV\x86\x18Q\x99\x0ek\x8d@S\x8aÛQå®±SöÝ¸¡\x87÷\x86Y\x19£\x02\x0eð·Ò4\x98¦á\x86\x9c\x81$º®EÉ¸\x914Cò\x82Ì®²í\\ú«7\x88üÚ(\x9aá~\x08¿Ý]«ÝïH\x12QþGæÎ)wUX\x18üÀ9Y%QwcMtÝ\x82þí\x8f\x05&nxÛ\x0eö×wë\x92\x02¾\x06ç \x8aP*J\\JÛ\x99Ý\x8e\x94?\x92\x02¦\x80\x9a>zã½\x96ëâÌÕP\x84\x87´Ï×guÜ9à%Ò\x0få\x82\x9f\x10@C,uqó\x97û\x0eøâ|·ðÆÅn\x91YJÍ¬àðò2Ý\x9a¸hsL;ü§|Çd\x9a\x10Äw::â;¦ÞcC\x939ö\x87W\x9e¡\x9eU%\x7f\x00G®\x90\x10­Y\x8f¯Ë" HTTPStatus.BAD_REQUEST -
+2025-08-12T00:57:53: 62.49.115.243 - - [12/Aug/2025 00:57:53] code 400, message Bad request version ('$îòä7¿#Ó°dôÀUÁD\x04ª\x88=\x0f³\x88vý:úûiAÃ©¼Å©\x98ÆùÑ¢8\x8aø\x94®bDw\x91È!\x8bÝ¶rØZ\x86\x82hû¯ì(AÉ\x93¾^¸')
+2025-08-12T00:57:53: 62.49.115.243 - - [12/Aug/2025 00:57:53] "\x03ô\x19ê\x94ë$¾\x8erÞ §¿Ë¢tkC4 ûÕòÛ\x89x\\\x1akfF\x1b:\x03pI|<\x80j¡êËÄ\x02\x01\x05Æ\x92`\x14\x1azögÃ\x9d9¤_5©\x8e¯c)\x021G%y³IÒ½R¤¾/"{î\x088;º\x1fX\x15\x1bU:Ý­T>ê\x81\x98\x80(\x861'ûr5Qwçñ\x93ÆA\x17\x86ÔÊ\x14M\x9d\x02 \x06áa@,\x1c¶rÝ\x0c$îòä7¿#Ó°dôÀUÁD\x04ª\x88=\x0f³\x88vý:úûiAÃ©¼Å©\x98ÆùÑ¢8\x8aø\x94®bDw\x91È!\x8bÝ¶rØZ\x86\x82hû¯ì(AÉ\x93¾^¸\x85" HTTPStatus.BAD_REQUEST -
+2025-08-12T01:00:30: 72.185.114.95 - - [12/Aug/2025 01:00:30] code 400, message Bad HTTP/0.9 request type ('\x13I\x02\x0fW')
+2025-08-12T01:00:30: 72.185.114.95 - - [12/Aug/2025 01:00:30] "\x13I\x02\x0fW\x0dsf" HTTPStatus.BAD_REQUEST -
+2025-08-12T01:16:35: 14.136.32.244 - - [12/Aug/2025 01:16:35] code 400, message Bad request version ('»ÖªW\x8fDþ:!Tl\x05åC\x80\\´\x9e\x12k?5O$0.a£ß5')
+2025-08-12T01:16:35: 14.136.32.244 - - [12/Aug/2025 01:16:35] "%5~¦3wmØR5\x0dr\\Ð¹Â\x0eï/Ad´^\x81ÿÈ\x16\x10|ó0ø\x8dB\x8a\x0dïªzË@~\x8a£Õ\x88ü\x86­l\x9f\x94ªÄü*sãG_\x02\x98\x902x]\x08À\x9cÍ)\x076­Þ\x18£K±,\x80Ï\x9eh÷ù\x8c\\\x98L\x8b¥s3ôÔÂí©\x1eÎ¡lé\x87dÁb-\x7f³\x9d³÷Êµ\x9bÇ½\x98ü¿Dl¥ù\x0c\x9d\\óÄ\x85?NT¶L".çüü¼x\x09uù£Qp\x1cAÓïn6Ö\x92={(®éÆ\x84\x06\x1bØ\x0d)\x16c÷h%\x95Eq4E¬\x8c{¹\x97rU\x12DÅ/U\x0b1\x9b\x16¿\x1d\x84Ã-\x0d|\x8aÂ\x972èIÿÿÏÑr\x9fs¬Üý²\x94f&\x1eé\x8f`¨\x16æTê\x11af\x10\x00]%dù3ÞvâsKäwÀiËjHgÊ¥Þº¯«µMÁ\x1c»ÖªW\x8fDþ:!Tl\x05åC\x80\\´\x9e\x12k?5O$0.a£ß5" HTTPStatus.BAD_REQUEST -
+2025-08-12T01:16:35: 14.136.32.244 - - [12/Aug/2025 01:16:35] code 400, message Bad HTTP/0.9 request type ('\x13I\x02\x0fW')
+2025-08-12T01:16:35: 14.136.32.244 - - [12/Aug/2025 01:16:35] "\x13I\x02\x0fW\x0dsf" HTTPStatus.BAD_REQUEST -
+2025-08-12T01:16:36: 14.136.32.244 - - [12/Aug/2025 01:16:36] code 400, message Bad request version ('\x9d¿ú¨Cñ\x8eK¢#\x89á¼[4N×6Ú\x8bÂ')
+2025-08-12T01:16:36: 14.136.32.244 - - [12/Aug/2025 01:16:36] "û_\x88ÑR\x80ìõ\x0d\x89\x09ÙnM7@4\x05\x9dÊG\x9d¿®\x0c²B>`|Å<{\x17¶´øÅ\x88Õ\x87\x7fÆëiÂ2±<\x89ã\x87ú$/âX»ßt^ó\x91v\x01*\x81ó\x08æÝ\x8eÏ\x18 c\x8eö¾È\x871\x0c"ÉÐkàûçà\x9eÅ\x7f\x1e.´¹éP0fÙ\x0f\x830\x0c,²\x9f\x9d,»jx&kJÄçÜéí5\x8fúL1"bvÕ®\x93\x1e\x9d¿ú¨Cñ\x8eK¢#\x89á¼[4N×6Ú\x8bÂ" HTTPStatus.BAD_REQUEST -
+2025-08-12T01:16:37: 14.136.32.244 - - [12/Aug/2025 01:16:37] code 400, message Bad HTTP/0.9 request type ('\x13I\x02\x0fW')
+2025-08-12T01:16:37: 14.136.32.244 - - [12/Aug/2025 01:16:37] "\x13I\x02\x0fW\x0dsf" HTTPStatus.BAD_REQUEST -
+2025-08-12T01:16:49: 14.136.32.244 - - [12/Aug/2025 01:16:49] code 400, message Bad request version ('>Ê')
+2025-08-12T01:16:49: 14.136.32.244 - - [12/Aug/2025 01:16:49] "+Ýp\x06C\x0b©Z\x7f\x87ú\x80S\x97~Á\x17\x1fµ\x9eÿ¯\x86\x82vQ©ÐÇûlp3îL(å\x0ek\x7fË+¢ïøh\x16O\x84\x1aê\x84Bv2¤Þí\x0c*ÿ\x02\x06¦\x9e\x0dªcç^Plw\x0f¦ù\x03dÍ\x0dä+m5\x9a^bU¹9$ÁÂG§Fë}\x8e¢HÓ«¬áK`\x1f."<\x9f\x04å\x16U\x17d\x1b6\x10Äv^G´\x9a\x96\x1e¸/õù¡\x97¢Ý\x1d\x1b·¤j·AÚ&~d8C«\x9b»\x16F\x1e_\x8ep\\}\x81K§¾"\x88ð»\x8f\x8e§3\x87DÄè9{ä\x167û\x8b\x91\x8a(\x88zßQv\x9dÞ\x96^j\x9bsz\x8e%í\x15.<W\x8eÀ!Á{\x85\x85þé§£QÂëi´H\x12ÑÄ½ÒOL%lcl#êNe\x00÷á\x04ËZp©\x9a\x11æôî\x06ò\x0b5p`\x89hÉ\x82\x06ÕgÌ?÷º\x80â\x81!~ùzi=ð\x81â×D2 >Ê" HTTPStatus.BAD_REQUEST -
+2025-08-12T01:16:49: 14.136.32.244 - - [12/Aug/2025 01:16:49] code 400, message Bad HTTP/0.9 request type ('\x13I\x02\x0fW')
+2025-08-12T01:16:49: 14.136.32.244 - - [12/Aug/2025 01:16:49] "
+2025-08-12T01:16:49: \x13I\x02\x0fW\x0dsf
+2025-08-12T01:16:49: " HTTPStatus.BAD_REQUEST -
+2025-08-12T01:52:07: 104.187.186.91 - - [12/Aug/2025 01:52:07] code 400, message Bad request syntax ('uÁÓZ\x9d¯\x88\x9eV;\x02\x16E3è>\x0fG')
+2025-08-12T01:52:07: 104.187.186.91 - - [12/Aug/2025 01:52:07] "uÁÓZ\x9d¯\x88\x9eV;\x02\x16E3è>\x0fG" HTTPStatus.BAD_REQUEST -
+2025-08-12T02:01:02: 184.147.170.161 - - [12/Aug/2025 02:01:02] code 400, message Bad request version ('I\x04©väjÕÃ')
+2025-08-12T02:01:02: 184.147.170.161 - - [12/Aug/2025 02:01:02] "\x9b=«dÏw\x9fØ\x8d\\xsò¤\x12mÉ£îá¯·Ò\x9dÿ0A\x19\x86\x96\x8e×ö5Øñ\x09\x8fF\x16+I-^\x01½¡ß\x02Ä\x90ÁíÏþ\x06O¡\x98?Oz\x0e§L½±\x8e\x0bMí\x8bKQño\x16\x0dÑ\x05üÖ\x93\x9b\x81\x86E¨jG³\x06-Ó\x08\x7f\x16¨×\x9e¨çThÊ¦A\x99Ò(ÌñWæÛ ï'£h\x138Zq\x1fI\x04©väjÕÃ
+2025-08-12T02:01:02: " HTTPStatus.BAD_REQUEST -
+2025-08-12T02:05:27: 184.147.170.161 - - [12/Aug/2025 02:05:27] code 400, message Bad HTTP/0.9 request type ('\x13I\x02\x0fW')
+2025-08-12T02:05:27: 184.147.170.161 - - [12/Aug/2025 02:05:27] "\x13I\x02\x0fW\x0dsf" HTTPStatus.BAD_REQUEST -
+2025-08-12T02:10:15: 81.17.23.243 - - [12/Aug/2025 02:10:15] "GET / HTTP/1.1" 200 -
+2025-08-12T02:17:29: 64.184.20.73 - - [12/Aug/2025 02:17:29] code 400, message Bad request version ('!Õ0\x12Ø·9ô{QÕÌñ\x04\xad\x8b²\x82üç0ö\x07Fä@9Öó^Þ¹}æ|^\x83°Êër\x90NÖP@\x96\x93\x82]\x12h7\x88\x8c\\u\xadFM¾`¯!^cÁ\x15TDú1Û#ôÜ\x94\x92£\x8cQ\x95+\x95\x80È\\#2')
+2025-08-12T02:17:29: 64.184.20.73 - - [12/Aug/2025 02:17:29] "OnîÚ­8\x01\x11\x8f\x01¼b\x02x\x8e{\x0eß+(&ìDá¼^Æ°àÚÏ²\x93£\x16\x17I±<ÓÌjá\x98(ÀßO<fÃ\x05÷/\x82«p\x91SYi`)ìÖ\x8cw½ð\x1f{\x97¼fá\x99NÄ\x87»a\x17g8ãy\x0dÚß¨ÎÄX\x1e_ý\x09\x02\x83w9B¹\x95¯l¢U\x0f¶nö\x9e\x8aw\x90X3\x9fÈ !Õ0\x12Ø·9ô{QÕÌñ\x04­\x8b²\x82üç0ö\x07Fä@9Öó^Þ¹}æ|^\x83°Êër\x90NÖP@\x96\x93\x82]\x12h7\x88\x8c\\u­FM¾`¯!^cÁ\x15TDú1Û#ôÜ\x94\x92£\x8cQ\x95+\x95\x80È\\#2 " HTTPStatus.BAD_REQUEST -
+2025-08-12T02:20:17: 72.203.2.150 - - [12/Aug/2025 02:20:17] code 400, message Bad request version ('\x19pMò\x19grÙlOcP\x18#Æ;q\x06»Ô·AM/ÝÙ\x04geÉ\x97jfá¾^¯;&¯\x06U~·\x89Ð®\x086Ä(Y\x86¾V')
+2025-08-12T02:20:17: 72.203.2.150 - - [12/Aug/2025 02:20:17] ";»É?m\x9dFmÈ`4\x95æq\x9dA¥ æA?\x98\x9c\x1b9õÝX»KJ\x16²Ä&\x8d\x9aÏ\x99=e\x1a¤\x0eÿ@\x1aÓ\x99\x07\x98(\x95\x89.ÐAräw9¢]\x03\x15R\x90\x11t\x98`_W\x9c -â\x08\x92ZèTëíj\x1e\x91ë¾ÓäJ·%*º\x8bC\x9fýåª%/N\x10\x9aH\x1eº,\x08ë!Ã\x9eL\x8a\x94Ï¸CÓ¿\x8c{\x85`+¿st?\x0d:@\x1e\x96\x80ÏI\x15Aß\x0eÇGmM\x06¸ØW\x86É´ò*\x91.y\x84ø\x17 èÎ\x8fV+øOCýÄ\x92qà^¡\x86Ä\\ú/At\x1c\x19pMò\x19grÙlOcP\x18#Æ;q\x06»Ô·AM/ÝÙ\x04geÉ\x97jfá¾^¯;&¯\x06U~·\x89Ð®\x086Ä(Y\x86¾V" HTTPStatus.BAD_REQUEST -
+2025-08-12T02:20:18: 72.203.2.150 - - [12/Aug/2025 02:20:18] code 400, message Bad HTTP/0.9 request type ('\x13I\x02\x0fW')
+2025-08-12T02:20:18: 72.203.2.150 - - [12/Aug/2025 02:20:18] "\x13I\x02\x0fW\x0dsf" HTTPStatus.BAD_REQUEST -
+2025-08-12T02:20:19: 72.203.2.150 - - [12/Aug/2025 02:20:19] code 400, message Bad request version ('©\x05\x0e±\x89¯H,UA\x17r\x13ÂGù3Ò)Û/')
+2025-08-12T02:20:19: 72.203.2.150 - - [12/Aug/2025 02:20:19] "$-´=U?J\x97\x96\x83\x96ÚRhÍ\x03xaÊæ\x0b\x11}¥Åg;&´\x8e\x8a\x10\x09 r|À%Ie\x9cS\x0b\x17ÿi\x10\x07½¹\x18\x1dçÛ³ ÚÂU\x121÷\x9e\x9dº\x85ðÒ\x7f\x9b0\x03F~\x11\x91í\x097Ôßå\\\x97\x99Oc\x08\x99¬0£8\x1bl\x12Ôùí¬«\x17«\x9e\x87ô\x7fÝÕÇ4\x04\x91\x07\x1f©\x05\x0e±\x89¯H,UA\x17r\x13ÂGù3Ò)Û/
+2025-08-12T02:20:19: " HTTPStatus.BAD_REQUEST -
+2025-08-12T02:20:20: 72.203.2.150 - - [12/Aug/2025 02:20:20] code 400, message Bad HTTP/0.9 request type ('\x13I\x02\x0fW')
+2025-08-12T02:20:20: 72.203.2.150 - - [12/Aug/2025 02:20:20] "\x13I\x02\x0fW\x0dsf" HTTPStatus.BAD_REQUEST -
+2025-08-12T02:20:31: 72.203.2.150 - - [12/Aug/2025 02:20:31] code 400, message Bad request version ('+ï)OcÆ\x01÷óy¤\x18«À8\x81¥H)ø_ÀÑ\x9bz\x10Âh\x0eª³Ø¨ø\x04¥áõï\xad\x9cØMïÛê\x02²>y\x07Ä\x1aå\x12à2×ä')
+2025-08-12T02:20:31: 72.203.2.150 - - [12/Aug/2025 02:20:31] "èï`¦+\x9aJÞ\x89|K\x1e\x85\x0c¡/Ò\x85\x81<·Ç7Ð\x17Z&\x88P\x9c,Ù>\x19v\x98\x84\x1c©2#jG¦c_.\x17:AD\x0cFÂ\x1d\x02\x08 2cy\x9a¥ÄÊ©D\x9f\x12\x86â2ð¶\x0bÖÆéåÙP·3 Vþa[äR\x87\x12\x11KO©]­Áw×´gI`ºü\x02P\x04®b=\x0be\x98¾\x14ViJmµù>E\x87:ý)\x95î1\x17|Z0@â\x89{_Ã9`±ég¿\x90zré°«î¤ô\x93\x08Kî\x1a\x91\x12ò\x10©hÕZ\x09uGFìÃÊ\x00\x9bøN\x1e\x94ÁkVVË:OÌëÑ\x94S^Y¥j*Í(õ£P=.\x09+ï)OcÆ\x01÷óy¤\x18«À8\x81¥H)ø_ÀÑ\x9bz\x10Âh\x0eª³Ø¨ø\x04¥áõï­\x9cØMïÛê\x02²>y\x07Ä\x1aå\x12à2×ä" HTTPStatus.BAD_REQUEST -
+2025-08-12T02:20:32: 72.203.2.150 - - [12/Aug/2025 02:20:32] code 400, message Bad HTTP/0.9 request type ('\x13I\x02\x0fW')
+2025-08-12T02:20:32: 72.203.2.150 - - [12/Aug/2025 02:20:32] "\x13I\x02\x0fW\x0dsf" HTTPStatus.BAD_REQUEST -
+2025-08-12T02:21:02: 64.184.20.73 - - [12/Aug/2025 02:21:02] code 400, message Bad HTTP/0.9 request type ('\x13I\x02\x0fW')
+2025-08-12T02:21:02: 64.184.20.73 - - [12/Aug/2025 02:21:02] "\x13I\x02\x0fW\x0dsf" HTTPStatus.BAD_REQUEST -
+2025-08-12T02:32:14: 38.248.57.141 - - [12/Aug/2025 02:32:14] code 400, message Bad request version ('Tä\x19Q\x97/Ö\x8d\xad\x1a\x11ONDBÃÄ´\x9f¤\x83Õ\x86Ìð\x11\x14YB\x08')
+2025-08-12T02:32:14: 38.248.57.141 - - [12/Aug/2025 02:32:14] "¼Ú-¯\x03\x9cA\x0c÷[ÏÛ[\x80.\x16\x94\x1c\x96õÝ+­5©\x0dV\x19I÷ÞLG¹3j@\x88\x9atðê\x96¦\x03\x1dbÞj\x8eT\x83Å³\x1bß\x16¸F\x00\x94\x9d'ë äf¼¶Z§`ÅÜé ¯>ï(CÆ"ê=\x86²dZR\x10¼ ¡\x00&ÝHîþ©Á\x0eº/BWÔ\x90\x00É\x18 þ×\x1c¯${âãùc#ÁþI>J¦`½Bõê\x7f\x0c³æ\x88°MçbÿI\x00-ÎdÜJ^Jê Üòµ\x89\x03\x93Q]ßFñ\x99­9\x96«ß\x8dâ\\;Î\x0bÚ#\x0cëaï\x9a3\x86vbÀ ¬ã\x06ÓeÉ©:8(*°\x7fT¾»z_;\x16\x930+Z¼<\x03HôänµékÂ\x13¸\x92\x94\x98ÐÓf\x0cô6\x7f4_ÒÔÖ\x01ä"iè\x85\x1d[º\x0bÂþ^ÿÉ\x10»¶6å\x98\x8e\x0f3£Æ(z\x8dû\x1a\x0eR;RÂ\x96ÈE3+kÁ®¯q_¿SG\x15W¶­è\x99ï\x9a¾Aª­Q±iK@\x9aìY@C¬\x97oy\x81\x97É\x14cY³!M\x85µ±=EE=X¼¾´+&p#\x0d\x8dÐ\x00 %Ð\x13vEJ\x02Ð\x02\x95w\x81j:ðñZÁ#=ý¤\x0b|áe\x93\x1d·»Þl§è13N&~}U?\x8ev¯<Énn5¥üCH©?\x90¥\x1d@,ÅPs²º\x85\\\x86¢{Of5\x98O¨~±\x18\x16§y9bì\x83XG²õ\x9a?°Ë\x1aÛKÅ\x96Â\x00ï)HûË2ªÄ\x1cTä\x19Q\x97/Ö\x8d­\x1a\x11ONDBÃÄ´\x9f¤\x83Õ\x86Ìð\x11\x14YB\x08" HTTPStatus.BAD_REQUEST -
+2025-08-12T02:32:20: 75.176.221.180 - - [12/Aug/2025 02:32:20] code 400, message Bad request version ('ôx·¹\x8b\x07Ô')
+2025-08-12T02:32:20: 75.176.221.180 - - [12/Aug/2025 02:32:20] "Þ!\x90\x04gî\x03?\x18óMª\x0bÝÔÎ\x15E\x96\x9b£®l\x8flé¸±°«hL\x0côx·¹\x8b\x07Ô" HTTPStatus.BAD_REQUEST -
+2025-08-12T02:32:31: 97.167.224.20 - - [12/Aug/2025 02:32:31] code 400, message Bad request version ('Øªa\x03¼$T\x84ÜyÌ')
+2025-08-12T02:32:31: 97.167.224.20 - - [12/Aug/2025 02:32:31] "HÙ72°6¿\x05ôøL\\\x10¨&\x19ÎÖÄ÷\x97³`ç®\x05¨ê³\x84nO0r¼0¥U%t³Æ+spê\x9f\x8d¨Â\x17$ý\x8b\x16ÓªiÎ&öhÅeVÚrãÄ\x80\x90°f´Ûâ\x01³\x0d¯¿z'\x1a\x9d_M¾s>Å\x16\x02\x7f¢\x94"M\x7f\x0c\x8e\x19¥h¶F+\x03Hèó_úÚ\x10\x85Øªa\x03¼$T\x84ÜyÌ
+2025-08-12T02:32:31: " HTTPStatus.BAD_REQUEST -
+2025-08-12T02:32:33: 97.167.224.20 - - [12/Aug/2025 02:32:33] code 400, message Bad HTTP/0.9 request type ('\x13I\x02\x0fW')
+2025-08-12T02:32:33: 97.167.224.20 - - [12/Aug/2025 02:32:33] "\x13I\x02\x0fW\x0dsf" HTTPStatus.BAD_REQUEST -
+2025-08-12T02:32:37: 75.176.221.180 - - [12/Aug/2025 02:32:37] code 400, message Bad HTTP/0.9 request type ('\x13I\x02\x0fW')
+2025-08-12T02:32:37: 75.176.221.180 - - [12/Aug/2025 02:32:37] "\x13I\x02\x0fW\x0dsf" HTTPStatus.BAD_REQUEST -
+2025-08-12T02:55:00: 70.23.200.34 - - [12/Aug/2025 02:55:00] code 400, message Bad request version ('åð@u\x83ÀA66\x8b+\x8czÃàâÜÐ\x82{B\x99Ë¿Ñ"')
+2025-08-12T02:55:00: 70.23.200.34 - - [12/Aug/2025 02:55:00] "ûD\x05\x8cìða7\x09VÜÔn\x1a,Ä*t\x87j~X8¢L\x8aÀî\x977yËlÐ÷¶-¹7x+\x06ÄöÏ»±Åñ\x1dô|¤ñ\x127\x9c\x8cq\x15qW4³*´{gé\x0bºPJðJ1~é\x92&\x0fp\x96ªw,\x86òË$<¬Üâ÷\x9f¾²ì`ñ\x0dA-ÖÆUW\x8fè×jMÀòèÏÎV\x8ayÕá¥\x0d\x12ê¨\x08\x89*Â\x9bzH Eó\x00T\x09\x7fïQQüý\x93_\x8agÛl\x9fg\x18_8\x83á+*p\x1fÅ\x97 ÈÁ{oÆ\x88fåö8D)L\x18X\x83\x13¶H\x0cR QõJ»\x9ap\x1dC§>\x89_äÖÑ`a/¼\x96\x9d*¶Ï{\x9f\x15mR\x03w# ³GLÞß^çî\x16Æ3°i\x99ã5?\x08ÿ\x0bµwW7¯Æ£A\x80«<i2;q÷r\x87\x87°\x1bcQe]Bg¥\x8a=\x06\x92}2\x84Ñ§\x09n\x9b·\x12@ñå\x8aÀìÜ=÷2BEÍ\x85åð@u\x83ÀA66\x8b+\x8czÃàâÜÐ\x82{B\x99Ë¿Ñ"
+2025-08-12T02:55:00: " HTTPStatus.BAD_REQUEST -
+2025-08-12T02:56:51: 71.83.30.103 - - [12/Aug/2025 02:56:51] code 400, message Bad HTTP/0.9 request type ('\x13I\x02\x0fW')
+2025-08-12T02:56:51: 71.83.30.103 - - [12/Aug/2025 02:56:51] "\x13I\x02\x0fW\x0dsf" HTTPStatus.BAD_REQUEST -
+2025-08-12T03:01:13: 71.194.124.197 - - [12/Aug/2025 03:01:13] code 400, message Bad request version ('-dR')
+2025-08-12T03:01:13: 71.194.124.197 - - [12/Aug/2025 03:01:13] "\x04Û\x11ÚÒ÷CòÚV6*ÌÝ\x92(è`w\x99HÓ\x14Ä{k£°¦¹¤]Ö¬\x84g\x92¿Ä®y\x08Û\\¿G\x81\x83@íè\x01¼|²o{d:Ìy«W\x9dUT\x96×\x8aDß\x88÷¦¡²iÃ\x17*\x89G¦¼Ã±\x12¨\x1e\x1b\\'7Äß!Å£þuØK¯¬DßÒW]\x82\x87°c}ÙËIÕPÃ\x91\x85£\x86R]\x8a:[w²KrQÊ\x13µ\x8cº$"@ô52úâ¦\x9fS\x7f±G.\x02/)\x8d´\x04\x8c\x10ã)>\x0cïTúD\x81FãGÜ±-fKÃÛOºS¢Ja§í\x10\x9bàúCÕ\x03!\x8f¡¤5[ê1\x03+BØø\x95X\x16ßÝ\x85ÝÇ0\x85a\x02zC\x80JäÌÌÿíf6\x8c$ºXç\x7f,^6[K\x92\x8f\x11d\x84Ø11ÒÍ^¯\x99 Æ\x0dx»<À=!ó³/òÙ\x9cø\x8d\x8dj,ÐÿÚzû£)n²Räà!½Ûý:\x8e4ï\x19\x1d\x9b,\x89Ë\x97X ÿøØ\x85»mõRÚ2¨\x14èæ\x08ï\x9dzM_øF\x80\x99õ6Á\x10ê!4\x13\x84:\x89\x93X\x9f'\x03(\x0fõXµ¹Å0</]\x0f\x8ey"ÄÏFcêË>?\x8aðr5ÞìõF0ä\x84ÉáM`Ë\x86k= -dR" HTTPStatus.BAD_REQUEST -
+2025-08-12T03:03:13: 118.141.235.218 - - [12/Aug/2025 03:03:13] code 400, message Bad HTTP/0.9 request type ('\x13I\x02\x0fW')
+2025-08-12T03:03:13: 118.141.235.218 - - [12/Aug/2025 03:03:13] "\x13I\x02\x0fW\x0dsf" HTTPStatus.BAD_REQUEST -
+2025-08-12T03:09:16: 97.167.224.20 - - [12/Aug/2025 03:09:16] code 400, message Bad request version ('±|\x10Cx\x90ù½\x80\x01')
+2025-08-12T03:09:16: 97.167.224.20 - - [12/Aug/2025 03:09:16] "\x85L4¶\x06çô\x1fj@þØ0:U=¡\x15©f]\x99\x11\x8a¯æ\x95\x0bWä8Ô\x1c\x1bøÁéBÚämQø\x99&Nõª¿$ø\x089}í\x829\x85èF\x092d\\\x94½ª0\x82¯ÈJÚ£Ë{Y\x0b%Â\x92·¤o`\x95©XÛgîC¢Ì'GcéÌ+Vñ]Â¢å`Í\x9bèõ\x86\x81C'\x01Gû~Yo\x0b±|\x10Cx\x90ù½\x80\x01" HTTPStatus.BAD_REQUEST -
+2025-08-12T03:13:16: 97.167.224.20 - - [12/Aug/2025 03:13:16] code 400, message Bad HTTP/0.9 request type ('\x13I\x02\x0fW')
+2025-08-12T03:13:16: 97.167.224.20 - - [12/Aug/2025 03:13:16] "\x13I\x02\x0fW\x0dsf" HTTPStatus.BAD_REQUEST -
+2025-08-12T03:34:26: 108.84.228.91 - - [12/Aug/2025 03:34:26] code 400, message Bad request version ('Z¡Þ\x8e±')
+2025-08-12T03:34:26: 108.84.228.91 - - [12/Aug/2025 03:34:26] "}Ô¬\x00\x88â"\x89ª\x09\x9c\x18\x15\x1c\x98Eß\x06Bñ\x08ÿNyYù\x91c%aíªT3\x8eÛ#|\x8d\x1f\x13£Þ/o> tÄj\x90!\x16\x9c\x1a\x1eZ^j\x1bØ·èû\x02Aî&÷\x8c¤<¡@zý^Ôx\x88\x9bÄDW\x09»\x0dßn»\x04S,÷\x1c\x94"ìkã\x1aõV\x98¶´òÔ\x88J\x85\x9e#¸«Y¦\x9eìTê\x1e÷|Dß~1÷-­59>GÁà\x90`²©m±à%\x90\x9b\x8fAâ»ÿp]&\x1ew\x12A^ÔE@¡Ì¶9O\x10ûä\x8a\x0b\x08ñyËÑ\x06Á\x89\x06T\x12ÖýÕÝe®$#o×øiÆ@>Èz\x19Ó!"\x7fÛmÈ\x1dÁ2sïË\x11Q"X|\x81\x18¹\x86{\x87ªÓ\x1dÁl®R\x0e\x809a5\x01¿Ð\x1a\x9f&ò\x814\x80\x14ñ\x04À@³\x96\x89¬ú)"Â\x1cÕ\x86Íþ@\x99=\x8fùt\x97ktáü\x9f¢âS\x8c-l\x16äM1¶ÒJ\x9b¬6\x8eÔ\x1d\x0ef\x02)ðU\x90Ñ³\x15¨\x82.+½B\x18%Dv\x0es\x82M´à\x80Íó«\x1cx`F:\x9a¼ª\x172\x98U¾{\x11á\x93\x16¹B\x0cÕ\x96\x9c\x80&D¿\x17\x1a5@â\x11\x195\x04\x04Y\x8c\x0do¼\x08gÙ-Úé\x01\x94Ø\x89§à\\.ô&¼¤\x86ãa©\x1c]\x86$Û(\x8fu;Å\x03ç\x91e(B9Ë:~_OG\x92jþªi\x07ß"öÍQ\x8e^\x92\x90GTJV\x1a\x83\x96\x9eà$ñ\x83¼¯rGñ®>p^¬\x8e\x0d\x96MY\x17 w\x9eòH®P\x13 ~Ý»\x16\x11]á³àT-î\x86$!«°\x12RÓ1òÔ\x102rµ%\x87\x01\x9fé\x1cZ¡Þ\x8e±" HTTPStatus.BAD_REQUEST -
+2025-08-12T03:35:55: 108.84.228.91 - - [12/Aug/2025 03:35:55] code 400, message Bad HTTP/0.9 request type ('\x13I\x02\x0fW')
+2025-08-12T03:35:55: 108.84.228.91 - - [12/Aug/2025 03:35:55] "\x13I\x02\x0fW\x0dsf" HTTPStatus.BAD_REQUEST -
+2025-08-12T03:38:54: 96.236.149.66 - - [12/Aug/2025 03:38:54] code 400, message Bad request version ('ïÇ¸\x8b!Ú1\x86çS\x00\x90¯\x94\x7fÿKàÉïÑ+$_\x12')
+2025-08-12T03:38:54: 96.236.149.66 - - [12/Aug/2025 03:38:54] "Ý\x08þB°Ò |\x82ø×Yw\x82LtÊÏêÁYë\x09Jf\x06rw$ÙwV>Nßâ~\x07\x02\x19J«æV\x18F<÷íUÓáà$]°;\x9b325\x93s\x83bô\x04EÀ\x90\x0f\x8d~ýI\x0ePÕ\x1a+\x19;æ\x94yß\x84½ºw)ª¯vÏÈyØ<Ô.·°ß\x7fÆµYLiÖÊâ\x95\x00R\x13ã/\x0bïÇ¸\x8b!Ú1\x86çS\x00\x90¯\x94\x7fÿKàÉïÑ+$_\x12" HTTPStatus.BAD_REQUEST -
+2025-08-12T03:38:56: 96.236.149.66 - - [12/Aug/2025 03:38:56] code 400, message Bad HTTP/0.9 request type ('\x13I\x02\x0fW')
+2025-08-12T03:38:56: 96.236.149.66 - - [12/Aug/2025 03:38:56] "\x13I\x02\x0fW\x0dsf" HTTPStatus.BAD_REQUEST -
+2025-08-12T03:38:59: 96.236.149.66 - - [12/Aug/2025 03:38:59] code 400, message Bad request version ('\x03ÃÃNH+tÆ\x0f$:åÉÌ·t?²!\x9fÏåR£Õ¹û\x15%\x16ùÌ´|ÀlV\x97ô\x90¡z\x16\x93ñ{[û\x86¬\x99\x83ÇñZÄ©Ã\x13\x7f+\x80o\x89ùlÄS0H§\x15A\x8d\x9b\x97ïEä\x9cr\x87zë¾\x8d\x19ûÝsu:y\x8e\x8búvg\x13ù¼S\x11\x8b\x12°\x8bf%¾U')
+2025-08-12T03:38:59: 96.236.149.66 - - [12/Aug/2025 03:38:59] "C\x8f}øg\x9cí*\x94\x03¸¦ÒH\x89k\x0c\x19g\x1d\x0cYë$re\x12¿-\x8e_õí´o\x06+Ï#Õ5À\x96\x06\x19M\x7f\x97ÁÏ#\x00GÍô>µ¤ËâJ\x15yte«.+1Å\x19î\x9bÂÌ\x95Ú\x88ëG\x1c¨\x1dí)\x98róì\x03*\x82Y§ºTBn\x8a\x05"ò¥\x85e6C\x1b\x13¤ôQúÆÏJòV{d;\x01j\x87\x02½&\x0d\x03ÃÃNH+tÆ\x0f$:åÉÌ·t?²!\x9fÏåR£Õ¹û\x15%\x16ùÌ´|ÀlV\x97ô\x90¡z\x16\x93ñ{[û\x86¬\x99\x83ÇñZÄ©Ã\x13\x7f+\x80o\x89ùlÄS0H§\x15A\x8d\x9b\x97ïEä\x9cr\x87zë¾\x8d\x19ûÝsu:y\x8e\x8búvg\x13ù¼S\x11\x8b\x12°\x8bf%¾U" HTTPStatus.BAD_REQUEST -
+2025-08-12T03:39:01: 96.236.149.66 - - [12/Aug/2025 03:39:01] code 400, message Bad HTTP/0.9 request type ('\x13I\x02\x0fW')
+2025-08-12T03:39:01: 96.236.149.66 - - [12/Aug/2025 03:39:01] "\x13I\x02\x0fW\x0dsf" HTTPStatus.BAD_REQUEST -
+2025-08-12T04:10:05: 180.75.47.46 - - [12/Aug/2025 04:10:05] code 400, message Bad request version ('¼ít\x8bdcÉa\x12?V\x84ä\x10C]\x015?\x8d$ù\x1ak£\x7f]Å')
+2025-08-12T04:10:05: 180.75.47.46 - - [12/Aug/2025 04:10:05] "â\x96w¶\x88ÿ\x91à\x14\x1bJÔZ\x86×·ÁÆÜá¾äo)î,\x93\x88\x10V,«\x11ÇW\x1dÿ}­¾B\x88§í«è\x95_É;ü\x8d%bÍùºôh\x94­PVÿ­uP\x9b[ÿ-æ\x09¼ít\x8bdcÉa\x12?V\x84ä\x10C]\x015?\x8d$ù\x1ak£\x7f]Å" HTTPStatus.BAD_REQUEST -
+2025-08-12T04:11:01: 180.75.47.46 - - [12/Aug/2025 04:11:01] code 400, message Bad HTTP/0.9 request type ('\x13I\x02\x0fW')
+2025-08-12T04:11:01: 180.75.47.46 - - [12/Aug/2025 04:11:01] "\x13I\x02\x0fW\x0dsf" HTTPStatus.BAD_REQUEST -
+2025-08-12T04:19:30: 97.167.224.20 - - [12/Aug/2025 04:19:30] code 400, message Bad request version ('6\x8eáIü\x8cÍÂÙ\x9dÓ®')
+2025-08-12T04:19:30: 97.167.224.20 - - [12/Aug/2025 04:19:30] "\x179<Ý¶Ö3\x15\x08\x11\x9ezÆ\x09\x1eúw\x84ÙÞ¢ÊÙíÙ\x89úÒ\x14«t]f\x9aâhï\x06I³]ÂI{®ád\x99\x9fÛ"\x9f&#ü\x0cNÕ½\x06v9¤eÙYOÔV0\x12\x91y.\x8c4\x83fj$p\x0b7o\x9bf¶\x8aÅ¦\x9aèW`z\x11k>\x96¡x«Òu·f\x09¥3Lµc5Gá¸*\x88ÔM¢cçÖuÆx\x1c\x00W÷¥\x8d*\x1e\x01Ñ\x1c=´\x8eÎ³»YAy½v\x0bØÐß4;äc°\x1fÐìx&÷ÙGK\x96\x89î0­ùT\x94\x88\x85\x0eàéË\x97àÔ­,\x8f÷tF\x0b³\x12µ§Ë\x80V\x1f¨FqæF\x19±\x9c¿\x9eÀ\x9crM\x7f±ÐpßèÃK_\x80»V"þU¦¬]ªj9c2\x90º\x0fT\x87m/\x8b \x17\x0d6\x8eáIü\x8cÍÂÙ\x9dÓ®" HTTPStatus.BAD_REQUEST -
+2025-08-12T04:21:06: 180.75.47.46 - - [12/Aug/2025 04:21:06] code 400, message Bad request version ("Üd\x9b\x80\x03\x0eC\x98V\x19ÃùÓ\x9d\x8dZó'")
+2025-08-12T04:21:06: 180.75.47.46 - - [12/Aug/2025 04:21:06] "5:ÇÁÒe8g³£\x1aé×1\x9cç\x84TëDs\x99r\x12ô1\x1f^ªR\x89àEQ\x0d!$d\x92Pr\x05(þ¶+Ç\x9eUxea´ò\x87É\x94ø¾>\x8f«C Rrx|\x1b\x90TÛ&\x9e\x1cEZø>\x9fãP\x0b\x09\x1a-¹Á¥ü\x97\x8d3\x18«vÆ\x10g*é\x88¨±eì[¬\x8e_ U¤*\x82À\x9aR\x89\x08òÒl\x1bÃzã\x1fÜd\x9b\x80\x03\x0eC\x98V\x19ÃùÓ\x9d\x8dZó'\x0b" HTTPStatus.BAD_REQUEST -
+2025-08-12T04:22:47: 180.75.47.46 - - [12/Aug/2025 04:22:47] code 400, message Bad HTTP/0.9 request type ('\x13I\x02\x0fW')
+2025-08-12T04:22:47: 180.75.47.46 - - [12/Aug/2025 04:22:47] "\x13I\x02\x0fW\x0dsf" HTTPStatus.BAD_REQUEST -
+2025-08-12T04:22:58: 97.167.224.20 - - [12/Aug/2025 04:22:58] code 400, message Bad HTTP/0.9 request type ('\x13I\x02\x0fW')
+2025-08-12T04:22:58: 97.167.224.20 - - [12/Aug/2025 04:22:58] "\x13I\x02\x0fW\x0dsf" HTTPStatus.BAD_REQUEST -
+2025-08-12T04:23:59: 38.248.57.141 - - [12/Aug/2025 04:23:59] code 400, message Bad HTTP/0.9 request type ('\x13I\x02\x0fW')
+2025-08-12T04:23:59: 38.248.57.141 - - [12/Aug/2025 04:23:59] "\x13I\x02\x0fW\x0dsf" HTTPStatus.BAD_REQUEST -
+2025-08-12T04:29:34: 64.184.20.73 - - [12/Aug/2025 04:29:34] code 400, message Bad request version ("7ºÏpk-.ÚáJA/\x06}g¨\x84T³'Y\x93\x94\x95\x93e&jª¬\x14Jzy'ÍÛ\x97pWÞB\x0e&§õ\x9dkâa;\x8fãy8\x96^")
+2025-08-12T04:29:34: 64.184.20.73 - - [12/Aug/2025 04:29:34] "F¸7=\x8aý\x05!.ê\x18Íyè\x88\x8füRx\x00\x03\x95c[\x88\x83ßzÄA')vÎ\x86Ú\x99\x12Tã¡¥-hÍ·¯\x02JôÁê\x11\x81],ÛÀVu\x16\x85U&§\\÷\x12à\x15\x9c\x9e\x93Ç2/TwJ¸w¾Æ½Æ\x84¢è]ôq{tmD(fÒÎI£Z\x99·q 7ºÏpk-.ÚáJA/\x06}g¨\x84T³'Y\x93\x94\x95\x93e&jª¬\x14Jzy'ÍÛ\x97pWÞB\x0e&§õ\x9dkâa;\x8fãy8\x96^" HTTPStatus.BAD_REQUEST -
+2025-08-12T04:30:16: 64.184.20.73 - - [12/Aug/2025 04:30:16] code 400, message Bad HTTP/0.9 request type ('\x13I\x02\x0fW')
+2025-08-12T04:30:16: 64.184.20.73 - - [12/Aug/2025 04:30:16] "\x13I\x02\x0fW\x0dsf" HTTPStatus.BAD_REQUEST -
+2025-08-12T04:55:59: 72.82.27.174 - - [12/Aug/2025 04:55:59] code 400, message Bad request syntax ('Æ\x97\x89ºFË±ívËö\x8d«-\x90¶7\x03êé\x80²\x97\x19IÑ')
+2025-08-12T04:55:59: 72.82.27.174 - - [12/Aug/2025 04:55:59] "Æ\x97\x89ºFË±ívËö\x8d«-\x90¶7\x03êé\x80²\x97\x19IÑ" HTTPStatus.BAD_REQUEST -
+2025-08-12T05:01:20: 72.82.27.174 - - [12/Aug/2025 05:01:20] code 400, message Bad HTTP/0.9 request type ('\x13I\x02\x0fW')
+2025-08-12T05:01:20: 72.82.27.174 - - [12/Aug/2025 05:01:20] "\x13I\x02\x0fW\x0dsf" HTTPStatus.BAD_REQUEST -
+2025-08-12T05:16:26: 58.153.105.101 - - [12/Aug/2025 05:16:26] code 400, message Bad request version ('¿mð')
+2025-08-12T05:16:26: 58.153.105.101 - - [12/Aug/2025 05:16:26] "÷ý\x8a\x99\\A\x97ñÄ\x0eR 0\x9d\x19%¹ö=$\x12y/\x94\x13\x08y\x9dU«¯ä\x89Ä\x19úÒ®,Ew>S@ZþiÆ\x8fXËþ;âÁ_\x95ês,4Jé§\x8da\x83ò\x97Õo:\x92\x97ó:DÞ\x99)ÉÐØ»¹ÝB]\x11{ö\\\x8c\x0dTô\x1aÒ\x09\x88rRì\x9bCúc\x9f\\ä\x1b\x00\x83\x8eÃ\x18Ö\x99CyS\x1d\x0dÚs§\x8b\x9bðÐ¸ö¨{ËÄ\x9aª\x0dé\x0dýÌ^ÏÉhÙ\x9bÑ\x8a\x1b\x94¤uÖî\x93t8¬Ls\x18\x83\x17ª¼Þ­tEû°>¸2Ì\x9a©Vhs\x864\x08[}9B\x01\x0b0Z¾"(}Nös\x97\x9ceËÑµ\x01\x90ªß»-±Ã-\x98ÜÅ\x83÷\x88t\x07`\x0e\x1dI¹þzç¾û\x88þ!3v-Ìy¹BB\x00<\x84#¶µ\x9dÎ:\x13!!|\x13¿\\ðò\x03#o=Å¢ªÄ2ËK­tºª¤\x01:(0}a,!MV¸&º3§{½\x05\x85¿mð" HTTPStatus.BAD_REQUEST -
+2025-08-12T06:14:04: 196.251.83.20 - - [12/Aug/2025 06:14:04] "GET / HTTP/1.1" 200 -
+2025-08-12T06:15:57: 76.125.164.7 - - [12/Aug/2025 06:15:57] code 400, message Bad request version ('Ê\x0e5Û£O')
+2025-08-12T06:15:57: 76.125.164.7 - - [12/Aug/2025 06:15:57] "¹\x18ò[7ÜEÔrÉÏØ\x8dr\x90¦\x0b\x1fFÞÑ\x1b_¡p.«M\x96¢µ ß­\x0dÊ\x0e5Û£O" HTTPStatus.BAD_REQUEST -
+2025-08-12T06:22:03: 180.73.149.171 - - [12/Aug/2025 06:22:03] code 400, message Bad request version ('d±f°')
+2025-08-12T06:22:03: 180.73.149.171 - - [12/Aug/2025 06:22:03] "P\x0e\x98\x14$ö\x11tÒ\x81\x98\x1b jèBò\x14áÅ\x13ª_ÖZøl\x13ãî¥Tª^q9+/\x04\x9aü\\\x07\x83ý\x89/\x05&e\x8d\x17\x8bÆ\x10\x08\x16\x18Bs}\x8féÂ-\x80zéÊ¸\x0cEK\x97Ó\x1c\x0c\x10aÑR'´6P=ýþ¶"ò-3§\x14V\x13®Õ.\x9b5\\>Óz&Ã\x8aÖ\x17gä3ÔÌz\x88³\x99\x9eïÒ$¼dC½Ü\x1ce\x95C\x7fNJ9Äd\x10æ(\x0b}VËxñ\x9c'¤\x9f\x12-]=¾þvDÐC\x1fäG)O\x88´ü]\x01\x17_¯Qå%\x89\x17+Ð\x07\x92Ì¤&Sæfü\x84S¶\x08ÎL\x06¤ì'6\x97ÊAÎÇYö×\x0bòÍV\x1fd±f°" HTTPStatus.BAD_REQUEST -
+2025-08-12T06:22:03: 180.73.149.171 - - [12/Aug/2025 06:22:03] code 400, message Bad HTTP/0.9 request type ('\x13I\x02\x0fW')
+2025-08-12T06:22:03: 180.73.149.171 - - [12/Aug/2025 06:22:03] "\x13I\x02\x0fW\x0dsf" HTTPStatus.BAD_REQUEST -
+2025-08-12T06:22:07: 180.73.149.171 - - [12/Aug/2025 06:22:07] code 400, message Bad request syntax ('Bõq¢\x8e"$x\x80·+t')
+2025-08-12T06:22:07: 180.73.149.171 - - [12/Aug/2025 06:22:07] "Bõq¢\x8e"$x\x80·+t" HTTPStatus.BAD_REQUEST -
+2025-08-12T06:22:08: 180.73.149.171 - - [12/Aug/2025 06:22:08] code 400, message Bad HTTP/0.9 request type ('\x13I\x02\x0fW')
+2025-08-12T06:22:08: 180.73.149.171 - - [12/Aug/2025 06:22:08] "\x13I\x02\x0fW\x0dsf" HTTPStatus.BAD_REQUEST -
+2025-08-12T06:22:11: 180.73.149.171 - - [12/Aug/2025 06:22:11] code 400, message Bad request syntax ('Ã©AóMðò¤GËöN.]#')
+2025-08-12T06:22:11: 180.73.149.171 - - [12/Aug/2025 06:22:11] "Ã©AóMðò¤GËöN.]#" HTTPStatus.BAD_REQUEST -
+2025-08-12T06:22:14: 180.73.149.171 - - [12/Aug/2025 06:22:14] code 400, message Bad HTTP/0.9 request type ('\x13I\x02\x0fW')
+2025-08-12T06:22:14: 180.73.149.171 - - [12/Aug/2025 06:22:14] "\x13I\x02\x0fW\x0dsf" HTTPStatus.BAD_REQUEST -
+2025-08-12T06:32:11: 76.125.164.7 - - [12/Aug/2025 06:32:11] code 400, message Bad HTTP/0.9 request type ('\x13I\x02\x0fW')
+2025-08-12T06:32:11: 76.125.164.7 - - [12/Aug/2025 06:32:11] "\x13I\x02\x0fW\x0dsf" HTTPStatus.BAD_REQUEST -
+2025-08-12T06:48:54: 60.48.209.74 - - [12/Aug/2025 06:48:54] code 400, message Bad request version ('>_\x18·\x94')
+2025-08-12T06:48:54: 60.48.209.74 - - [12/Aug/2025 06:48:54] "DÞz \x01\x96O\x15\x085\x19TÇ\x8c|ò}Zç¦¥\x96hv\x83öè8¸\x0f\x928\x9b¹.C\x8b\x8d\x10bËÚ\x87¥d\x0ctsùI\x8b\x0d¦\x9cO×yÏÀ\x90È{¹Ä\x9f`ºj«u¶RcdûÀá¯~+P\x12»C\x7fµyN)\x10O¼\x1eÓ\x9bÞ\x18ÃÕÊÒónÈf\x8fø¼'»\x95ÜV¾O?ã\x9d®\x00SVi\x0b½¶9\x87î×Èà¬:Éo\x18}!É,¹B¡dz\x99[z\\\x1d.I>\x08ôÓ&£\x91^±9þ¹5-ñ\x9cu(+-ÿj]\x9f&B¸õ\x98\x99\x10å\x9b¨«×èÊ¬\x0c$k\x17Ü÷ \x80\x18ËÑU\x8e#\x11Äª\x95\x8eJ9f¤ÚIÀ\x0c¦-\x92±\x8c\x9d\x04£ ù\x96$R®Ôà¼±¸:\x8b)\x9cÂ\x07)ÚÂÀ\x9b\x02øW8·]æ³&$\x0dö$¾\x9a\x83ã\x1aÔýQëdÀ\x0e!áª\x07yöý´02]êÓló]2Ñ´¶r\x8c¼MB\x10Ô\x84&\x05\x13¿ïÍ \x03K±\x95*x­ÿÀ\x14Ô\x02~\x11a\x19aÄ\\|e\x1cæ\x9aãï!Å\x84p¾îá½$\x85¹\x95:\x82Î'Ñ\x82\\\x05±\x0978>æ\x80mÇ´\x03Ll|0é©x´S\x83ó´JML¦\x0f\x17\x19ËS´gMQg ñ÷*\x86x?\x9aÛ\x98\x9d\x82#\x92\x91\x02\x01p\\[¾ÝÏZi >_\x18·\x94" HTTPStatus.BAD_REQUEST -
+2025-08-12T06:48:55: 60.48.209.74 - - [12/Aug/2025 06:48:55] code 400, message Bad HTTP/0.9 request type ('\x13I\x02\x0fW')
+2025-08-12T06:48:55: 60.48.209.74 - - [12/Aug/2025 06:48:55] "\x13I\x02\x0fW\x0dsf" HTTPStatus.BAD_REQUEST -
+2025-08-12T06:49:06: 60.48.209.74 - - [12/Aug/2025 06:49:06] code 400, message Bad request version ('\x07ý\x8cRã\x19H¨¯ñe^º3')
+2025-08-12T06:49:06: 60.48.209.74 - - [12/Aug/2025 06:49:06] "ÕªJ½Ô\x83;q¸o×z\x1d3\x15\x16¬\x8d6¥\x85R\x88\x0eJ\x03Øc%\x98\x1blÛ^þè_jÅÀ¶ù\x80\x00\x86M\x9b¡Ý\x00\x9d5opD{ÆM\x0c:\x9b«?K»&\x14\x12µ¹°Àcû5v\x08\x8c×ù~JJ\x02}`\x84Wd\x8düho\x1d=¬\x01øf\x87Kx\x0fUod©\x19ÀàV\x09\x7f3 <\x9cb\x8fÍ\x9ckZ¨\x96\x1b:ôW\x8cÙ\x1d¥?ê|¡ÒR¦E^\x83N\x0doêØ³¡~{\x12Óy\x11,\x0b$~GæÊ»2ºÎ~¥JÙ\x88Æ$+\x8aÈ\x9b\x13µ®]zÝ.°\x99H°MË\x19uÙ|TÕüA\x8d¡ \x022§ÈRqS\x8aßÇr«\x05'\x12U}Ã\x86w2y\x8694Ýr\x1bÅß·©\x91\x19JÝû¸R\x11\x93\x04â\x9f£\x8dä\x17éô\x11\x1c^S\x1cÛ5Jï)ß§\x0c8K±\x16ö,\x11i\x03r^ãLÚCÆI¡O¶ÏTYÜ\x92Ã\x8e-;\x13\x19Å"ómm©ç2<4ÀÊYÈ,~Þ?iJØ%\x15Ak3"\x9e\x12fåi\x05ºMÃ³\x880ÎnyÁ;'&\x1eqNN\x06WÛ³¨¾k\x91\x96n\x82¼ÙËïU\x1e$M(\x0d\x99¥¥º¦1y4P<É;ê%\x0b\x10\x84\x82\x80dñ`Rrt©F(\x07\x9f\x1d\x80G\x84\x8dîÿ\\×òOÊ\x05Íx\x17ÂPGRÕÏ\x1c\x91<5\x97Uá1Þ\x0cû\x8f\x8c¯\x04¡9\x8cRÛ¢\x1eU\x7fu\x18lm¼\x81d\x1cãø\x8d¦g\x19{ý\x1døV;\x1dÊÞ\x18I¤\x00u}[\x0d\x15U\x8a\x9dk\x95±ÿ\x8d9z[H\x1a\x18gN:ÈÂ\x8b¬yð\x96#\x88óB\x15¤\x82S\x8bÑéM\x88\x88|h\x13û¹¡ãuùê§àÓ\x82ïa\x0e_º\x1e@Ç\x9d\x1f\x07ý\x8cRã\x19H¨¯ñe^º3" HTTPStatus.BAD_REQUEST -
+2025-08-12T06:49:06: 60.48.209.74 - - [12/Aug/2025 06:49:06] code 400, message Bad HTTP/0.9 request type ('\x13I\x02\x0fW')
+2025-08-12T06:49:06: 60.48.209.74 - - [12/Aug/2025 06:49:06] "\x13I\x02\x0fW\x0dsf" HTTPStatus.BAD_REQUEST -
+2025-08-12T06:49:17: 60.48.209.74 - - [12/Aug/2025 06:49:17] code 400, message Bad request version ('\x10¤¨\x98ÏD?#Æ¨ZyP')
+2025-08-12T06:49:17: 60.48.209.74 - - [12/Aug/2025 06:49:17] "Sô\x7fÈ¹\x0c\x88÷ncÇH\x0eY]CÝWpà\x97\\±X@&è\x1c½Z?'"\x99\x12\x92\x1b\x99Û\x8cC\x16\x8c\x8e\x91Ý\x8fBT áb2cbzoç\x11\x8c\x83\x9a\x94\x8fþÉ^c)ÍÂ\x83N\x1d6¿A\x84mß¢(þõ\x9f/YG\x1c\x12\x84|\x17\x0fÄT\x82\x1c\x83\x16eT\x84]¡x÷\x18\x8a«ü\x81`6\x9e¬\x16\x1ee´.^\x08\x87¿Æ?K\x98p·l\x7fÚ\x1fD\x92¥_eÏéé\x86¯3'\x07ì\x1c\x14"d\x87ç°\x16vé\x95I\x89hÊË\x15Ä\x05WÝ¦\x07\x10pQ\x82*\x1f\x10¤¨\x98ÏD?#Æ¨ZyP" HTTPStatus.BAD_REQUEST -
+2025-08-12T06:49:17: 60.48.209.74 - - [12/Aug/2025 06:49:17] code 400, message Bad HTTP/0.9 request type ('\x13I\x02\x0fW')
+2025-08-12T06:49:17: 60.48.209.74 - - [12/Aug/2025 06:49:17] "\x13I\x02\x0fW\x0dsf" HTTPStatus.BAD_REQUEST -
+2025-08-12T07:30:19: 72.193.55.14 - - [12/Aug/2025 07:30:19] code 400, message Bad request version ('t°Y\x7f\x06¡I\x99\x8c_Ì9\x95®-bþ\x08Cý³ö´¢-o\x81')
+2025-08-12T07:30:19: 72.193.55.14 - - [12/Aug/2025 07:30:19] "\x16\x0b¥\x02\x05\x04ö½&\x04ç¬t/Î*\x98ÜzÑ;Ê\x1fÂ\x98øtåýóµ¤j\x08à\x93jðµ¡Y\x1et°Y\x7f\x06¡I\x99\x8c_Ì9\x95®-bþ\x08Cý³ö´¢-o\x81" HTTPStatus.BAD_REQUEST -
+2025-08-12T07:30:20: 72.193.55.14 - - [12/Aug/2025 07:30:20] code 400, message Bad HTTP/0.9 request type ('\x13I\x02\x0fW')
+2025-08-12T07:30:20: 72.193.55.14 - - [12/Aug/2025 07:30:20] "\x13I\x02\x0fW\x0dsf" HTTPStatus.BAD_REQUEST -
+2025-08-12T07:36:39: 72.193.55.14 - - [12/Aug/2025 07:36:39] code 400, message Bad request version ('¿\x8e')
+2025-08-12T07:36:39: 72.193.55.14 - - [12/Aug/2025 07:36:39] "êÌ»ª\x86\x97\x8d}¨°W0b¾r[!Fß,ÙÕ}\x9a º\x0c\x11­\x12ä\x83>§ü\x91\x92|3}³)Å\x07\x95V÷O«\x07²\x9e2+1úÊ\x823I3¸?\x8bí9\x90\x04\x9f\x1dÜ`\x06\x92"hE\x8d75I\x8eÍ\x9a#ß\x99Ø:µ³*úIÔç/¿Øê/äuû\x9dÝÜ\x85\x93¯ZM\x8b\x88W\x08ÿT\x83>\x9fo\x9fJ.uæ~ú4\x16cöÃ\x1e\x1ev¬eí\x86D´Ñæ\x1cÂF¦\x90[.Z|,Ìû\x0f-ëZ·«\x1fA<ñ#(é\x92a\x91äV\x91\x01\x9f¿y\x9bg7ÒZ\x1a×KêöÖ§$\x8c\x8c\x01%Ó"0\x09XÙEI\x93ó1¯VA\x84ñ^JPò\x0c\x15,\x91-\x94T+õ­î´\x0bågm¾«üBU?UÄ\x83=K¾ùÊÊv\x16ZÒ\x82º\x1b\x97C8\x01É\x03ioî§Ý\x7fê\x11-î¡\x14l§³\x14¼êf:ü\x19¢R\x9f\x1f\x15A\x98}w&qóç\x0b|ÇtH ´¹tUr \x09*ÞG\x93\x83Çÿ\x95áTpùZ\x15Û1§¤xî\\øþ|2FA¸\x80\x93õ¯ÉÛ\x90Õn×Nß\x84oN=À¼Ú7\x8f¸Ä£C\x85ë@gVÝ³3þ\x96\x1b\x1b\x13gS\x81¿òÃ\x8c#Rã\x10gWN¬bî\x7fóã *Â\x9a19±¦ha¥¼ïa\x81ðP×ü$\x1f¿\x8e" HTTPStatus.BAD_REQUEST -
+2025-08-12T07:40:32: 98.118.111.106 - - [12/Aug/2025 07:40:32] code 400, message Bad request version ('¹Àè\x80ß\x8fê#Åâ')
+2025-08-12T07:40:32: 98.118.111.106 - - [12/Aug/2025 07:40:32] ""{\x14n\x89õm\x18i\x93¾íN\x1dx¹\x93\x7fÛx\x06@êDÒ¬\x9e½\x84\x048±\x86þú\x81bå\x0dó¯\x9e1¼@¼6¾ßDDðý\x01º\x09R«Y'°\x8c\x90\x09\x99ýû!S±\x9b¢\x8a%[¯OË\x1c8ÑÁ®L²Lcý\x0f3dÞ4\x94ì¡Ë\x93ÊT^\x09¹Àè\x80ß\x8fê#Åâ" HTTPStatus.BAD_REQUEST -
+2025-08-12T07:40:43: 72.193.55.14 - - [12/Aug/2025 07:40:43] code 400, message Bad HTTP/0.9 request type ('\x13I\x02\x0fW')
+2025-08-12T07:40:43: 72.193.55.14 - - [12/Aug/2025 07:40:43] "\x13I\x02\x0fW\x0dsf" HTTPStatus.BAD_REQUEST -
+2025-08-12T07:45:54: 98.118.111.106 - - [12/Aug/2025 07:45:54] code 400, message Bad HTTP/0.9 request type ('\x13I\x02\x0fW')
+2025-08-12T07:45:54: 98.118.111.106 - - [12/Aug/2025 07:45:54] "\x13I\x02\x0fW\x0dsf" HTTPStatus.BAD_REQUEST -
+2025-08-12T07:52:41: 98.56.253.53 - - [12/Aug/2025 07:52:41] code 400, message Bad request version ('ö4Ï®çî_\x0f\x02¹¯u@\x90\x04AUëªfîq½l\x8aÊ\x94\x91ò\x93Ë')
+2025-08-12T07:52:41: 98.56.253.53 - - [12/Aug/2025 07:52:41] "(:x\x9bð;Hw4#ô}pùÁÆm'%¥¸Ý\x1b$]B\x14h\x16y\x1dþÃ\x0eµc\x18Æ\x98\x1f^%ÛÝ(¬BdQ\x05Ø\x18Vp\x0b\x80\x05År\x8fåt\x17óm`Õ \x86;\x08×\x15çËH~M\x1eª>ANHn-íªß=¿Pu\x1bH?\x9d\x00ç\x8a\x04\x1f¦ÿÙESì\x9b#ê,Ã«<óHgDº>v\x97Ä\x9a#ùK\x10#\x0cL\x1dk#ì!¬4\x86¤lìR¹ÂÝ³\x7f®Ò\x1cÄ\x12D ÅQå\x16\x11\x83Yå\x8cR\x04r\x8etþ#+Å#\x0e\x8e\x00HC~\x1a\x88²\x03;¼»!Y\x09QÃs\x92É³gNEÆqõ·\x15A\x15\x94e¸A\x17¨>h/\x9dÂC\x07\x92Oè/JH|lù@\x06\x19lx^7EöD\x19d>\x8c¥b°wG7}\x1exûG\x08æÉUÚAÀp.¢#\\|\x97 ö4Ï®çî_\x0f\x02¹¯u@\x90\x04AUëªfîq½l\x8aÊ\x94\x91ò\x93Ë" HTTPStatus.BAD_REQUEST -
+2025-08-12T07:53:27: 98.56.253.53 - - [12/Aug/2025 07:53:27] code 400, message Bad HTTP/0.9 request type ('\x13I\x02\x0fW')
+2025-08-12T07:53:27: 98.56.253.53 - - [12/Aug/2025 07:53:27] "\x13I\x02\x0fW\x0dsf" HTTPStatus.BAD_REQUEST -
+2025-08-12T08:01:08: 172.248.48.83 - - [12/Aug/2025 08:01:08] code 400, message Bad request version ('\x12SÁæ\x18Î\x97ôËÌü')
+2025-08-12T08:01:08: 172.248.48.83 - - [12/Aug/2025 08:01:08] "Ô\x1b²Ù\x8e$¡èÈÓ\x17\x95Vs\x8eÁdù\x95FØ5Ì\x12\x95|ká\x932Ñ\x16&\x11o\x89Ìeú-n\x1eÄ\x12\x9f)Êkd%S»²ë\x8e\x9c_O\x8dgESJ\\²Ó@ªÂ¢Q÷\x9aä4ýØÙQwwT\x02vî¡Ü_´ÁòÈây)\x1f\x0d\x12SÁæ\x18Î\x97ôËÌü" HTTPStatus.BAD_REQUEST -
+2025-08-12T08:01:08: 172.248.48.83 - - [12/Aug/2025 08:01:08] code 400, message Bad HTTP/0.9 request type ('\x13I\x02\x0fW')
+2025-08-12T08:01:08: 172.248.48.83 - - [12/Aug/2025 08:01:08] "\x13I\x02\x0fW\x0dsf" HTTPStatus.BAD_REQUEST -
+2025-08-12T08:01:09: 172.248.48.83 - - [12/Aug/2025 08:01:09] code 400, message Bad request version ('Ø©µÑ.õZxXæ7{\x9b\x14')
+2025-08-12T08:01:09: 172.248.48.83 - - [12/Aug/2025 08:01:09] "Ù°RP\x9eP÷n:ükí&t3ý¾ÓÜÝ\x17·FâÅ`».f9\x0b|?\x92wî@>;\x8eÿ´(ð\x8d\x8a\x8a;\x93\x11ò\x98\x80ÙÎ\x89ë@\x05Ë\x1dt6H°õHûª\x1dØ©µÑ.õZxXæ7{\x9b\x14" HTTPStatus.BAD_REQUEST -
+2025-08-12T08:01:10: 172.248.48.83 - - [12/Aug/2025 08:01:10] code 400, message Bad HTTP/0.9 request type ('\x13I\x02\x0fW')
+2025-08-12T08:01:10: 172.248.48.83 - - [12/Aug/2025 08:01:10] "\x13I\x02\x0fW\x0dsf" HTTPStatus.BAD_REQUEST -
+2025-08-12T08:01:11: 172.248.48.83 - - [12/Aug/2025 08:01:11] code 400, message Bad request syntax ('\x87Ýk\x14\x18uÏ´·.,5')
+2025-08-12T08:01:11: 172.248.48.83 - - [12/Aug/2025 08:01:11] "\x87Ýk\x14\x18uÏ´·.,5" HTTPStatus.BAD_REQUEST -
+2025-08-12T08:01:12: 172.248.48.83 - - [12/Aug/2025 08:01:12] code 400, message Bad HTTP/0.9 request type ('\x13I\x02\x0fW')
+2025-08-12T08:01:12: 172.248.48.83 - - [12/Aug/2025 08:01:12] "\x13I\x02\x0fW\x0dsf" HTTPStatus.BAD_REQUEST -
+2025-08-12T08:18:35: 69.144.106.173 - - [12/Aug/2025 08:18:35] code 400, message Bad request version ('B¶ÃópW\x82ß^èX=ÓG8\x8bãÖÑ\x7fqf\x98GERnë')
+2025-08-12T08:18:35: 69.144.106.173 - - [12/Aug/2025 08:18:35] "\x988-È9îì²\x8f!\x03Á\x1eQ\x84ð$\x00ÔÇýQãÙÍ Êa1\x04\x09ÿÚ\x18\x0dQ¤³Á@ÌR\x91£¿\x80\x10ö*¬K¢ÿ\x1bÌ\x0eq\x85+7«®\x9f{\x13\x91\x9dév\x17Ï\x1eÐ,\x89fÃ\x1dÁºb»¥\x82¶ÕW\x03ù\x9eê®o\x1a{>8\x19M\x15\x93\x1c\x04J\x02OÛê\x8aæí¬¾6Ô¿(AjZãà­\x02F\x8b¼X»Èþ\x9c­.bÂ\x9f\x15À/ZÝ^\x10?×\x8fWºÓwT×Géìï\x18qxz\x08m<\x08½V\x82Kj\x1dRL\x1c°Ñ¾£\x9b4p\x1bË_Û\x16o\x1eÛg÷þ{\x8e>Éé»Ä\x9d\x88\x81\x14¨%\x18E\x82AN\x9b'\x8c\x0cM\x90s\x81aìÐí´\x80À\x0c\x16\x18\x93\x1d\x91(Ü\x8dÊ\x84§E\x81¹Ê\x8d3\x06T\x9bßú#¼å«\x92\x1e\x09\x90N8\x97üJÖ¡8ÉÄd;\x98\x17É\x08^\x13\x07¥\x0b¼e³nü\x1d¯ãm\\Ä)ÄfJRÛ×ßÓZ\x04 »\x01\x80\x05\x01\x93»ÖöbÄÎÙt/J\x89O\x11®Uf(Õï \x182\x80\x81Ð\x88Õw\x0bB¶ÃópW\x82ß^èX=ÓG8\x8bãÖÑ\x7fqf\x98GERnë" HTTPStatus.BAD_REQUEST -
+2025-08-12T08:18:35: 69.144.106.173 - - [12/Aug/2025 08:18:35] code 400, message Bad HTTP/0.9 request type ('\x13I\x02\x0fW')
+2025-08-12T08:18:35: 69.144.106.173 - - [12/Aug/2025 08:18:35] "\x13I\x02\x0fW\x0dsf" HTTPStatus.BAD_REQUEST -
+2025-08-12T08:18:36: 69.144.106.173 - - [12/Aug/2025 08:18:36] code 400, message Bad request version ('Í7;"Ïç±ª\xadâO')
+2025-08-12T08:18:36: 69.144.106.173 - - [12/Aug/2025 08:18:36] "é¼\x99|\x14Þäy>\x87@\x86\x97?ó\x0e\x1e¦eÊ-\x19Zy§«»a\x87á\x12\x88Çå\x93è\x06\x8d;¶y\x0d]ö\x8aV\x14h½dÝ>Ï~\x09\x1fþ\x97\x85\x900ÛÑu¨Ë°\x9a@\x09Í7;"Ïç±ª­âO" HTTPStatus.BAD_REQUEST -
+2025-08-12T08:18:37: 69.144.106.173 - - [12/Aug/2025 08:18:37] code 400, message Bad HTTP/0.9 request type ('\x13I\x02\x0fW')
+2025-08-12T08:18:37: 69.144.106.173 - - [12/Aug/2025 08:18:37] "\x13I\x02\x0fW\x0dsf" HTTPStatus.BAD_REQUEST -
+2025-08-12T08:18:38: 69.144.106.173 - - [12/Aug/2025 08:18:38] code 400, message Bad request version ('\x95ø\x06l6\x1aÂ`¨¼')
+2025-08-12T08:18:38: 69.144.106.173 - - [12/Aug/2025 08:18:38] "Ë\x1bæ9ò\x8aS·\x80L\x1fY­»\x7fQ4ïJ\x85Ë~þU~ÕåP\x0fvÖß°\x11©\x93\x87Â\x85\x9c¸ñ»Bw²aú4\x15¾ì\x13\x1cø¬x\x1aäEaVPõÆ@£û:ì\x02)\x17j\x8aºwZ»\x18Ù(K³ðE1N£ikâ6Û\x86\x906ù\x1d³°[Íï\x1c\x95ø\x06l6\x1aÂ`¨¼" HTTPStatus.BAD_REQUEST -
+2025-08-12T08:18:39: 69.144.106.173 - - [12/Aug/2025 08:18:39] code 400, message Bad HTTP/0.9 request type ('\x13I\x02\x0fW')
+2025-08-12T08:18:39: 69.144.106.173 - - [12/Aug/2025 08:18:39] "\x13I\x02\x0fW\x0dsf" HTTPStatus.BAD_REQUEST -
+2025-08-12T08:21:49: 76.133.249.65 - - [12/Aug/2025 08:21:49] code 400, message Bad request version ('ú»ø}â\x03òqbáÐ')
+2025-08-12T08:21:49: 76.133.249.65 - - [12/Aug/2025 08:21:49] "7rÒ7fÌ\x94£Å^ëx\x8bLâÝR@±_¹\x97üÉuíYÐË\x07æ\x0bQ\x99j\x03\x8e@\x98 Ua \x0bVè\x97\x07¸_\x85³Cå\x9bYØ6\x005CpKE\x9f\x11\x08>\x86\x15\x13*a"Õ\x96áýîÔ±Zð\x88þÙ\x0dm-è\x94T\x81øÐ(ø#µ*²SN(FïØ\x1c\x07\x1bu<6\x1e/\x9fÃý\x8e`3¶Ik\x9d\x16\x19çÎ7¨@\x8c\x9a©ÏøÝ\x01)\x0c\x19"\x01DÚy»Z¼ý\x8e)\x9eèT³\x86\x83ñ>\x11\x19^\x99\x95\x0dQ|Õ\x08\x8b\x0d_J½\x7f\x86"\x18ÕøypÅû\x88\x0b·Hª\x0cì\x84Kw¼W\x00àø+±µn\x83ñ$\x8aõnª\x19Æ\x84:) ì\x06\x0dò\x91ì}d\x83\x80Ùö\x04²\x8e4À\x1c\x91\x18\x1aë\x09ü¢g\x09:¢ {bØ·\x18\x17=F\x93\x86\x04mÖ\x84\x9eúcCú4Ý±ËÄ n\x01A\x8agYVÝ\x14\x10\x92=J³ÌÓ½\x121\x94\x16Rì\x9c­"p´ä\x06eó\x1fÏ-\x80c+\x11u\x8aX\x0dß ô4âÞñÁùÁ¤¼\\ÅüFzCÏ\x81¥äP\x1eÎA\x9d\x84e\x19u\x9ab.\x071b¼å\x11é\x97\x18\x9eÆàM'\x94c,Ì\\\x90É\x09X\x143ãÓ\x14*­,\x06ïwù+3\x14G­1Ç\x00Q×\x8afØ\x1fú»ø}â\x03òqbáÐ" HTTPStatus.BAD_REQUEST -
+2025-08-12T08:22:23: 76.133.249.65 - - [12/Aug/2025 08:22:23] code 400, message Bad HTTP/0.9 request type ('\x13I\x02\x0fW')
+2025-08-12T08:22:23: 76.133.249.65 - - [12/Aug/2025 08:22:23] "\x13I\x02\x0fW\x0dsf" HTTPStatus.BAD_REQUEST -
+2025-08-12T08:23:20: 174.28.0.115 - - [12/Aug/2025 08:23:20] code 400, message Bad request version ('\x9eÈC\x12\x82Ä5\x8f7³!ó{Cçpc')
+2025-08-12T08:23:20: 174.28.0.115 - - [12/Aug/2025 08:23:20] "=ê¹º\x06ì\x1cK%\x9eiL³QÖ(ÕM\x81J'\x90\x1fÑÑ\x06i`\x15¢&\x9a2¥¿^\x0bº#GÜåg\x16¢ø°Ê\x06\x14gÓg\x1a:ÃÆÙæ`\x09\x84\x95;\x80Ó\x00SÃj\x04=\x9du÷|\x1aõPt;Èt°\x967\x08½á\x15Îu\x9d ©(¨\x83\x85\x9eÈC\x12\x82Ä5\x8f7³!ó{Cçpc" HTTPStatus.BAD_REQUEST -
+2025-08-12T08:54:56: 97.167.52.85 - - [12/Aug/2025 08:54:56] code 400, message Bad request version ('ÈYëy#û\x93[ûû+E£ñ\x9eJj¤§\x13nÜ?û\x18V¡Z7Ñöà¼F£\x17\x104+')
+2025-08-12T08:54:56: 97.167.52.85 - - [12/Aug/2025 08:54:56] "òôC¯x\x84]Üj3¨\x1dü\x01\x0bò\x98Ð\x88\x11¸E{í+?\x82·\x83\x0dhÓx\x01°?*qÄ½q\x91AÐµ6ú\x96Ê\x08&\x91W\x8bËÞã\x8ca\x96|9³ÙùH=¥õ'¢\x89Øý\x0e(i\x7f\x1e=\x0fÉ\x1fô\x06Ù\x1fqLæ\x03\x8c¸âÂ~\x7ftC8#ÆQ¬\x8då<\x9c\x0f\x0dn¿`¥M®°xRúM\x1eÈYëy#û\x93[ûû+E£ñ\x9eJj¤§\x13nÜ?û\x18V¡Z7Ñöà¼F£\x17\x104+" HTTPStatus.BAD_REQUEST -
+2025-08-12T08:55:37: 97.167.52.85 - - [12/Aug/2025 08:55:37] code 400, message Bad HTTP/0.9 request type ('\x13I\x02\x0fW')
+2025-08-12T08:55:37: 97.167.52.85 - - [12/Aug/2025 08:55:37] "\x13I\x02\x0fW\x0dsf" HTTPStatus.BAD_REQUEST -
+2025-08-12T09:07:37:  * Detected change in '/home/pi/project/finance-portfolio/app.py', reloading
+2025-08-12T09:07:38:  * Restarting with stat
+2025-08-12T09:07:41:  * Debugger is active!
+2025-08-12T09:07:41:  * Debugger PIN: 972-012-010
+2025-08-12T09:08:55: 118.235.10.27 - - [12/Aug/2025 09:08:55] code 400, message Bad request version ('ù;¡Y\x88\x00*êê\x13\x02\x13\x03\x13\x01À,À+Ì©À0À/Ì¨À')
+2025-08-12T09:08:55: 118.235.10.27 - - [12/Aug/2025 09:08:55] "\x16\x03\x01\x06\x03\x01\x00\x05ÿ\x03\x03\x8aA\x88uî°\x96ø\x1b\x7fûÉÑ\x03Êê8é\x93E\x05b`iZ/P\x908¬ní ÁÌÌ\x1c\x81\x9b\x1b\x90"%\x12ðB¾ÞØ\x80ÏN\x8bVÕ\x9a°åÙ\x0bù;¡Y\x88\x00*êê\x13\x02\x13\x03\x13\x01À,À+Ì©À0À/Ì¨À" HTTPStatus.BAD_REQUEST -
+2025-08-12T09:08:55: 118.235.10.27 - - [12/Aug/2025 09:08:55] code 400, message Bad request version ('Q\x9e!V\x7fÓ\x04Ø\x00*\x9a\x9a\x13\x02\x13\x03\x13\x01À,À+Ì©À0À/Ì¨À')
+2025-08-12T09:08:55: 118.235.10.27 - - [12/Aug/2025 09:08:55] "\x16\x03\x01\x06\x03\x01\x00\x05ÿ\x03\x03bqÛ\x0bÆ}\x81Àl}{\x8b{ÿ42yC@ï3Ö:Þ`\x8aªD·ß\x94  tþÛ`\x0e\x0f}û¯f\x1cÃZóI½!ò;\x10¤\x8a« Q\x9e!V\x7fÓ\x04Ø\x00*\x9a\x9a\x13\x02\x13\x03\x13\x01À,À+Ì©À0À/Ì¨À" HTTPStatus.BAD_REQUEST -
+2025-08-12T09:08:55: 118.235.10.27 - - [12/Aug/2025 09:08:55] code 400, message Bad request version ('¹æîsÿ\x89Å·\x00*úú\x13\x02\x13\x03\x13\x01À,À+Ì©À0À/Ì¨À')
+2025-08-12T09:08:55: 118.235.10.27 - - [12/Aug/2025 09:08:55] "\x16\x03\x01\x06\x03\x01\x00\x05ÿ\x03\x03\x89\x9bØ,R\x111\x14.NDßêN³ç\x0fyÞ±`~\x08\x81ÿ!\x85SChG½ \x08÷iÌ\x82IÁ2\x9eO\x99!\x0f\x1e\x91\x9bI`\x1fåSËª\x1e¹æîsÿ\x89Å·\x00*úú\x13\x02\x13\x03\x13\x01À,À+Ì©À0À/Ì¨À" HTTPStatus.BAD_REQUEST -
+2025-08-12T09:08:55: 118.235.10.27 - - [12/Aug/2025 09:08:55] code 400, message Bad request version ("dV\x9bpX\x17ÓN&psæ='\x8eLA\x08p\x10¡\x01\x8c\x08)Oc2\x84Þ0Ô\x00*\x9a\x9a\x13\x02\x13\x03\x13\x01À,À+Ì©À0À/Ì¨À")
+2025-08-12T09:08:55: 118.235.10.27 - - [12/Aug/2025 09:08:55] "\x16\x03\x01\x06\x03\x01\x00\x05ÿ\x03\x03)\x04/\x83ÉKÑ7jp½¿w\x90Ú\x86Ü{\x11êÄTu\x1fÈÄ\x88^û0&X dV\x9bpX\x17ÓN&psæ='\x8eLA\x08p\x10¡\x01\x8c\x08)Oc2\x84Þ0Ô\x00*\x9a\x9a\x13\x02\x13\x03\x13\x01À,À+Ì©À0À/Ì¨À" HTTPStatus.BAD_REQUEST -
+2025-08-12T09:08:56: 118.235.10.27 - - [12/Aug/2025 09:08:56] "GET / HTTP/1.1" 200 -
+2025-08-12T09:08:56: 118.235.10.27 - - [12/Aug/2025 09:08:56] "GET /static/style.css HTTP/1.1" 304 -
+2025-08-12T09:08:56: 118.235.10.27 - - [12/Aug/2025 09:08:56] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:08:56: 118.235.10.27 - - [12/Aug/2025 09:08:56] "
+2025-08-12T09:08:56: GET /apple-touch-icon-precomposed.png HTTP/1.1
+2025-08-12T09:08:56: " 404 -
+2025-08-12T09:08:56: 118.235.10.27 - - [12/Aug/2025 09:08:56] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:08:56: YF.download() has changed argument auto_adjust default to True
+2025-08-12T09:08:56: 
+2025-08-12T09:08:56: 118.235.10.27 - - [12/Aug/2025 09:08:56] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:08:56: 118.235.10.27 - - [12/Aug/2025 09:08:56] "
+2025-08-12T09:08:56: GET /favicon.ico HTTP/1.1
+2025-08-12T09:08:56: " 404 -
+2025-08-12T09:08:56: 118.235.10.27 - - [12/Aug/2025 09:08:56] "
+2025-08-12T09:08:56: GET /apple-touch-icon.png HTTP/1.1" 404 -
+2025-08-12T09:08:56: 118.235.10.27 - - [12/Aug/2025 09:08:56] "GET /api/stocks/v1/symbol-search?q=NVDA HTTP/1.1" 200 -
+2025-08-12T09:08:56: 118.235.10.27 - - [12/Aug/2025 09:08:56] "GET /api/stocks/v1/symbol-search?q=NVDA HTTP/1.1" 200 -
+2025-08-12T09:08:56: 118.235.10.27 - - [12/Aug/2025 09:08:56] "GET /api/stocks/v1/symbol-search?q=AAPL HTTP/1.1" 200 -
+2025-08-12T09:08:56: 118.235.10.27 - - [12/Aug/2025 09:08:56] "GET /api/stocks/v1/symbol-search?q=AAPL HTTP/1.1" 200 -
+2025-08-12T09:08:56: 118.235.10.27 - - [12/Aug/2025 09:08:56] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:08:56: 118.235.10.27 - - [12/Aug/2025 09:08:56] "GET /api/stocks/v1/portfolio HTTP/1.1" 200 -
+2025-08-12T09:08:56: [WARNING] Could not sort news items due to parsing error: time data 'Sun, 10 Aug 2025 14:00:00 -0400' does not match format '%a, %d %b %Y %H:%M:%S %Z'
+2025-08-12T09:08:56: 118.235.10.27 - - [12/Aug/2025 09:08:56] "GET /api/stocks/v1/news HTTP/1.1" 200 -
+2025-08-12T09:08:57: [                       0%                       ]
+2025-08-12T09:08:57: [*********************100%***********************]  2 of 2 completed
+2025-08-12T09:08:57: 
+2025-08-12T09:08:57: [                       0%                       ]
+2025-08-12T09:08:57: [*********************100%***********************]  2 of 2 completed
+2025-08-12T09:08:57: 118.235.10.27 - - [12/Aug/2025 09:08:57] "GET /api/stocks/v1/asset-history HTTP/1.1" 200 -
+2025-08-12T09:08:58: 118.235.10.27 - - [12/Aug/2025 09:08:58] "GET /api/stocks/v1/prices HTTP/1.1" 200 -
+2025-08-12T09:08:59: 118.235.10.27 - - [12/Aug/2025 09:08:59] "
+2025-08-12T09:08:59: GET /apple-touch-icon-precomposed.png HTTP/1.1
+2025-08-12T09:08:59: " 404 -
+2025-08-12T09:08:59: 118.235.10.27 - - [12/Aug/2025 09:08:59] "
+2025-08-12T09:08:59: GET /favicon.ico HTTP/1.1
+2025-08-12T09:08:59: " 404 -
+2025-08-12T09:08:59: 118.235.10.27 - - [12/Aug/2025 09:08:59] "GET /apple-touch-icon.png HTTP/1.1
+2025-08-12T09:08:59: " 404 -
+2025-08-12T09:09:06: 118.235.10.27 - - [12/Aug/2025 09:09:06] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:09:34: 174.28.0.115 - - [12/Aug/2025 09:09:34] code 400, message Bad HTTP/0.9 request type ('\x13I\x02\x0fW')
+2025-08-12T09:09:34: 174.28.0.115 - - [12/Aug/2025 09:09:34] "\x13I\x02\x0fW\x0dsf" HTTPStatus.BAD_REQUEST -
+2025-08-12T09:10:08: 118.235.10.27 - - [12/Aug/2025 09:10:08] "GET / HTTP/1.1" 200 -
+2025-08-12T09:10:08: 118.235.10.27 - - [12/Aug/2025 09:10:08] "GET /static/style.css HTTP/1.1" 304 -
+2025-08-12T09:10:08: 118.235.10.27 - - [12/Aug/2025 09:10:08] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:10:09: 118.235.10.27 - - [12/Aug/2025 09:10:09] "
+2025-08-12T09:10:09: GET /apple-touch-icon-precomposed.png HTTP/1.1" 404 -
+2025-08-12T09:10:09: 118.235.10.27 - - [12/Aug/2025 09:10:09] "
+2025-08-12T09:10:09: GET /apple-touch-icon.png HTTP/1.1
+2025-08-12T09:10:09: " 404 -
+2025-08-12T09:10:09: 118.235.10.27 - - [12/Aug/2025 09:10:09] "
+2025-08-12T09:10:09: GET /favicon.ico HTTP/1.1
+2025-08-12T09:10:09: " 404 -
+2025-08-12T09:10:09: 118.235.10.27 - - [12/Aug/2025 09:10:09] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:10:09: 118.235.10.27 - - [12/Aug/2025 09:10:09] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:10:09: 118.235.10.27 - - [12/Aug/2025 09:10:09] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:10:09: 118.235.10.27 - - [12/Aug/2025 09:10:09] "GET /api/stocks/v1/portfolio HTTP/1.1" 200 -
+2025-08-12T09:10:09: [WARNING] Could not sort news items due to parsing error: time data 'Sun, 10 Aug 2025 14:00:00 -0400' does not match format '%a, %d %b %Y %H:%M:%S %Z'
+2025-08-12T09:10:09: 
+2025-08-12T09:10:09: 118.235.10.27 - - [12/Aug/2025 09:10:09] "GET /api/stocks/v1/news HTTP/1.1" 200 -
+2025-08-12T09:10:09: 118.235.10.27 - - [12/Aug/2025 09:10:09] "GET /api/stocks/v1/symbol-search?q=NVDA HTTP/1.1" 200 -
+2025-08-12T09:10:09: 118.235.10.27 - - [12/Aug/2025 09:10:09] "GET /api/stocks/v1/symbol-search?q=NVDA HTTP/1.1" 200 -
+2025-08-12T09:10:09: 118.235.10.27 - - [12/Aug/2025 09:10:09] "GET /api/stocks/v1/symbol-search?q=AAPL HTTP/1.1" 200 -
+2025-08-12T09:10:09: 118.235.10.27 - - [12/Aug/2025 09:10:09] "GET /api/stocks/v1/symbol-search?q=AAPL HTTP/1.1" 200 -
+2025-08-12T09:10:09: 118.235.10.27 - - [12/Aug/2025 09:10:09] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:10:09: [                       0%                       ]
+2025-08-12T09:10:09: [*********************100%***********************]  2 of 2 completed
+2025-08-12T09:10:10: [                       0%                       ]
+2025-08-12T09:10:10: [*********************100%***********************]  2 of 2 completed
+2025-08-12T09:10:10: 118.235.10.27 - - [12/Aug/2025 09:10:10] "GET /api/stocks/v1/asset-history HTTP/1.1" 200 -
+2025-08-12T09:10:11: 118.235.10.27 - - [12/Aug/2025 09:10:11] "GET /api/stocks/v1/prices HTTP/1.1" 200 -
+2025-08-12T09:11:05: [DEBUG] Processing file: IMG_0286.png, type: image/png, size: 0
+2025-08-12T09:11:05: [DEBUG] File read successfully, actual size: 172426 bytes
+2025-08-12T09:11:05: [DEBUG] Image opened: (1206, 2622), mode: RGB
+2025-08-12T09:11:06: [DEBUG] Image preprocessing completed
+2025-08-12T09:11:07: [DEBUG] Image saved to user_screenshot.png for analysis
+2025-08-12T09:11:19: [DEBUG] OCR Text extracted: '10:44 이 내 023\n엔비디아 5\nNVDA\n7 월 2 일 (수) 출금 완 료 되었습니다.\n(sm (sm a2\n점수 / el) 완료\n- 7 72 22 (4)\n6% 302 (2) 10:30\n구매 접수 금액 20,0002!\n주식수 0.093438 주\n1 주 당 체결가 157.11 달 러\n적 용 환율 1.361.82 원\n원 화 환산 213,955 원\n구매 금액 19,991 원\n수수료 무료\n정 산 금액 19,991 원\n\x0c'
+2025-08-12T09:11:19: [DEBUG] Raw OCR text: '10:44 이 내 023\n엔비디아 5\nNVDA\n7 월 2 일 (수) 출금 완 료 되었습니다.\n(sm (sm a2\n점수 / el) 완료\n- 7 72 22 (4)\n6% 302 (2) 10:30\n구매 접수 금액 20,0002!\n주식수 0.093438 주\n1 주 당 체결가 157.11 달 러\n적 용 환율 1.361.82 원\n원 화 환산 213,955 원\n구매 금액 19,991 원\n수수료 무료\n정 산 금액 19,991 원\n\x0c'
+2025-08-12T09:11:19: [DEBUG] Cleaned lines: ['10:44 이 내 023', '엔비디아 5', 'NVDA', '7 월 2 일 (수) 출금 완 료 되었습니다.', '(sm (sm a2', '점수 / el) 완료', '- 7 72 22 (4)', '6% 302 (2) 10:30', '구매 접수 금액 20,0002!', '주식수 0.093438 주', '1 주 당 체결가 157.11 달 러', '적 용 환율 1.361.82 원', '원 화 환산 213,955 원', '구매 금액 19,991 원', '수수료 무료', '정 산 금액 19,991 원']
+2025-08-12T09:11:19: [DEBUG] Final parsed result: {'ticker': 'NVDA', 'type': 'buy', 'quantity': 0.093438, 'price': 157.11, 'date': '2025-07-02'}
+2025-08-12T09:11:19: [DEBUG] Final parsed result: {'ticker': 'NVDA', 'type': 'buy', 'quantity': 0.093438, 'price': 157.11, 'date': '2025-07-02'}
+2025-08-12T09:11:19: 118.235.10.27 - - [12/Aug/2025 09:11:19] "POST /api/stocks/v1/parse-screenshot HTTP/1.1" 200 -
+2025-08-12T09:11:46: 118.235.10.27 - - [12/Aug/2025 09:11:46] "GET / HTTP/1.1" 200 -
+2025-08-12T09:11:46: 118.235.10.27 - - [12/Aug/2025 09:11:46] "GET /static/style.css HTTP/1.1" 304 -
+2025-08-12T09:11:47: 118.235.10.27 - - [12/Aug/2025 09:11:47] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:11:47: 118.235.10.27 - - [12/Aug/2025 09:11:47] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:11:47: 118.235.10.27 - - [12/Aug/2025 09:11:47] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:11:47: 118.235.10.27 - - [12/Aug/2025 09:11:47] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:11:47: 118.235.10.27 - - [12/Aug/2025 09:11:47] "GET /api/stocks/v1/portfolio HTTP/1.1" 200 -
+2025-08-12T09:11:47: 118.235.10.27 - - [12/Aug/2025 09:11:47] "GET /api/stocks/v1/symbol-search?q=NVDA HTTP/1.1" 200 -
+2025-08-12T09:11:47: 118.235.10.27 - - [12/Aug/2025 09:11:47] "GET /api/stocks/v1/symbol-search?q=NVDA HTTP/1.1" 200 -
+2025-08-12T09:11:47: [WARNING] Could not sort news items due to parsing error: time data 'Sun, 10 Aug 2025 14:00:00 -0400' does not match format '%a, %d %b %Y %H:%M:%S %Z'
+2025-08-12T09:11:47: 118.235.10.27 - - [12/Aug/2025 09:11:47] "GET /api/stocks/v1/news HTTP/1.1" 200 -
+2025-08-12T09:11:47: 118.235.10.27 - - [12/Aug/2025 09:11:47] "GET /api/stocks/v1/symbol-search?q=AAPL HTTP/1.1" 200 -
+2025-08-12T09:11:47: 118.235.10.27 - - [12/Aug/2025 09:11:47] "GET /api/stocks/v1/symbol-search?q=AAPL HTTP/1.1" 200 -
+2025-08-12T09:11:47: 118.235.10.27 - - [12/Aug/2025 09:11:47] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:11:47: [                       0%                       ]
+2025-08-12T09:11:47: [*********************100%***********************]  2 of 2 completed
+2025-08-12T09:11:47: 
+2025-08-12T09:11:48: [                       0%                       ]
+2025-08-12T09:11:48: [*********************100%***********************]  2 of 2 completed
+2025-08-12T09:11:48: 118.235.10.27 - - [12/Aug/2025 09:11:48] "GET /api/stocks/v1/asset-history HTTP/1.1" 200 -
+2025-08-12T09:11:49: 118.235.10.27 - - [12/Aug/2025 09:11:49] "GET /api/stocks/v1/prices HTTP/1.1" 200 -
+2025-08-12T09:12:51: 118.235.10.37 - - [12/Aug/2025 09:12:51] "GET / HTTP/1.1" 200 -
+2025-08-12T09:12:51: 118.235.10.37 - - [12/Aug/2025 09:12:51] "
+2025-08-12T09:12:51: GET /static/style.css HTTP/1.1" 304 -
+2025-08-12T09:12:51: 118.235.10.37 - - [12/Aug/2025 09:12:51] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:12:51: 118.235.10.37 - - [12/Aug/2025 09:12:51] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:12:51: 118.235.10.37 - - [12/Aug/2025 09:12:51] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:12:51: 118.235.10.37 - - [12/Aug/2025 09:12:51] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:12:51: 118.235.10.37 - - [12/Aug/2025 09:12:51] "GET /api/stocks/v1/portfolio HTTP/1.1" 200 -
+2025-08-12T09:12:51: 118.235.10.37 - - [12/Aug/2025 09:12:51] "GET /api/stocks/v1/symbol-search?q=NVDA HTTP/1.1" 200 -
+2025-08-12T09:12:51: 118.235.10.37 - - [12/Aug/2025 09:12:51] "GET /api/stocks/v1/symbol-search?q=NVDA HTTP/1.1" 200 -
+2025-08-12T09:12:51: [WARNING] Could not sort news items due to parsing error: time data 'Sun, 10 Aug 2025 14:00:00 -0400' does not match format '%a, %d %b %Y %H:%M:%S %Z'
+2025-08-12T09:12:51: 118.235.10.37 - - [12/Aug/2025 09:12:51] "GET /api/stocks/v1/news HTTP/1.1" 200 -
+2025-08-12T09:12:51: 118.235.10.37 - - [12/Aug/2025 09:12:51] "GET /api/stocks/v1/symbol-search?q=AAPL HTTP/1.1" 200 -
+2025-08-12T09:12:51: 118.235.10.37 - - [12/Aug/2025 09:12:51] "GET /api/stocks/v1/symbol-search?q=AAPL HTTP/1.1" 200 -
+2025-08-12T09:12:51: 118.235.10.37 - - [12/Aug/2025 09:12:51] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:12:51: [                       0%                       ]
+2025-08-12T09:12:51: [*********************100%***********************]  2 of 2 completed
+2025-08-12T09:12:52: [                       0%                       ]
+2025-08-12T09:12:52: [*********************100%***********************]  2 of 2 completed
+2025-08-12T09:12:52: 118.235.10.37 - - [12/Aug/2025 09:12:52] "GET /api/stocks/v1/asset-history HTTP/1.1" 200 -
+2025-08-12T09:12:53: 118.235.10.37 - - [12/Aug/2025 09:12:53] "GET /api/stocks/v1/prices HTTP/1.1" 200 -
+2025-08-12T09:14:22: 118.235.10.37 - - [12/Aug/2025 09:14:22] "GET / HTTP/1.1" 200 -
+2025-08-12T09:14:22: 118.235.10.37 - - [12/Aug/2025 09:14:22] "GET /static/style.css HTTP/1.1" 304 -
+2025-08-12T09:14:22: 118.235.10.37 - - [12/Aug/2025 09:14:22] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:14:22: 118.235.10.37 - - [12/Aug/2025 09:14:22] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:14:22: 118.235.10.37 - - [12/Aug/2025 09:14:22] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:14:22: 118.235.10.37 - - [12/Aug/2025 09:14:22] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:14:22: 118.235.10.37 - - [12/Aug/2025 09:14:22] "GET /api/stocks/v1/portfolio HTTP/1.1" 200 -
+2025-08-12T09:14:22: 118.235.10.37 - - [12/Aug/2025 09:14:22] "GET /api/stocks/v1/symbol-search?q=NVDA HTTP/1.1" 200 -
+2025-08-12T09:14:22: 118.235.10.37 - - [12/Aug/2025 09:14:22] "GET /api/stocks/v1/symbol-search?q=NVDA HTTP/1.1" 200 -
+2025-08-12T09:14:22: 118.235.10.37 - - [12/Aug/2025 09:14:22] "GET /api/stocks/v1/symbol-search?q=AAPL HTTP/1.1" 200 -
+2025-08-12T09:14:22: 118.235.10.37 - - [12/Aug/2025 09:14:22] "GET /api/stocks/v1/symbol-search?q=AAPL HTTP/1.1" 200 -
+2025-08-12T09:14:22: [WARNING] Could not sort news items due to parsing error: time data 'Sun, 10 Aug 2025 14:00:00 -0400' does not match format '%a, %d %b %Y %H:%M:%S %Z'
+2025-08-12T09:14:22: 118.235.10.37 - - [12/Aug/2025 09:14:22] "GET /api/stocks/v1/news HTTP/1.1" 200 -
+2025-08-12T09:14:23: 118.235.10.37 - - [12/Aug/2025 09:14:23] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:14:23: [                       0%                       ]
+2025-08-12T09:14:23: [*********************100%***********************]  2 of 2 completed
+2025-08-12T09:14:23: 72.193.55.14 - - [12/Aug/2025 09:14:23] code 400, message Bad request version ('¼yß')
+2025-08-12T09:14:23: 72.193.55.14 - - [12/Aug/2025 09:14:23] "
+2025-08-12T09:14:23: 0Kr]k^A?Æß\x03²NY+\x17\x8f\x03\x0c\x8b-ó\x15U÷¦AYBz¹µv;ý\x0e\x8bÿE½\x1b ×\x1bÏ+i¾\x8cx\x7f\x88Ø\x02Þ\x07\x10®»7P·\x13ú\x95ùH\x8b$À\x13ï\x015Ô5ÓJ\x1bdz60i»\x09¼yß\x1e
+2025-08-12T09:14:23: " HTTPStatus.BAD_REQUEST -
+2025-08-12T09:14:23: [                       0%                       ]
+2025-08-12T09:14:24: [*********************100%***********************]  2 of 2 completed
+2025-08-12T09:14:24: 118.235.10.37 - - [12/Aug/2025 09:14:24] "GET /api/stocks/v1/asset-history HTTP/1.1" 200 -
+2025-08-12T09:14:24: 118.235.10.37 - - [12/Aug/2025 09:14:24] "GET /api/stocks/v1/prices HTTP/1.1" 200 -
+2025-08-12T09:15:01: 118.235.10.37 - - [12/Aug/2025 09:15:01] "GET / HTTP/1.1" 200 -
+2025-08-12T09:15:01: 118.235.10.37 - - [12/Aug/2025 09:15:01] "
+2025-08-12T09:15:01: GET /static/style.css HTTP/1.1" 304 -
+2025-08-12T09:15:01: 118.235.10.37 - - [12/Aug/2025 09:15:01] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:15:01: 118.235.10.37 - - [12/Aug/2025 09:15:01] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:15:01: 118.235.10.37 - - [12/Aug/2025 09:15:01] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:15:01: 118.235.10.37 - - [12/Aug/2025 09:15:01] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:15:01: 118.235.10.37 - - [12/Aug/2025 09:15:01] "GET /api/stocks/v1/portfolio HTTP/1.1" 200 -
+2025-08-12T09:15:01: 118.235.10.37 - - [12/Aug/2025 09:15:01] "GET /api/stocks/v1/symbol-search?q=NVDA HTTP/1.1" 200 -
+2025-08-12T09:15:01: 118.235.10.37 - - [12/Aug/2025 09:15:01] "GET /api/stocks/v1/symbol-search?q=NVDA HTTP/1.1" 200 -
+2025-08-12T09:15:01: [WARNING] Could not sort news items due to parsing error: time data 'Sun, 10 Aug 2025 14:00:00 -0400' does not match format '%a, %d %b %Y %H:%M:%S %Z'
+2025-08-12T09:15:01: 118.235.10.37 - - [12/Aug/2025 09:15:01] "GET /api/stocks/v1/news HTTP/1.1" 200 -
+2025-08-12T09:15:01: 118.235.10.37 - - [12/Aug/2025 09:15:01] "GET /api/stocks/v1/symbol-search?q=AAPL HTTP/1.1" 200 -
+2025-08-12T09:15:01: 118.235.10.37 - - [12/Aug/2025 09:15:01] "GET /api/stocks/v1/symbol-search?q=AAPL HTTP/1.1" 200 -
+2025-08-12T09:15:01: 118.235.10.37 - - [12/Aug/2025 09:15:01] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:15:01: [                       0%                       ]
+2025-08-12T09:15:01: [*********************100%***********************]  2 of 2 completed
+2025-08-12T09:15:02: [                       0%                       ]
+2025-08-12T09:15:02: [*********************100%***********************]  2 of 2 completed
+2025-08-12T09:15:02: 118.235.10.37 - - [12/Aug/2025 09:15:02] "GET /api/stocks/v1/asset-history HTTP/1.1" 200 -
+2025-08-12T09:15:03: 118.235.10.37 - - [12/Aug/2025 09:15:03] "GET /api/stocks/v1/prices HTTP/1.1" 200 -
+2025-08-12T09:15:21: 118.235.11.173 - - [12/Aug/2025 09:15:21] "GET / HTTP/1.1" 200 -
+2025-08-12T09:15:22: 118.235.11.173 - - [12/Aug/2025 09:15:22] "GET /static/style.css HTTP/1.1" 304 -
+2025-08-12T09:15:22: 118.235.11.173 - - [12/Aug/2025 09:15:22] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:15:22: 118.235.11.173 - - [12/Aug/2025 09:15:22] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:15:22: 118.235.11.173 - - [12/Aug/2025 09:15:22] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:15:22: 118.235.11.173 - - [12/Aug/2025 09:15:22] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:15:22: 118.235.11.173 - - [12/Aug/2025 09:15:22] "GET /api/stocks/v1/portfolio HTTP/1.1" 200 -
+2025-08-12T09:15:22: 118.235.11.173 - - [12/Aug/2025 09:15:22] "GET /api/stocks/v1/symbol-search?q=NVDA HTTP/1.1" 200 -
+2025-08-12T09:15:22: 118.235.11.173 - - [12/Aug/2025 09:15:22] "GET /api/stocks/v1/symbol-search?q=NVDA HTTP/1.1" 200 -
+2025-08-12T09:15:22: [WARNING] Could not sort news items due to parsing error: time data 'Sun, 10 Aug 2025 14:00:00 -0400' does not match format '%a, %d %b %Y %H:%M:%S %Z'
+2025-08-12T09:15:22: 118.235.11.173 - - [12/Aug/2025 09:15:22] "GET /api/stocks/v1/news HTTP/1.1" 200 -
+2025-08-12T09:15:22: 118.235.11.173 - - [12/Aug/2025 09:15:22] "GET /api/stocks/v1/symbol-search?q=AAPL HTTP/1.1" 200 -
+2025-08-12T09:15:22: 118.235.11.173 - - [12/Aug/2025 09:15:22] "GET /api/stocks/v1/symbol-search?q=AAPL HTTP/1.1" 200 -
+2025-08-12T09:15:22: 118.235.11.173 - - [12/Aug/2025 09:15:22] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:15:22: [                       0%                       ]
+2025-08-12T09:15:22: [*********************100%***********************]  2 of 2 completed
+2025-08-12T09:15:22: 
+2025-08-12T09:15:23: [ERROR] 가격 정보 실패 - AAPL: HTTP Error 401: 
+2025-08-12T09:15:23: [                       0%                       ]
+2025-08-12T09:15:23: [*********************100%***********************]  2 of 2 completed
+2025-08-12T09:15:23: 118.235.11.173 - - [12/Aug/2025 09:15:23] "GET /api/stocks/v1/asset-history HTTP/1.1" 200 -
+2025-08-12T09:15:23: 118.235.11.173 - - [12/Aug/2025 09:15:23] "GET /api/stocks/v1/prices HTTP/1.1" 200 -
+2025-08-12T09:16:37: 118.235.11.15 - - [12/Aug/2025 09:16:37] "GET / HTTP/1.1" 200 -
+2025-08-12T09:16:37: 118.235.11.15 - - [12/Aug/2025 09:16:37] "GET /static/style.css HTTP/1.1" 304 -
+2025-08-12T09:16:37: 118.235.11.15 - - [12/Aug/2025 09:16:37] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:16:37: 118.235.11.15 - - [12/Aug/2025 09:16:37] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:16:37: 118.235.11.15 - - [12/Aug/2025 09:16:37] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:16:37: 118.235.11.15 - - [12/Aug/2025 09:16:37] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:16:37: 118.235.11.15 - - [12/Aug/2025 09:16:37] "GET /api/stocks/v1/portfolio HTTP/1.1" 200 -
+2025-08-12T09:16:37: 118.235.11.15 - - [12/Aug/2025 09:16:37] "GET /api/stocks/v1/symbol-search?q=NVDA HTTP/1.1" 200 -
+2025-08-12T09:16:37: 118.235.11.15 - - [12/Aug/2025 09:16:37] "GET /api/stocks/v1/symbol-search?q=NVDA HTTP/1.1" 200 -
+2025-08-12T09:16:37: [WARNING] Could not sort news items due to parsing error: time data 'Sun, 10 Aug 2025 14:00:00 -0400' does not match format '%a, %d %b %Y %H:%M:%S %Z'
+2025-08-12T09:16:37: 118.235.11.15 - - [12/Aug/2025 09:16:37] "GET /api/stocks/v1/news HTTP/1.1" 200 -
+2025-08-12T09:16:37: 118.235.11.15 - - [12/Aug/2025 09:16:37] "GET /api/stocks/v1/symbol-search?q=AAPL HTTP/1.1" 200 -
+2025-08-12T09:16:37: 118.235.11.15 - - [12/Aug/2025 09:16:37] "GET /api/stocks/v1/symbol-search?q=AAPL HTTP/1.1" 200 -
+2025-08-12T09:16:37: 118.235.11.15 - - [12/Aug/2025 09:16:37] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:16:38: [                       0%                       ]
+2025-08-12T09:16:38: [*********************100%***********************]  2 of 2 completed
+2025-08-12T09:16:38: [                       0%                       ]
+2025-08-12T09:16:38: [*********************100%***********************]  2 of 2 completed
+2025-08-12T09:16:38: 118.235.11.15 - - [12/Aug/2025 09:16:38] "GET /api/stocks/v1/asset-history HTTP/1.1" 200 -
+2025-08-12T09:16:39: 118.235.11.15 - - [12/Aug/2025 09:16:39] "GET /api/stocks/v1/prices HTTP/1.1" 200 -
+2025-08-12T09:17:30: 104.235.43.231 - - [12/Aug/2025 09:17:30] code 400, message Bad request version ('qÁ\x98-ÄX1X¶')
+2025-08-12T09:17:30: 104.235.43.231 - - [12/Aug/2025 09:17:30] "\x81½Rñòç¯z\x05e\x7fæ\x83\x84\x1bZEÆ\x97¿óBà¸Ìòì`+Ü#^ÖIá+ \x8dÈ¸Ståú×UOK\x98ôVÛ «:^\x13cl&¥>m@Gö\x9dBè6+i÷\x1eqÁ\x98-ÄX1X¶" HTTPStatus.BAD_REQUEST -
+2025-08-12T09:17:32: 104.235.43.231 - - [12/Aug/2025 09:17:32] code 400, message Bad HTTP/0.9 request type ('\x13I\x02\x0fW')
+2025-08-12T09:17:32: 104.235.43.231 - - [12/Aug/2025 09:17:32] "\x13I\x02\x0fW\x0dsf" HTTPStatus.BAD_REQUEST -
+2025-08-12T09:17:47: 104.235.43.231 - - [12/Aug/2025 09:17:47] code 400, message Bad request version ('§ÍûE\x17ií\x08')
+2025-08-12T09:17:47: 104.235.43.231 - - [12/Aug/2025 09:17:47] "°ù\x8dË¡\x0b¤±\x07\x19fO\x19X°\x9d\\\x90\x9e[ëjët´­û\x1fÃò)m½þXÌ\x9c\x9bËÁêÁ¹\x8cBÚ\x80%uëj\x97@\x0eôz?[åOv\x0dÿÇ¨\\*\x12£\x90.9Uö:¬uhv\x03yÈYYÈÂïÁH\x07\x0b§ã¥\x16êd\x9200Õ ¥ã(ã-.p\x04T\x03àº­\x98FÄà«(óUçy_|_øº¶6&ÁãaâÎ\x89\x85¢\x8b\x9dúPÁòñ¿N;²È5¾ý\x05Ï\x98\x92) §ÍûE\x17ií\x08" HTTPStatus.BAD_REQUEST -
+2025-08-12T09:17:48: 104.235.43.231 - - [12/Aug/2025 09:17:48] code 400, message Bad HTTP/0.9 request type ('\x13I\x02\x0fW')
+2025-08-12T09:17:48: 104.235.43.231 - - [12/Aug/2025 09:17:48] "\x13I\x02\x0fW\x0dsf" HTTPStatus.BAD_REQUEST -
+2025-08-12T09:18:04: 104.235.43.231 - - [12/Aug/2025 09:18:04] code 400, message Bad request version ('ø/YÃ\x12Ìº£R½ûÅw')
+2025-08-12T09:18:04: 104.235.43.231 - - [12/Aug/2025 09:18:04] "=\x93éý>~¿A.á¦ï\x110\x0e\x8c¤^\x8aÒU\x87\x7fÉ´G\x7f\x12Ò\x16Z/8"ä*§}\x8b\x12ëv\x82¼@Ð7\x06t{3t¥?D\x9d÷±e\x1c¬\x18\x9eP)\x99øTf\x04@K\x7f/t\x98;\x10;§B×\x80\x06¦©¤\x08í\x18ì\x18ãw4\x09Ì0Q¡x\x06ì\x16\x06\x177Ñ§©û.\x1eø/YÃ\x12Ìº£R½ûÅw" HTTPStatus.BAD_REQUEST -
+2025-08-12T09:18:10: 104.235.43.231 - - [12/Aug/2025 09:18:10] code 400, message Bad HTTP/0.9 request type ('\x13I\x02\x0fW')
+2025-08-12T09:18:10: 104.235.43.231 - - [12/Aug/2025 09:18:10] "\x13I\x02\x0fW\x0dsf" HTTPStatus.BAD_REQUEST -
+2025-08-12T09:19:55:  * Serving Flask app 'app'
+2025-08-12T09:19:55:  * Debug mode: on
+2025-08-12T09:19:55: WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+2025-08-12T09:19:55:  * Running on all addresses (0.0.0.0)
+2025-08-12T09:19:55:  * Running on http://127.0.0.1:9010
+2025-08-12T09:19:55:  * Running on http://192.168.0.65:9010
+2025-08-12T09:19:55: Press CTRL+C to quit
+2025-08-12T09:19:55:  * Restarting with stat
+2025-08-12T09:19:57:  * Debugger is active!
+2025-08-12T09:19:57:  * Debugger PIN: 972-012-010
+2025-08-12T09:20:03:  * Serving Flask app 'app'
+2025-08-12T09:20:03:  * Debug mode: on
+2025-08-12T09:20:03: WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+2025-08-12T09:20:03:  * Running on all addresses (0.0.0.0)
+2025-08-12T09:20:03:  * Running on http://127.0.0.1:9010
+2025-08-12T09:20:03:  * Running on http://192.168.0.65:9010
+2025-08-12T09:20:03: Press CTRL+C to quit
+2025-08-12T09:20:03:  * Restarting with stat
+2025-08-12T09:20:05:  * Debugger is active!
+2025-08-12T09:20:05:  * Debugger PIN: 972-012-010
+2025-08-12T09:20:05: 118.235.11.9 - - [12/Aug/2025 09:20:05] "GET / HTTP/1.1" 200 -
+2025-08-12T09:20:05: 118.235.11.9 - - [12/Aug/2025 09:20:05] "GET /static/style.css HTTP/1.1" 304 -
+2025-08-12T09:20:06: 118.235.11.9 - - [12/Aug/2025 09:20:06] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:20:06: 118.235.11.9 - - [12/Aug/2025 09:20:06] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:20:06: 118.235.11.9 - - [12/Aug/2025 09:20:06] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:20:06: 118.235.11.9 - - [12/Aug/2025 09:20:06] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:20:06: YF.download() has changed argument auto_adjust default to True
+2025-08-12T09:20:06: 118.235.11.9 - - [12/Aug/2025 09:20:06] "GET /api/stocks/v1/symbol-search?q=NVDA HTTP/1.1" 200 -
+2025-08-12T09:20:06: 118.235.11.9 - - [12/Aug/2025 09:20:06] "GET /api/stocks/v1/symbol-search?q=NVDA HTTP/1.1" 200 -
+2025-08-12T09:20:06: 118.235.11.9 - - [12/Aug/2025 09:20:06] "GET /api/stocks/v1/portfolio HTTP/1.1" 200 -
+2025-08-12T09:20:06: 118.235.11.9 - - [12/Aug/2025 09:20:06] "GET /api/stocks/v1/symbol-search?q=AAPL HTTP/1.1" 200 -
+2025-08-12T09:20:06: 118.235.11.9 - - [12/Aug/2025 09:20:06] "GET /api/stocks/v1/symbol-search?q=AAPL HTTP/1.1" 200 -
+2025-08-12T09:20:06: 118.235.11.9 - - [12/Aug/2025 09:20:06] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:20:06: [WARNING] Could not sort news items due to parsing error: time data 'Sun, 10 Aug 2025 14:00:00 -0400' does not match format '%a, %d %b %Y %H:%M:%S %Z'
+2025-08-12T09:20:06: 118.235.11.9 - - [12/Aug/2025 09:20:06] "GET /api/stocks/v1/news HTTP/1.1" 200 -
+2025-08-12T09:20:07: [                       0%                       ]
+2025-08-12T09:20:07: [*********************100%***********************]  2 of 2 completed
+2025-08-12T09:20:07: [                       0%                       ]
+2025-08-12T09:20:07: [*********************100%***********************]  2 of 2 completed
+2025-08-12T09:20:07: 118.235.11.9 - - [12/Aug/2025 09:20:07] "GET /api/stocks/v1/asset-history HTTP/1.1" 200 -
+2025-08-12T09:20:08: 118.235.11.9 - - [12/Aug/2025 09:20:08] "GET /api/stocks/v1/prices HTTP/1.1" 200 -
+2025-08-12T09:20:37: 118.235.11.9 - - [12/Aug/2025 09:20:37] "GET / HTTP/1.1" 200 -
+2025-08-12T09:20:37: 118.235.11.9 - - [12/Aug/2025 09:20:37] "GET /static/style.css HTTP/1.1" 304 -
+2025-08-12T09:20:37: 118.235.11.9 - - [12/Aug/2025 09:20:37] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:20:37: 118.235.11.9 - - [12/Aug/2025 09:20:37] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:20:37: 118.235.11.9 - - [12/Aug/2025 09:20:37] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:20:37: 118.235.11.9 - - [12/Aug/2025 09:20:37] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:20:37: 118.235.11.9 - - [12/Aug/2025 09:20:37] "GET /api/stocks/v1/portfolio HTTP/1.1" 200 -
+2025-08-12T09:20:37: 118.235.11.9 - - [12/Aug/2025 09:20:37] "GET /api/stocks/v1/symbol-search?q=NVDA HTTP/1.1" 200 -
+2025-08-12T09:20:37: 118.235.11.9 - - [12/Aug/2025 09:20:37] "GET /api/stocks/v1/symbol-search?q=NVDA HTTP/1.1" 200 -
+2025-08-12T09:20:37: [WARNING] Could not sort news items due to parsing error: time data 'Sun, 10 Aug 2025 14:00:00 -0400' does not match format '%a, %d %b %Y %H:%M:%S %Z'
+2025-08-12T09:20:37: 
+2025-08-12T09:20:37: 118.235.11.9 - - [12/Aug/2025 09:20:37] "GET /api/stocks/v1/news HTTP/1.1" 200 -
+2025-08-12T09:20:37: 118.235.11.9 - - [12/Aug/2025 09:20:37] "GET /api/stocks/v1/symbol-search?q=AAPL HTTP/1.1" 200 -
+2025-08-12T09:20:37: 118.235.11.9 - - [12/Aug/2025 09:20:37] "GET /api/stocks/v1/symbol-search?q=AAPL HTTP/1.1" 200 -
+2025-08-12T09:20:37: 118.235.11.9 - - [12/Aug/2025 09:20:37] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:20:38: [                       0%                       ]
+2025-08-12T09:20:38: [*********************100%***********************]  2 of 2 completed
+2025-08-12T09:20:38: [                       0%                       ]
+2025-08-12T09:20:38: [*********************100%***********************]  2 of 2 completed
+2025-08-12T09:20:38: 118.235.11.9 - - [12/Aug/2025 09:20:38] "GET /api/stocks/v1/asset-history HTTP/1.1" 200 -
+2025-08-12T09:20:39: 118.235.11.9 - - [12/Aug/2025 09:20:39] "GET /api/stocks/v1/prices HTTP/1.1" 200 -
+2025-08-12T09:21:16: 72.193.55.14 - - [12/Aug/2025 09:21:16] code 400, message Bad HTTP/0.9 request type ('\x13I\x02\x0fW')
+2025-08-12T09:21:16: 72.193.55.14 - - [12/Aug/2025 09:21:16] "\x13I\x02\x0fW\x0dsf" HTTPStatus.BAD_REQUEST -
+2025-08-12T09:21:58: 118.235.11.201 - - [12/Aug/2025 09:21:58] "GET / HTTP/1.1" 200 -
+2025-08-12T09:21:58: 118.235.11.201 - - [12/Aug/2025 09:21:58] "GET /static/style.css HTTP/1.1" 304 -
+2025-08-12T09:21:58: 118.235.11.201 - - [12/Aug/2025 09:21:58] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:21:58: 118.235.11.201 - - [12/Aug/2025 09:21:58] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:21:58: 118.235.11.201 - - [12/Aug/2025 09:21:58] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:21:58: 118.235.11.201 - - [12/Aug/2025 09:21:58] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:21:58: 118.235.11.201 - - [12/Aug/2025 09:21:58] "GET /api/stocks/v1/symbol-search?q=NVDA HTTP/1.1" 200 -
+2025-08-12T09:21:58: 118.235.11.201 - - [12/Aug/2025 09:21:58] "GET /api/stocks/v1/symbol-search?q=NVDA HTTP/1.1" 200 -
+2025-08-12T09:21:58: [WARNING] Could not sort news items due to parsing error: time data 'Sun, 10 Aug 2025 14:00:00 -0400' does not match format '%a, %d %b %Y %H:%M:%S %Z'
+2025-08-12T09:21:58: 118.235.11.201 - - [12/Aug/2025 09:21:58] "GET /api/stocks/v1/news HTTP/1.1" 200 -
+2025-08-12T09:21:58: 118.235.11.201 - - [12/Aug/2025 09:21:58] "GET /api/stocks/v1/portfolio HTTP/1.1" 200 -
+2025-08-12T09:21:58: 118.235.11.201 - - [12/Aug/2025 09:21:58] "GET /api/stocks/v1/symbol-search?q=AAPL HTTP/1.1" 200 -
+2025-08-12T09:21:58: 118.235.11.201 - - [12/Aug/2025 09:21:58] "GET /api/stocks/v1/symbol-search?q=AAPL HTTP/1.1" 200 -
+2025-08-12T09:21:59: 118.235.11.201 - - [12/Aug/2025 09:21:59] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:21:59: [                       0%                       ]
+2025-08-12T09:21:59: [*********************100%***********************]  2 of 2 completed
+2025-08-12T09:21:59: [ERROR] 가격 정보 실패 - AAPL: HTTP Error 401: 
+2025-08-12T09:21:59: 
+2025-08-12T09:22:00: [                       0%                       ]
+2025-08-12T09:22:00: [*********************100%***********************]  2 of 2 completed
+2025-08-12T09:22:00: 118.235.11.201 - - [12/Aug/2025 09:22:00] "GET /api/stocks/v1/asset-history HTTP/1.1" 200 -
+2025-08-12T09:22:00: 118.235.11.201 - - [12/Aug/2025 09:22:00] "GET /api/stocks/v1/prices HTTP/1.1" 200 -
+2025-08-12T09:28:30: 127.0.0.1 - - [12/Aug/2025 09:28:30] "GET / HTTP/1.1" 200 -
+2025-08-12T09:28:30: 127.0.0.1 - - [12/Aug/2025 09:28:30] "GET /static/style.css HTTP/1.1" 200 -
+2025-08-12T09:28:35: 127.0.0.1 - - [12/Aug/2025 09:28:35] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:28:35: 127.0.0.1 - - [12/Aug/2025 09:28:35] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:28:35: 127.0.0.1 - - [12/Aug/2025 09:28:35] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:28:35: 127.0.0.1 - - [12/Aug/2025 09:28:35] "GET /api/stocks/v1/portfolio HTTP/1.1" 200 -
+2025-08-12T09:28:35: 127.0.0.1 - - [12/Aug/2025 09:28:35] "GET /api/stocks/v1/symbol-search?q=NVDA HTTP/1.1" 200 -
+2025-08-12T09:28:35: 127.0.0.1 - - [12/Aug/2025 09:28:35] "GET /api/stocks/v1/symbol-search?q=NVDA HTTP/1.1" 200 -
+2025-08-12T09:28:35: 127.0.0.1 - - [12/Aug/2025 09:28:35] "GET /api/stocks/v1/symbol-search?q=AAPL HTTP/1.1" 200 -
+2025-08-12T09:28:35: 127.0.0.1 - - [12/Aug/2025 09:28:35] "GET /api/stocks/v1/symbol-search?q=AAPL HTTP/1.1" 200 -
+2025-08-12T09:28:35: 127.0.0.1 - - [12/Aug/2025 09:28:35] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:28:36: [                       0%                       ]
+2025-08-12T09:28:36: [WARNING] Could not sort news items due to parsing error: time data 'Sun, 10 Aug 2025 14:00:00 -0400' does not match format '%a, %d %b %Y %H:%M:%S %Z'
+2025-08-12T09:28:36: 127.0.0.1 - - [12/Aug/2025 09:28:36] "GET /api/stocks/v1/news HTTP/1.1" 200 -
+2025-08-12T09:28:36: [*********************100%***********************]  2 of 2 completed
+2025-08-12T09:28:36: [                       0%                       ]
+2025-08-12T09:28:37: [*********************100%***********************]  2 of 2 completed
+2025-08-12T09:28:37: 127.0.0.1 - - [12/Aug/2025 09:28:37] "GET /api/stocks/v1/asset-history HTTP/1.1" 200 -
+2025-08-12T09:28:37: 127.0.0.1 - - [12/Aug/2025 09:28:37] "GET /api/stocks/v1/prices HTTP/1.1" 200 -
+2025-08-12T09:28:48: 127.0.0.1 - - [12/Aug/2025 09:28:48] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:30:56: 127.0.0.1 - - [12/Aug/2025 09:30:56] "GET / HTTP/1.1" 200 -
+2025-08-12T09:30:57: 127.0.0.1 - - [12/Aug/2025 09:30:57] "GET /static/style.css HTTP/1.1" 200 -
+2025-08-12T09:30:57: 127.0.0.1 - - [12/Aug/2025 09:30:57] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:30:57: 127.0.0.1 - - [12/Aug/2025 09:30:57] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:30:57: 127.0.0.1 - - [12/Aug/2025 09:30:57] "GET /api/stocks/v1/symbol-search?q=NVDA HTTP/1.1" 200 -
+2025-08-12T09:30:57: 127.0.0.1 - - [12/Aug/2025 09:30:57] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:30:57: 127.0.0.1 - - [12/Aug/2025 09:30:57] "GET /api/stocks/v1/symbol-search?q=NVDA HTTP/1.1" 200 -
+2025-08-12T09:30:57: 127.0.0.1 - - [12/Aug/2025 09:30:57] "GET /api/stocks/v1/symbol-search?q=AAPL HTTP/1.1" 200 -
+2025-08-12T09:30:57: 127.0.0.1 - - [12/Aug/2025 09:30:57] "GET /api/stocks/v1/portfolio HTTP/1.1" 200 -
+2025-08-12T09:30:57: 127.0.0.1 - - [12/Aug/2025 09:30:57] "GET /api/stocks/v1/symbol-search?q=AAPL HTTP/1.1" 200 -
+2025-08-12T09:30:58: 127.0.0.1 - - [12/Aug/2025 09:30:58] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:30:58: [WARNING] Could not sort news items due to parsing error: time data 'Sun, 10 Aug 2025 14:00:00 -0400' does not match format '%a, %d %b %Y %H:%M:%S %Z'
+2025-08-12T09:30:58: 
+2025-08-12T09:30:58: 127.0.0.1 - - [12/Aug/2025 09:30:58] "GET /api/stocks/v1/news HTTP/1.1" 200 -
+2025-08-12T09:30:58: [                       0%                       ]
+2025-08-12T09:30:58: [*********************100%***********************]  2 of 2 completed
+2025-08-12T09:30:58: 
+2025-08-12T09:30:58: [ERROR] 가격 정보 실패 - AAPL: HTTP Error 401: 
+2025-08-12T09:30:59: [                       0%                       ]
+2025-08-12T09:30:59: [*********************100%***********************]  2 of 2 completed
+2025-08-12T09:30:59: 127.0.0.1 - - [12/Aug/2025 09:30:59] "GET /api/stocks/v1/asset-history HTTP/1.1" 200 -
+2025-08-12T09:30:59: 127.0.0.1 - - [12/Aug/2025 09:30:59] "GET /api/stocks/v1/prices HTTP/1.1" 200 -
+2025-08-12T09:31:05: 127.0.0.1 - - [12/Aug/2025 09:31:05] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:31:07: 127.0.0.1 - - [12/Aug/2025 09:31:07] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:31:46: 71.10.1.213 - - [12/Aug/2025 09:31:46] code 400, message Bad request version ('\x95')
+2025-08-12T09:31:46: 71.10.1.213 - - [12/Aug/2025 09:31:46] "ü±äùÏ\x93ÆH\x94\x17\x09§\x90ÓSG8\x085V\x1c£t: \x08¹Ý\x8e\x07\x94)\x02H\x82á\x9eÁs\x9dú\x02EEÛPü\x88ºº:\x14.\x83Î:d­\x105ÎÝb3ÏÅ^[Á\x85G²ß.\x99c§1\x90ÓWùó£üM\x12\x8dP½²ô\x0e\x01,\x1b\x94[MNKfï¨`i\x04e÷\x15¼Um/ó*Æ\x18÷\x17Iøf\x03(\x876jVxÏÑ}\x82Sä\x08\x0bý-[t§s#ûe­ÇQO¡ý¹]\x1ezÙjÒÁ![É\x1dÕY\x83ª¸9°\x8dWý\x8aCïtÏ\x17üüZ­_h]¼*ü=Ù\x0b\x95" HTTPStatus.BAD_REQUEST -
+2025-08-12T09:31:47: 71.10.1.213 - - [12/Aug/2025 09:31:47] code 400, message Bad HTTP/0.9 request type ('\x13I\x02\x0fW')
+2025-08-12T09:31:47: 71.10.1.213 - - [12/Aug/2025 09:31:47] "\x13I\x02\x0fW\x0dsf" HTTPStatus.BAD_REQUEST -
+2025-08-12T09:31:48: 71.10.1.213 - - [12/Aug/2025 09:31:48] code 400, message Bad request version ('ê\x15B[\x10uÙZ]ò5\x87\\ðëÞQò\x81\x8eê\x9aQm\x06ò³«Â\x8d¶\x91È>«\x87\x1bprÇ$\x13X\x05@c\x04dÀDb¬?ªI\x00[Ç^\x8fßh\x01\x00Út1gçYØG7ªZ\x9eþÃHøÊ³\x02aóÅw\x051©\x08gHD\x8b:Þ\x11lßm2í|S\x17\x8dµ\x06É\x87')
+2025-08-12T09:31:48: 71.10.1.213 - - [12/Aug/2025 09:31:48] "\x88tËmJ'lëµ\x9fÇp;|u\x93ìæûæ ì/\x08\x02Æ\x0c·\x8dèÍQ\x09Ã\x0bê\x15B[\x10uÙZ]ò5\x87\\ðëÞQò\x81\x8eê\x9aQm\x06ò³«Â\x8d¶\x91È>«\x87\x1bprÇ$\x13X\x05@c\x04dÀDb¬?ªI\x00[Ç^\x8fßh\x01\x00Út1gçYØG7ªZ\x9eþÃHøÊ³\x02aóÅw\x051©\x08gHD\x8b:Þ\x11lßm2í|S\x17\x8dµ\x06É\x87" HTTPStatus.BAD_REQUEST -
+2025-08-12T09:31:49: 71.10.1.213 - - [12/Aug/2025 09:31:49] code 400, message Bad HTTP/0.9 request type ('\x13I\x02\x0fW')
+2025-08-12T09:31:49: 71.10.1.213 - - [12/Aug/2025 09:31:49] "
+2025-08-12T09:31:49: \x13I\x02\x0fW\x0dsf" HTTPStatus.BAD_REQUEST -
+2025-08-12T09:32:18: 127.0.0.1 - - [12/Aug/2025 09:32:18] "GET / HTTP/1.1" 200 -
+2025-08-12T09:32:18: 127.0.0.1 - - [12/Aug/2025 09:32:18] "GET /static/style.css HTTP/1.1" 200 -
+2025-08-12T09:32:19: 127.0.0.1 - - [12/Aug/2025 09:32:19] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:32:19: 127.0.0.1 - - [12/Aug/2025 09:32:19] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:32:19: 127.0.0.1 - - [12/Aug/2025 09:32:19] "GET /api/stocks/v1/symbol-search?q=NVDA HTTP/1.1" 200 -
+2025-08-12T09:32:19: 127.0.0.1 - - [12/Aug/2025 09:32:19] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:32:19: 127.0.0.1 - - [12/Aug/2025 09:32:19] "GET /api/stocks/v1/symbol-search?q=NVDA HTTP/1.1" 200 -
+2025-08-12T09:32:19: 127.0.0.1 - - [12/Aug/2025 09:32:19] "GET /api/stocks/v1/symbol-search?q=AAPL HTTP/1.1" 200 -
+2025-08-12T09:32:19: [WARNING] Could not sort news items due to parsing error: time data 'Sun, 10 Aug 2025 14:00:00 -0400' does not match format '%a, %d %b %Y %H:%M:%S %Z'
+2025-08-12T09:32:19: 127.0.0.1 - - [12/Aug/2025 09:32:19] "GET /api/stocks/v1/news HTTP/1.1" 200 -
+2025-08-12T09:32:19: 127.0.0.1 - - [12/Aug/2025 09:32:19] "GET /api/stocks/v1/portfolio HTTP/1.1" 200 -
+2025-08-12T09:32:19: 127.0.0.1 - - [12/Aug/2025 09:32:19] "GET /api/stocks/v1/symbol-search?q=AAPL HTTP/1.1" 200 -
+2025-08-12T09:32:19: [                       0%                       ]
+2025-08-12T09:32:19: 127.0.0.1 - - [12/Aug/2025 09:32:19] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:32:19: [*********************100%***********************]  2 of 2 completed
+2025-08-12T09:32:19: 
+2025-08-12T09:32:20: [                       0%                       ]
+2025-08-12T09:32:20: [*********************100%***********************]  2 of 2 completed
+2025-08-12T09:32:20: 127.0.0.1 - - [12/Aug/2025 09:32:20] "GET /api/stocks/v1/asset-history HTTP/1.1" 200 -
+2025-08-12T09:32:20: [ERROR] 가격 정보 실패 - AAPL: HTTP Error 401: 
+2025-08-12T09:32:20: 127.0.0.1 - - [12/Aug/2025 09:32:20] "GET /api/stocks/v1/prices HTTP/1.1" 200 -
+2025-08-12T09:32:26: 127.0.0.1 - - [12/Aug/2025 09:32:26] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:32:36: [DEBUG] Processing file: tmp37c2loa8.png, type: image/png, size: 0
+2025-08-12T09:32:36: 
+2025-08-12T09:32:36: [DEBUG] File read successfully, actual size: 3983 bytes
+2025-08-12T09:32:36: 
+2025-08-12T09:32:36: [DEBUG] Image opened: (600, 400), mode: RGB
+2025-08-12T09:32:36: [DEBUG] Image preprocessing completed
+2025-08-12T09:32:36: [DEBUG] Image saved to user_screenshot.png for analysis
+2025-08-12T09:32:37: [DEBUG] OCR Text extracted: "wee\nseaece'y\n\x0c"
+2025-08-12T09:32:37: [DEBUG] Raw OCR text: "wee\nseaece'y\n\x0c"
+2025-08-12T09:32:37: [DEBUG] Cleaned lines: ['wee', "seaece'y"]
+2025-08-12T09:32:37: [DEBUG] Final parsed result: {'ticker': None, 'type': 'buy', 'quantity': None, 'price': None, 'date': '2025-08-12'}
+2025-08-12T09:32:37: [DEBUG] Final parsed result: {'ticker': None, 'type': 'buy', 'quantity': None, 'price': None, 'date': '2025-08-12'}
+2025-08-12T09:32:37: 127.0.0.1 - - [12/Aug/2025 09:32:37] "POST /api/stocks/v1/parse-screenshot HTTP/1.1" 200 -
+2025-08-12T09:32:46: 127.0.0.1 - - [12/Aug/2025 09:32:46] "GET /api/stocks/v1/symbol-search?q=AAPL HTTP/1.1" 200 -
+2025-08-12T09:33:44: 118.235.11.149 - - [12/Aug/2025 09:33:44] code 400, message Bad request version ('\x19¸x\x80\x9d5´*')
+2025-08-12T09:33:44: 118.235.11.149 - - [12/Aug/2025 09:33:44] "\x16\x03\x01\x06\x03\x01\x00\x05ÿ\x03\x03É\x85±\x09)Åü¼Z=¼?¸ \x19¸x\x80\x9d5´*" HTTPStatus.BAD_REQUEST -
+2025-08-12T09:33:44: 118.235.11.149 - - [12/Aug/2025 09:33:44] code 400, message Bad request version ('\x16±±ZL\x89-ÓìÀ\x14\x9eA\x06þ(\x1a9Z\x01,¹\x8dâ£@ÔÜf\x00*::\x13\x02\x13\x03\x13\x01À,À+Ì©À0À/Ì¨À')
+2025-08-12T09:33:44: 118.235.11.149 - - [12/Aug/2025 09:33:44] "\x16\x03\x01\x06\x03\x01\x00\x05ÿ\x03\x03\x14¨ÓÔÅ\x8f{\x81¦\x0e\x1eé®°j*o_¬Û\x8cHûIÖ\x81Ø\x94Æ¼\x8fª Àñ\x1e\x16±±ZL\x89-ÓìÀ\x14\x9eA\x06þ(\x1a9Z\x01,¹\x8dâ£@ÔÜf\x00*::\x13\x02\x13\x03\x13\x01À,À+Ì©À0À/Ì¨À" HTTPStatus.BAD_REQUEST -
+2025-08-12T09:33:44: 118.235.11.149 - - [12/Aug/2025 09:33:44] code 400, message Bad request version ('¦~\x12®sÊ/A\x97\x84\x84T\x00*\x9a\x9a\x13\x02\x13\x03\x13\x01À,À+Ì©À0À/Ì¨À')
+2025-08-12T09:33:44: 118.235.11.149 - - [12/Aug/2025 09:33:44] "\x16\x03\x01\x06\x03\x01\x00\x05ÿ\x03\x03l\x16qa=\x87¶ç1ÁÓéh\x93èÏúI\x82XíÊ¶¤ÈÍL{øø-  [od¯K\x85}E\x9cÿÂG\x00\x92E%\x00p\x10\x0b¦~\x12®sÊ/A\x97\x84\x84T\x00*\x9a\x9a\x13\x02\x13\x03\x13\x01À,À+Ì©À0À/Ì¨À" HTTPStatus.BAD_REQUEST -
+2025-08-12T09:33:44: 118.235.11.149 - - [12/Aug/2025 09:33:44] code 400, message Bad request version ('¦5i\\\x06\x00I9Ù\x00***\x13\x02\x13\x03\x13\x01À,À+Ì©À0À/Ì¨À')
+2025-08-12T09:33:44: 118.235.11.149 - - [12/Aug/2025 09:33:44] "\x16\x03\x01\x06\x03\x01\x00\x05ÿ\x03\x03à%\x91~#\x9a\x1c÷$ÜÔí\x8eã Î\x18(ÔY{B\x8d7mÚCC\x98p\x83å ó"\x83ä±Q\x07ãüCî0PJÕ0WÔBÌ~ó\x1d¦5i\\\x06\x00I9Ù\x00***\x13\x02\x13\x03\x13\x01À,À+Ì©À0À/Ì¨À" HTTPStatus.BAD_REQUEST -
+2025-08-12T09:33:44: 118.235.11.149 - - [12/Aug/2025 09:33:44] "GET / HTTP/1.1" 200 -
+2025-08-12T09:33:45: 118.235.11.149 - - [12/Aug/2025 09:33:45] "GET /static/style.css HTTP/1.1" 304 -
+2025-08-12T09:33:45: 118.235.11.149 - - [12/Aug/2025 09:33:45] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:33:45: 118.235.11.149 - - [12/Aug/2025 09:33:45] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:33:45: 118.235.11.149 - - [12/Aug/2025 09:33:45] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:33:45: 118.235.11.149 - - [12/Aug/2025 09:33:45] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:33:45: 118.235.11.149 - - [12/Aug/2025 09:33:45] "GET /api/stocks/v1/portfolio HTTP/1.1" 200 -
+2025-08-12T09:33:45: 118.235.11.149 - - [12/Aug/2025 09:33:45] "GET /api/stocks/v1/symbol-search?q=NVDA HTTP/1.1" 200 -
+2025-08-12T09:33:45: 118.235.11.149 - - [12/Aug/2025 09:33:45] "GET /api/stocks/v1/symbol-search?q=NVDA HTTP/1.1" 200 -
+2025-08-12T09:33:45: [WARNING] Could not sort news items due to parsing error: time data 'Sun, 10 Aug 2025 14:00:00 -0400' does not match format '%a, %d %b %Y %H:%M:%S %Z'
+2025-08-12T09:33:45: 118.235.11.149 - - [12/Aug/2025 09:33:45] "GET /api/stocks/v1/news HTTP/1.1" 200 -
+2025-08-12T09:33:45: 118.235.11.149 - - [12/Aug/2025 09:33:45] "GET /api/stocks/v1/symbol-search?q=AAPL HTTP/1.1" 200 -
+2025-08-12T09:33:45: 118.235.11.149 - - [12/Aug/2025 09:33:45] "GET /api/stocks/v1/symbol-search?q=AAPL HTTP/1.1" 200 -
+2025-08-12T09:33:45: 118.235.11.149 - - [12/Aug/2025 09:33:45] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:33:45: [                       0%                       ]
+2025-08-12T09:33:45: [*********************100%***********************]  2 of 2 completed
+2025-08-12T09:33:46: [                       0%                       ]
+2025-08-12T09:33:46: [*********************100%***********************]  2 of 2 completed
+2025-08-12T09:33:46: 118.235.11.149 - - [12/Aug/2025 09:33:46] "GET /api/stocks/v1/asset-history HTTP/1.1" 200 -
+2025-08-12T09:33:47: 118.235.11.149 - - [12/Aug/2025 09:33:47] "GET /api/stocks/v1/prices HTTP/1.1" 200 -
+2025-08-12T09:35:15:  * Detected change in '/home/pi/project/finance-portfolio/app.py', reloading
+2025-08-12T09:35:16:  * Restarting with stat
+2025-08-12T09:35:19:  * Debugger is active!
+2025-08-12T09:35:19:  * Debugger PIN: 972-012-010
+2025-08-12T09:35:33:  * Serving Flask app 'app'
+2025-08-12T09:35:33:  * Debug mode: on
+2025-08-12T09:35:33: WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+2025-08-12T09:35:33: 
+2025-08-12T09:35:33:  * Running on all addresses (0.0.0.0)
+2025-08-12T09:35:33:  * Running on http://127.0.0.1:9010
+2025-08-12T09:35:33:  * Running on http://192.168.0.65:9010
+2025-08-12T09:35:33: Press CTRL+C to quit
+2025-08-12T09:35:33: 
+2025-08-12T09:35:33:  * Restarting with stat
+2025-08-12T09:35:35:  * Debugger is active!
+2025-08-12T09:35:35:  * Debugger PIN: 972-012-010
+2025-08-12T09:35:43: 118.235.11.121 - - [12/Aug/2025 09:35:43] "GET / HTTP/1.1" 200 -
+2025-08-12T09:35:43: 118.235.11.121 - - [12/Aug/2025 09:35:43] "GET /static/style.css HTTP/1.1" 200 -
+2025-08-12T09:35:44: 118.235.11.121 - - [12/Aug/2025 09:35:44] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:35:44: 118.235.11.121 - - [12/Aug/2025 09:35:44] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:35:44: 118.235.11.121 - - [12/Aug/2025 09:35:44] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:35:44: 118.235.11.121 - - [12/Aug/2025 09:35:44] "GET /api/stocks/v1/portfolio HTTP/1.1" 200 -
+2025-08-12T09:35:44: 118.235.11.121 - - [12/Aug/2025 09:35:44] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:35:44: 118.235.11.121 - - [12/Aug/2025 09:35:44] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:35:45: 118.235.11.121 - - [12/Aug/2025 09:35:45] "GET /api/stocks/v1/prices HTTP/1.1" 200 -
+2025-08-12T09:37:08: 118.235.3.180 - - [12/Aug/2025 09:37:08] "GET / HTTP/1.1" 200 -
+2025-08-12T09:37:08: 118.235.3.180 - - [12/Aug/2025 09:37:08] "GET /apple-touch-icon-precomposed.png HTTP/1.1" 404 -
+2025-08-12T09:37:08: 118.235.3.180 - - [12/Aug/2025 09:37:08] "GET /favicon.ico HTTP/1.1
+2025-08-12T09:37:08: " 404 -
+2025-08-12T09:37:08: 118.235.3.180 - - [12/Aug/2025 09:37:08] "
+2025-08-12T09:37:08: GET /apple-touch-icon.png HTTP/1.1" 404 -
+2025-08-12T09:39:31:  * Detected change in '/home/pi/project/finance-portfolio/app.py', reloading
+2025-08-12T09:39:31:  * Restarting with stat
+2025-08-12T09:39:34:  * Debugger is active!
+2025-08-12T09:39:34:  * Debugger PIN: 972-012-010
+2025-08-12T09:39:37:  * Detected change in '/home/pi/project/finance-portfolio/app.py', reloading
+2025-08-12T09:39:37:  * Restarting with stat
+2025-08-12T09:39:39:  * Debugger is active!
+2025-08-12T09:39:39:  * Debugger PIN: 972-012-010
+2025-08-12T09:39:45:  * Detected change in '/home/pi/project/finance-portfolio/app.py', reloading
+2025-08-12T09:39:46:  * Restarting with stat
+2025-08-12T09:39:48:  * Debugger is active!
+2025-08-12T09:39:48:  * Debugger PIN: 972-012-010
+2025-08-12T09:40:05:  * Detected change in '/home/pi/project/finance-portfolio/app.py', reloading
+2025-08-12T09:40:05:  * Restarting with stat
+2025-08-12T09:40:07:  * Debugger is active!
+2025-08-12T09:40:07:  * Debugger PIN: 972-012-010
+2025-08-12T09:42:11:  * Serving Flask app 'app'
+2025-08-12T09:42:11:  * Debug mode: on
+2025-08-12T09:42:11: WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+2025-08-12T09:42:11:  * Running on all addresses (0.0.0.0)
+2025-08-12T09:42:11:  * Running on http://127.0.0.1:9010
+2025-08-12T09:42:11:  * Running on http://192.168.0.65:9010
+2025-08-12T09:42:11: Press CTRL+C to quit
+2025-08-12T09:42:11:  * Restarting with stat
+2025-08-12T09:42:13:  * Debugger is active!
+2025-08-12T09:42:13:  * Debugger PIN: 972-012-010
+2025-08-12T09:42:27: 118.235.11.95 - - [12/Aug/2025 09:42:27] "GET / HTTP/1.1" 200 -
+2025-08-12T09:42:27: 118.235.11.95 - - [12/Aug/2025 09:42:27] "GET /static/style.css HTTP/1.1" 200 -
+2025-08-12T09:42:27: 118.235.11.95 - - [12/Aug/2025 09:42:27] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:42:27: 118.235.11.95 - - [12/Aug/2025 09:42:27] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:42:27: 118.235.11.95 - - [12/Aug/2025 09:42:27] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:42:27: 118.235.11.95 - - [12/Aug/2025 09:42:27] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:42:28: 118.235.11.95 - - [12/Aug/2025 09:42:28] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:42:28: 118.235.11.95 - - [12/Aug/2025 09:42:28] "GET /api/stocks/v1/portfolio HTTP/1.1" 200 -
+2025-08-12T09:42:28: 118.235.11.95 - - [12/Aug/2025 09:42:28] "GET /api/stocks/v1/news HTTP/1.1" 200 -
+2025-08-12T09:42:28: 118.235.11.95 - - [12/Aug/2025 09:42:28] "GET /api/stocks/v1/asset-history HTTP/1.1" 200 -
+2025-08-12T09:42:29: 118.235.11.95 - - [12/Aug/2025 09:42:29] "GET /api/stocks/v1/prices HTTP/1.1" 200 -
+2025-08-12T09:42:37: OCR Raw Text: wll LTE
+2025-08-12T09:42:37: 
+2025-08-12T09:42:37:  
+2025-08-12T09:42:37: 
+2025-08-12T09:42:37:  
+2025-08-12T09:42:37: 
+2025-08-12T09:42:37: oily JO} 5
+2025-08-12T09:42:37: NVDA
+2025-08-12T09:42:37: 
+2025-08-12T09:42:37: 7 22 (4) SS AESIMSLCt.
+2025-08-12T09:42:37: 
+2025-08-12T09:42:37: eS
+2025-08-12T09:42:37: 
+2025-08-12T09:42:37: Tn
+2025-08-12T09:42:37: 
+2025-08-12T09:42:37: 71 221 (4)
+2025-08-12T09:42:37: 
+2025-08-12T09:42:37: 62 30H (2) 10:30
+2025-08-12T09:42:37: 
+2025-08-12T09:42:37: oH 4 3H 20,0002
+2025-08-12T09:42:37: BAL 0.093438
+2025-08-12T09:42:37: {Zt WZ} 157.1124
+2025-08-12T09:42:37: Agsts 1,361.822
+2025-08-12T09:42:37: 21S} SHAt 213,9552
+2025-08-12T09:42:37: 0H oH 19,9912
+2025-08-12T09:42:37: 448 7
+2025-08-12T09:42:37: 
+2025-08-12T09:42:37: Ste 19,9912
+2025-08-12T09:42:37: 
+2025-08-12T09:42:37:  
+2025-08-12T09:42:37: 
+2025-08-12T09:42:37: 118.235.10.37 - - [12/Aug/2025 09:42:37] "POST /api/stocks/v1/upload-screenshot HTTP/1.1" 200 -
+2025-08-12T09:42:55: OCR Raw Text: wll LTE
+2025-08-12T09:42:55: 
+2025-08-12T09:42:55:  
+2025-08-12T09:42:55: 
+2025-08-12T09:42:55:  
+2025-08-12T09:42:55: 
+2025-08-12T09:42:55: oily JO} 5
+2025-08-12T09:42:55: NVDA
+2025-08-12T09:42:55: 
+2025-08-12T09:42:55: 7 22 (4) SS AESIMSLCt.
+2025-08-12T09:42:55: 
+2025-08-12T09:42:55: eS
+2025-08-12T09:42:55: 
+2025-08-12T09:42:55: Tn
+2025-08-12T09:42:55: 
+2025-08-12T09:42:55: 71 221 (4)
+2025-08-12T09:42:55: 
+2025-08-12T09:42:55: 62 30H (2) 10:30
+2025-08-12T09:42:55: 
+2025-08-12T09:42:55: oH 4 3H 20,0002
+2025-08-12T09:42:55: BAL 0.093438
+2025-08-12T09:42:55: {Zt WZ} 157.1124
+2025-08-12T09:42:55: Agsts 1,361.822
+2025-08-12T09:42:55: 21S} SHAt 213,9552
+2025-08-12T09:42:55: 0H oH 19,9912
+2025-08-12T09:42:55: 448 7
+2025-08-12T09:42:55: 
+2025-08-12T09:42:55: Ste 19,9912
+2025-08-12T09:42:55: 
+2025-08-12T09:42:55:  
+2025-08-12T09:42:55: 
+2025-08-12T09:42:55: 118.235.11.113 - - [12/Aug/2025 09:42:55] "POST /api/stocks/v1/upload-screenshot HTTP/1.1" 200 -
+2025-08-12T09:42:55: OCR Raw Text: wll LTE
+2025-08-12T09:42:55: 
+2025-08-12T09:42:55:  
+2025-08-12T09:42:55: 
+2025-08-12T09:42:55:  
+2025-08-12T09:42:55: 
+2025-08-12T09:42:55: oily JO} 5
+2025-08-12T09:42:55: NVDA
+2025-08-12T09:42:55: 
+2025-08-12T09:42:55: 7 22 (4) SS AESIMSLCt.
+2025-08-12T09:42:55: 
+2025-08-12T09:42:55: eS
+2025-08-12T09:42:55: 
+2025-08-12T09:42:55: Tn
+2025-08-12T09:42:55: 
+2025-08-12T09:42:55: 71 221 (4)
+2025-08-12T09:42:55: 
+2025-08-12T09:42:55: 62 30H (2) 10:30
+2025-08-12T09:42:55: 
+2025-08-12T09:42:55: oH 4 3H 20,0002
+2025-08-12T09:42:55: BAL 0.093438
+2025-08-12T09:42:55: {Zt WZ} 157.1124
+2025-08-12T09:42:55: Agsts 1,361.822
+2025-08-12T09:42:55: 21S} SHAt 213,9552
+2025-08-12T09:42:55: 0H oH 19,9912
+2025-08-12T09:42:55: 448 7
+2025-08-12T09:42:55: 
+2025-08-12T09:42:55: Ste 19,9912
+2025-08-12T09:42:55: 
+2025-08-12T09:42:55:  
+2025-08-12T09:42:55: 
+2025-08-12T09:42:55: 118.235.11.113 - - [12/Aug/2025 09:42:55] "POST /api/stocks/v1/upload-screenshot HTTP/1.1" 200 -
+2025-08-12T09:49:17:  * Detected change in '/home/pi/project/finance-portfolio/app.py', reloading
+2025-08-12T09:49:18:  * Restarting with stat
+2025-08-12T09:49:21:  * Debugger is active!
+2025-08-12T09:49:21:  * Debugger PIN: 972-012-010
+2025-08-12T09:51:27:  * Serving Flask app 'app'
+2025-08-12T09:51:27:  * Debug mode: on
+2025-08-12T09:51:27: WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+2025-08-12T09:51:27:  * Running on all addresses (0.0.0.0)
+2025-08-12T09:51:27:  * Running on http://127.0.0.1:9010
+2025-08-12T09:51:27:  * Running on http://192.168.0.65:9010
+2025-08-12T09:51:27: Press CTRL+C to quit
+2025-08-12T09:51:27:  * Restarting with stat
+2025-08-12T09:51:30:  * Debugger is active!
+2025-08-12T09:51:30:  * Debugger PIN: 972-012-010
+2025-08-12T09:52:03:  * Serving Flask app 'app'
+2025-08-12T09:52:03:  * Debug mode: on
+2025-08-12T09:52:03: WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+2025-08-12T09:52:03:  * Running on all addresses (0.0.0.0)
+2025-08-12T09:52:03:  * Running on http://127.0.0.1:9010
+2025-08-12T09:52:03:  * Running on http://192.168.0.65:9010
+2025-08-12T09:52:03: Press CTRL+C to quit
+2025-08-12T09:52:03:  * Restarting with stat
+2025-08-12T09:52:05:  * Debugger is active!
+2025-08-12T09:52:05:  * Debugger PIN: 972-012-010
+2025-08-12T09:52:17: 118.235.10.247 - - [12/Aug/2025 09:52:17] "GET / HTTP/1.1" 200 -
+2025-08-12T09:52:17: 118.235.10.247 - - [12/Aug/2025 09:52:17] "GET /static/style.css HTTP/1.1" 200 -
+2025-08-12T09:52:17: 118.235.10.247 - - [12/Aug/2025 09:52:17] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:52:17: 118.235.10.247 - - [12/Aug/2025 09:52:17] "
+2025-08-12T09:52:17: GET /apple-touch-icon-120x120-precomposed.png HTTP/1.1" 404 -
+2025-08-12T09:52:17: 118.235.10.247 - - [12/Aug/2025 09:52:17] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:52:17: 118.235.10.247 - - [12/Aug/2025 09:52:17] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:52:17: 118.235.10.247 - - [12/Aug/2025 09:52:17] "GET /api/stocks/v1/portfolio HTTP/1.1" 200 -
+2025-08-12T09:52:17: 118.235.10.247 - - [12/Aug/2025 09:52:17] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:52:17: 118.235.10.247 - - [12/Aug/2025 09:52:17] "GET /apple-touch-icon-120x120.png HTTP/1.1
+2025-08-12T09:52:17: " 404 -
+2025-08-12T09:52:17: 118.235.10.247 - - [12/Aug/2025 09:52:17] "
+2025-08-12T09:52:17: GET /apple-touch-icon-precomposed.png HTTP/1.1
+2025-08-12T09:52:17: " 404 -
+2025-08-12T09:52:18: 118.235.10.247 - - [12/Aug/2025 09:52:18] "GET /apple-touch-icon.png HTTP/1.1" 404 -
+2025-08-12T09:52:18: 118.235.10.247 - - [12/Aug/2025 09:52:18] "GET /api/stocks/v1/news HTTP/1.1" 200 -
+2025-08-12T09:52:18: 118.235.10.247 - - [12/Aug/2025 09:52:18] "GET /api/stocks/v1/asset-history HTTP/1.1" 200 -
+2025-08-12T09:52:19: 118.235.10.247 - - [12/Aug/2025 09:52:19] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:52:19: 118.235.10.247 - - [12/Aug/2025 09:52:19] "GET /api/stocks/v1/prices HTTP/1.1" 200 -
+2025-08-12T09:52:27: OCR Raw Text: wll LTE
+2025-08-12T09:52:27: 
+2025-08-12T09:52:27:  
+2025-08-12T09:52:27: 
+2025-08-12T09:52:27:  
+2025-08-12T09:52:27: 
+2025-08-12T09:52:27: oily JO} 5
+2025-08-12T09:52:27: NVDA
+2025-08-12T09:52:27: 
+2025-08-12T09:52:27: 7 22 (4) SS AESIMSLCt.
+2025-08-12T09:52:27: 
+2025-08-12T09:52:27: eS
+2025-08-12T09:52:27: 
+2025-08-12T09:52:27: Tn
+2025-08-12T09:52:27: 
+2025-08-12T09:52:27: 71 221 (4)
+2025-08-12T09:52:27: 
+2025-08-12T09:52:27: 62 30H (2) 10:30
+2025-08-12T09:52:27: 
+2025-08-12T09:52:27: oH 4 3H 20,0002
+2025-08-12T09:52:27: BAL 0.093438
+2025-08-12T09:52:27: {Zt WZ} 157.1124
+2025-08-12T09:52:27: Agsts 1,361.822
+2025-08-12T09:52:27: 21S} SHAt 213,9552
+2025-08-12T09:52:27: 0H oH 19,9912
+2025-08-12T09:52:27: 448 7
+2025-08-12T09:52:27: 
+2025-08-12T09:52:27: Ste 19,9912
+2025-08-12T09:52:27: 
+2025-08-12T09:52:27:  
+2025-08-12T09:52:27: 
+2025-08-12T09:52:27: 118.235.10.247 - - [12/Aug/2025 09:52:27] "POST /api/stocks/v1/upload-screenshot HTTP/1.1" 200 -
+2025-08-12T09:52:35: Sample OCR Raw Text: wll LTE
+2025-08-12T09:52:35: 
+2025-08-12T09:52:35:  
+2025-08-12T09:52:35: 
+2025-08-12T09:52:35:  
+2025-08-12T09:52:35: 
+2025-08-12T09:52:35: oily JO} 5
+2025-08-12T09:52:35: NVDA
+2025-08-12T09:52:35: 
+2025-08-12T09:52:35: 7 22 (4) SS AESIMSLCt.
+2025-08-12T09:52:35: 
+2025-08-12T09:52:35: eS
+2025-08-12T09:52:35: 
+2025-08-12T09:52:35: Tn
+2025-08-12T09:52:35: 
+2025-08-12T09:52:35: 71 221 (4)
+2025-08-12T09:52:35: 
+2025-08-12T09:52:35: 62 30H (2) 10:30
+2025-08-12T09:52:35: 
+2025-08-12T09:52:35: oH 4 3H 20,0002
+2025-08-12T09:52:35: BAL 0.093438
+2025-08-12T09:52:35: {Zt WZ} 157.1124
+2025-08-12T09:52:35: Agsts 1,361.822
+2025-08-12T09:52:35: 21S} SHAt 213,9552
+2025-08-12T09:52:35: 0H oH 19,9912
+2025-08-12T09:52:35: 448 7
+2025-08-12T09:52:35: 
+2025-08-12T09:52:35: Ste 19,9912
+2025-08-12T09:52:35: 
+2025-08-12T09:52:35:  
+2025-08-12T09:52:35: 
+2025-08-12T09:52:35: 118.235.10.247 - - [12/Aug/2025 09:52:35] "POST /api/stocks/v1/save-sample HTTP/1.1" 200 -
+2025-08-12T09:53:08:  * Detected change in '/home/pi/project/finance-portfolio/app.py', reloading
+2025-08-12T09:53:09:  * Restarting with stat
+2025-08-12T09:53:11:  * Debugger is active!
+2025-08-12T09:53:11:  * Debugger PIN: 972-012-010
+2025-08-12T09:53:15:  * Detected change in '/home/pi/project/finance-portfolio/app.py', reloading
+2025-08-12T09:53:15:  * Restarting with stat
+2025-08-12T09:53:18:  * Debugger is active!
+2025-08-12T09:53:18:  * Debugger PIN: 972-012-010
+2025-08-12T09:53:35:  * Detected change in '/home/pi/project/finance-portfolio/app.py', reloading
+2025-08-12T09:53:35:  * Restarting with stat
+2025-08-12T09:53:38:  * Debugger is active!
+2025-08-12T09:53:38:  * Debugger PIN: 972-012-010
+2025-08-12T09:53:42:  * Serving Flask app 'app'
+2025-08-12T09:53:42:  * Debug mode: on
+2025-08-12T09:53:42: WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+2025-08-12T09:53:42:  * Running on all addresses (0.0.0.0)
+2025-08-12T09:53:42:  * Running on http://127.0.0.1:9010
+2025-08-12T09:53:42:  * Running on http://192.168.0.65:9010
+2025-08-12T09:53:42: Press CTRL+C to quit
+2025-08-12T09:53:42:  * Restarting with stat
+2025-08-12T09:53:44:  * Debugger is active!
+2025-08-12T09:53:44:  * Debugger PIN: 972-012-010
+2025-08-12T09:54:07: 118.235.10.247 - - [12/Aug/2025 09:54:07] "GET / HTTP/1.1" 200 -
+2025-08-12T09:54:07: 118.235.10.247 - - [12/Aug/2025 09:54:07] "GET /static/style.css HTTP/1.1" 304 -
+2025-08-12T09:54:07: 118.235.10.247 - - [12/Aug/2025 09:54:07] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:54:07: 118.235.10.247 - - [12/Aug/2025 09:54:07] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:54:07: 118.235.10.247 - - [12/Aug/2025 09:54:07] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:54:07: 118.235.10.247 - - [12/Aug/2025 09:54:07] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:54:07: 118.235.10.247 - - [12/Aug/2025 09:54:07] "GET /api/stocks/v1/portfolio HTTP/1.1" 200 -
+2025-08-12T09:54:08: 118.235.10.247 - - [12/Aug/2025 09:54:08] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T09:54:08: 118.235.10.247 - - [12/Aug/2025 09:54:08] "GET /api/stocks/v1/news HTTP/1.1" 200 -
+2025-08-12T09:54:09: 118.235.10.247 - - [12/Aug/2025 09:54:09] "GET /api/stocks/v1/asset-history HTTP/1.1" 200 -
+2025-08-12T09:54:09: 118.235.10.247 - - [12/Aug/2025 09:54:09] "GET /api/stocks/v1/prices HTTP/1.1" 200 -
+2025-08-12T09:54:29: OCR Raw Text: wll LTE치
+2025-08-12T09:54:29: 
+2025-08-12T09:54:29:  
+2025-08-12T09:54:29: 
+2025-08-12T09:54:29:  
+2025-08-12T09:54:29: 
+2025-08-12T09:54:29: 엔비디아                             5
+2025-08-12T09:54:29: NVDA
+2025-08-12T09:54:29: 
+2025-08-12T09:54:29: 7월 2일 (수) 출금 완료되었습니다.
+2025-08-12T09:54:29: 
+2025-08-12T09:54:29: eS
+2025-08-12T09:54:29: 
+2025-08-12T09:54:29: 베미
+2025-08-12T09:54:29: 
+2025-08-12T09:54:29: 7월 2일 (수)
+2025-08-12T09:54:29: 
+2025-08-12T09:54:29: 6월 30일 (월) 10:30
+2025-08-12T09:54:29: 
+2025-08-12T09:54:29: 구매 접수 금액                                   20,000원
+2025-08-12T09:54:29: 주식수                                           0.093438주
+2025-08-12T09:54:29: 1주당 체결가                               157.11달러
+2025-08-12T09:54:29: 적용환율                                          1,361.82원
+2025-08-12T09:54:29: 원화환산                                        213,955원
+2025-08-12T09:54:29: 구매 금액                                            19,991원
+2025-08-12T09:54:29: 수수료                                                      무료
+2025-08-12T09:54:29: 
+2025-08-12T09:54:29: 정산금액                    19,991원
+2025-08-12T09:54:29: 
+2025-08-12T09:54:29:  
+2025-08-12T09:54:29: 
+2025-08-12T09:54:29: Processing OCR text lines: 28
+2025-08-12T09:54:29: Line 0: 'wll LTE치'
+2025-08-12T09:54:29: Line 1: ''
+2025-08-12T09:54:29: Line 2: ''
+2025-08-12T09:54:29: Line 3: ''
+2025-08-12T09:54:29: Line 4: ''
+2025-08-12T09:54:29: Line 5: ''
+2025-08-12T09:54:29: Line 6: '엔비디아                             5'
+2025-08-12T09:54:29: Line 7: 'NVDA'
+2025-08-12T09:54:29: Line 8: ''
+2025-08-12T09:54:29: Line 9: '7월 2일 (수) 출금 완료되었습니다.'
+2025-08-12T09:54:29: Line 10: ''
+2025-08-12T09:54:29: Line 11: 'eS'
+2025-08-12T09:54:29: Line 12: ''
+2025-08-12T09:54:29: Line 13: '베미'
+2025-08-12T09:54:29: Line 14: ''
+2025-08-12T09:54:29: Line 15: '7월 2일 (수)'
+2025-08-12T09:54:29: Line 16: ''
+2025-08-12T09:54:29: Line 17: '6월 30일 (월) 10:30'
+2025-08-12T09:54:29: Line 18: ''
+2025-08-12T09:54:29: Line 19: '구매 접수 금액                                   20,000원'
+2025-08-12T09:54:29: Line 20: '주식수                                           0.093438주'
+2025-08-12T09:54:29: Line 21: '1주당 체결가                               157.11달러'
+2025-08-12T09:54:29: Line 22: '적용환율                                          1,361.82원'
+2025-08-12T09:54:29: Line 23: '원화환산                                        213,955원'
+2025-08-12T09:54:29: Line 24: '구매 금액                                            19,991원'
+2025-08-12T09:54:29: Line 25: '수수료                                                      무료'
+2025-08-12T09:54:29: Line 26: ''
+2025-08-12T09:54:29: Line 27: '정산금액                    19,991원'
+2025-08-12T09:54:29: Extracted - Symbol: ['LTE', 'NVDA'], Shares: ['0.093438', '1'], Amount: ['20,000', '82', '213,955', '19,991', '19,991']
+2025-08-12T09:54:29: 118.235.10.247 - - [12/Aug/2025 09:54:29] "POST /api/stocks/v1/upload-screenshot HTTP/1.1" 200 -
+2025-08-12T09:56:54:  * Detected change in '/home/pi/project/finance-portfolio/app.py', reloading
+2025-08-12T09:56:54:  * Restarting with stat
+2025-08-12T09:56:56:  * Debugger is active!
+2025-08-12T09:56:56:  * Debugger PIN: 972-012-010
+2025-08-12T09:58:27:  * Serving Flask app 'app'
+2025-08-12T09:58:27:  * Debug mode: on
+2025-08-12T09:58:27: WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+2025-08-12T09:58:27:  * Running on all addresses (0.0.0.0)
+2025-08-12T09:58:27:  * Running on http://127.0.0.1:9010
+2025-08-12T09:58:27:  * Running on http://192.168.0.65:9010
+2025-08-12T09:58:27: Press CTRL+C to quit
+2025-08-12T09:58:27:  * Restarting with stat
+2025-08-12T09:58:30:  * Debugger is active!
+2025-08-12T09:58:30:  * Debugger PIN: 972-012-010
+2025-08-12T10:00:25: 118.235.10.243 - - [12/Aug/2025 10:00:25] "GET / HTTP/1.1" 200 -
+2025-08-12T10:00:25: 118.235.10.243 - - [12/Aug/2025 10:00:25] "GET /static/style.css HTTP/1.1" 200 -
+2025-08-12T10:00:26: 118.235.10.243 - - [12/Aug/2025 10:00:26] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T10:00:26: 118.235.10.243 - - [12/Aug/2025 10:00:26] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T10:00:26: 118.235.10.243 - - [12/Aug/2025 10:00:26] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T10:00:26: 118.235.10.243 - - [12/Aug/2025 10:00:26] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T10:00:26: 118.235.10.243 - - [12/Aug/2025 10:00:26] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T10:00:26: 118.235.10.243 - - [12/Aug/2025 10:00:26] "GET /api/stocks/v1/portfolio HTTP/1.1" 200 -
+2025-08-12T10:00:26: 118.235.10.243 - - [12/Aug/2025 10:00:26] "GET /api/stocks/v1/news HTTP/1.1" 200 -
+2025-08-12T10:00:27: 118.235.10.243 - - [12/Aug/2025 10:00:27] "GET /api/stocks/v1/asset-history HTTP/1.1" 200 -
+2025-08-12T10:00:27: 118.235.10.243 - - [12/Aug/2025 10:00:27] "GET /api/stocks/v1/prices HTTP/1.1" 200 -
+2025-08-12T10:00:37: OCR Raw Text: wll LTE치
+2025-08-12T10:00:37: 
+2025-08-12T10:00:37:  
+2025-08-12T10:00:37: 
+2025-08-12T10:00:37:  
+2025-08-12T10:00:37: 
+2025-08-12T10:00:37: 엔비디아                             5
+2025-08-12T10:00:37: NVDA
+2025-08-12T10:00:37: 
+2025-08-12T10:00:37: 7월 2일 (수) 출금 완료되었습니다.
+2025-08-12T10:00:37: 
+2025-08-12T10:00:37: eS
+2025-08-12T10:00:37: 
+2025-08-12T10:00:37: 베미
+2025-08-12T10:00:37: 
+2025-08-12T10:00:37: 7월 2일 (수)
+2025-08-12T10:00:37: 
+2025-08-12T10:00:37: 6월 30일 (월) 10:30
+2025-08-12T10:00:37: 
+2025-08-12T10:00:37: 구매 접수 금액                                   20,000원
+2025-08-12T10:00:37: 주식수                                           0.093438주
+2025-08-12T10:00:37: 1주당 체결가                               157.11달러
+2025-08-12T10:00:37: 적용환율                                          1,361.82원
+2025-08-12T10:00:37: 원화환산                                        213,955원
+2025-08-12T10:00:37: 구매 금액                                            19,991원
+2025-08-12T10:00:37: 수수료                                                      무료
+2025-08-12T10:00:37: 
+2025-08-12T10:00:37: 정산금액                    19,991원
+2025-08-12T10:00:37: 
+2025-08-12T10:00:37:  
+2025-08-12T10:00:37: 
+2025-08-12T10:00:37: Processing OCR text lines: 28
+2025-08-12T10:00:37: Line 0: 'wll LTE치'
+2025-08-12T10:00:37: Line 1: ''
+2025-08-12T10:00:37: Line 2: ''
+2025-08-12T10:00:37: Line 3: ''
+2025-08-12T10:00:37: Line 4: ''
+2025-08-12T10:00:37: Line 5: ''
+2025-08-12T10:00:37: Line 6: '엔비디아                             5'
+2025-08-12T10:00:37: Line 7: 'NVDA'
+2025-08-12T10:00:37: Line 8: ''
+2025-08-12T10:00:37: Line 9: '7월 2일 (수) 출금 완료되었습니다.'
+2025-08-12T10:00:37: Line 10: ''
+2025-08-12T10:00:37: Line 11: 'eS'
+2025-08-12T10:00:37: Line 12: ''
+2025-08-12T10:00:37: Line 13: '베미'
+2025-08-12T10:00:37: Line 14: ''
+2025-08-12T10:00:37: Line 15: '7월 2일 (수)'
+2025-08-12T10:00:37: Line 16: ''
+2025-08-12T10:00:37: Line 17: '6월 30일 (월) 10:30'
+2025-08-12T10:00:37: Line 18: ''
+2025-08-12T10:00:37: Line 19: '구매 접수 금액                                   20,000원'
+2025-08-12T10:00:37: Line 20: '주식수                                           0.093438주'
+2025-08-12T10:00:37: Line 21: '1주당 체결가                               157.11달러'
+2025-08-12T10:00:37: Line 22: '적용환율                                          1,361.82원'
+2025-08-12T10:00:37: Line 23: '원화환산                                        213,955원'
+2025-08-12T10:00:37: Line 24: '구매 금액                                            19,991원'
+2025-08-12T10:00:37: Line 25: '수수료                                                      무료'
+2025-08-12T10:00:37: Line 26: ''
+2025-08-12T10:00:37: Line 27: '정산금액                    19,991원'
+2025-08-12T10:00:37: === Full OCR Text ===
+2025-08-12T10:00:37: wll LTE치
+2025-08-12T10:00:37: 
+2025-08-12T10:00:37:  
+2025-08-12T10:00:37: 
+2025-08-12T10:00:37:  
+2025-08-12T10:00:37: 
+2025-08-12T10:00:37: 엔비디아                             5
+2025-08-12T10:00:37: NVDA
+2025-08-12T10:00:37: 
+2025-08-12T10:00:37: 7월 2일 (수) 출금 완료되었습니다.
+2025-08-12T10:00:37: 
+2025-08-12T10:00:37: eS
+2025-08-12T10:00:37: 
+2025-08-12T10:00:37: 베미
+2025-08-12T10:00:37: 
+2025-08-12T10:00:37: 7월 2일 (수)
+2025-08-12T10:00:37: 
+2025-08-12T10:00:37: 6월 30일 (월) 10:30
+2025-08-12T10:00:37: 
+2025-08-12T10:00:37: 구매 접수 금액                                   20,000원
+2025-08-12T10:00:37: 주식수                                           0.093438주
+2025-08-12T10:00:37: 1주당 체결가                               157.11달러
+2025-08-12T10:00:37: 적용환율                                          1,361.82원
+2025-08-12T10:00:37: 원화환산                                        213,955원
+2025-08-12T10:00:37: 구매 금액                                            19,991원
+2025-08-12T10:00:37: 수수료                                                      무료
+2025-08-12T10:00:37: 
+2025-08-12T10:00:37: 정산금액                    19,991원
+2025-08-12T10:00:37: 
+2025-08-12T10:00:37:  
+2025-08-12T10:00:37: 
+2025-08-12T10:00:37: === End OCR Text ===
+2025-08-12T10:00:37: Valid Symbols: ['NVDA']
+2025-08-12T10:00:37: Shares: ['0.093438', '1']
+2025-08-12T10:00:37: Buy Amount: ['20,000', '19,991']
+2025-08-12T10:00:37: All Amount: ['20,000', '82', '213,955', '19,991', '19,991']
+2025-08-12T10:00:37: Dollar Price: ['157.11']
+2025-08-12T10:00:37: Action: buy
+2025-08-12T10:00:37: 118.235.10.243 - - [12/Aug/2025 10:00:37] "POST /api/stocks/v1/upload-screenshot HTTP/1.1" 200 -
+2025-08-12T10:02:33: 118.235.10.203 - - [12/Aug/2025 10:02:33] "POST /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T10:02:34: 118.235.10.203 - - [12/Aug/2025 10:02:34] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T10:02:35: 118.235.10.203 - - [12/Aug/2025 10:02:35] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T10:02:35: 118.235.10.203 - - [12/Aug/2025 10:02:35] "GET /api/stocks/v1/portfolio HTTP/1.1" 200 -
+2025-08-12T10:02:35: 118.235.10.203 - - [12/Aug/2025 10:02:35] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T10:02:36: 118.235.10.203 - - [12/Aug/2025 10:02:36] "GET /api/stocks/v1/prices HTTP/1.1" 200 -
+2025-08-12T10:02:40: 118.235.10.203 - - [12/Aug/2025 10:02:40] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T10:02:41: 118.235.10.203 - - [12/Aug/2025 10:02:41] "DELETE /api/stocks/v1/transactions/7 HTTP/1.1" 200 -
+2025-08-12T10:02:41: 118.235.10.203 - - [12/Aug/2025 10:02:41] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T10:02:41: 118.235.10.203 - - [12/Aug/2025 10:02:41] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T10:02:41: 118.235.10.203 - - [12/Aug/2025 10:02:41] "GET /api/stocks/v1/portfolio HTTP/1.1" 200 -
+2025-08-12T10:02:41: 118.235.10.203 - - [12/Aug/2025 10:02:41] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T10:02:42: 118.235.10.203 - - [12/Aug/2025 10:02:42] "GET /api/stocks/v1/prices HTTP/1.1" 200 -
+2025-08-12T10:04:38:  * Serving Flask app 'app'
+2025-08-12T10:04:38:  * Debug mode: on
+2025-08-12T10:04:38: WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+2025-08-12T10:04:38:  * Running on all addresses (0.0.0.0)
+2025-08-12T10:04:38:  * Running on http://127.0.0.1:9010
+2025-08-12T10:04:38:  * Running on http://192.168.0.65:9010
+2025-08-12T10:04:38: Press CTRL+C to quit
+2025-08-12T10:04:38:  * Restarting with stat
+2025-08-12T10:04:41:  * Debugger is active!
+2025-08-12T10:04:41:  * Debugger PIN: 972-012-010
+2025-08-12T10:05:02: 67.187.184.81 - - [12/Aug/2025 10:05:02] code 400, message Bad request syntax ('ø')
+2025-08-12T10:05:02: 67.187.184.81 - - [12/Aug/2025 10:05:02] "ø" HTTPStatus.BAD_REQUEST -
+2025-08-12T10:07:00: 67.187.184.81 - - [12/Aug/2025 10:07:00] code 400, message Bad HTTP/0.9 request type ('\x13I\x02\x0fW')
+2025-08-12T10:07:00: 67.187.184.81 - - [12/Aug/2025 10:07:00] "\x13I\x02\x0fW\x0dsf" HTTPStatus.BAD_REQUEST -
+2025-08-12T10:11:06: OCR Raw Text: wll LTE치
+2025-08-12T10:11:06: 
+2025-08-12T10:11:06:  
+2025-08-12T10:11:06: 
+2025-08-12T10:11:06:  
+2025-08-12T10:11:06: 
+2025-08-12T10:11:06: 엔비디아                             5
+2025-08-12T10:11:06: NVDA
+2025-08-12T10:11:06: 
+2025-08-12T10:11:06: 7월 2일 (수) 출금 완료되었습니다.
+2025-08-12T10:11:06: 
+2025-08-12T10:11:06: eS
+2025-08-12T10:11:06: 
+2025-08-12T10:11:06: 베미
+2025-08-12T10:11:06: 
+2025-08-12T10:11:06: 7월 2일 (수)
+2025-08-12T10:11:06: 
+2025-08-12T10:11:06: 6월 30일 (월) 10:30
+2025-08-12T10:11:06: 
+2025-08-12T10:11:06: 구매 접수 금액                                   20,000원
+2025-08-12T10:11:06: 주식수                                           0.093438주
+2025-08-12T10:11:06: 1주당 체결가                               157.11달러
+2025-08-12T10:11:06: 적용환율                                          1,361.82원
+2025-08-12T10:11:06: 원화환산                                        213,955원
+2025-08-12T10:11:06: 구매 금액                                            19,991원
+2025-08-12T10:11:06: 수수료                                                      무료
+2025-08-12T10:11:06: 
+2025-08-12T10:11:06: 정산금액                    19,991원
+2025-08-12T10:11:06: 
+2025-08-12T10:11:06:  
+2025-08-12T10:11:06: 
+2025-08-12T10:11:06: 
+2025-08-12T10:11:06: Line 0: 'wll LTE치'
+2025-08-12T10:11:06: Line 1: ''
+2025-08-12T10:11:06: Line 2: ''
+2025-08-12T10:11:06: Line 3: ''
+2025-08-12T10:11:06: Line 4: ''
+2025-08-12T10:11:06: Line 5: ''
+2025-08-12T10:11:06: Line 6: '엔비디아                             5'
+2025-08-12T10:11:06: Line 7: 'NVDA'
+2025-08-12T10:11:06: Line 8: ''
+2025-08-12T10:11:06: Line 9: '7월 2일 (수) 출금 완료되었습니다.'
+2025-08-12T10:11:06: Line 10: ''
+2025-08-12T10:11:06: Line 11: 'eS'
+2025-08-12T10:11:06: Line 12: ''
+2025-08-12T10:11:06: Line 13: '베미'
+2025-08-12T10:11:06: Line 14: ''
+2025-08-12T10:11:06: Line 15: '7월 2일 (수)'
+2025-08-12T10:11:06: Line 16: ''
+2025-08-12T10:11:06: Line 17: '6월 30일 (월) 10:30'
+2025-08-12T10:11:06: Line 18: ''
+2025-08-12T10:11:06: Line 19: '구매 접수 금액                                   20,000원'
+2025-08-12T10:11:06: Line 20: '주식수                                           0.093438주'
+2025-08-12T10:11:06: Line 21: '1주당 체결가                               157.11달러'
+2025-08-12T10:11:06: Line 22: '적용환율                                          1,361.82원'
+2025-08-12T10:11:06: Line 23: '원화환산                                        213,955원'
+2025-08-12T10:11:06: Line 24: '구매 금액                                            19,991원'
+2025-08-12T10:11:06: Line 25: '수수료                                                      무료'
+2025-08-12T10:11:06: Line 26: ''
+2025-08-12T10:11:06: Line 27: '정산금액                    19,991원'
+2025-08-12T10:11:06: === Full OCR Text ===
+2025-08-12T10:11:06: wll LTE치
+2025-08-12T10:11:06: 
+2025-08-12T10:11:06:  
+2025-08-12T10:11:06: 
+2025-08-12T10:11:06:  
+2025-08-12T10:11:06: 
+2025-08-12T10:11:06: 엔비디아                             5
+2025-08-12T10:11:06: NVDA
+2025-08-12T10:11:06: 
+2025-08-12T10:11:06: 7월 2일 (수) 출금 완료되었습니다.
+2025-08-12T10:11:06: 
+2025-08-12T10:11:06: eS
+2025-08-12T10:11:06: 
+2025-08-12T10:11:06: 베미
+2025-08-12T10:11:06: 
+2025-08-12T10:11:06: 7월 2일 (수)
+2025-08-12T10:11:06: 
+2025-08-12T10:11:06: 6월 30일 (월) 10:30
+2025-08-12T10:11:06: 
+2025-08-12T10:11:06: 구매 접수 금액                                   20,000원
+2025-08-12T10:11:06: 주식수                                           0.093438주
+2025-08-12T10:11:06: 1주당 체결가                               157.11달러
+2025-08-12T10:11:06: 적용환율                                          1,361.82원
+2025-08-12T10:11:06: 원화환산                                        213,955원
+2025-08-12T10:11:06: 구매 금액                                            19,991원
+2025-08-12T10:11:06: 수수료                                                      무료
+2025-08-12T10:11:06: 
+2025-08-12T10:11:06: 정산금액                    19,991원
+2025-08-12T10:11:06: 
+2025-08-12T10:11:06:  
+2025-08-12T10:11:06: 
+2025-08-12T10:11:06: === End OCR Text ===
+2025-08-12T10:11:06: Valid Symbols: ['NVDA']
+2025-08-12T10:11:06: Shares: ['0.093438', '1']
+2025-08-12T10:11:06: Buy Amount: ['20,000', '19,991']
+2025-08-12T10:11:06: All Amount: ['20,000', '82', '213,955', '19,991', '19,991']
+2025-08-12T10:11:06: Dollar Price: ['157.11']
+2025-08-12T10:11:06: Action: buy
+2025-08-12T10:11:06: 118.235.10.105 - - [12/Aug/2025 10:11:06] "POST /api/stocks/v1/upload-screenshot HTTP/1.1" 200 -
+2025-08-12T10:16:21: 118.235.11.239 - - [12/Aug/2025 10:16:21] "GET / HTTP/1.1" 200 -
+2025-08-12T10:16:21: 118.235.11.239 - - [12/Aug/2025 10:16:21] "GET /static/style.css HTTP/1.1" 200 -
+2025-08-12T10:16:21: 118.235.11.239 - - [12/Aug/2025 10:16:21] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T10:16:21: 118.235.11.239 - - [12/Aug/2025 10:16:21] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T10:16:21: 118.235.11.239 - - [12/Aug/2025 10:16:21] "
+2025-08-12T10:16:21: GET /apple-touch-icon-precomposed.png HTTP/1.1
+2025-08-12T10:16:21: " 404 -
+2025-08-12T10:16:21: 118.235.11.239 - - [12/Aug/2025 10:16:21] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T10:16:21: 118.235.11.239 - - [12/Aug/2025 10:16:21] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T10:16:21: 118.235.11.239 - - [12/Aug/2025 10:16:21] "GET /favicon.ico HTTP/1.1" 404 -
+2025-08-12T10:16:21: 118.235.11.239 - - [12/Aug/2025 10:16:21] "GET /apple-touch-icon.png HTTP/1.1" 404 -
+2025-08-12T10:16:21: 118.235.11.239 - - [12/Aug/2025 10:16:21] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T10:16:22: 118.235.11.239 - - [12/Aug/2025 10:16:22] "GET /api/stocks/v1/portfolio HTTP/1.1" 200 -
+2025-08-12T10:16:22: 118.235.11.239 - - [12/Aug/2025 10:16:22] "GET /api/stocks/v1/news HTTP/1.1" 200 -
+2025-08-12T10:16:22: 118.235.11.239 - - [12/Aug/2025 10:16:22] "GET /api/stocks/v1/asset-history HTTP/1.1" 200 -
+2025-08-12T10:16:23: 118.235.11.239 - - [12/Aug/2025 10:16:23] "GET /api/stocks/v1/prices HTTP/1.1" 200 -
+2025-08-12T10:16:45: OCR Raw Text: wll LTE치
+2025-08-12T10:16:45: 
+2025-08-12T10:16:45:  
+2025-08-12T10:16:45: 
+2025-08-12T10:16:45:  
+2025-08-12T10:16:45: 
+2025-08-12T10:16:45: 엔비디아                             5
+2025-08-12T10:16:45: NVDA
+2025-08-12T10:16:45: 
+2025-08-12T10:16:45: 7월 2일 (수) 출금 완료되었습니다.
+2025-08-12T10:16:45: 
+2025-08-12T10:16:45: eS
+2025-08-12T10:16:45: 
+2025-08-12T10:16:45: 베미
+2025-08-12T10:16:45: 
+2025-08-12T10:16:45: 7월 2일 (수)
+2025-08-12T10:16:45: 
+2025-08-12T10:16:45: 6월 30일 (월) 10:30
+2025-08-12T10:16:45: 
+2025-08-12T10:16:45: 구매 접수 금액                                   20,000원
+2025-08-12T10:16:45: 주식수                                           0.093438주
+2025-08-12T10:16:45: 1주당 체결가                               157.11달러
+2025-08-12T10:16:45: 적용환율                                          1,361.82원
+2025-08-12T10:16:45: 원화환산                                        213,955원
+2025-08-12T10:16:45: 구매 금액                                            19,991원
+2025-08-12T10:16:45: 수수료                                                      무료
+2025-08-12T10:16:45: 
+2025-08-12T10:16:45: 정산금액                    19,991원
+2025-08-12T10:16:45: 
+2025-08-12T10:16:45:  
+2025-08-12T10:16:45: 
+2025-08-12T10:16:45: Processing OCR text lines: 28
+2025-08-12T10:16:45: Line 0: 'wll LTE치'
+2025-08-12T10:16:45: Line 1: ''
+2025-08-12T10:16:45: Line 2: ''
+2025-08-12T10:16:45: Line 3: ''
+2025-08-12T10:16:45: Line 4: ''
+2025-08-12T10:16:45: Line 5: ''
+2025-08-12T10:16:45: Line 6: '엔비디아                             5'
+2025-08-12T10:16:45: Line 7: 'NVDA'
+2025-08-12T10:16:45: Line 8: ''
+2025-08-12T10:16:45: Line 9: '7월 2일 (수) 출금 완료되었습니다.'
+2025-08-12T10:16:45: Line 10: ''
+2025-08-12T10:16:45: Line 11: 'eS'
+2025-08-12T10:16:45: Line 12: ''
+2025-08-12T10:16:45: Line 13: '베미'
+2025-08-12T10:16:45: Line 14: ''
+2025-08-12T10:16:45: Line 15: '7월 2일 (수)'
+2025-08-12T10:16:45: Line 16: ''
+2025-08-12T10:16:45: Line 17: '6월 30일 (월) 10:30'
+2025-08-12T10:16:45: Line 18: ''
+2025-08-12T10:16:45: Line 19: '구매 접수 금액                                   20,000원'
+2025-08-12T10:16:45: Line 20: '주식수                                           0.093438주'
+2025-08-12T10:16:45: Line 21: '1주당 체결가                               157.11달러'
+2025-08-12T10:16:45: Line 22: '적용환율                                          1,361.82원'
+2025-08-12T10:16:45: Line 23: '원화환산                                        213,955원'
+2025-08-12T10:16:45: Line 24: '구매 금액                                            19,991원'
+2025-08-12T10:16:45: Line 25: '수수료                                                      무료'
+2025-08-12T10:16:45: Line 26: ''
+2025-08-12T10:16:45: Line 27: '정산금액                    19,991원'
+2025-08-12T10:16:45: === Full OCR Text ===
+2025-08-12T10:16:45: wll LTE치
+2025-08-12T10:16:45: 
+2025-08-12T10:16:45:  
+2025-08-12T10:16:45: 
+2025-08-12T10:16:45:  
+2025-08-12T10:16:45: 
+2025-08-12T10:16:45: 엔비디아                             5
+2025-08-12T10:16:45: NVDA
+2025-08-12T10:16:45: 
+2025-08-12T10:16:45: 7월 2일 (수) 출금 완료되었습니다.
+2025-08-12T10:16:45: 
+2025-08-12T10:16:45: eS
+2025-08-12T10:16:45: 
+2025-08-12T10:16:45: 베미
+2025-08-12T10:16:45: 
+2025-08-12T10:16:45: 7월 2일 (수)
+2025-08-12T10:16:45: 
+2025-08-12T10:16:45: 6월 30일 (월) 10:30
+2025-08-12T10:16:45: 
+2025-08-12T10:16:45: 구매 접수 금액                                   20,000원
+2025-08-12T10:16:45: 주식수                                           0.093438주
+2025-08-12T10:16:45: 1주당 체결가                               157.11달러
+2025-08-12T10:16:45: 적용환율                                          1,361.82원
+2025-08-12T10:16:45: 원화환산                                        213,955원
+2025-08-12T10:16:45: 구매 금액                                            19,991원
+2025-08-12T10:16:45: 수수료                                                      무료
+2025-08-12T10:16:45: 
+2025-08-12T10:16:45: 정산금액                    19,991원
+2025-08-12T10:16:45: 
+2025-08-12T10:16:45:  
+2025-08-12T10:16:45: 
+2025-08-12T10:16:45: === End OCR Text ===
+2025-08-12T10:16:45: Valid Symbols: ['NVDA']
+2025-08-12T10:16:45: Shares: ['0.093438', '1']
+2025-08-12T10:16:45: Buy Amount: ['20,000', '19,991']
+2025-08-12T10:16:45: All Amount: ['20,000', '82', '213,955', '19,991', '19,991']
+2025-08-12T10:16:45: Dollar Price: ['157.11']
+2025-08-12T10:16:45: Action: buy
+2025-08-12T10:16:45: 118.235.11.239 - - [12/Aug/2025 10:16:45] "POST /api/stocks/v1/upload-screenshot HTTP/1.1" 200 -
+2025-08-12T10:19:18:  * Serving Flask app 'app'
+2025-08-12T10:19:18:  * Debug mode: on
+2025-08-12T10:19:18: WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+2025-08-12T10:19:18:  * Running on all addresses (0.0.0.0)
+2025-08-12T10:19:18:  * Running on http://127.0.0.1:9010
+2025-08-12T10:19:18:  * Running on http://192.168.0.65:9010
+2025-08-12T10:19:18: Press CTRL+C to quit
+2025-08-12T10:19:18:  * Restarting with stat
+2025-08-12T10:19:21:  * Debugger is active!
+2025-08-12T10:19:21:  * Debugger PIN: 972-012-010
+2025-08-12T10:21:45: 118.235.11.241 - - [12/Aug/2025 10:21:45] "GET / HTTP/1.1" 200 -
+2025-08-12T10:21:45: 118.235.11.241 - - [12/Aug/2025 10:21:45] "GET /static/style.css HTTP/1.1" 200 -
+2025-08-12T10:21:45: 118.235.11.241 - - [12/Aug/2025 10:21:45] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T10:21:45: 118.235.11.241 - - [12/Aug/2025 10:21:45] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T10:21:45: 118.235.11.241 - - [12/Aug/2025 10:21:45] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T10:21:45: 118.235.11.241 - - [12/Aug/2025 10:21:45] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T10:21:45: 118.235.11.241 - - [12/Aug/2025 10:21:45] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T10:21:46: 118.235.11.241 - - [12/Aug/2025 10:21:46] "GET /api/stocks/v1/news HTTP/1.1" 200 -
+2025-08-12T10:21:46: 118.235.11.241 - - [12/Aug/2025 10:21:46] "GET /api/stocks/v1/portfolio HTTP/1.1" 200 -
+2025-08-12T10:21:46: 118.235.11.241 - - [12/Aug/2025 10:21:46] "GET /api/stocks/v1/asset-history HTTP/1.1" 200 -
+2025-08-12T10:21:47: 118.235.11.241 - - [12/Aug/2025 10:21:47] "GET /api/stocks/v1/prices HTTP/1.1" 200 -
+2025-08-12T10:21:56: OCR Raw Text: wll LTE치
+2025-08-12T10:21:56: 
+2025-08-12T10:21:56:  
+2025-08-12T10:21:56: 
+2025-08-12T10:21:56:  
+2025-08-12T10:21:56: 
+2025-08-12T10:21:56: 엔비디아                             5
+2025-08-12T10:21:56: NVDA
+2025-08-12T10:21:56: 
+2025-08-12T10:21:56: 7월 2일 (수) 출금 완료되었습니다.
+2025-08-12T10:21:56: 
+2025-08-12T10:21:56: eS
+2025-08-12T10:21:56: 
+2025-08-12T10:21:56: 베미
+2025-08-12T10:21:56: 
+2025-08-12T10:21:56: 7월 2일 (수)
+2025-08-12T10:21:56: 
+2025-08-12T10:21:56: 6월 30일 (월) 10:30
+2025-08-12T10:21:56: 
+2025-08-12T10:21:56: 구매 접수 금액                                   20,000원
+2025-08-12T10:21:56: 주식수                                           0.093438주
+2025-08-12T10:21:56: 1주당 체결가                               157.11달러
+2025-08-12T10:21:56: 적용환율                                          1,361.82원
+2025-08-12T10:21:56: 원화환산                                        213,955원
+2025-08-12T10:21:56: 구매 금액                                            19,991원
+2025-08-12T10:21:56: 수수료                                                      무료
+2025-08-12T10:21:56: 
+2025-08-12T10:21:56: 정산금액                    19,991원
+2025-08-12T10:21:56: 
+2025-08-12T10:21:56:  
+2025-08-12T10:21:56: 
+2025-08-12T10:21:56: Processing OCR text lines: 28
+2025-08-12T10:21:56: Line 0: 'wll LTE치'
+2025-08-12T10:21:56: Line 1: ''
+2025-08-12T10:21:56: Line 2: ''
+2025-08-12T10:21:56: Line 3: ''
+2025-08-12T10:21:56: Line 4: ''
+2025-08-12T10:21:56: Line 5: ''
+2025-08-12T10:21:56: Line 6: '엔비디아                             5'
+2025-08-12T10:21:56: Line 7: 'NVDA'
+2025-08-12T10:21:56: Line 8: ''
+2025-08-12T10:21:56: Line 9: '7월 2일 (수) 출금 완료되었습니다.'
+2025-08-12T10:21:56: Line 10: ''
+2025-08-12T10:21:56: Line 11: 'eS'
+2025-08-12T10:21:56: Line 12: ''
+2025-08-12T10:21:56: Line 13: '베미'
+2025-08-12T10:21:56: Line 14: ''
+2025-08-12T10:21:56: Line 15: '7월 2일 (수)'
+2025-08-12T10:21:56: Line 16: ''
+2025-08-12T10:21:56: Line 17: '6월 30일 (월) 10:30'
+2025-08-12T10:21:56: Line 18: ''
+2025-08-12T10:21:56: Line 19: '구매 접수 금액                                   20,000원'
+2025-08-12T10:21:56: Line 20: '주식수                                           0.093438주'
+2025-08-12T10:21:56: Line 21: '1주당 체결가                               157.11달러'
+2025-08-12T10:21:56: Line 22: '적용환율                                          1,361.82원'
+2025-08-12T10:21:56: Line 23: '원화환산                                        213,955원'
+2025-08-12T10:21:56: Line 24: '구매 금액                                            19,991원'
+2025-08-12T10:21:56: Line 25: '수수료                                                      무료'
+2025-08-12T10:21:56: Line 26: ''
+2025-08-12T10:21:56: Line 27: '정산금액                    19,991원'
+2025-08-12T10:21:56: === Full OCR Text ===
+2025-08-12T10:21:56: wll LTE치
+2025-08-12T10:21:56: 
+2025-08-12T10:21:56:  
+2025-08-12T10:21:56: 
+2025-08-12T10:21:56:  
+2025-08-12T10:21:56: 
+2025-08-12T10:21:56: 엔비디아                             5
+2025-08-12T10:21:56: NVDA
+2025-08-12T10:21:56: 
+2025-08-12T10:21:56: 7월 2일 (수) 출금 완료되었습니다.
+2025-08-12T10:21:56: 
+2025-08-12T10:21:56: eS
+2025-08-12T10:21:56: 
+2025-08-12T10:21:56: 베미
+2025-08-12T10:21:56: 
+2025-08-12T10:21:56: 7월 2일 (수)
+2025-08-12T10:21:56: 
+2025-08-12T10:21:56: 6월 30일 (월) 10:30
+2025-08-12T10:21:56: 
+2025-08-12T10:21:56: 구매 접수 금액                                   20,000원
+2025-08-12T10:21:56: 주식수                                           0.093438주
+2025-08-12T10:21:56: 1주당 체결가                               157.11달러
+2025-08-12T10:21:56: 적용환율                                          1,361.82원
+2025-08-12T10:21:56: 원화환산                                        213,955원
+2025-08-12T10:21:56: 구매 금액                                            19,991원
+2025-08-12T10:21:56: 수수료                                                      무료
+2025-08-12T10:21:56: 
+2025-08-12T10:21:56: 정산금액                    19,991원
+2025-08-12T10:21:56: 
+2025-08-12T10:21:56:  
+2025-08-12T10:21:56: 
+2025-08-12T10:21:56: === End OCR Text ===
+2025-08-12T10:21:56: Valid Symbols: ['NVDA']
+2025-08-12T10:21:56: Shares: ['0.093438', '1']
+2025-08-12T10:21:56: Buy Amount: ['20,000', '19,991']
+2025-08-12T10:21:56: All Amount: ['20,000', '82', '213,955', '19,991', '19,991']
+2025-08-12T10:21:56: Dollar Price: ['157.11']
+2025-08-12T10:21:56: Action: buy
+2025-08-12T10:21:56: 118.235.11.241 - - [12/Aug/2025 10:21:56] "POST /api/stocks/v1/upload-screenshot HTTP/1.1" 200 -
+2025-08-12T10:22:17: OCR Raw Text: 때
+2025-08-12T10:22:17: 
+2025-08-12T10:22:17:  
+2025-08-12T10:22:17: 
+2025-08-12T10:22:17: 애플
+2025-08-12T10:22:17: ©  AAPL                                                    ?
+2025-08-12T10:22:17: 
+2025-08-12T10:22:17: 7월 30일 (수) 출금 완료되었습니다.
+2025-08-12T10:22:17: 
+2025-08-12T10:22:17: 모던
+2025-08-12T10:22:17: 
+2025-08-12T10:22:17: 7월 30일 (수)
+2025-08-12T10:22:17: 7월 28일 (월) 10:32
+2025-08-12T10:22:17: 구매 접수 금액                                         30,000원
+2025-08-12T10:22:17: 주식수                                           0.100729주
+2025-08-12T10:22:17: 1주당 체결가                                           213.94달러
+2025-08-12T10:22:17: 적용환율                                          1,391.49원
+2025-08-12T10:22:17: 원화환산                                           297,695원
+2025-08-12T10:22:17: 구매 금액                                           29,986원
+2025-08-12T10:22:17: 수수료                                                      무료
+2025-08-12T10:22:17: 
+2025-08-12T10:22:17: 정산금액                                          29,986원
+2025-08-12T10:22:17: 
+2025-08-12T10:22:17:  
+2025-08-12T10:22:17: 
+2025-08-12T10:22:17: Processing OCR text lines: 22
+2025-08-12T10:22:17: Line 0: '때'
+2025-08-12T10:22:17: Line 1: ''
+2025-08-12T10:22:17: Line 2: ''
+2025-08-12T10:22:17: Line 3: ''
+2025-08-12T10:22:17: Line 4: '애플'
+2025-08-12T10:22:17: Line 5: '©  AAPL                                                    ?'
+2025-08-12T10:22:17: Line 6: ''
+2025-08-12T10:22:17: Line 7: '7월 30일 (수) 출금 완료되었습니다.'
+2025-08-12T10:22:17: Line 8: ''
+2025-08-12T10:22:17: Line 9: '모던'
+2025-08-12T10:22:17: Line 10: ''
+2025-08-12T10:22:17: Line 11: '7월 30일 (수)'
+2025-08-12T10:22:17: Line 12: '7월 28일 (월) 10:32'
+2025-08-12T10:22:17: Line 13: '구매 접수 금액                                         30,000원'
+2025-08-12T10:22:17: Line 14: '주식수                                           0.100729주'
+2025-08-12T10:22:17: Line 15: '1주당 체결가                                           213.94달러'
+2025-08-12T10:22:17: Line 16: '적용환율                                          1,391.49원'
+2025-08-12T10:22:17: Line 17: '원화환산                                           297,695원'
+2025-08-12T10:22:17: Line 18: '구매 금액                                           29,986원'
+2025-08-12T10:22:17: Line 19: '수수료                                                      무료'
+2025-08-12T10:22:17: Line 20: ''
+2025-08-12T10:22:17: Line 21: '정산금액                                          29,986원'
+2025-08-12T10:22:17: === Full OCR Text ===
+2025-08-12T10:22:17: 때
+2025-08-12T10:22:17: 
+2025-08-12T10:22:17:  
+2025-08-12T10:22:17: 
+2025-08-12T10:22:17: 애플
+2025-08-12T10:22:17: ©  AAPL                                                    ?
+2025-08-12T10:22:17: 
+2025-08-12T10:22:17: 7월 30일 (수) 출금 완료되었습니다.
+2025-08-12T10:22:17: 
+2025-08-12T10:22:17: 모던
+2025-08-12T10:22:17: 
+2025-08-12T10:22:17: 7월 30일 (수)
+2025-08-12T10:22:17: 7월 28일 (월) 10:32
+2025-08-12T10:22:17: 구매 접수 금액                                         30,000원
+2025-08-12T10:22:17: 주식수                                           0.100729주
+2025-08-12T10:22:17: 1주당 체결가                                           213.94달러
+2025-08-12T10:22:17: 적용환율                                          1,391.49원
+2025-08-12T10:22:17: 원화환산                                           297,695원
+2025-08-12T10:22:17: 구매 금액                                           29,986원
+2025-08-12T10:22:17: 수수료                                                      무료
+2025-08-12T10:22:17: 
+2025-08-12T10:22:17: 정산금액                                          29,986원
+2025-08-12T10:22:17: 
+2025-08-12T10:22:17:  
+2025-08-12T10:22:17: 
+2025-08-12T10:22:17: === End OCR Text ===
+2025-08-12T10:22:17: Valid Symbols: ['AAPL']
+2025-08-12T10:22:17: Shares: ['0.100729', '1']
+2025-08-12T10:22:17: Buy Amount: ['30,000', '29,986']
+2025-08-12T10:22:17: All Amount: ['30,000', '49', '297,695', '29,986', '29,986']
+2025-08-12T10:22:17: Dollar Price: ['213.94']
+2025-08-12T10:22:17: Action: buy
+2025-08-12T10:22:17: 118.235.11.241 - - [12/Aug/2025 10:22:17] "POST /api/stocks/v1/upload-screenshot HTTP/1.1" 200 -
+2025-08-12T10:26:01: 41.58.206.188 - - [12/Aug/2025 10:26:01] code 400, message Bad request version ('\x88é`ÏÜ\x05²\x10Îz°\x8cø=T¦\x87uøîÃ5ö®')
+2025-08-12T10:26:01: 41.58.206.188 - - [12/Aug/2025 10:26:01] "ùÆu1f\x18"c\x91\x89\x87`\x8aàR¹¦oaTÙ=\x0bÊ=|\x048ì\x85âÇ°:Nu\x02{\x82\x97°æw\x10®\x96ìJ®\x12«ª.:\x05Qè\x1e4=«V[\x9aLÐË\x82«Ú\x99ßz\x85ÿS¤y\x97\x08äö\x18¬\x8f\x98òSô.Ì\x10ð"+\x97\x15;né\x97ª[c©\x99¸D¡K³L\x1692«\x9eªj#²ë\x91Ü®,«Äõ÷\x81 2M±´¹_Þ\x0b\x0bæ\x07dx\x1fö¹ßgÏm\x91nÈ\x11T\x1b÷Ó\x83üF\x83Sh\x84C04\x96ËF\x0eËV\x1byM-Ye²Îªj²¹¼¡ôÖd\x1f\x01\x86Þ\x0fZD2k¤ø³W\x01Ø¢\x1a{ûï¹\x9a|\x1f2\x15GIR¥\x83:3ô\x9c¸VµëäYÍ\x05¸U®\x9d°ÖÅ\x17\x86x\x09ª\x15\x1a´0_Â\x0f\x8dª\x0deºÅQ\x19mhQÔg¹\x9bÖYë\x82nt\x01´\x85\x8c±wTçc\x846¨X\x80\x97Óè\x13\x0cüä§}\x91\x1a¿}Àöñº\x06E\x82\x90V\x15\x9c¸â¹.\x1d\x88é`ÏÜ\x05²\x10Îz°\x8cø=T¦\x87uøîÃ5ö®" HTTPStatus.BAD_REQUEST -
+2025-08-12T10:26:02: 41.58.206.188 - - [12/Aug/2025 10:26:02] code 400, message Bad HTTP/0.9 request type ('\x13I\x02\x0fW')
+2025-08-12T10:26:02: 41.58.206.188 - - [12/Aug/2025 10:26:02] "
+2025-08-12T10:26:02: \x13I\x02\x0fW\x0dsf
+2025-08-12T10:26:02: " HTTPStatus.BAD_REQUEST -
+2025-08-12T10:26:23: 41.58.206.188 - - [12/Aug/2025 10:26:23] code 400, message Bad request version ('IÃ.#"8')
+2025-08-12T10:26:23: 41.58.206.188 - - [12/Aug/2025 10:26:23] "\x11ýú70;²0¯n"[s¿÷.°*U\x18¹.4\x86\x98ÌS©Ä"\x9b\x93>\x11Ì\x8bmQL>À(Ek\x1eÜÃ\x0cJª3>.ñ(Üõù\x9akÞ×\x15Ã8ú\x9dµAÆ\x8aà{A}#¬\x81nr]ò\x17ø\x85\x01í\x8c³J/\x87\x9b¨«­æ\x0c6\x85{\x00[U¶,nï\x93|\x8fÆhÇâ)â@\x17\x09\x96\x05\x95ÙFÕC\x8e³ßóÆ\x1aµk\x05L_\x10\x1am\x8c1 Iäí NxÃT*[´\x06\x02J\x17\x17K\x86ù\x1cIÃ.#"8" HTTPStatus.BAD_REQUEST -
+2025-08-12T10:26:24: 41.58.206.188 - - [12/Aug/2025 10:26:24] code 400, message Bad HTTP/0.9 request type ('\x13I\x02\x0fW')
+2025-08-12T10:26:24: 41.58.206.188 - - [12/Aug/2025 10:26:24] "\x13I\x02\x0fW\x0dsf" HTTPStatus.BAD_REQUEST -
+2025-08-12T10:26:46: 41.58.206.188 - - [12/Aug/2025 10:26:46] code 400, message Bad request version ('TÄ\\a')
+2025-08-12T10:26:46: 41.58.206.188 - - [12/Aug/2025 10:26:46] "\x80\x0c?\x05\x80[À¤·\x9bI \x80Ù´r\x90^«H6\x9b\x1b\\î±èf\x0cn\x0f\x91ÀÒÍib·ó\x1düUÄìsÆ®=£\x9e:äÉ'\x0b\x0cL\x81ü\x87i}\x8eÍ"\x83;\x19 Î\x12p\x04%;¨Fæ+\x04tlößpÍ£Ï gn®némÝ®y­ð7 O\x1e\x9e\x1a\x13H\x92¡¼w\x16\x80Ï¬¥\x0c\x82ïpÀÒ÷Ãù´r\x85JcóÞ}Øvó'X\x90Íç'7W;Z+\x86þÊ\x01\x93\x82%ÊdF\x1ed\x09TÄ\\a" HTTPStatus.BAD_REQUEST -
+2025-08-12T10:27:02: 41.58.206.188 - - [12/Aug/2025 10:27:02] code 400, message Bad HTTP/0.9 request type ('\x13I\x02\x0fW')
+2025-08-12T10:27:02: 41.58.206.188 - - [12/Aug/2025 10:27:02] "\x13I\x02\x0fW\x0dsf" HTTPStatus.BAD_REQUEST -
