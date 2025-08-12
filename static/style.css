@@ -283,7 +283,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .transaction-card {
   background: var(--card-bg-light);
-  padding: 16px;
+  padding: 16px 80px 16px 16px; /* 우측에 버튼 공간 확보 */
   border-radius: 12px;
   margin-bottom: 12px;
   border: 1px solid var(--border-light);
@@ -1213,6 +1213,21 @@ ul#transaction-list {
   border: 1px solid #f5c6cb;
   color: #721c24;
 }
+.ocr-status.failed {
+  background: #fff3cd;
+  border: 2px solid #ffc107;
+  color: #856404;
+}
+.ocr-status.partial-success {
+  background: #fff3cd;
+  border: 2px solid #fd7e14;
+  color: #495057;
+}
+.ocr-status.progress-screen {
+  background: #e7f3ff;
+  border: 2px solid #0084ff;
+  color: #0056b3;
+}
 
 .dark-mode .ocr-status.processing {
   background: #554d3e;
@@ -1231,9 +1246,272 @@ ul#transaction-list {
   border-color: #7b3e3e;
   color: #e5b3b3;
 }
+.dark-mode .ocr-status.failed {
+  background: #554d3e;
+  border-color: #ffb300;
+  color: #ffc107;
+}
+.dark-mode .ocr-status.partial-success {
+  background: #4a3f33;
+  border-color: #fd7e14;
+  color: #ffc49b;
+}
+.dark-mode .ocr-status.progress-screen {
+  background: #1a3a4a;
+  border-color: #4da6ff;
+  color: #80c7ff;
+}
 
 .status-icon {
   font-size: 1.2rem;
+}
+
+/* OCR 실패 관련 스타일 */
+.ocr-failure-details, .ocr-error-details {
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  background: #f8f9fa;
+  border-left: 4px solid #ffc107;
+}
+
+.dark-mode .ocr-failure-details, .dark-mode .ocr-error-details {
+  background: #2a2a2a;
+  border-left-color: #ffb300;
+}
+
+.failure-message, .error-message {
+  margin: 0 0 10px 0;
+  font-weight: 500;
+}
+
+.failure-suggestions, .error-suggestions {
+  margin: 10px 0 5px 0;
+  font-weight: 500;
+  color: #666;
+}
+
+.dark-mode .failure-suggestions, .dark-mode .error-suggestions {
+  color: #ccc;
+}
+
+.failure-tips {
+  margin: 5px 0 0 20px;
+  color: #666;
+}
+
+.dark-mode .failure-tips {
+  color: #bbb;
+}
+
+.failure-tips li {
+  margin-bottom: 5px;
+}
+
+/* 재시도 버튼 스타일 */
+.retry-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.retry-ocr-btn, .upload-new-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.retry-ocr-btn {
+  background: #007bff;
+  color: white;
+}
+
+.retry-ocr-btn:hover {
+  background: #0056b3;
+  transform: translateY(-1px);
+}
+
+.upload-new-btn {
+  background: #6c757d;
+  color: white;
+}
+
+.upload-new-btn:hover {
+  background: #5a6268;
+  transform: translateY(-1px);
+}
+
+.manual-input-btn {
+  padding: 10px 20px;
+  border: 2px solid #28a745;
+  border-radius: 6px;
+  background: transparent;
+  color: #28a745;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.manual-input-btn:hover {
+  background: #28a745;
+  color: white;
+  transform: translateY(-1px);
+}
+
+.dark-mode .manual-input-btn {
+  border-color: #34ce57;
+  color: #34ce57;
+}
+
+.dark-mode .manual-input-btn:hover {
+  background: #34ce57;
+  color: #000;
+}
+
+/* 날짜 누락 관련 스타일 */
+.tx-datetime-missing {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 0;
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+.dark-mode .tx-datetime-missing {
+  color: #adb5bd;
+}
+
+.datetime-missing {
+  color: #fd7e14;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.dark-mode .datetime-missing {
+  color: #ffc49b;
+}
+
+.date-reprocess-section {
+  margin-top: 20px;
+  padding: 15px;
+  background: #f8f9fa;
+  border: 2px dashed #fd7e14;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.dark-mode .date-reprocess-section {
+  background: #2a2a2a;
+  border-color: #fd7e14;
+}
+
+.reprocess-hint {
+  margin: 0 0 15px 0;
+  color: #495057;
+  font-size: 0.95rem;
+}
+
+.dark-mode .reprocess-hint {
+  color: #ced4da;
+}
+
+.reprocess-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.retry-date-btn {
+  padding: 10px 20px;
+  border: 2px solid #fd7e14;
+  border-radius: 6px;
+  background: #fd7e14;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.retry-date-btn:hover {
+  background: #e8590c;
+  border-color: #e8590c;
+  transform: translateY(-1px);
+}
+
+.dark-mode .retry-date-btn {
+  background: #fd7e14;
+  border-color: #fd7e14;
+}
+
+.dark-mode .retry-date-btn:hover {
+  background: #e8590c;
+  border-color: #e8590c;
+}
+
+/* 진행 중 화면 안내 스타일 */
+.progress-screen-notice {
+  margin-top: 20px;
+  padding: 20px;
+  background: #f8f9ff;
+  border: 2px solid #0084ff;
+  border-radius: 8px;
+}
+
+.dark-mode .progress-screen-notice {
+  background: #1a2833;
+  border-color: #4da6ff;
+}
+
+.progress-hint {
+  margin: 0 0 15px 0;
+  color: #0056b3;
+  font-size: 1rem;
+}
+
+.dark-mode .progress-hint {
+  color: #80c7ff;
+}
+
+.progress-tips {
+  margin: 15px 0;
+  padding-left: 20px;
+  color: #495057;
+  line-height: 1.6;
+}
+
+.dark-mode .progress-tips {
+  color: #ced4da;
+}
+
+.progress-tips li {
+  margin-bottom: 8px;
+}
+
+.progress-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+  flex-wrap: wrap;
 }
 
 .status-text {
@@ -1873,7 +2151,7 @@ ul#all-transaction-list {
   background-color: #f9f9f9;
   border: 1px solid #ddd;
   border-radius: 8px;
-  padding: 16px;
+  padding: 16px 80px 16px 16px; /* 우측에 버튼 공간 확보 */
   margin-bottom: 12px;
   display: flex;
   flex-direction: column;
@@ -1953,18 +2231,100 @@ ul#all-transaction-list {
   font-weight: 500;
 }
 
-.transaction-card .tx-delete {
+.tx-actions {
     position: absolute;
     top: 8px;
     right: 8px;
-    background: none;
-    border: none;
-    font-size: 20px;
-    cursor: pointer;
-    color: #999;
+    display: flex;
+    gap: 12px;
+    z-index: 2;
 }
+
+.transaction-card .tx-edit, .transaction-card .tx-delete {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    cursor: pointer;
+    padding: 6px 8px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    min-width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.dark-mode .transaction-card .tx-edit, 
 .dark-mode .transaction-card .tx-delete {
-    color: #ccc;
+    background: rgba(30, 30, 30, 0.9);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.transaction-card .tx-edit {
+    color: #28a745;
+}
+
+.transaction-card .tx-edit:hover {
+    background: rgba(40, 167, 69, 0.1);
+}
+
+.transaction-card .tx-delete {
+    color: #dc3545;
+}
+
+.transaction-card .tx-delete:hover {
+    background: rgba(220, 53, 69, 0.1);
+}
+
+.dark-mode .transaction-card .tx-edit {
+    color: #34ce57;
+}
+
+.dark-mode .transaction-card .tx-edit:hover {
+    background: rgba(52, 206, 87, 0.1);
+}
+
+.dark-mode .transaction-card .tx-delete {
+    color: #f87171;
+}
+
+.dark-mode .transaction-card .tx-delete:hover {
+    background: rgba(248, 113, 113, 0.1);
+}
+
+/* 추가 모바일 최적화 */
+@media (max-width: 768px) {
+  .tx-actions {
+    top: 10px;
+    right: 10px;
+    gap: 10px;
+  }
+  
+  .transaction-card .tx-edit, 
+  .transaction-card .tx-delete {
+    min-width: 30px;
+    height: 30px;
+    font-size: 12px;
+    padding: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tx-actions {
+    top: 8px;
+    right: 8px;
+    gap: 8px;
+  }
+  
+  .transaction-card .tx-edit, 
+  .transaction-card .tx-delete {
+    min-width: 28px;
+    height: 28px;
+    font-size: 11px;
+    padding: 4px;
+  }
 }
 
 /* ======================== */

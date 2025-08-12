@@ -78,6 +78,33 @@ def extract_purchase_date(text):
     print(filtered_text)
     print("=" * 50)
     
+    # 구매일시 패턴을 먼저 찾기 (6월 30일 (월) 10:30 형식)
+    purchase_datetime_pattern = r'(\d{1,2})월\s*(\d{1,2})일\s*\([가-힣]\)\s*(\d{1,2}):(\d{2})'
+    
+    # 전체 텍스트에서 모든 날짜/시간 매치를 찾기
+    all_matches = []
+    for i, line in enumerate(lines):
+        matches = re.findall(purchase_datetime_pattern, line)
+        for match in matches:
+            month, day, hour, minute = match
+            # 출금 관련 줄이 아닌 경우만 추가
+            if '출금' not in line and '완료되었습니다' not in line:
+                all_matches.append((month, day, hour, minute, line, i))
+                print(f"발견된 날짜/시간: {month}월 {day}일 {hour}:{minute} (줄 {i}: {line.strip()})")
+    
+    if all_matches:
+        # 가장 위쪽에 나오는 날짜/시간을 사용 (거래일시가 먼저 나옴)
+        month, day, hour, minute, source_line, line_num = all_matches[0]
+        try:
+            current_year = datetime.now().year
+            purchase_date = datetime(current_year, int(month), int(day), int(hour), int(minute))
+            result = purchase_date.strftime('%Y-%m-%d %H:%M')
+            print(f"구매일시 추출 성공: {month}월 {day}일 {hour}:{minute} → {result}")
+            print(f"출처: {source_line.strip()}")
+            return result
+        except ValueError as e:
+            print(f"구매일시 파싱 오류: {e}")
+    
     # 시간 정보가 있는 패턴 우선 검색 (구매 관련 정보만)
     # 예: "6월 30일 (월) 10:30"
     datetime_pattern = r'(\d{1,2})월\s*(\d{1,2})일\s*(?:\([가-힣]\))?\s*(\d{1,2}):(\d{2})'
@@ -136,6 +163,75 @@ def extract_korean_trading_info(text):
     # 잘못된 심볼 제외 (LTE, APP 등 일반적인 단어들)
     excluded_symbols = {'LTE', 'APP', 'CEO', 'USD', 'KRW', 'GMT'}
     valid_symbols = [s for s in symbol_matches if s not in excluded_symbols]
+    
+    # 진행 중인 거래 화면 감지 패턴
+    progress_keywords = ['구매 접수', '구매 처리', '구매 완료', '출금 완료', '출금 중']
+    is_progress_screen = any(keyword in text for keyword in progress_keywords)
+    
+    if is_progress_screen:
+        print("⚠️  진행 중인 거래 화면이 감지되었습니다.")
+        # 진행 중 화면에서는 예상 정보만 추출 가능
+        
+        # 체결가 패턴 (1주당 체결가: 177.05달러)
+        price_per_share_pattern = r'1주당\s*체결가[:\s]*(\d+(?:\.\d+)?)\s*달러'
+        price_matches = re.findall(price_per_share_pattern, text)
+        
+        # 구매 금액과 주식수로 역산
+        buy_amount_pattern = r'구매\s*금액[:\s]*(\d{1,3}(?:,\d{3})*)\s*원'
+        buy_amount_matches = re.findall(buy_amount_pattern, text)
+        
+        # 주식수 패턴
+        shares_pattern = r'(\d+(?:\.\d+)?)\s*주'
+        shares_matches = re.findall(shares_pattern, text)
+        
+        if valid_symbols and (price_matches or (buy_amount_matches and shares_matches)):
+            symbol = valid_symbols[0]
+            
+            # 가격 정보 결정
+            if price_matches:
+                price_usd = float(price_matches[0])
+            elif buy_amount_matches and shares_matches:
+                # 구매 금액과 주식수로 달러 가격 역산
+                amount_krw = float(buy_amount_matches[0].replace(',', ''))
+                quantity = float(shares_matches[0])
+                price_krw_per_share = amount_krw / quantity
+                price_usd = price_krw_per_share / 1300  # 대략적인 환율
+            else:
+                print("가격 정보를 찾을 수 없습니다.")
+                return transactions
+                
+            # 주식수 정보
+            if shares_matches:
+                quantity = float(shares_matches[0])
+            else:
+                # 구매 금액과 체결가로 주식수 역산
+                if buy_amount_matches and price_matches:
+                    amount_krw = float(buy_amount_matches[0].replace(',', ''))
+                    price_usd = float(price_matches[0])
+                    quantity = amount_krw / (price_usd * 1300)  # 대략적 계산
+                else:
+                    print("주식수 정보를 찾을 수 없습니다.")
+                    return transactions
+            
+            transactions.append({
+                'ticker': symbol.upper(),
+                'type': 'buy',  # 진행 중 화면은 대부분 구매
+                'quantity': round(quantity, 6),
+                'price': round(price_usd, 2),
+                'date': purchase_date[:10] if purchase_date else datetime.now().strftime('%Y-%m-%d'),
+                'purchase_datetime': purchase_date,
+                'original_amount_krw': float(buy_amount_matches[0].replace(',', '')) if buy_amount_matches else None,
+                'extracted_dollar_price': float(price_matches[0]) if price_matches else None,
+                'is_progress_screen': True  # 진행 중 화면임을 표시
+            })
+            
+            print(f"진행 중 화면에서 추출된 정보:")
+            print(f"  종목: {symbol}")
+            print(f"  수량: {quantity}")
+            print(f"  가격: ${price_usd}")
+            print(f"  구매금액: {buy_amount_matches[0] if buy_amount_matches else 'N/A'}원")
+            
+            return transactions
     
     # 주식수 패턴 (0.093438주 형태)
     shares_pattern = r'(\d+(?:\.\d+)?)\s*주'
@@ -273,6 +369,34 @@ def add_transaction():
 def get_transactions():
     data = load_data()
     return jsonify(data.get("transactions", []))
+
+@app.route("/api/stocks/v1/transactions/<int:index>", methods=["PUT"])
+def update_transaction(index):
+    req = request.get_json()
+    data = load_data()
+    transactions = data.get("transactions", [])
+    
+    if not (0 <= index < len(transactions)):
+        return jsonify({"error": "Transaction not found."}), 404
+    
+    # 새로운 거래 정보로 업데이트
+    symbol = req["ticker"]
+    price = float(req["price"])
+    quantity = float(req["quantity"])
+    tx_type = req["type"]
+    date = req.get("date") or datetime.today().strftime("%Y-%m-%d")
+    
+    transactions[index] = {
+        "ticker": symbol,
+        "type": tx_type,
+        "price": price,
+        "quantity": quantity,
+        "date": date
+    }
+    
+    update_portfolio(data)
+    save_data(data)
+    return jsonify({"message": "Transaction updated."})
 
 @app.route("/api/stocks/v1/transactions/<int:index>", methods=["DELETE"])
 def delete_transaction(index):

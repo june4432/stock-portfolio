@@ -629,7 +629,10 @@
                   <span class="tx-value">${Number(tx.price).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
               </div>
           </div>
-          <button class="tx-delete" onclick="deleteTransaction(${originalIndex})" title="거래내역 삭제">×</button>
+          <div class="tx-actions">
+            <button class="tx-edit" onclick="editExistingTransaction(${originalIndex})" title="거래내역 수정">✏️</button>
+            <button class="tx-delete" onclick="deleteTransaction(${originalIndex})" title="거래내역 삭제">×</button>
+          </div>
         `;
         container.appendChild(div);
       });
@@ -846,6 +849,9 @@
     async function processImageFile(file) {
       console.log('handleFile called with:', file.name, 'type:', file.type, 'size:', file.size);
       
+      // 파일을 전역 변수에 저장 (재시도를 위해)
+      currentUploadedFile = file;
+      
       // Validation
       const validTypes = ['image/png', 'image/jpeg', 'image/jpg', 'image/gif', 'image/bmp'];
       const validExtensions = ['.png', '.jpg', '.jpeg', '.gif', '.bmp'];
@@ -907,13 +913,11 @@
           parsedTransactionData = result.parsed_data;
           displayParsedTransactions(result);
         } else {
-          resetUploadArea();
-          alert('거래내역을 인식할 수 없습니다. 더 명확한 이미지를 시도해보세요.');
+          displayOCRFailure(result);
         }
       } catch (error) {
         console.error('Upload error:', error);
-        resetUploadArea();
-        alert('업로드 중 오류가 발생했습니다: ' + error.message);
+        displayOCRError(error.message);
       }
     }
 
@@ -931,11 +935,34 @@
       // OCR 결과 저장 (수정하여 저장 버튼에서 사용)
       window.currentParsedTransaction = result.parsed_data && result.parsed_data.length > 0 ? result.parsed_data[0] : null;
       
-      // OCR 처리 완료 상태 표시
+      // 날짜가 누락된 거래내역이 있는지 확인
+      const missingDates = result.parsed_data.filter(tx => !tx.purchase_datetime || tx.purchase_datetime === null);
+      const hasMissingDates = missingDates.length > 0;
+      
+      // 진행 중 화면 감지
+      const hasProgressScreen = result.parsed_data.some(tx => tx.is_progress_screen);
+      
+      // OCR 처리 상태에 따른 메시지 결정
+      let statusClass, statusIcon, statusText;
+      if (hasProgressScreen) {
+        statusClass = 'progress-screen';
+        statusIcon = '🔄';
+        statusText = '거래 진행 중인 화면에서 예상 정보를 추출했습니다';
+      } else if (hasMissingDates) {
+        statusClass = 'partial-success';
+        statusIcon = '⚠️';
+        statusText = '거래내역은 인식되었으나 날짜 정보가 누락되었습니다';
+      } else {
+        statusClass = 'success';
+        statusIcon = '✅';
+        statusText = '처리 완료 - 아래 폼에서 수정 후 저장하세요';
+      }
+      
+      // OCR 처리 결과 표시
       parsedContainer.innerHTML = `
-        <div class="ocr-status success">
-          <span class="status-icon">✅</span>
-          <span class="status-text">처리 완료 - 아래 폼에서 수정 후 저장하세요</span>
+        <div class="ocr-status ${statusClass}">
+          <span class="status-icon">${statusIcon}</span>
+          <span class="status-text">${statusText}</span>
         </div>
         ${result.parsed_data.map(tx => `
           <div class="parsed-transaction">
@@ -949,9 +976,45 @@
                 <span class="datetime-label">구매일시:</span>
                 <span class="datetime-value">${tx.purchase_datetime}</span>
               </div>
-            ` : `<div class="tx-datetime-debug">DEBUG: purchase_datetime가 없습니다 (${tx.purchase_datetime})</div>`}
+            ` : `
+              <div class="tx-datetime-missing">
+                <span class="datetime-label">구매일시:</span>
+                <span class="datetime-missing">인식되지 않음</span>
+              </div>
+            `}
           </div>
         `).join('')}
+        ${/* 진행 중 화면인 경우 */ ''}
+        ${hasProgressScreen ? `
+          <div class="progress-screen-notice">
+            <p class="progress-hint">📝 <strong>진행 중인 거래 화면 안내</strong></p>
+            <ul class="progress-tips">
+              <li>현재 표시된 정보는 <strong>예상값</strong>일 수 있습니다</li>
+              <li>정확한 체결 정보는 거래 완료 후 확인 가능합니다</li>
+              <li>필요시 수정하여 저장하거나 완료 화면에서 다시 업로드해주세요</li>
+            </ul>
+            <div class="progress-actions">
+              <button class="manual-input-btn" onclick="editParsedTransaction()">✏️ 수정하여 저장</button>
+            </div>
+          </div>
+        ` : ''}
+        ${/* 날짜 누락된 경우 (진행 중 화면과 일반 화면 구분 없이 항상 표시) */ ''}
+        ${hasMissingDates ? `
+          <div class="date-reprocess-section">
+            <div class="reprocess-actions">
+              <button class="retry-date-btn" onclick="retryDateExtraction()">📅 날짜 다시 추출하기</button>
+              <button class="manual-input-btn" onclick="editParsedTransaction()">✏️ 수정하여 저장</button>
+            </div>
+          </div>
+        ` : ''}
+        ${/* 완전 성공인 경우 (진행 중 화면이 아니고 날짜도 있는 경우) */ ''}
+        ${!hasProgressScreen && !hasMissingDates ? `
+          <div class="success-actions" style="text-align: center; margin-top: 15px;">
+            <div class="success-button-group">
+              <button class="manual-input-btn" onclick="editParsedTransaction()">✏️ 수정하여 저장</button>
+            </div>
+          </div>
+        ` : ''}
       `;
       
       // 결과 영역이 아직 표시되지 않았다면 표시
@@ -959,6 +1022,201 @@
       if (uploadResult.style.display === 'none') {
         uploadResult.style.display = 'block';
       }
+    }
+
+    // 전역 변수로 현재 업로드된 파일 저장
+    let currentUploadedFile = null;
+
+    function displayOCRFailure(result) {
+      const parsedContainer = document.getElementById('parsed-transactions');
+      
+      // OCR 실패 상태 표시 및 재시도 버튼 추가
+      parsedContainer.innerHTML = `
+        <div class="ocr-status failed">
+          <span class="status-icon">❌</span>
+          <span class="status-text">거래내역을 인식할 수 없습니다.</span>
+        </div>
+        <div class="ocr-failure-details">
+          <p class="failure-message">이미지에서 거래 정보를 찾을 수 없었습니다.</p>
+          <p class="failure-suggestions">다음을 확인해보세요:</p>
+          <ul class="failure-tips">
+            <li>스크린샷이 선명한지 확인</li>
+            <li>거래내역이 완전히 보이는지 확인</li>
+            <li>한국어 또는 영어로 된 거래 앱 화면인지 확인</li>
+          </ul>
+        </div>
+        <div class="retry-actions">
+          <button class="retry-ocr-btn" onclick="retryOCR()">🔄 다시 분석하기</button>
+          <button class="manual-input-btn" onclick="openAddTransactionModal()">✏️ 직접 입력하기</button>
+        </div>
+      `;
+      
+      // 결과 영역 표시
+      const uploadResult = document.getElementById('upload-result');
+      if (uploadResult.style.display === 'none') {
+        uploadResult.style.display = 'block';
+      }
+    }
+
+    function displayOCRError(errorMessage) {
+      const parsedContainer = document.getElementById('parsed-transactions');
+      
+      // OCR 에러 상태 표시 및 재시도 버튼 추가
+      parsedContainer.innerHTML = `
+        <div class="ocr-status error">
+          <span class="status-icon">🚨</span>
+          <span class="status-text">처리 중 오류가 발생했습니다.</span>
+        </div>
+        <div class="ocr-error-details">
+          <p class="error-message">${errorMessage}</p>
+          <p class="error-suggestions">네트워크 연결을 확인하고 다시 시도해보세요.</p>
+        </div>
+        <div class="retry-actions">
+          <button class="retry-ocr-btn" onclick="retryOCR()">🔄 다시 시도하기</button>
+          <button class="upload-new-btn" onclick="clearUploadResult()">📷 새 이미지 업로드</button>
+        </div>
+      `;
+      
+      // 결과 영역 표시
+      const uploadResult = document.getElementById('upload-result');
+      if (uploadResult.style.display === 'none') {
+        uploadResult.style.display = 'block';
+      }
+    }
+
+    async function retryOCR() {
+      if (!currentUploadedFile) {
+        alert('재시도할 파일이 없습니다. 새로운 이미지를 업로드해주세요.');
+        clearUploadResult();
+        return;
+      }
+      
+      // 재시도 중 상태 표시
+      const parsedContainer = document.getElementById('parsed-transactions');
+      parsedContainer.innerHTML = `
+        <div class="ocr-status processing">
+          <span class="status-icon">⏳</span>
+          <span class="status-text">다시 분석하는 중...</span>
+        </div>
+      `;
+      
+      try {
+        const formData = new FormData();
+        formData.append('file', currentUploadedFile);
+        
+        const response = await fetch('/api/stocks/v1/upload-screenshot', {
+          method: 'POST',
+          body: formData
+        });
+        
+        const result = await response.json();
+        console.log('Retry OCR Result:', result);
+        
+        if (result.success && result.parsed_data.length > 0) {
+          parsedTransactionData = result.parsed_data;
+          displayParsedTransactions(result);
+        } else {
+          displayOCRFailure(result);
+        }
+      } catch (error) {
+        console.error('Retry OCR error:', error);
+        displayOCRError(error.message);
+      }
+    }
+
+    async function retryDateExtraction() {
+      if (!currentUploadedFile) {
+        alert('재시도할 파일이 없습니다. 새로운 이미지를 업로드해주세요.');
+        clearUploadResult();
+        return;
+      }
+      
+      // 날짜 재추출 중 상태 표시
+      const parsedContainer = document.getElementById('parsed-transactions');
+      const currentHTML = parsedContainer.innerHTML;
+      
+      // 기존 내용을 유지하되 상태 메시지만 업데이트
+      parsedContainer.innerHTML = currentHTML.replace(
+        /<div class="ocr-status[^>]*>[\s\S]*?<\/div>/,
+        `<div class="ocr-status processing">
+          <span class="status-icon">⏳</span>
+          <span class="status-text">날짜 정보를 다시 추출하는 중...</span>
+        </div>`
+      );
+      
+      try {
+        const formData = new FormData();
+        formData.append('file', currentUploadedFile);
+        
+        const response = await fetch('/api/stocks/v1/upload-screenshot', {
+          method: 'POST',
+          body: formData
+        });
+        
+        const result = await response.json();
+        console.log('Retry Date Extraction Result:', result);
+        
+        if (result.success && result.parsed_data.length > 0) {
+          // 기존 거래 데이터와 새로운 결과를 비교하여 날짜 정보만 업데이트
+          const updatedData = mergeDateInfo(parsedTransactionData, result.parsed_data);
+          parsedTransactionData = updatedData;
+          
+          // 결과 표시
+          displayParsedTransactions({ success: true, parsed_data: updatedData });
+          
+          // 날짜가 여전히 누락된지 확인
+          const stillMissingDates = updatedData.filter(tx => !tx.purchase_datetime || tx.purchase_datetime === null);
+          if (stillMissingDates.length === 0) {
+            // 모든 날짜가 추출되었다면 성공 메시지 표시
+            setTimeout(() => {
+              const statusEl = document.querySelector('.ocr-status');
+              if (statusEl) {
+                statusEl.className = 'ocr-status success';
+                statusEl.innerHTML = `
+                  <span class="status-icon">✅</span>
+                  <span class="status-text">날짜 정보가 성공적으로 추출되었습니다!</span>
+                `;
+              }
+            }, 500);
+          }
+        } else {
+          // 재시도해도 날짜를 찾지 못한 경우
+          displayDateExtractionFailure();
+        }
+      } catch (error) {
+        console.error('Date extraction retry error:', error);
+        displayOCRError(error.message);
+      }
+    }
+
+    function mergeDateInfo(originalData, newData) {
+      // 원래 데이터를 기준으로 하되, 새로운 데이터에서 날짜 정보만 업데이트
+      return originalData.map((originalTx, index) => {
+        const newTx = newData[index];
+        if (newTx && newTx.purchase_datetime && !originalTx.purchase_datetime) {
+          // 새로운 데이터에 날짜가 있고 원래 데이터에는 없는 경우
+          return {
+            ...originalTx,
+            purchase_datetime: newTx.purchase_datetime,
+            date: newTx.purchase_datetime ? newTx.purchase_datetime.split(' ')[0] : originalTx.date
+          };
+        }
+        return originalTx;
+      });
+    }
+
+    function displayDateExtractionFailure() {
+      const parsedContainer = document.getElementById('parsed-transactions');
+      const currentHTML = parsedContainer.innerHTML;
+      
+      // 상태 메시지만 업데이트 
+      parsedContainer.innerHTML = currentHTML.replace(
+        /<div class="ocr-status[^>]*>[\s\S]*?<\/div>/,
+        `<div class="ocr-status partial-success">
+          <span class="status-icon">⚠️</span>
+          <span class="status-text">날짜 정보를 여전히 찾을 수 없습니다. 직접 입력해주세요.</span>
+        </div>`
+      );
     }
 
     function editParsedTransaction() {
@@ -990,10 +1248,18 @@
         if (quantityInput) {
           quantityInput.value = transaction.quantity || '';
         }
-        if (dateInput && transaction.purchase_datetime) {
-          // purchase_datetime에서 날짜 부분만 추출 (YYYY-MM-DD 형식)
-          const dateOnly = transaction.purchase_datetime.split(' ')[0];
-          dateInput.value = dateOnly;
+        if (dateInput) {
+          if (transaction.purchase_datetime) {
+            // purchase_datetime에서 날짜 부분만 추출 (YYYY-MM-DD 형식)
+            const dateOnly = transaction.purchase_datetime.split(' ')[0];
+            dateInput.value = dateOnly;
+          } else if (transaction.date) {
+            // purchase_datetime이 없으면 date 필드 사용
+            dateInput.value = transaction.date;
+          } else {
+            // 둘 다 없으면 오늘 날짜
+            dateInput.value = new Date().toISOString().split('T')[0];
+          }
         }
         if (typeSelect) {
           typeSelect.value = transaction.type || 'buy';
@@ -1113,7 +1379,9 @@
         </div>
       `;
       
+      // 전역 변수 초기화
       parsedTransactionData = [];
+      currentUploadedFile = null;
     }
 
     function resetUploadArea() {
@@ -1235,30 +1503,32 @@
     // Main initialization
     // Edit transaction functionality
     let currentEditingTransaction = null;
+    let currentEditingIndex = null;
 
-    function editParsedTransaction() {
-      if (!parsedTransactionData || parsedTransactionData.length === 0) {
-        alert('편집할 거래내역이 없습니다.');
-        return;
-      }
-      
-      // 첫 번째 거래내역을 편집 (여러개인 경우 확장 가능)
-      currentEditingTransaction = parsedTransactionData[0];
-      
-      // 모달 폼에 데이터 채우기
-      document.getElementById('edit-ticker').value = currentEditingTransaction.ticker || '';
-      document.getElementById('edit-type').value = currentEditingTransaction.type || 'buy';
-      document.getElementById('edit-quantity').value = currentEditingTransaction.quantity || '';
-      document.getElementById('edit-price').value = currentEditingTransaction.price || '';
-      document.getElementById('edit-date').value = currentEditingTransaction.date || new Date().toISOString().split('T')[0];
-      
-      // 모달 표시
-      document.getElementById('editTransactionModal').style.display = 'block';
+    function editExistingTransaction(index) {
+      fetchTransactions().then(transactions => {
+        const transaction = transactions[index];
+        if (transaction) {
+          currentEditingTransaction = transaction;
+          currentEditingIndex = index;
+          
+          // 편집 모달 폼에 데이터 채우기
+          document.getElementById('edit-ticker').value = transaction.ticker || '';
+          document.getElementById('edit-type').value = transaction.type || 'buy';
+          document.getElementById('edit-quantity').value = transaction.quantity || '';
+          document.getElementById('edit-price').value = transaction.price || '';
+          document.getElementById('edit-date').value = transaction.date || new Date().toISOString().split('T')[0];
+          
+          // 편집 모달 표시
+          document.getElementById('editTransactionModal').style.display = 'block';
+        }
+      });
     }
 
     function closeEditModal() {
       document.getElementById('editTransactionModal').style.display = 'none';
       currentEditingTransaction = null;
+      currentEditingIndex = null;
     }
 
     async function saveEditedTransaction() {
@@ -1280,25 +1550,49 @@
       }
       
       try {
-        const response = await fetch('/api/stocks/v1/transactions', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(editedTransaction)
-        });
-        
-        const result = await response.json();
-        if (response.ok) {
-          alert('수정된 거래내역이 저장되었습니다.');
-          closeEditModal();
-          clearUploadResult();
+        if (currentEditingIndex !== null) {
+          // 기존 거래내역 수정
+          const response = await fetch(`/api/stocks/v1/transactions/${currentEditingIndex}`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(editedTransaction)
+          });
           
-          // 대시보드 업데이트
-          renderDashboard();
-          renderRecentTransactions();
-          renderAllTransactions();
-          updateTradeCount();
+          if (response.ok) {
+            alert('거래내역이 수정되었습니다.');
+            closeEditModal();
+            
+            // 대시보드 업데이트
+            renderDashboard();
+            renderRecentTransactions();
+            renderAllTransactions();
+            updateTradeCount();
+          } else {
+            const result = await response.json();
+            alert('수정 실패: ' + (result.error || '알 수 없는 오류'));
+          }
         } else {
-          alert('저장 실패: ' + result.error);
+          // 새 거래내역 추가 (OCR에서 온 경우)
+          const response = await fetch('/api/stocks/v1/transactions', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(editedTransaction)
+          });
+          
+          const result = await response.json();
+          if (response.ok) {
+            alert('수정된 거래내역이 저장되었습니다.');
+            closeEditModal();
+            clearUploadResult();
+            
+            // 대시보드 업데이트
+            renderDashboard();
+            renderRecentTransactions();
+            renderAllTransactions();
+            updateTradeCount();
+          } else {
+            alert('저장 실패: ' + result.error);
+          }
         }
       } catch (error) {
         alert('저장 중 오류가 발생했습니다: ' + error.message);

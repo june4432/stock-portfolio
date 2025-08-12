@@ -1545,3 +1545,162 @@
 2025-08-12T17:33:03: 118.235.11.13 - - [12/Aug/2025 17:33:03] "GET /api/stocks/v1/portfolio HTTP/1.1" 200 -
 2025-08-12T17:33:03: 118.235.11.13 - - [12/Aug/2025 17:33:03] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
 2025-08-12T17:33:04: 118.235.11.13 - - [12/Aug/2025 17:33:04] "GET /api/stocks/v1/prices HTTP/1.1" 200 -
+2025-08-12T17:41:57: 118.235.11.13 - - [12/Aug/2025 17:41:57] "GET / HTTP/1.1" 200 -
+2025-08-12T17:41:57: 118.235.11.13 - - [12/Aug/2025 17:41:57] "GET /static/style.css?v=20250812174157 HTTP/1.1" 200 -
+2025-08-12T17:41:57: 118.235.11.13 - - [12/Aug/2025 17:41:57] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T17:41:57: 118.235.11.13 - - [12/Aug/2025 17:41:57] "
+2025-08-12T17:41:57: GET /apple-touch-icon-precomposed.png HTTP/1.1
+2025-08-12T17:41:57: " 404 -
+2025-08-12T17:41:57: 118.235.11.13 - - [12/Aug/2025 17:41:57] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T17:41:57: 118.235.11.13 - - [12/Aug/2025 17:41:57] "GET /api/stocks/v1/portfolio HTTP/1.1" 200 -
+2025-08-12T17:41:57: 118.235.11.13 - - [12/Aug/2025 17:41:57] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T17:41:57: 118.235.11.13 - - [12/Aug/2025 17:41:57] "
+2025-08-12T17:41:57: GET /apple-touch-icon.png HTTP/1.1" 404 -
+2025-08-12T17:41:57: 118.235.11.13 - - [12/Aug/2025 17:41:57] "GET /favicon.ico HTTP/1.1" 404 -
+2025-08-12T17:41:58: 118.235.11.13 - - [12/Aug/2025 17:41:58] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T17:41:58: 118.235.11.13 - - [12/Aug/2025 17:41:58] "GET /api/stocks/v1/news HTTP/1.1" 200 -
+2025-08-12T17:41:58: 118.235.11.13 - - [12/Aug/2025 17:41:58] "GET /api/stocks/v1/asset-history HTTP/1.1" 200 -
+2025-08-12T17:41:58: 118.235.11.13 - - [12/Aug/2025 17:41:58] "GET /api/stocks/v1/prices HTTP/1.1" 200 -
+2025-08-12T17:41:59: 118.235.11.13 - - [12/Aug/2025 17:41:59] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T17:42:11: 118.235.11.13 - - [12/Aug/2025 17:42:11] "POST /api/stocks/v1/upload-screenshot HTTP/1.1" 200 -
+2025-08-12T17:42:23: 118.235.11.13 - - [12/Aug/2025 17:42:23] "POST /api/stocks/v1/upload-screenshot HTTP/1.1" 200 -
+2025-08-12T17:42:32: 118.235.11.13 - - [12/Aug/2025 17:42:32] "POST /api/stocks/v1/upload-screenshot HTTP/1.1" 200 -
+2025-08-12T17:42:38: 118.235.11.13 - - [12/Aug/2025 17:42:38] "POST /api/stocks/v1/upload-screenshot HTTP/1.1" 200 -
+2025-08-12T17:42:49: 118.235.11.13 - - [12/Aug/2025 17:42:49] "POST /api/stocks/v1/upload-screenshot HTTP/1.1" 200 -
+2025-08-12T17:42:58: 118.235.11.13 - - [12/Aug/2025 17:42:58] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T17:43:10: 118.235.11.13 - - [12/Aug/2025 17:43:10] "POST /api/stocks/v1/upload-screenshot HTTP/1.1" 200 -
+2025-08-12T17:43:23: 118.235.11.13 - - [12/Aug/2025 17:43:23] "POST /api/stocks/v1/upload-screenshot HTTP/1.1" 200 -
+2025-08-12T17:43:33: 118.235.11.13 - - [12/Aug/2025 17:43:33] "POST /api/stocks/v1/upload-screenshot HTTP/1.1" 200 -
+2025-08-12T17:43:39: 118.235.11.13 - - [12/Aug/2025 17:43:39] "GET / HTTP/1.1" 200 -
+2025-08-12T17:43:39: 118.235.11.13 - - [12/Aug/2025 17:43:39] "GET /static/style.css?v=20250812174339 HTTP/1.1" 200 -
+2025-08-12T17:43:40: 118.235.11.13 - - [12/Aug/2025 17:43:40] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T17:43:40: 118.235.11.13 - - [12/Aug/2025 17:43:40] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T17:43:40: 118.235.11.13 - - [12/Aug/2025 17:43:40] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T17:43:40: 118.235.11.13 - - [12/Aug/2025 17:43:40] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T17:43:40: 118.235.11.13 - - [12/Aug/2025 17:43:40] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T17:43:40: 118.235.11.13 - - [12/Aug/2025 17:43:40] "GET /api/stocks/v1/portfolio HTTP/1.1" 200 -
+2025-08-12T17:43:40: 118.235.11.13 - - [12/Aug/2025 17:43:40] "GET /api/stocks/v1/news HTTP/1.1" 200 -
+2025-08-12T17:43:40: 118.235.11.13 - - [12/Aug/2025 17:43:40] "GET /api/stocks/v1/asset-history HTTP/1.1" 200 -
+2025-08-12T17:43:41: 118.235.11.13 - - [12/Aug/2025 17:43:41] "GET /api/stocks/v1/prices HTTP/1.1" 200 -
+2025-08-12T17:43:53: 118.235.11.13 - - [12/Aug/2025 17:43:53] "POST /api/stocks/v1/upload-screenshot HTTP/1.1" 200 -
+2025-08-12T17:44:09: 118.235.11.13 - - [12/Aug/2025 17:44:09] "POST /api/stocks/v1/upload-screenshot HTTP/1.1" 200 -
+2025-08-12T17:45:06: 24.255.28.133 - - [12/Aug/2025 17:45:06] code 400, message Bad request version ('N{IÙ@6Ô')
+2025-08-12T17:45:06: 24.255.28.133 - - [12/Aug/2025 17:45:06] "Ò»l5ce]zÁ\x96.\x7fg¡\x88"\x80\x1d\x177£,\x89±HÃY\x19/sä\x9a\x15Wpø\x9d\x03²ÏïõöÔÌÛî©Ò\x1b\\}\x08~ÔÓ|ã2\x81Ü\x13\x08\x8d=5@\x9b"Ç)\x12¯\x8a¹\x1fvÚ\x04Äögi(ôSIpÖ!óÂ3\x8cù~\x15ßG(ó\x9bÄ\x93\x84Å§WmÓ\x9ai\x09¯f\x9c\x86+é£,#&Ä¾.w\x1cù\x00Ý\x899_x7;À\x12Êý~Õ%Â¶\x1dÕ2Áh\x1e\x9dOj\x9f`\x1c>¤`R¶\x08³|ÓÅ_!P\x1a:\x05YXðøYH#Yñ<­+\x04±\x01Ñï\x9e¯iÖ[\x06Ã\x191ÓýæzH¼èuù\x09\x1e¨ÿÅÆò?Êw,Å N{IÙ@6Ô" HTTPStatus.BAD_REQUEST -
+2025-08-12T17:45:31:  * Detected change in '/home/pi/project/finance-portfolio/app.py', reloading
+2025-08-12T17:45:32:  * Restarting with stat
+2025-08-12T17:45:34:  * Debugger is active!
+2025-08-12T17:45:34:  * Debugger PIN: 972-012-010
+2025-08-12T17:45:50:  * Detected change in '/home/pi/project/finance-portfolio/app.py', reloading
+2025-08-12T17:45:51:  * Restarting with stat
+2025-08-12T17:45:53:  * Debugger is active!
+2025-08-12T17:45:53:  * Debugger PIN: 972-012-010
+2025-08-12T17:47:03: 118.235.11.13 - - [12/Aug/2025 17:47:03] "GET / HTTP/1.1" 200 -
+2025-08-12T17:47:03: 118.235.11.13 - - [12/Aug/2025 17:47:03] "GET /static/style.css?v=20250812174703 HTTP/1.1" 200 -
+2025-08-12T17:47:03: 118.235.11.13 - - [12/Aug/2025 17:47:03] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T17:47:03: 118.235.11.13 - - [12/Aug/2025 17:47:03] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T17:47:03: 118.235.11.13 - - [12/Aug/2025 17:47:03] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T17:47:03: 118.235.11.13 - - [12/Aug/2025 17:47:03] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T17:47:03: 118.235.11.13 - - [12/Aug/2025 17:47:03] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T17:47:03: 118.235.11.13 - - [12/Aug/2025 17:47:03] "GET /api/stocks/v1/portfolio HTTP/1.1" 200 -
+2025-08-12T17:47:04: 118.235.11.13 - - [12/Aug/2025 17:47:04] "GET /api/stocks/v1/news HTTP/1.1" 200 -
+2025-08-12T17:47:04: 118.235.11.13 - - [12/Aug/2025 17:47:04] "GET /api/stocks/v1/asset-history HTTP/1.1" 200 -
+2025-08-12T17:47:05: 118.235.11.13 - - [12/Aug/2025 17:47:05] "GET /api/stocks/v1/prices HTTP/1.1" 200 -
+2025-08-12T17:47:12: 118.235.11.13 - - [12/Aug/2025 17:47:12] "POST /api/stocks/v1/upload-screenshot HTTP/1.1" 200 -
+2025-08-12T17:49:36: 118.235.11.13 - - [12/Aug/2025 17:49:36] "GET / HTTP/1.1" 200 -
+2025-08-12T17:49:36: 118.235.11.13 - - [12/Aug/2025 17:49:36] "GET /static/style.css?v=20250812174936 HTTP/1.1" 200 -
+2025-08-12T17:49:36: 118.235.11.13 - - [12/Aug/2025 17:49:36] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T17:49:36: 118.235.11.13 - - [12/Aug/2025 17:49:36] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T17:49:36: 118.235.11.13 - - [12/Aug/2025 17:49:36] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T17:49:36: 118.235.11.13 - - [12/Aug/2025 17:49:36] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T17:49:36: 118.235.11.13 - - [12/Aug/2025 17:49:36] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T17:49:36: 118.235.11.13 - - [12/Aug/2025 17:49:36] "GET /api/stocks/v1/portfolio HTTP/1.1" 200 -
+2025-08-12T17:49:37: 118.235.11.13 - - [12/Aug/2025 17:49:37] "GET /api/stocks/v1/news HTTP/1.1" 200 -
+2025-08-12T17:49:37: 118.235.11.13 - - [12/Aug/2025 17:49:37] "GET /api/stocks/v1/asset-history HTTP/1.1" 200 -
+2025-08-12T17:49:37: 118.235.11.13 - - [12/Aug/2025 17:49:37] "GET /api/stocks/v1/prices HTTP/1.1" 200 -
+2025-08-12T17:49:45: 118.235.11.13 - - [12/Aug/2025 17:49:45] "POST /api/stocks/v1/upload-screenshot HTTP/1.1" 200 -
+2025-08-12T17:50:07: 118.235.11.13 - - [12/Aug/2025 17:50:07] "POST /api/stocks/v1/upload-screenshot HTTP/1.1" 200 -
+2025-08-12T17:51:43:  * Detected change in '/home/pi/project/finance-portfolio/app.py', reloading
+2025-08-12T17:51:44:  * Restarting with stat
+2025-08-12T17:51:46:  * Debugger is active!
+2025-08-12T17:51:46:  * Debugger PIN: 972-012-010
+2025-08-12T17:51:59: 118.235.11.13 - - [12/Aug/2025 17:51:59] "GET / HTTP/1.1" 200 -
+2025-08-12T17:51:59: 118.235.11.13 - - [12/Aug/2025 17:51:59] "GET /static/style.css?v=20250812175159 HTTP/1.1" 200 -
+2025-08-12T17:51:59: 118.235.11.13 - - [12/Aug/2025 17:51:59] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T17:51:59: 118.235.11.13 - - [12/Aug/2025 17:51:59] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T17:51:59: 118.235.11.13 - - [12/Aug/2025 17:51:59] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T17:51:59: 118.235.11.13 - - [12/Aug/2025 17:51:59] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T17:51:59: 118.235.11.13 - - [12/Aug/2025 17:51:59] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T17:51:59: 118.235.11.13 - - [12/Aug/2025 17:51:59] "GET /api/stocks/v1/portfolio HTTP/1.1" 200 -
+2025-08-12T17:52:00: 118.235.11.13 - - [12/Aug/2025 17:52:00] "GET /api/stocks/v1/news HTTP/1.1" 200 -
+2025-08-12T17:52:00: 118.235.11.13 - - [12/Aug/2025 17:52:00] "GET /api/stocks/v1/asset-history HTTP/1.1" 200 -
+2025-08-12T17:52:01: 118.235.11.13 - - [12/Aug/2025 17:52:01] "GET /api/stocks/v1/prices HTTP/1.1" 200 -
+2025-08-12T17:52:08: 118.235.11.13 - - [12/Aug/2025 17:52:08] "POST /api/stocks/v1/upload-screenshot HTTP/1.1" 200 -
+2025-08-12T17:52:13: 118.235.11.13 - - [12/Aug/2025 17:52:13] "GET / HTTP/1.1" 200 -
+2025-08-12T17:52:13: 118.235.11.13 - - [12/Aug/2025 17:52:13] "GET /static/style.css?v=20250812175213 HTTP/1.1" 200 -
+2025-08-12T17:52:13: 118.235.11.13 - - [12/Aug/2025 17:52:13] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T17:52:13: 118.235.11.13 - - [12/Aug/2025 17:52:13] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T17:52:13: 118.235.11.13 - - [12/Aug/2025 17:52:13] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T17:52:13: 118.235.11.13 - - [12/Aug/2025 17:52:13] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T17:52:13: 118.235.11.13 - - [12/Aug/2025 17:52:13] "GET /api/stocks/v1/portfolio HTTP/1.1" 200 -
+2025-08-12T17:52:13: 118.235.11.13 - - [12/Aug/2025 17:52:13] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T17:52:14: 118.235.11.13 - - [12/Aug/2025 17:52:14] "GET /api/stocks/v1/news HTTP/1.1" 200 -
+2025-08-12T17:52:14: 118.235.11.13 - - [12/Aug/2025 17:52:14] "GET /api/stocks/v1/asset-history HTTP/1.1" 200 -
+2025-08-12T17:52:14: 118.235.11.13 - - [12/Aug/2025 17:52:14] "GET /api/stocks/v1/prices HTTP/1.1" 200 -
+2025-08-12T17:52:22: 118.235.11.13 - - [12/Aug/2025 17:52:22] "POST /api/stocks/v1/upload-screenshot HTTP/1.1" 200 -
+2025-08-12T17:55:10:  * Detected change in '/home/pi/project/finance-portfolio/app.py', reloading
+2025-08-12T17:55:10:  * Restarting with stat
+2025-08-12T17:55:12:  * Debugger is active!
+2025-08-12T17:55:12:  * Debugger PIN: 972-012-010
+2025-08-12T17:55:56: 118.235.11.13 - - [12/Aug/2025 17:55:56] "GET / HTTP/1.1" 200 -
+2025-08-12T17:55:56: 118.235.11.13 - - [12/Aug/2025 17:55:56] "GET /static/style.css?v=20250812175556 HTTP/1.1" 200 -
+2025-08-12T17:55:57: 118.235.11.13 - - [12/Aug/2025 17:55:57] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T17:55:57: 118.235.11.13 - - [12/Aug/2025 17:55:57] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T17:55:57: 118.235.11.13 - - [12/Aug/2025 17:55:57] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T17:55:57: 118.235.11.13 - - [12/Aug/2025 17:55:57] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T17:55:57: 118.235.11.13 - - [12/Aug/2025 17:55:57] "GET /api/stocks/v1/portfolio HTTP/1.1" 200 -
+2025-08-12T17:55:57: 118.235.11.13 - - [12/Aug/2025 17:55:57] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T17:55:57: 118.235.11.13 - - [12/Aug/2025 17:55:57] "GET /api/stocks/v1/news HTTP/1.1" 200 -
+2025-08-12T17:55:58: 118.235.11.13 - - [12/Aug/2025 17:55:58] "GET /api/stocks/v1/asset-history HTTP/1.1" 200 -
+2025-08-12T17:55:58: 118.235.11.13 - - [12/Aug/2025 17:55:58] "GET /api/stocks/v1/prices HTTP/1.1" 200 -
+2025-08-12T17:56:02: 118.235.11.13 - - [12/Aug/2025 17:56:02] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T17:56:04: 118.235.11.13 - - [12/Aug/2025 17:56:04] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T17:56:08: 118.235.11.13 - - [12/Aug/2025 17:56:08] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T17:56:25: 118.235.11.13 - - [12/Aug/2025 17:56:25] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T17:56:30: 118.235.11.13 - - [12/Aug/2025 17:56:30] "PUT /api/stocks/v1/transactions/14 HTTP/1.1" 200 -
+2025-08-12T17:56:31: 118.235.11.13 - - [12/Aug/2025 17:56:31] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T17:56:31: 118.235.11.13 - - [12/Aug/2025 17:56:31] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T17:56:31: 118.235.11.13 - - [12/Aug/2025 17:56:31] "GET /api/stocks/v1/portfolio HTTP/1.1" 200 -
+2025-08-12T17:56:31: 118.235.11.13 - - [12/Aug/2025 17:56:31] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T17:56:31: 118.235.11.13 - - [12/Aug/2025 17:56:31] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T17:56:32: 118.235.11.13 - - [12/Aug/2025 17:56:32] "GET /api/stocks/v1/prices HTTP/1.1" 200 -
+2025-08-12T17:56:35: 118.235.11.13 - - [12/Aug/2025 17:56:35] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T17:56:39: 118.235.11.13 - - [12/Aug/2025 17:56:39] "PUT /api/stocks/v1/transactions/16 HTTP/1.1" 200 -
+2025-08-12T17:56:40: 118.235.11.13 - - [12/Aug/2025 17:56:40] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T17:56:40: 118.235.11.13 - - [12/Aug/2025 17:56:40] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T17:56:40: 118.235.11.13 - - [12/Aug/2025 17:56:40] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T17:56:40: 118.235.11.13 - - [12/Aug/2025 17:56:40] "GET /api/stocks/v1/portfolio HTTP/1.1" 200 -
+2025-08-12T17:56:40: 118.235.11.13 - - [12/Aug/2025 17:56:40] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T17:56:41: 118.235.11.13 - - [12/Aug/2025 17:56:41] "GET /api/stocks/v1/prices HTTP/1.1" 200 -
+2025-08-12T17:59:25: 118.235.11.13 - - [12/Aug/2025 17:59:25] "GET / HTTP/1.1" 200 -
+2025-08-12T17:59:25: 118.235.11.13 - - [12/Aug/2025 17:59:25] "GET /static/style.css?v=20250812175925 HTTP/1.1" 200 -
+2025-08-12T17:59:25: 118.235.11.13 - - [12/Aug/2025 17:59:25] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T17:59:25: 118.235.11.13 - - [12/Aug/2025 17:59:25] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T17:59:25: 118.235.11.13 - - [12/Aug/2025 17:59:25] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T17:59:25: 118.235.11.13 - - [12/Aug/2025 17:59:25] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T17:59:25: 118.235.11.13 - - [12/Aug/2025 17:59:25] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T17:59:25: 118.235.11.13 - - [12/Aug/2025 17:59:25] "GET /api/stocks/v1/portfolio HTTP/1.1" 200 -
+2025-08-12T17:59:26: 118.235.11.13 - - [12/Aug/2025 17:59:26] "GET /api/stocks/v1/news HTTP/1.1" 200 -
+2025-08-12T17:59:26: 118.235.11.13 - - [12/Aug/2025 17:59:26] "GET /api/stocks/v1/asset-history HTTP/1.1" 200 -
+2025-08-12T17:59:26: 118.235.11.13 - - [12/Aug/2025 17:59:26] "GET /api/stocks/v1/prices HTTP/1.1" 200 -
+2025-08-12T18:00:12: 118.235.11.13 - - [12/Aug/2025 18:00:12] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T18:02:35: 118.235.11.13 - - [12/Aug/2025 18:02:35] "GET / HTTP/1.1" 200 -
+2025-08-12T18:02:35: 118.235.11.13 - - [12/Aug/2025 18:02:35] "GET /static/style.css?v=20250812180235 HTTP/1.1" 200 -
+2025-08-12T18:02:35: 118.235.11.13 - - [12/Aug/2025 18:02:35] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T18:02:35: 118.235.11.13 - - [12/Aug/2025 18:02:35] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T18:02:35: 118.235.11.13 - - [12/Aug/2025 18:02:35] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T18:02:35: 118.235.11.13 - - [12/Aug/2025 18:02:35] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T18:02:35: 118.235.11.13 - - [12/Aug/2025 18:02:35] "GET /api/stocks/v1/portfolio HTTP/1.1" 200 -
+2025-08-12T18:02:35: 118.235.11.13 - - [12/Aug/2025 18:02:35] "GET /api/stocks/v1/transactions HTTP/1.1" 200 -
+2025-08-12T18:02:36: 118.235.11.13 - - [12/Aug/2025 18:02:36] "GET /api/stocks/v1/news HTTP/1.1" 200 -
+2025-08-12T18:02:36: 118.235.11.13 - - [12/Aug/2025 18:02:36] "GET /api/stocks/v1/asset-history HTTP/1.1" 200 -
+2025-08-12T18:02:37: 118.235.11.13 - - [12/Aug/2025 18:02:37] "GET /api/stocks/v1/prices HTTP/1.1" 200 -
