@@ -175,7 +175,9 @@ def save_data(data):
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    # Generate a unique version string (e.g., timestamp) for cache busting
+    cache_buster = datetime.now().strftime("%Y%m%d%H%M%S")
+    return render_template("index.html", cache_buster=cache_buster)
 
 @app.route("/api/stocks/v1/transactions", methods=["POST"])
 def add_transaction():

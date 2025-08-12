@@ -96,18 +96,34 @@ input, select, button, textarea {
   margin-top: 12px;
 }
 
+input[type="date"] {
+  /* Ensure it takes full width and respects box model */
+  width: 100%;
+  box-sizing: border-box;
+  display: block; /* Ensures it behaves like a block element */
+  /* Add padding to make space for the calendar icon */
+  padding-right: 30px; /* Adjust as needed, typical icon width + some space */
+  -webkit-appearance: none; /* Attempt to reset native iOS styling */
+}
+
+/* Re-add some styling for the calendar picker indicator to position it */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  position: absolute; /* Position absolutely within the input */
+  right: 10px; /* Adjust to position it within the padding */
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 1; /* Make sure it's visible */
+  filter: none; /* Remove any filter that might affect its size/appearance */
+  cursor: pointer;
+  width: 20px; /* Give it a fixed width */
+  height: 20px; /* Give it a fixed height */
+}
+
 .flatpickr-input {
   background-color: white;
 }
 
-input[type="date"]::-webkit-calendar-picker-indicator {
-  margin: 0;
-  padding: 0;
-  opacity: 0.8;
-  filter: invert(0.5);
-  position: relative;
-  right: -4px;
-}
+
 
 .header-top-bar {
   display: flex;

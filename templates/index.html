@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>📈 미국 주식 대시보드</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css', v=cache_buster) }}">
 </head>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
@@ -325,7 +325,9 @@
       const toggle = document.getElementById("currencyToggle");
       const label = document.getElementById("currencyLabel");
       currency = toggle.checked ? 'krw' : 'usd';
-      label.innerText = toggle.checked ? '🇰🇷 원화 보기' : '💵 달러 보기';
+      // If toggle.checked is true, currency is KRW, so offer to switch to USD.
+      // If toggle.checked is false, currency is USD, so offer to switch to KRW.
+      label.innerText = toggle.checked ? '💵 달러 보기' : '🇰🇷 원화 보기';
       renderDashboard();
     }
 
