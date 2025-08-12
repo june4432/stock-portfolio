@@ -19,7 +19,7 @@
           <div class="toggle-switch">
             <input type="checkbox" id="currencyToggle" onchange="toggleCurrency()">
             <label for="currencyToggle"></label>
-            <span class="toggle-label-text" id="currencyLabel">💵 달러 보기</span>
+            <span class="toggle-label-text" id="currencyLabel"></span>
           </div>
           <div class="toggle-switch">
             <input type="checkbox" id="themeToggle" onchange="toggleTheme()">
@@ -388,19 +388,23 @@
       return `${Math.round(value).toLocaleString()}원`;
     }
 
-    document.addEventListener("DOMContentLoaded", function () {
-      // Initialize tabs
-      initializeTabs();
+    function initializeCurrencyDisplay() {
+      const toggle = document.getElementById("currencyToggle");
+      const label = document.getElementById("currencyLabel");
 
-      // Initialize date picker for inline form
-      flatpickr("input[name='date']", {
-        dateFormat: "Y-m-d",
-        defaultDate: new Date()
-      });
+      // Set initial state based on 'currency' global variable (which is 'usd' by default)
+      if (currency === 'usd') {
+        toggle.checked = false; // Unchecked for USD
+        label.innerText = '🇰🇷 원화 보기'; // Offer to switch to KRW
+      } else { // currency === 'krw'
+        toggle.checked = true; // Checked for KRW
+        label.innerText = '💵 달러 보기'; // Offer to switch to USD
+      }
+      // Then call the main app initialization
+      initializeApp();
+    }
 
-      // Initialize add transaction modal
-      initializeAddTransactionModal();
-    });
+    document.addEventListener("DOMContentLoaded", initializeCurrencyDisplay);
 
     let portfolioChart = null; // ✅ 전역 차트 변수
 
@@ -493,7 +497,7 @@
             <div class="stock-card">
               <div class="stock-header">
                 <h3>${symbol}</h3>
-                <span class="price">${formatUSD(price)}</span>
+                <span class="price">${currency === 'usd' ? formatUSD(price) : formatKRW(price * krwRate)}</span>
               </div>
               <div class="stock-body">
                 <p><strong>보유 수량:</strong> ${shares}</p>
@@ -603,36 +607,36 @@
         const div = document.createElement("div");
         div.className = "transaction-card";
         div.innerHTML = `
-          <button class="tx-edit" onclick="editExistingTransaction(${originalIndex})" title="거래내역 수정">✏️</button>
-          <div class="tx-content">
+          <div class="tx-header-row">
               <div class="tx-main-info">
-                  <div class="tx-ticker-type">
-                      <span class="tx-ticker">${tx.ticker}</span>
-                      <span class="tx-type ${tx.type}">${tx.type.toUpperCase()}</span>
-                  </div>
+                  <span class="tx-ticker">${tx.ticker}</span>
+                  <span class="tx-type ${tx.type}">${tx.type.toUpperCase()}</span>
               </div>
-              <div class="tx-sub-details">
-                  <div class="tx-detail">
-                      <span class="tx-label">거래일</span>
-                      <span class="tx-value">${tx.date}</span>
-                  </div>
-                  ${tx.purchase_datetime ? `
-                    <div class="tx-detail">
-                        <span class="tx-label">구매일시</span>
-                        <span class="tx-value">${tx.purchase_datetime}</span>
-                    </div>
-                  ` : ''}
-                  <div class="tx-detail">
-                      <span class="tx-label">수량</span>
-                      <span class="tx-value">${tx.quantity.toLocaleString(undefined, { maximumFractionDigits: 6 })}</span>
-                  </div>
-                  <div class="tx-detail">
-                      <span class="tx-label">단가</span>
-                      <span class="tx-value">${Number(tx.price).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
-                  </div>
+              <div class="tx-actions">
+                  <button class="tx-edit" onclick="editExistingTransaction(${originalIndex})" title="거래내역 수정">✏️</button>
+                  <button class="tx-delete" onclick="deleteTransaction(${originalIndex})" title="거래내역 삭제">×</button>
               </div>
           </div>
-          <button class="tx-delete" onclick="deleteTransaction(${originalIndex})" title="거래내역 삭제">×</button>
+          <div class="tx-sub-details">
+              <div class="tx-detail">
+                  <span class="tx-label">거래일</span>
+                  <span class="tx-value">${tx.date}</span>
+              </div>
+              ${tx.purchase_datetime ? `
+                <div class="tx-detail">
+                    <span class="tx-label">구매일시</span>
+                    <span class="tx-value">${tx.purchase_datetime}</span>
+                </div>
+              ` : ''}
+              <div class="tx-detail">
+                  <span class="tx-label">수량</span>
+                  <span class="tx-value">${tx.quantity.toLocaleString(undefined, { maximumFractionDigits: 6 })}</span>
+              </div>
+              <div class="tx-detail">
+                  <span class="tx-label">단가</span>
+                  <span class="tx-value">${Number(tx.price).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+              </div>
+          </div>
         `;
         container.appendChild(div);
       });
@@ -1600,6 +1604,7 @@
     }
 
     function initializeApp() {
+      initializeTabs();
       renderDashboard();
       renderRecentTransactions();
       renderAllTransactions();
