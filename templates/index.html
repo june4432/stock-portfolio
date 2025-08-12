@@ -603,36 +603,36 @@
         const div = document.createElement("div");
         div.className = "transaction-card";
         div.innerHTML = `
-          <div class="tx-main-info">
-              <div class="tx-ticker-type">
-                  <span class="tx-ticker">${tx.ticker}</span>
-                  <span class="tx-type ${tx.type}">${tx.type.toUpperCase()}</span>
+          <button class="tx-edit" onclick="editExistingTransaction(${originalIndex})" title="거래내역 수정">✏️</button>
+          <div class="tx-content">
+              <div class="tx-main-info">
+                  <div class="tx-ticker-type">
+                      <span class="tx-ticker">${tx.ticker}</span>
+                      <span class="tx-type ${tx.type}">${tx.type.toUpperCase()}</span>
+                  </div>
+              </div>
+              <div class="tx-sub-details">
+                  <div class="tx-detail">
+                      <span class="tx-label">거래일</span>
+                      <span class="tx-value">${tx.date}</span>
+                  </div>
+                  ${tx.purchase_datetime ? `
+                    <div class="tx-detail">
+                        <span class="tx-label">구매일시</span>
+                        <span class="tx-value">${tx.purchase_datetime}</span>
+                    </div>
+                  ` : ''}
+                  <div class="tx-detail">
+                      <span class="tx-label">수량</span>
+                      <span class="tx-value">${tx.quantity.toLocaleString(undefined, { maximumFractionDigits: 6 })}</span>
+                  </div>
+                  <div class="tx-detail">
+                      <span class="tx-label">단가</span>
+                      <span class="tx-value">${Number(tx.price).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+                  </div>
               </div>
           </div>
-          <div class="tx-sub-details">
-              <div class="tx-detail">
-                  <span class="tx-label">거래일</span>
-                  <span class="tx-value">${tx.date}</span>
-              </div>
-              ${tx.purchase_datetime ? `
-                <div class="tx-detail">
-                    <span class="tx-label">구매일시</span>
-                    <span class="tx-value">${tx.purchase_datetime}</span>
-                </div>
-              ` : ''}
-              <div class="tx-detail">
-                  <span class="tx-label">수량</span>
-                  <span class="tx-value">${tx.quantity.toLocaleString(undefined, { maximumFractionDigits: 6 })}</span>
-              </div>
-              <div class="tx-detail">
-                  <span class="tx-label">단가</span>
-                  <span class="tx-value">${Number(tx.price).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
-              </div>
-          </div>
-          <div class="tx-actions">
-            <button class="tx-edit" onclick="editExistingTransaction(${originalIndex})" title="거래내역 수정">✏️</button>
-            <button class="tx-delete" onclick="deleteTransaction(${originalIndex})" title="거래내역 삭제">×</button>
-          </div>
+          <button class="tx-delete" onclick="deleteTransaction(${originalIndex})" title="거래내역 삭제">×</button>
         `;
         container.appendChild(div);
       });
