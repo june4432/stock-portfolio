@@ -96,7 +96,6 @@
                 <p class="upload-subtext">PNG, JPG, JPEG 파일 지원 (최대 16MB)</p>
                 <div class="upload-buttons">
                   <button type="button" class="upload-btn" onclick="document.getElementById('file-input').click()">파일 선택</button>
-                  <button type="button" class="save-sample-btn" onclick="document.getElementById('sample-file-input').click()">🔬 샘플 저장</button>
                 </div>
                 <input type="file" id="file-input" accept="image/*" style="display: none;">
                 <input type="file" id="sample-file-input" accept="image/*" style="display: none;">
@@ -840,11 +839,7 @@
       
       // File input change event
       fileInput.addEventListener('change', handleFile);
-      
-      // Sample file input change event
-      if (sampleFileInput) {
-        sampleFileInput.addEventListener('change', handleSampleFile);
-      }
+
       
       // Drag and drop events
       uploadArea.addEventListener('dragover', (e) => {
@@ -1023,41 +1018,6 @@
       `;
       
       parsedTransactionData = [];
-    }
-
-    async function handleSampleFile(event) {
-      const file = event.target.files[0];
-      if (!file) return;
-
-      try {
-        const formData = new FormData();
-        formData.append('file', file);
-        
-        const response = await fetch('/api/stocks/v1/save-sample', {
-          method: 'POST',
-          body: formData
-        });
-        
-        const result = await response.json();
-        console.log('Sample save result:', result);
-        
-        if (result.success) {
-          alert(`샘플 파일이 저장되었습니다: ${result.message}\n\n이미지 정보:\n- 크기: ${result.image_info.size[0]}x${result.image_info.size[1]}\n- 형식: ${result.image_info.format}\n- 파일 크기: ${Math.round(result.image_info.file_size / 1024)}KB`);
-          
-          // 인식된 텍스트가 있으면 콘솔에 출력
-          if (result.raw_text) {
-            console.log('OCR Result from sample:', result.raw_text);
-          }
-        } else {
-          alert('샘플 저장에 실패했습니다: ' + result.error);
-        }
-      } catch (error) {
-        console.error('Sample save error:', error);
-        alert('샘플 저장 중 오류가 발생했습니다: ' + error.message);
-      }
-      
-      // 파일 인풋 리셋
-      event.target.value = '';
     }
 
     function resetUploadArea() {

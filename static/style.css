@@ -1024,27 +1024,6 @@ ul#transaction-list {
   align-items: center;
 }
 
-.save-sample-btn {
-  background: #28a745;
-  color: white;
-  border: none;
-  padding: 12px 24px;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.dark-mode .save-sample-btn {
-  background: #34ce57;
-}
-
-.save-sample-btn:hover {
-  background: #218838;
-  transform: translateY(-1px);
-}
-
 .upload-result {
   margin-top: 20px;
   padding: 20px;
