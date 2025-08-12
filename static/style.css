@@ -742,14 +742,7 @@ ul#transaction-list {
 /* ======================== */
 /* 📝 Inline Trade Form */
 /* ======================== */
-.trade-form-section {
-  background: var(--card-bg-light);
-  border: 1px solid var(--border-light);
-  border-radius: 12px;
-  padding: 24px;
-  margin-bottom: 24px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-}
+
 
 .dark-mode .trade-form-section {
   background: var(--card-bg-dark);
@@ -943,14 +936,7 @@ ul#transaction-list {
 /* ======================== */
 /* 📷 Screenshot Upload Section */
 /* ======================== */
-.screenshot-upload-section {
-  background: var(--card-bg-light);
-  border: 1px solid var(--border-light);
-  border-radius: 12px;
-  padding: 24px;
-  margin-bottom: 24px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-}
+
 
 .dark-mode .screenshot-upload-section {
   background: var(--card-bg-dark);
@@ -1346,14 +1332,7 @@ ul#transaction-list {
 /* ======================== */
 /* 📰 News Section */
 /* ======================== */
-.news-section {
-  background: var(--card-bg-light);
-  border: 1px solid var(--border-light);
-  border-radius: 12px;
-  padding: 24px;
-  margin-bottom: 24px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-}
+
 
 .dark-mode .news-section {
   background: var(--card-bg-dark);
@@ -1464,14 +1443,7 @@ ul#transaction-list {
 /* ======================== */
 /* 📊 Asset History Chart */
 /* ======================== */
-.asset-history-section {
-  background: var(--card-bg-light);
-  border: 1px solid var(--border-light);
-  border-radius: 12px;
-  padding: 24px;
-  margin-bottom: 24px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-}
+
 
 .dark-mode .asset-history-section {
   background: var(--card-bg-dark);
@@ -1530,10 +1502,6 @@ ul#transaction-list {
   }
 
   /* Mobile form improvements */
-  .trade-form-section {
-    padding: 20px;
-    margin-bottom: 20px;
-  }
 
   .form-group input {
     padding: 14px 16px;
@@ -1586,7 +1554,6 @@ ul#transaction-list {
   /* Extra small screen form optimizations */
   .trade-form-section {
     padding: 16px;
-    margin: 0 -8px 20px -8px;
     border-radius: 8px;
   }
 
@@ -1787,4 +1754,120 @@ ul#all-transaction-list {
   .delete-modal-actions {
     padding: 20px;
   }
+}
+
+/* New Transaction Card Design */
+.transaction-card {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+}
+
+.dark-mode .transaction-card {
+  background-color: #2a2a2a;
+  border-color: #444;
+}
+
+.tx-main-info {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 12px;
+}
+
+.dark-mode .tx-main-info {
+  border-color: #444;
+}
+
+.tx-ticker-type {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tx-ticker {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.tx-type {
+  font-size: 0.8em;
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 4px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.tx-type.buy {
+  background-color: #28a745; /* Green */
+}
+
+.tx-type.sell {
+  background-color: #dc3545; /* Red */
+}
+
+
+
+.tx-sub-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 12px;
+}
+
+.tx-detail {
+  display: flex;
+  flex-direction: column;
+}
+
+.tx-label {
+  font-size: 0.85em;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.dark-mode .tx-label {
+  color: #bbb;
+}
+
+.tx-value {
+  font-weight: 500;
+}
+
+.transaction-card .tx-delete {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #999;
+}
+.dark-mode .transaction-card .tx-delete {
+    color: #ccc;
+}
+
+/* ======================== */
+/* 📦 Content Section      */
+/* ======================== */
+.content-section {
+  background: var(--card-bg-light);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.dark-mode .content-section {
+  background: var(--card-bg-dark);
+  border-color: var(--border-dark);
 }

@@ -45,7 +45,7 @@
       <div class="tab-content">
         <!-- Dashboard Tab Panel -->
         <div class="tab-panel active" id="dashboard-panel">
-          <section class="summary-section">
+          <section class="summary-section content-section">
             <div class="summary-header">
               <span class="summary-title">💵 요약</span>
               <span class="exchange" id="krw-rate">$1 = <span id="krw-value">loading...</span>원</span>
@@ -53,29 +53,29 @@
             <div class="summary-cards" id="summary-cards"></div>
           </section>
 
-          <section class="chart-section">
+          <section class="chart-section content-section">
             <h2>📈 종목별 평가금액 분포</h2>
             <canvas id="portfolioPieChart" width="400" height="400"></canvas>
           </section>
 
-          <section class="asset-history-section">
+          <section class="asset-history-section content-section">
             <h2>📊 자산 히스토리</h2>
             <canvas id="assetHistoryChart" width="800" height="400"></canvas>
           </section>
 
-          <section class="holdings-section">
+          <section class="holdings-section content-section">
             <h2>📂 보유 종목</h2>
             <div class="stock-cards" id="stock-cards"></div>
           </section>
 
-          <section class="news-section">
+          <section class="news-section content-section">
             <h2>📰 관련 뉴스</h2>
             <div class="news-container" id="news-container">
               <p class="news-loading">뉴스를 불러오는 중...</p>
             </div>
           </section>
 
-          <section class="recent-transactions-section">
+          <section class="recent-transactions-section content-section">
             <h2>📜 최근 거래내역</h2>
             <ul id="recent-transaction-list"></ul>
             <div class="view-all-link">
@@ -87,7 +87,7 @@
         <!-- Trading Tab Panel -->
         <div class="tab-panel" id="trading-panel">
           <!-- Screenshot Upload Section -->
-          <section class="screenshot-upload-section">
+          <section class="screenshot-upload-section content-section">
             <h2>📷 스크린샷으로 거래 등록</h2>
             <div class="upload-area" id="upload-area">
               <div class="upload-content">
@@ -169,7 +169,7 @@
             </div>
           </section>
 
-          <section class="trade-form-section">
+          <section class="trade-form-section content-section">
             <h2>💼 거래 등록</h2>
             <form id="trade-form-inline" class="trade-form-inline">
               <div class="form-row">
@@ -210,7 +210,7 @@
             <div id="trade-message-inline" class="trade-message"></div>
           </section>
 
-          <section class="all-transactions-section">
+          <section class="all-transactions-section content-section">
             <h2>📜 전체 거래내역</h2>
             <div class="transaction-controls">
               <div class="transaction-stats">
@@ -567,25 +567,25 @@
         const div = document.createElement("div");
         div.className = "transaction-card";
         div.innerHTML = `
-          <div class="tx-info">
-            <div class="tx-header">
-              <span class="tx-ticker" title="${tx.ticker}">${tx.ticker}</span>
-              <span class="tx-type" data-type="${tx.type.toUpperCase()}">${tx.type.toUpperCase()}</span>
-            </div>
-            <div class="tx-details">
-              <div class="tx-detail-item">
-                <span>📅</span>
-                <span>${tx.date}</span>
+          <div class="tx-main-info">
+              <div class="tx-ticker-type">
+                  <span class="tx-ticker">${tx.ticker}</span>
+                  <span class="tx-type ${tx.type}">${tx.type.toUpperCase()}</span>
               </div>
-              <div class="tx-detail-item">
-                <span>📦</span>
-                <span class="tx-amount">${tx.quantity.toLocaleString(undefined, { maximumFractionDigits: 6 })}</span>
+          </div>
+          <div class="tx-sub-details">
+              <div class="tx-detail">
+                  <span class="tx-label">거래일</span>
+                  <span class="tx-value">${tx.date}</span>
               </div>
-              <div class="tx-detail-item">
-                <span>💲</span>
-                <span class="tx-amount">${Number(tx.price).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+              <div class="tx-detail">
+                  <span class="tx-label">수량</span>
+                  <span class="tx-value">${tx.quantity.toLocaleString(undefined, { maximumFractionDigits: 6 })}</span>
               </div>
-            </div>
+              <div class="tx-detail">
+                  <span class="tx-label">단가</span>
+                  <span class="tx-value">${Number(tx.price).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+              </div>
           </div>
         `;
         container.appendChild(div);
@@ -610,29 +610,25 @@
         const div = document.createElement("div");
         div.className = "transaction-card";
         div.innerHTML = `
-          <div class="tx-info">
-            <div class="tx-header">
-              <span class="tx-ticker" title="${tx.ticker}">${tx.ticker}</span>
-              <span class="tx-type" data-type="${tx.type.toUpperCase()}">${tx.type.toUpperCase()}</span>
-            </div>
-            <div class="tx-details">
-              <div class="tx-detail-item">
-                <span>📅</span>
-                <span>${tx.date}</span>
+          <div class="tx-main-info">
+              <div class="tx-ticker-type">
+                  <span class="tx-ticker">${tx.ticker}</span>
+                  <span class="tx-type ${tx.type}">${tx.type.toUpperCase()}</span>
               </div>
-              <div class="tx-detail-item">
-                <span>📦</span>
-                <span class="tx-amount">${tx.quantity.toLocaleString(undefined, { maximumFractionDigits: 6 })}</span>
+          </div>
+          <div class="tx-sub-details">
+              <div class="tx-detail">
+                  <span class="tx-label">거래일</span>
+                  <span class="tx-value">${tx.date}</span>
               </div>
-              <div class="tx-detail-item">
-                <span>💲</span>
-                <span class="tx-amount">${Number(tx.price).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+              <div class="tx-detail">
+                  <span class="tx-label">수량</span>
+                  <span class="tx-value">${tx.quantity.toLocaleString(undefined, { maximumFractionDigits: 6 })}</span>
               </div>
-              <div class="tx-detail-item">
-                <span>💰</span>
-                <span class="tx-amount">${(tx.quantity * tx.price).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+              <div class="tx-detail">
+                  <span class="tx-label">단가</span>
+                  <span class="tx-value">${Number(tx.price).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
               </div>
-            </div>
           </div>
           <button class="tx-delete" onclick="deleteTransaction(${originalIndex})" title="거래내역 삭제">×</button>
         `;
@@ -1160,7 +1156,7 @@
                 time: {
                   unit: 'day',
                   displayFormats: {
-                    day: 'MM/DD'
+                    day: 'MM/dd'
                   }
                 }
               },
