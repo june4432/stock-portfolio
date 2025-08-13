@@ -348,6 +348,7 @@
       // If toggle.checked is false, currency is USD, so offer to switch to KRW.
       label.innerText = toggle.checked ? '💵 달러 보기' : '🇰🇷 원화 보기';
       renderDashboard();
+      renderAssetHistoryChart();
     }
 
     function toggleTheme() {
@@ -493,27 +494,68 @@
           const rate = Number(((profit / invested) * 100).toFixed(2)).toString();
           const rateClass = profit >= 0 ? 'positive' : 'negative';
 
+          const priceChangePercent = ((price - avgPrice) / avgPrice * 100).toFixed(2);
+          const priceChangeClass = priceChangePercent >= 0 ? 'positive' : 'negative';
+          
           stockCards.innerHTML += `
             <div class="stock-card">
               <div class="stock-header">
-                <h3>${symbol}</h3>
-                <span class="price">${currency === 'usd' ? formatUSD(price) : formatKRW(price * krwRate)}</span>
+                <div class="stock-symbol">
+                  <h3>${symbol}</h3>
+                  <span class="symbol-badge">STOCK</span>
+                </div>
+                <div class="stock-price">
+                  <div class="current-price">${currency === 'usd' ? formatUSD(price) : formatKRW(price * krwRate)}</div>
+                  <div class="price-change ${priceChangeClass}">
+                    ${priceChangePercent >= 0 ? '+' : ''}${priceChangePercent}%
+                  </div>
+                </div>
               </div>
-              <div class="stock-body">
-                <p><strong>보유 수량:</strong> ${shares}</p>
-                <p><strong>평가 금액:</strong> 
-                  ${currency === 'usd' ? formatUSD(currentValue) : formatKRW(currentValue * krwRate)}
-                </p>
-                <p><strong>수익:</strong> 
-                  ${currency === 'usd' ? formatUSD(profit) : formatKRW(profit * krwRate)}
-                </p>
-                <p><strong>수익률:</strong> <span class="${rateClass}">${rate}%</span></p>
+              
+              <div class="stock-metrics">
+                <div class="metric-item">
+                  <div class="metric-label">보유 수량</div>
+                  <div class="metric-value">${shares}</div>
+                </div>
+                <div class="metric-item">
+                  <div class="metric-label">평균 매수가</div>
+                  <div class="metric-value">${currency === 'usd' ? formatUSD(avgPrice) : formatKRW(avgPrice * krwRate)}</div>
+                </div>
+                <div class="metric-item">
+                  <div class="metric-label">평가 금액</div>
+                  <div class="metric-value">${currency === 'usd' ? formatUSD(currentValue) : formatKRW(currentValue * krwRate)}</div>
+                </div>
+                <div class="metric-item">
+                  <div class="metric-label">투자 금액</div>
+                  <div class="metric-value">${currency === 'usd' ? formatUSD(invested) : formatKRW(invested * krwRate)}</div>
+                </div>
+              </div>
+              
+              <div class="performance-summary">
+                <div class="performance-row">
+                  <span class="performance-label">총 수익</span>
+                  <span class="performance-value ${rateClass}">
+                    ${currency === 'usd' ? formatUSD(profit) : formatKRW(profit * krwRate)}
+                  </span>
+                </div>
+                <div class="performance-row">
+                  <span class="performance-label">수익률</span>
+                  <span class="performance-value ${rateClass}">
+                    ${profit >= 0 ? '+' : ''}${rate}%
+                  </span>
+                </div>
               </div>
             </div>
           `;
         }
       } else {
-        stockCards.innerHTML = `<p>📭 보유 중인 종목이 없습니다.</p>`;
+        stockCards.innerHTML = `
+          <div class="no-holdings">
+            <div class="no-holdings-icon">📂</div>
+            <div class="no-holdings-text">보유 중인 종목이 없습니다</div>
+            <div class="no-holdings-subtext">거래를 등록하여 포트폴리오를 시작해보세요</div>
+          </div>
+        `;
       }
 
       const profit = summary.value - summary.invested;
@@ -546,43 +588,58 @@
       const container = document.getElementById("recent-transaction-list");
       container.innerHTML = "";
 
-      // Show only the most recent 5 transactions
-      const recentTx = txList.slice(-5).reverse();
+      // Sort transactions by date and show the most recent 5
+      const sortedTx = txList.slice().sort((a, b) => {
+        const dateA = new Date(a.date);
+        const dateB = new Date(b.date);
+        return dateB - dateA; // 내림차순 (최신순)
+      });
+      const recentTx = sortedTx.slice(0, 5);
 
       if (recentTx.length === 0) {
-        container.innerHTML = '<li class="no-transactions">📭 거래내역이 없습니다.</li>';
+        container.innerHTML = `
+          <div class="no-transactions">
+            <div class="no-holdings-icon">📝</div>
+            <div class="no-holdings-text">최근 거래내역이 없습니다</div>
+            <div class="no-holdings-subtext">거래를 등록하면 여기에 표시됩니다</div>
+          </div>
+        `;
         return;
       }
 
       recentTx.forEach((tx, i) => {
+        const totalValue = tx.quantity * tx.price;
+        const typeClass = tx.type.toLowerCase();
+        
         const div = document.createElement("div");
-        div.className = "transaction-card";
+        div.className = "transaction-card recent-transaction";
         div.innerHTML = `
-          <div class="tx-main-info">
-              <div class="tx-ticker-type">
-                  <span class="tx-ticker">${tx.ticker}</span>
-                  <span class="tx-type ${tx.type}">${tx.type.toUpperCase()}</span>
-              </div>
+          <div class="tx-header">
+            <div class="tx-symbol-info">
+              <div class="tx-symbol">${tx.ticker}</div>
+              <div class="tx-type-badge ${typeClass}">${tx.type.toUpperCase()}</div>
+            </div>
+            <div class="tx-amount-info">
+              <div class="tx-total-amount">${totalValue.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</div>
+              <div class="tx-unit-price">@${Number(tx.price).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</div>
+            </div>
           </div>
-          <div class="tx-sub-details">
-              <div class="tx-detail">
-                  <span class="tx-label">거래일</span>
-                  <span class="tx-value">${tx.date}</span>
+          
+          <div class="tx-metrics">
+            <div class="tx-metric">
+              <div class="metric-label">거래일</div>
+              <div class="metric-value">${tx.date}</div>
+            </div>
+            ${tx.purchase_datetime ? `
+              <div class="tx-metric">
+                <div class="metric-label">거래시간</div>
+                <div class="metric-value">${tx.purchase_datetime.split(' ')[1] || tx.purchase_datetime}</div>
               </div>
-              ${tx.purchase_datetime ? `
-                <div class="tx-detail">
-                    <span class="tx-label">구매일시</span>
-                    <span class="tx-value">${tx.purchase_datetime}</span>
-                </div>
-              ` : ''}
-              <div class="tx-detail">
-                  <span class="tx-label">수량</span>
-                  <span class="tx-value">${tx.quantity.toLocaleString(undefined, { maximumFractionDigits: 6 })}</span>
-              </div>
-              <div class="tx-detail">
-                  <span class="tx-label">단가</span>
-                  <span class="tx-value">${Number(tx.price).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
-              </div>
+            ` : ''}
+            <div class="tx-metric">
+              <div class="metric-label">수량</div>
+              <div class="metric-value">${tx.quantity.toLocaleString(undefined, { maximumFractionDigits: 6 })}</div>
+            </div>
           </div>
         `;
         container.appendChild(div);
@@ -595,47 +652,74 @@
       container.innerHTML = "";
 
       if (txList.length === 0) {
-        container.innerHTML = '<li class="no-transactions">📭 거래내역이 없습니다.</li>';
+        container.innerHTML = `
+          <div class="no-transactions">
+            <div class="no-holdings-icon">📝</div>
+            <div class="no-holdings-text">거래내역이 없습니다</div>
+            <div class="no-holdings-subtext">첫 번째 거래를 등록해보세요</div>
+          </div>
+        `;
         return;
       }
 
-      // Show all transactions in reverse chronological order
-      const sortedTx = txList.slice().reverse();
+      // Sort transactions by date (newest first)
+      const sortedTx = txList.slice().sort((a, b) => {
+        const dateA = new Date(a.date);
+        const dateB = new Date(b.date);
+        return dateB - dateA; // 내림차순 (최신순)
+      });
 
       sortedTx.forEach((tx, i) => {
-        const originalIndex = txList.length - 1 - i;
+        const originalIndex = txList.findIndex(originalTx => 
+          originalTx.ticker === tx.ticker && 
+          originalTx.date === tx.date && 
+          originalTx.price === tx.price && 
+          originalTx.quantity === tx.quantity &&
+          originalTx.type === tx.type
+        );
+        const totalValue = tx.quantity * tx.price;
+        const typeClass = tx.type.toLowerCase();
+        
         const div = document.createElement("div");
-        div.className = "transaction-card";
+        div.className = "transaction-card full-transaction";
         div.innerHTML = `
-          <div class="tx-header-row">
-              <div class="tx-main-info">
-                  <span class="tx-ticker">${tx.ticker}</span>
-                  <span class="tx-type ${tx.type}">${tx.type.toUpperCase()}</span>
-              </div>
-              <div class="tx-actions">
-                  <button class="tx-edit" onclick="editExistingTransaction(${originalIndex})" title="거래내역 수정">✏️</button>
-                  <button class="tx-delete" onclick="deleteTransaction(${originalIndex})" title="거래내역 삭제">×</button>
-              </div>
+          <div class="tx-header">
+            <div class="tx-symbol-info">
+              <div class="tx-symbol">${tx.ticker}</div>
+              <div class="tx-type-badge ${typeClass}">${tx.type.toUpperCase()}</div>
+            </div>
+            <div class="tx-amount-info">
+              <div class="tx-total-amount">$${totalValue.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</div>
+              <div class="tx-unit-price">@$${Number(tx.price).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</div>
+            </div>
           </div>
-          <div class="tx-sub-details">
-              <div class="tx-detail">
-                  <span class="tx-label">거래일</span>
-                  <span class="tx-value">${tx.date}</span>
+          
+          <div class="tx-metrics">
+            <div class="tx-metric">
+              <div class="metric-label">거래일</div>
+              <div class="metric-value">${tx.date}</div>
+            </div>
+            ${tx.purchase_datetime ? `
+              <div class="tx-metric">
+                <div class="metric-label">거래시간</div>
+                <div class="metric-value">${tx.purchase_datetime.split(' ')[1] || tx.purchase_datetime}</div>
               </div>
-              ${tx.purchase_datetime ? `
-                <div class="tx-detail">
-                    <span class="tx-label">구매일시</span>
-                    <span class="tx-value">${tx.purchase_datetime}</span>
-                </div>
-              ` : ''}
-              <div class="tx-detail">
-                  <span class="tx-label">수량</span>
-                  <span class="tx-value">${tx.quantity.toLocaleString(undefined, { maximumFractionDigits: 6 })}</span>
+            ` : ''}
+            <div class="tx-metric">
+              <div class="metric-label">수량</div>
+              <div class="metric-value">${tx.quantity.toLocaleString(undefined, { maximumFractionDigits: 6 })}</div>
+            </div>
+            <div class="tx-metric">
+              <div class="metric-label">총 금액</div>
+              <div class="metric-value">$${totalValue.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</div>
+            </div>
+            <div class="tx-metric tx-actions-metric">
+              <div class="metric-label">관리</div>
+              <div class="tx-actions">
+                <button class="tx-edit" onclick="editExistingTransaction(${originalIndex})" title="거래내역 수정">✏️</button>
+                <button class="tx-delete" onclick="deleteTransaction(${originalIndex})" title="거래내역 삭제">×</button>
               </div>
-              <div class="tx-detail">
-                  <span class="tx-label">단가</span>
-                  <span class="tx-value">${Number(tx.price).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
-              </div>
+            </div>
           </div>
         `;
         container.appendChild(div);
@@ -1445,6 +1529,7 @@
       try {
         const response = await fetch('/api/stocks/v1/asset-history');
         const historyData = await response.json();
+        const krwRate = await fetchExchangeRate();
         
         const ctx = document.getElementById('assetHistoryChart').getContext('2d');
         
@@ -1460,7 +1545,10 @@
           const colors = ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF', '#FF9F40'];
           return {
             label: symbol,
-            data: data.map(point => ({ x: point.date, y: point.value })),
+            data: data.map(point => ({
+              x: point.date,
+              y: currency === 'krw' ? point.value * krwRate : point.value
+            })),
             borderColor: colors[index % colors.length],
             backgroundColor: colors[index % colors.length] + '20',
             fill: false,
@@ -1492,7 +1580,9 @@
                 beginAtZero: true,
                 ticks: {
                   callback: function(value) {
-                    return '$' + value.toLocaleString();
+                    return currency === 'krw'
+                      ? '₩' + Math.round(value).toLocaleString()
+                      : '$' + value.toLocaleString();
                   }
                 }
               }
